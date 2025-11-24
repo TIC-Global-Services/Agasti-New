@@ -112,20 +112,20 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           <div className="absolute bottom-8 sm:bottom-12 left-6 right-6 sm:left-8 sm:right-8 md:left-16 md:right-16 lg:left-24 lg:right-24 w-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 text-xs sm:text-sm text-gray-500 mb-6 sm:mb-8">
               {/* Need Support */}
-              <div>
+              <div className="text-center sm:text-left">
                 <h3 className="font-semibold mb-2 text-gray-700">NEED SUPPORT?</h3>
                 <p>INFO@AGASTI.COM</p>
               </div>
 
               {/* Address */}
-              <div className="sm:text-right">
+              <div className="text-center sm:text-right">
                 <h3 className="font-semibold mb-2 text-gray-700">ADDRESS</h3>
                 <p>AGASTIESTATES, GACHIBOWLI,</p>
                 <p>HYDERABAD - 500032</p>
               </div>
 
               {/* Socials */}
-              <div>
+              <div className="text-center sm:text-left">
                 <h3 className="font-semibold mb-2 text-gray-700">SOCIALS</h3>
                 <ul className="space-y-1">
                   <li>
@@ -147,7 +147,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
               </div>
 
               {/* Customer Care */}
-              <div className="sm:text-right">
+              <div className="text-center sm:text-right">
                 <h3 className="font-semibold mb-2 text-gray-700">CUSTOMER CARE</h3>
                 <p>+1 234 567 8910</p>
               </div>

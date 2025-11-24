@@ -29,7 +29,7 @@ export default function SmartFutureHomes() {
           
           <div className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-8 mb-6 sm:mb-8 lg:items-end">
             <h2 className="font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black leading-tight max-w-2xl">
-              Crafting Homes Designed for Intelligent Living, <br></br>Lasting Strength, and a Future-Ready Lifestyle
+              Crafting Homes Designed for Intelligent Living,Lasting <br></br>Strength,and a Future-Ready Lifestyle
             </h2>
             
             <p className="text-gray-500 text-xs sm:text-sm md:text-[16px] leading-relaxed max-w-md">

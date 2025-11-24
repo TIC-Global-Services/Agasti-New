@@ -28,21 +28,24 @@ export default function HeroSection() {
         <div className="relative z-10 flex h-full flex-col">
           {/* Header with Text and Menu */}
           <div className="relative px-4 py-6 sm:px-6 sm:py-8 xl:px-[145px] lg:px-[50px]">
-            {/* Centered AGASTI Logo */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-8">
-              <div className="relative h-[36px] sm:h-[44px] w-auto aspect-[4/1]">
-                <Image
-                  src="/Agasti_Logo.png"
-                  alt="Agasti Logo"
-                  fill
-                  sizes="(max-width: 640px) 144px, 176px"
-                  className="object-contain"
-                />
+            <div className="flex items-center justify-between">
+              {/* Spacer for left side */}
+              <div className="w-6 sm:w-8" />
+              
+              {/* Centered AGASTI Logo */}
+              <div className="flex-1 flex justify-center">
+                <div className="relative h-[36px] sm:h-[44px] w-auto aspect-[4/1]">
+                  <Image
+                    src="/Agasti_Logo.png"
+                    alt="Agasti Logo"
+                    fill
+                    sizes="(max-width: 640px) 144px, 176px"
+                    className="object-contain"
+                  />
+                </div>
               </div>
-            </div>
-            
-            {/* Hamburger Menu - Top Right */}
-            <div className="absolute right-4 top-6 sm:right-6 sm:top-8 xl:right-[145px] lg:right-[50px]">
+              
+              {/* Hamburger Menu - Top Right */}
               <button 
                 onClick={() => setIsMenuOpen(true)}
                 className="hover:opacity-80 transition-opacity flex flex-col gap-2"

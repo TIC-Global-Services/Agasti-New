@@ -1,8 +1,20 @@
 "use client";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
 
 export default function Services() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const scrollLeft = scrollRef.current.scrollLeft;
+      const cardWidth = scrollRef.current.offsetWidth;
+      const index = Math.round(scrollLeft / cardWidth);
+      setActiveIndex(index);
+    }
+  };
   const services = [
     {
       title: "Lush Surroundings",
@@ -29,7 +41,7 @@ export default function Services() {
             height: 6px;
           }
           .scrollbar-thin::-webkit-scrollbar-track {
-            background: #e5e7eb;
+            background: #e5e7ebff;
             border-radius: 10px;
           }
           .scrollbar-thin::-webkit-scrollbar-thumb {
@@ -39,13 +51,20 @@ export default function Services() {
           .scrollbar-thin::-webkit-scrollbar-thumb:hover {
             background: #6b7280;
           }
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
         `
       }} />
       <ContainerLayout>
         {/* Header */}
         <div className="mb-12 sm:mb-16">
           <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[24px] mb-4 font-bold">Where Luxury Meets Nature</p>
-          <h2 className="font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black leading-tight">
+          <h2 className="font-gc-palioka text-[20px] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black leading-tight">
             Elegance curated with care, <br></br>serenity framed in every vista.
           </h2>
         </div>
@@ -53,31 +72,49 @@ export default function Services() {
         <hr className="border-gray-500 mb-12 sm:mb-16" />
 
         {/* Mobile Carousel - Visible only on mobile */}
-        <div className="block sm:hidden overflow-x-auto overflow-y-hidden pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 -mx-4 sm:mx-0">
-          <div className="flex gap-4 px-4">
-            {services.map((service, index) => (
-              <div key={index} className="flex flex-col w-[calc(100vw-2rem)] flex-shrink-0 snap-center">
-                {/* Text Content */}
-                <div className="mb-4 h-[100px]">
-                  <h3 className="text-lg font-semibold text-black mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
-                    {service.description}
-                  </p>
-                </div>
+        <div className="block sm:hidden -mx-4">
+          <div 
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="overflow-x-auto overflow-y-hidden snap-x snap-mandatory hide-scrollbar"
+          >
+            <div className="flex">
+              {services.map((service, index) => (
+                <div key={index} className="flex flex-col w-screen flex-shrink-0 snap-center px-5">
+                  {/* Text Content */}
+                  <div className="mb-4">
+                    <h3 className="text-lg font-semibold text-black mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
 
-                {/* Image */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    sizes="calc(100vw - 2rem)"
-                    className="object-cover"
-                  />
+                  {/* Image */}
+                  <div className="relative aspect-[4/5] w-full overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="calc(100vw - 40px)"
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
-              </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Progress Bar */}
+          <div className="flex justify-center gap-2 mt-6 px-5">
+            {services.map((_, index) => (
+              <div 
+                key={index} 
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  index === activeIndex ? 'bg-[#8D957E] w-12' : 'bg-gray-300 w-8'
+                }`}
+              />
             ))}
           </div>
         </div>
