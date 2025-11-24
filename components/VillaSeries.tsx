@@ -43,8 +43,8 @@ export default function VillaSeries() {
       <ContainerLayout>
         {/* Header */}
         <div className="mb-8 sm:mb-12 pb-6 sm:pb-8 border-b border-gray-300">
-          <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[24px] mb-3 sm:mb-4 font-bold">The Agasti Villa Series</p>
-          <h2 className="font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+          <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">The Agasti Villa Series</p>
+          <h2 className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight">
             Villas Crafted for Every Lifestyle and Every Direction
           </h2>
         </div>

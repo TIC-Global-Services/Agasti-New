@@ -25,19 +25,15 @@ export default function SmartFutureHomes() {
       <ContainerLayout>
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[24px] mb-4 sm:mb-6 font-bold">Smart, Future-Ready Engineering</p>
+          <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">Smart, Future-Ready Engineering</p>
           
-          <div className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-8 mb-6 sm:mb-8 lg:items-end">
-            <h2 className="font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black leading-tight max-w-2xl">
-              Crafting Homes Designed for Intelligent Living,Lasting <br></br>Strength,and a Future-Ready Lifestyle
-            </h2>
-            
-            <p className="text-gray-500 text-xs sm:text-sm md:text-[16px] leading-relaxed max-w-md">
-              Agasti homes use advanced structures, planned MEP systems, quality 
-              waterproofing, and solar integration to ensure long-term durability, easy 
-              upkeep, and a modern living experience built for the future.
-            </p>
-          </div>
+          <h2 className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight mb-6 sm:mb-8">
+            Crafting Homes Designed for Intelligent Living, Lasting Strength, and a Future-Ready Lifestyle
+          </h2>
+          
+          <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-3xl">
+            Agasti homes use advanced structures, planned MEP systems, quality waterproofing, and solar integration to ensure long-term durability, easy upkeep, and a modern living experience built for the future.
+          </p>
         </div>
 
         <hr className="border-gray-400 mb-12" />

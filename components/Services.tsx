@@ -69,7 +69,7 @@ export default function Services() {
           </h2>
         </div>
 
-        <hr className="border-gray-300 mb-8 sm:mb-12" />
+        <hr className="border-gray-300 mb-6 sm:mb-8" />
 
         {/* Mobile Carousel */}
         <div className="block sm:hidden -mx-6">
