@@ -68,7 +68,7 @@ export default function Services() {
                 </div>
 
                 {/* Image */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg">
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -97,7 +97,7 @@ export default function Services() {
               </div>
 
               {/* Image */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg group mt-auto">
+              <div className="relative aspect-[4/5] w-full overflow-hidden group mt-auto">
                 <Image
                   src={service.image}
                   alt={service.title}

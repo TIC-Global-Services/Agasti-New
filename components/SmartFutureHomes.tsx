@@ -43,7 +43,7 @@ export default function SmartFutureHomes() {
         <hr className="border-gray-400 mb-12" />
 
         {/* Parallax Image */}
-        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-lg">
+        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
           <div
             style={{
               transform: `translateY(${offsetY * 0.5}px)`,

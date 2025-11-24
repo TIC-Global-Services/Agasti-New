@@ -51,7 +51,7 @@ export default function LifestyleGallery() {
             {features.map((feature, index) => (
               <div key={index} className="group cursor-pointer flex-shrink-0 w-[75vw] sm:w-[65vw] md:w-auto">
                 {/* Image */}
-                <div className={`relative ${feature.aspectRatio} overflow-hidden mb-3 sm:mb-4 rounded-lg`}>
+                <div className={`relative ${feature.aspectRatio} overflow-hidden mb-3 sm:mb-4`}>
                   <Image
                     src={feature.image}
                     alt={feature.title}
