@@ -1,7 +1,39 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
 
 export default function LifestyleGallery() {
+  const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false, false]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = cardRefs.current.map((card, index) => {
+      if (!card) return null;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setVisibleCards((prev) => {
+                const newState = [...prev];
+                newState[index] = true;
+                return newState;
+              });
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(card);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
   const features = [
     {
       title: "Sleek, Sculpted Rooflines",
@@ -49,9 +81,18 @@ export default function LifestyleGallery() {
         <div className="overflow-x-auto md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 pb-6 md:pb-0">
           <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 md:items-start min-w-max md:min-w-0">
             {features.map((feature, index) => (
-              <div key={index} className="group cursor-pointer flex-shrink-0 w-[75vw] sm:w-[65vw] md:w-auto">
+              <div 
+                key={index} 
+                ref={(el) => { cardRefs.current[index] = el; }}
+                className={`group cursor-pointer flex-shrink-0 w-[75vw] sm:w-[65vw] md:w-auto transition-all duration-700 ease-out ${
+                  visibleCards[index] 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
                 {/* Image */}
-                <div className={`relative ${feature.aspectRatio} overflow-hidden mb-3 sm:mb-4`}>
+                <div className={`relative aspect-[3/4] lg:${feature.aspectRatio} overflow-hidden mb-3 sm:mb-4`}>
                   <Image
                     src={feature.image}
                     alt={feature.title}
