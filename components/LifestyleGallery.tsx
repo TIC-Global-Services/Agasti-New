@@ -39,21 +39,21 @@ export default function LifestyleGallery() {
       title: "Sleek, Sculpted Rooflines",
       description:
         "Sleek, sculpted rooflines bring refined architectural elegance while enhancing natural light and ventilation.",
-      image: "/roofline.jpg",
+      image: "/stairs.png",
       aspectRatio: "aspect-[3/4]",
     },
     {
-      title: "Organic Kitchen Garden",
+      title: "Tot Lot Garden",
       description:
-        "Organic Kitchen Garden offers a personal space to grow fresh, natural produce right at home.",
-      image: "/organic-kitchen.jpg",
+        "A safe, joyful play space surrounded by greenery—designed for little ones to explore, play, and connect with nature.",
+      image: "/totlotgarden.png",
       aspectRatio: "aspect-[3/5]",
     },
     {
-      title: "Outdoor Culinary Space",
+      title: "Signature Clubhouse",
       description:
-        "Outdoor Culinary Space provides a stylish open-air setting for cooking, entertaining, and enjoying relaxed gatherings.",
-      image: "/outdoor-culinary.jpg",
+        "A refined retreat with a generous 4,000 sq. ft. built-up area, featuring premium lounges, curated amenities, and serene social spaces for effortless luxury living.",
+      image: "/clubhouse.png",
       aspectRatio: "aspect-[3/4]",
     },
     {
