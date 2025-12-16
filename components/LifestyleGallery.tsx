@@ -39,7 +39,7 @@ export default function LifestyleGallery() {
       title: "Sleek, Sculpted Rooflines",
       description:
         "Sleek, sculpted rooflines bring refined architectural elegance while enhancing natural light and ventilation.",
-      image: "/stairs.png",
+      image: "/stairs.png.png",
       aspectRatio: "aspect-[3/4]",
     },
     {
