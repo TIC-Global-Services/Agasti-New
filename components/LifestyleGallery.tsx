@@ -36,10 +36,10 @@ export default function LifestyleGallery() {
   }, []);
   const features = [
     {
-      title: "Sleek, Sculpted Rooflines",
+      title: "Sculpted Spiral Staircase",
       description:
-        "Sleek, sculpted rooflines bring refined architectural elegance while enhancing natural light and ventilation.",
-      image: "/stairs.png",
+        "A sculpted spiral staircase adds architectural elegance while optimizing space and creating a striking visual centerpiece.",
+      image: "/staircase.png",
       aspectRatio: "aspect-[3/4]",
     },
     {
