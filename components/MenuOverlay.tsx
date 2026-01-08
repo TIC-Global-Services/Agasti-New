@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface MenuOverlayProps {
   isOpen: boolean;
@@ -12,7 +13,11 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
 
   useEffect(() => {
     if (isOpen) {
-      setIsAnimating(true);
+      // Use a microtask to avoid synchronous setState in effect
+      Promise.resolve().then(() => setIsAnimating(true));
+    } else {
+      // Use a microtask for consistency
+      Promise.resolve().then(() => setIsAnimating(false));
     }
   }, [isOpen]);
 
@@ -86,22 +91,22 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           <nav className="mb-auto">
             <ul className="space-y-4 sm:space-y-6 text-gray-500 text-center">
               <li>
-                <a href="#home" className="hover:text-black transition-colors text-base sm:text-lg">
+                <Link href="/" className="hover:text-black transition-colors text-base sm:text-lg" onClick={handleClose}>
                   HOME
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="hover:text-black transition-colors text-base sm:text-lg">
+                <Link href="/about" className="hover:text-black transition-colors text-base sm:text-lg" onClick={handleClose}>
                   ABOUT
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#projects" className="hover:text-black transition-colors text-base sm:text-lg">
+                <Link href="/projects" className="hover:text-black transition-colors text-base sm:text-lg" onClick={handleClose}>
                   PROJECTS
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="hover:text-black transition-colors text-base sm:text-lg">
+                <a href="#contact" className="hover:text-black transition-colors text-base sm:text-lg" onClick={handleClose}>
                   CONTACT
                 </a>
               </li>
