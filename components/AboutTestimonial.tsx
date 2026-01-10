@@ -47,7 +47,7 @@ export default function AboutTestimonial() {
 
   return (
     <section ref={sectionRef} className="bg-[#F0EDE4] py-12 sm:py-16 md:py-20 min-h-screen flex items-center">
-      <ContainerLayout>
+      <ContainerLayout paddingX="px-6 xl:px-[48px] lg:px-[48px]">
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Quote - Word by Word */}
           <blockquote className="font-gc-palioka text-[54px] leading-[1.1] mb-12 sm:mb-16 text-center">

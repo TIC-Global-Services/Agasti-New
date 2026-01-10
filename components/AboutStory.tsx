@@ -62,7 +62,7 @@ export default function AboutStory() {
           </div>
         </div>
 
-        <ContainerLayout className="pt-20 sm:pt-24 md:pt-28">
+        <ContainerLayout className="pt-20 sm:pt-24 md:pt-28" paddingX="px-6 xl:px-[48px] lg:px-[48px]">
           {/* Parallax Image - Centered */}
           <div className="flex justify-center mb-1 sm:mb-2 md:mb-3">
             <div className="relative overflow-hidden" style={{ width: '1344px', height: '500px', maxWidth: '100%' }}>

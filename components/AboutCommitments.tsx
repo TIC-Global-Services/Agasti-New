@@ -55,7 +55,7 @@ export default function AboutCommitments() {
 
   return (
     <section className="bg-white pt-[85px]">
-      <ContainerLayout>
+      <ContainerLayout paddingX="px-6 xl:px-[48px] lg:px-[48px]">
         {/* Header */}
         <div className="mb-12 sm:mb-16">
           <p 

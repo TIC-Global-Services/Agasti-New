@@ -109,7 +109,7 @@ export default function AboutExcellence() {
         </div>
         
         <ContainerLayout className="relative z-10 py-14 sm:py-20 md:py-24" disablePaddingX={true}>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-4 items-start pl-[48px]">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-4 items-start px-[48px]">
             {/* Left Side - Built on Excellence */}
             <div className="lg:col-span-1 flex flex-col gap-[10px]" style={{ width: '435.00439453125px', height: '220px' }}>
               <h2 
@@ -193,7 +193,7 @@ export default function AboutExcellence() {
           />
         </div>
         
-        <ContainerLayout className="relative z-10 py-16 sm:py-20 md:py-24 h-[600px]">
+        <ContainerLayout className="relative z-10 py-16 sm:py-20 md:py-24 h-[600px]" paddingX="px-6 xl:px-[48px] lg:px-[48px]">
           <div className="absolute bottom-8 right-8">
             <div 
               className={`max-w-xl bg-white/40 p-8 rounded-lg border-2 border-white transition-all duration-1000 ease-out ${
