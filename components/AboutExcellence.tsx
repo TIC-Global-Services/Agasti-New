@@ -22,6 +22,16 @@ export default function AboutExcellence() {
   // Animation for stats numbers
   useEffect(() => {
     if (isStatsVisible) {
+      // Check if it's tablet (768px to 1023px)
+      const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+      
+      if (isTablet) {
+        // No animation on tablet - set final values immediately
+        setAnimatedNumbers({ years: 7, villas: 18, satisfaction: 95 });
+        return;
+      }
+      
+      // Animation for mobile and desktop
       const duration = 2000; // 2 seconds
       const steps = 60; // 60 steps for smooth animation
       const stepDuration = duration / steps;
@@ -125,7 +135,7 @@ export default function AboutExcellence() {
             </div>
 
             {/* Mobile Stats Cards - Stacked Vertically */}
-            <div className="space-y-4 md:grid md:grid-cols-2 md:gap-6 md:space-y-0" ref={statsRef}>
+            <div className="space-y-4 md:grid md:grid-cols-3 md:gap-4 md:space-y-0" ref={statsRef}>
               {/* 7+ Years */}
               <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm md:max-w-none">
                 <div className="text-center">
@@ -157,7 +167,7 @@ export default function AboutExcellence() {
               </div>
 
               {/* 95% Client Satisfaction */}
-              <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm md:max-w-none md:col-span-2 md:max-w-sm md:mx-auto">
+              <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm md:max-w-none">
                 <div className="text-center">
                   <div className="mb-3">
                     <div className="text-black text-[64px] font-bold leading-none mb-1">
@@ -411,7 +421,7 @@ export default function AboutExcellence() {
           </div>
 
           {/* Tablet Layout */}
-          <div className="hidden sm:block lg:hidden relative z-10 py-16 flex items-start justify-center min-h-[700px] px-6 pt-20">
+          <div className="hidden sm:block lg:hidden relative z-10 py-16 flex items-center justify-center min-h-[700px] px-6">
             <div className="bg-white/40 p-8 rounded-lg max-w-md w-full border-2 border-white text-center">
               <h3 
                 ref={sustainabilityRef}

@@ -18,8 +18,8 @@ body {
   font-family: var(--font-jarkata-sans), Helvetica, sans-serif;
 }
 
-/* Blur animations only for desktop (sm and above) */
-@media (min-width: 640px) {
+/* Blur animations only for desktop (lg and above - 1024px+) */
+@media (min-width: 1024px) {
   .filter {
     -webkit-filter: blur(0px);
     filter: blur(0px);
@@ -43,8 +43,8 @@ body {
   }
 }
 
-/* Mobile: No blur effects, just ensure smooth rendering */
-@media (max-width: 639px) {
+/* Mobile and Tablet: No blur effects, just ensure smooth rendering */
+@media (max-width: 1023px) {
   .filter,
   .blur-sm,
   .filter-none {

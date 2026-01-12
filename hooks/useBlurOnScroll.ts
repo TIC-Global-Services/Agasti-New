@@ -2,19 +2,19 @@ import { useEffect, useRef, useState } from "react";
 
 export const useBlurOnScroll = <T extends HTMLElement = HTMLElement>(threshold: number = 0.2) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const elementRef = useRef<T>(null);
 
   useEffect(() => {
-    // Detect mobile device
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640);
+    // Detect mobile or tablet device (up to 1024px)
+    const checkMobileOrTablet = () => {
+      setIsMobileOrTablet(window.innerWidth < 1024);
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    checkMobileOrTablet();
+    window.addEventListener('resize', checkMobileOrTablet);
     
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobileOrTablet);
   }, []);
 
   useEffect(() => {
@@ -39,9 +39,9 @@ export const useBlurOnScroll = <T extends HTMLElement = HTMLElement>(threshold: 
     };
   }, [threshold]);
 
-  // No blur effect on mobile, blur effect on desktop
-  const blurClass = isMobile 
-    ? '' // No animation classes on mobile
+  // No blur effect on mobile and tablet, blur effect on desktop only
+  const blurClass = isMobileOrTablet 
+    ? '' // No animation classes on mobile and tablet
     : (isVisible 
         ? 'filter-none opacity-100' 
         : 'filter blur-sm opacity-70');

@@ -74,7 +74,7 @@ export default function AboutCTA() {
                   Step into a world where craftsmanship, nature, and refined design come together to create a truly elevated way of living. Explore our vision, discover our communities, and see how Agasti is shaping the future of luxury villas.
                 </p>
 
-                <button className="text-[14px] font-bold tracking-wider text-white bg-white bg-opacity-30 w-[200px] h-[50px] rounded transition-colors duration-300">
+                <button className="text-[14px] font-bold tracking-wider text-white bg-[#FFFFFF4D] bg-opacity-30 w-[200px] h-[50px] rounded transition-colors duration-300">
                   SCHEDULE A VISIT
                 </button>
               </div>

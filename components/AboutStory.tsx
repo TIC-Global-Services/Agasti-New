@@ -110,7 +110,7 @@ export default function AboutStory() {
           {/* Desktop Layout */}
           <div className="hidden lg:block">
             {/* Parallax Image - Centered */}
-            <div className="flex justify-center mb-1 sm:mb-2 md:mb-3">
+            <div className="flex justify-center mb-1 sm:mb-2 md:mb-1 lg:mb-3">
               <div className="relative overflow-hidden" style={{ width: '1344px', height: '500px', maxWidth: '100%' }}>
                 <div
                   style={{

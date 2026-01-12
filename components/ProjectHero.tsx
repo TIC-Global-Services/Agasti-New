@@ -110,7 +110,7 @@ export default function ProjectHero() {
           {/* Desktop Layout */}
           <div className="hidden lg:block">
             {/* Parallax Image - Centered */}
-            <div className="flex justify-center mb-[20px]">
+            <div className="flex justify-center mb-[20px] md:mb-[10px] lg:mb-[20px]">
               <div className="relative overflow-hidden" style={{ width: '1344px', height: '500px', maxWidth: '100%' }}>
                 <div
                   style={{

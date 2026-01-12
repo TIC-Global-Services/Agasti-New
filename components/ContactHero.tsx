@@ -132,7 +132,7 @@ export default function ContactHero() {
             </div>
 
             {/* Content Grid - Properly aligned below image */}
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-16 items-start pb-12 sm:pb-16 md:pb-18 mt-12">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-16 items-start pb-12 sm:pb-16 md:pb-18 mt-12 md:mt-6 lg:mt-12">
               {/* Left Side - Contact Header */}
               <div className="lg:col-span-2">
                 <p 
