@@ -75,7 +75,7 @@ export default function ProjectHero() {
               </p>
               <h1 
                 ref={titleRef}
-                className={`font-gc-palioka text-[20px] sm:text-[28px] text-black leading-[1.1] tracking-[-0.03em] mb-4 transition-all duration-700 ease-out ${titleBlur}`}
+                className={`font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4 transition-all duration-700 ease-out ${titleBlur}`}
               >
                 Designing
                 <br />
@@ -87,7 +87,7 @@ export default function ProjectHero() {
             </div>
 
             {/* Mobile Image */}
-            <div className="relative overflow-hidden rounded-lg" style={{ width: '100%', height: '400px' }}>
+            <div className="relative overflow-hidden rounded-lg h-[400px] md:h-[500px]" style={{ width: '100%' }}>
               <div
                 style={{
                   transform: `translateY(${Math.min(0, offsetY * 3)}px)`,
@@ -110,7 +110,7 @@ export default function ProjectHero() {
           {/* Desktop Layout */}
           <div className="hidden lg:block">
             {/* Parallax Image - Centered */}
-            <div className="flex justify-center -mb-2">
+            <div className="flex justify-center mb-[20px]">
               <div className="relative overflow-hidden" style={{ width: '1344px', height: '500px', maxWidth: '100%' }}>
                 <div
                   style={{
@@ -132,12 +132,12 @@ export default function ProjectHero() {
             </div>
 
             {/* Content Grid - Properly aligned below image */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start pb-12 sm:pb-16 md:pb-18 mt-3">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start pb-12 sm:pb-16 md:pb-18">
               {/* Left Side - Projects Header */}
               <div>
                 <p 
                   ref={projectsRef}
-                  className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-lg mb-1 sm:mb-2 font-bold transition-all duration-700 ease-out ${projectsBlur}`}
+                  className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-lg mb-4 sm:mb-2 font-regular transition-all duration-700 ease-out ${projectsBlur}`}
                 >
                   Our projects
                 </p>

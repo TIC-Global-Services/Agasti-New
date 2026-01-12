@@ -108,15 +108,15 @@ export default function AboutExcellence() {
           />
         </div>
         
-        <ContainerLayout className="relative z-10 py-14 sm:py-20 md:py-24" disablePaddingX={true}>
+        <ContainerLayout className="relative z-10 py-[86px] sm:py-[110px] md:py-[126px]" disablePaddingX={true}>
           {/* Mobile Layout */}
           <div className="block lg:hidden px-6">
             {/* Mobile Header */}
             <div className="mb-8">
-              <h2 className="text-white font-gc-palioka text-[20px] sm:text-[24px] font-normal mb-4">
+              <h2 className="text-white font-gc-palioka text-[20px] sm:text-[24px] md:text-[28px] font-normal mb-4">
                 Built on Excellence
               </h2>
-              <h3 className="font-gc-palioka text-[#262B35] text-[20px] sm:text-[28px] leading-tight mb-4">
+              <h3 className="font-gc-palioka text-[#262B35] text-[20px] sm:text-[28px] md:text-[32px] leading-tight mb-4">
                 Where every property reflects uncompromised quality
               </h3>
               <p className="text-[#3C3C3C]/80 text-[14px] leading-relaxed">
@@ -125,14 +125,16 @@ export default function AboutExcellence() {
             </div>
 
             {/* Mobile Stats Cards - Stacked Vertically */}
-            <div className="space-y-4" ref={statsRef}>
+            <div className="space-y-4 md:grid md:grid-cols-2 md:gap-6 md:space-y-0" ref={statsRef}>
               {/* 7+ Years */}
-              <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm">
+              <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm md:max-w-none">
                 <div className="text-center">
-                  <div className="text-black text-[64px] font-bold leading-none mb-2">
-                    {animatedNumbers.years}+
+                  <div className="mb-3">
+                    <div className="text-black text-[64px] font-bold leading-none mb-1">
+                      {animatedNumbers.years}+
+                    </div>
+                    <div className="text-black text-[16px] font-medium">Years of Excellence</div>
                   </div>
-                  <div className="text-black text-[16px] font-medium mb-3">Years of Excellence</div>
                   <p className="text-black text-[12px] leading-relaxed">
                     delivering premium Villas since 2018
                   </p>
@@ -140,12 +142,14 @@ export default function AboutExcellence() {
               </div>
 
               {/* 18 Signature Villas */}
-              <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm">
+              <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm md:max-w-none">
                 <div className="text-center">
-                  <div className="text-black text-[64px] font-bold leading-none mb-2">
-                    {animatedNumbers.villas}
+                  <div className="mb-3">
+                    <div className="text-black text-[64px] font-bold leading-none mb-1">
+                      {animatedNumbers.villas}
+                    </div>
+                    <div className="text-black text-[16px] font-medium">Signature Villas</div>
                   </div>
-                  <div className="text-black text-[16px] font-medium mb-3">Signature Villas</div>
                   <p className="text-black text-[12px] leading-relaxed">
                     crafted with precision and refined exclusivity
                   </p>
@@ -153,12 +157,14 @@ export default function AboutExcellence() {
               </div>
 
               {/* 95% Client Satisfaction */}
-              <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm">
+              <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-[10px] p-6 mx-auto max-w-sm md:max-w-none md:col-span-2 md:max-w-sm md:mx-auto">
                 <div className="text-center">
-                  <div className="text-black text-[64px] font-bold leading-none mb-2">
-                    {animatedNumbers.satisfaction}%
+                  <div className="mb-3">
+                    <div className="text-black text-[64px] font-bold leading-none mb-1">
+                      {animatedNumbers.satisfaction}%
+                    </div>
+                    <div className="text-black text-[16px] font-medium">Client Satisfaction</div>
                   </div>
-                  <div className="text-black text-[16px] font-medium mb-3">Client Satisfaction</div>
                   <p className="text-black text-[12px] leading-relaxed">
                     reflecting our commitment to quality and trust
                   </p>
@@ -184,7 +190,7 @@ export default function AboutExcellence() {
                 >
                   Where every property reflects uncompromised quality
                 </h3>
-                <p className="text-[#3C3C3C]/80 text-sm leading-relaxed font-plus-jakarta-sans">
+                <p className="text-[#3C3C3C]/80 text-[16px] font-regular leading-tight font-plus-jakarta-sans">
                   Building exclusive communities for individuals who seek refined elegance, elevated comfort, and a truly distinguished way of living.
                 </p>
               </div>
@@ -193,29 +199,29 @@ export default function AboutExcellence() {
               <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 items-start ml-24" ref={statsRef}>
                 {/* 7+ Years */}
                 <div className="bg-white/10 backdrop-blur-sm border-[5.29px] border-white/20 rounded-[10px] flex flex-col p-6 -mr-4" style={{ width: '275px', height: '289px' }}>
-                  <div className="flex-grow-0">
-                    <div className="text-black text-[74px] font-bold mb-2">
+                  <div className="flex-grow-0 mb-4">
+                    <div className="text-black text-[74px] font-bold leading-none mb-1">
                       {animatedNumbers.years}+
                     </div>
-                    <div className="text-black text-sm font-medium mb-8">Years of Excellence</div>
+                    <div className="text-black text-[18px] font-bold font-gc-palioka-demo">Years of Excellence</div>
                   </div>
                   <div className="mt-auto">
-                    <p className="text-black text-xs leading-relaxed">
-                      delivering premium Villas since 2018
+                    <p className="text-black text-[14px] font-regular font-plus-jakarta-sans leading-relaxed">
+                      delivering premium Villas <br />since 2018
                     </p>
                   </div>
                 </div>
 
                 {/* 18 Signature Villas */}
                 <div className="bg-white/10 backdrop-blur-sm border-[5.29px] border-white/20 rounded-[10px] flex flex-col p-6 -mr-4" style={{ width: '275px', height: '289px' }}>
-                  <div className="flex-grow-0">
-                    <div className="text-black text-[74px] font-bold mb-2">
+                  <div className="flex-grow-0 mb-4">
+                    <div className="text-black text-[74px] font-urbanist font-bold leading-none mb-1">
                       {animatedNumbers.villas}
                     </div>
-                    <div className="text-black text-sm font-medium mb-8">Signature Villas</div>
+                    <div className="text-black text-[18px] font-bold font-gc-palioka-demo">Signature Villas</div>
                   </div>
                   <div className="mt-auto">
-                    <p className="text-black text-xs leading-relaxed">
+                    <p className="text-black text-[14px] font-regular font-plus-jakarta-sans leading-relaxed">
                       crafted with precision and refined exclusivity
                     </p>
                   </div>
@@ -223,14 +229,14 @@ export default function AboutExcellence() {
 
                 {/* 95% Client Satisfaction */}
                 <div className="bg-white/10 backdrop-blur-sm border-[5.29px] border-white/20 rounded-[10px] flex flex-col p-6" style={{ width: '275px', height: '289px' }}>
-                  <div className="flex-grow-0">
-                    <div className="text-black text-[74px] font-bold mb-2">
+                  <div className="flex-grow-0 mb-4">
+                    <div className="text-black text-[74px] font-bold leading-none mb-1">
                       {animatedNumbers.satisfaction}%
                     </div>
-                    <div className="text-black text-sm font-medium mb-8">Client Satisfaction</div>
+                    <div className="text-black text-[18px] font-gc-palioka-demo font-bold">Client Satisfaction</div>
                   </div>
                   <div className="mt-auto">
-                    <p className="text-black text-xs leading-relaxed">
+                    <p className="text-black text-[14px] font-plus-jakarta-sans font-regular leading-relaxed">
                       reflecting our commitment to quality and trust
                     </p>
                   </div>
@@ -258,7 +264,7 @@ export default function AboutExcellence() {
         <div className="block lg:hidden">
           <ContainerLayout className="relative z-10 py-16 flex items-center justify-center min-h-[600px]" paddingX="px-6">
             <div 
-              className={`bg-white/40 p-6 rounded-lg border-2 border-white max-w-sm w-full text-center transition-all duration-1000 ease-out ${
+              className={`bg-white/40 p-6 md:p-8 rounded-lg border-2 border-white max-w-sm md:max-w-md w-full text-center transition-all duration-1000 ease-out ${
                 isVisionVisible 
                   ? 'translate-y-0 opacity-100' 
                   : 'translate-y-8 opacity-0'
@@ -266,13 +272,13 @@ export default function AboutExcellence() {
             >
               <h3 
                 ref={visionTitleRef}
-                className={`font-gc-palioka text-2xl text-black leading-tight mb-4 transition-all duration-700 ease-out ${visionTitleBlur}`}
+                className={`font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4 transition-all duration-700 ease-out ${visionTitleBlur}`}
               >
                 Our Vision
                 <br />
                 for Elevated Living
               </h3>
-              <p className="text-black text-sm leading-relaxed">
+              <p className="text-black text-[14px] font-medium leading-relaxed">
                 At Agasti, our vision is to redefine luxury living by creating communities that harmonize architecture, nature, and human experience. We aim to build spaces that feel timeless—crafted with enduring quality, thoughtful engineering, and an unwavering attention to detail.
               </p>
             </div>
@@ -298,7 +304,7 @@ export default function AboutExcellence() {
                   <br />
                   for Elevated Living
                 </h3>
-                <p className="text-black-600 text-sm leading-tight tracking-[-0.02em]">
+                <p className="text-black-600 text-[14px] font-medium leading-tight tracking-[-0.02em]">
                   At Agasti, our vision is to redefine luxury living by creating communities that harmonize architecture, nature, and human experience. We aim to build spaces that feel timeless—crafted with enduring quality, thoughtful engineering, and an unwavering attention to detail.
                 </p>
               </div>
@@ -323,11 +329,28 @@ export default function AboutExcellence() {
           </div>
           
           {/* Mobile Layout */}
-          <div className="block lg:hidden relative z-10 py-16 flex items-center justify-center min-h-[600px] px-6">
+          <div className="block sm:hidden relative z-10 py-16 flex items-start justify-center min-h-[600px] px-6 pt-20">
             <div className="bg-white/40 p-6 rounded-lg max-w-sm w-full border-2 border-white text-center">
               <h3 
                 ref={craftsmanshipRef}
                 className={`font-gc-palioka text-2xl text-black leading-tight mb-4 transition-all duration-700 ease-out ${craftsmanshipBlur}`}
+              >
+                Craftsmanship
+                <br />
+                & Quality
+              </h3>
+              <p className="text-black text-sm leading-relaxed">
+                A section that highlights the details, premium materials, and artisanal finishes that beautifully define every Agasti villa.
+              </p>
+            </div>
+          </div>
+
+          {/* Tablet Layout */}
+          <div className="hidden sm:block lg:hidden relative z-10 py-16 flex items-start justify-center min-h-[700px] px-6 pt-20">
+            <div className="bg-white/40 p-8 rounded-lg max-w-md w-full border-2 border-white text-center mx-auto">
+              <h3 
+                ref={craftsmanshipRef}
+                className={`font-gc-palioka text-3xl text-black leading-tight mb-4 transition-all duration-700 ease-out ${craftsmanshipBlur}`}
               >
                 Craftsmanship
                 <br />
@@ -371,11 +394,28 @@ export default function AboutExcellence() {
           </div>
           
           {/* Mobile Layout */}
-          <div className="block lg:hidden relative z-10 py-16 flex items-center justify-center min-h-[600px] px-6">
+          <div className="block sm:hidden relative z-10 py-16 flex items-center justify-center min-h-[600px] px-6">
             <div className="bg-white/40 p-6 rounded-lg max-w-sm w-full border-2 border-white text-center">
               <h3 
                 ref={sustainabilityRef}
                 className={`font-gc-palioka text-2xl text-black leading-tight mb-4 transition-all duration-700 ease-out ${sustainabilityBlur}`}
+              >
+                Sustainability
+                <br />
+                & Integrity
+              </h3>
+              <p className="text-black text-sm leading-relaxed">
+                We build with honesty and responsibility, creating homes that uphold trust while preserving the environment for generations.
+              </p>
+            </div>
+          </div>
+
+          {/* Tablet Layout */}
+          <div className="hidden sm:block lg:hidden relative z-10 py-16 flex items-start justify-center min-h-[700px] px-6 pt-20">
+            <div className="bg-white/40 p-8 rounded-lg max-w-md w-full border-2 border-white text-center">
+              <h3 
+                ref={sustainabilityRef}
+                className={`font-gc-palioka text-3xl text-black leading-tight mb-4 transition-all duration-700 ease-out ${sustainabilityBlur}`}
               >
                 Sustainability
                 <br />

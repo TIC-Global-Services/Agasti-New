@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ContainerLayout from "@/layout/ContainerLayout";
 
 export default function Footer() {
@@ -14,7 +15,7 @@ export default function Footer() {
                 src="/Agasti_Logo.png"
                 alt="Agasti Logo"
                 fill
-                sizes="240px"
+                sizes="420px"
                 className="object-contain"
               />
             </div>
@@ -22,18 +23,18 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="flex flex-col items-center gap-4 mb-8">
-            <a href="#home" className="text-gray-600 hover:text-black transition-colors text-base">
+            <Link href="/" className="text-gray-600 hover:text-black transition-colors text-base">
               Home
-            </a>
-            <a href="#about" className="text-gray-600 hover:text-black transition-colors text-base">
+            </Link>
+            <Link href="/about" className="text-gray-600 hover:text-black transition-colors text-base">
               About Us
-            </a>
-            <a href="#projects" className="text-gray-600 hover:text-black transition-colors text-base">
+            </Link>
+            <Link href="/projects" className="text-gray-600 hover:text-black transition-colors text-base">
               Projects
-            </a>
-            <a href="#contact" className="text-gray-600 hover:text-black transition-colors text-base">
+            </Link>
+            <Link href="/contact" className="text-gray-600 hover:text-black transition-colors text-base">
               Contact us
-            </a>
+            </Link>
           </div>
 
           {/* Contact Info */}
@@ -75,18 +76,18 @@ export default function Footer() {
         <div className="hidden sm:block">
           {/* Navigation */}
           <div className="flex flex-row flex-wrap justify-center sm:justify-start gap-3 md:gap-6 mb-4 md:mb-6">
-            <a href="#home" className="text-gray-600 hover:text-black transition-colors text-sm md:text-[16px]">
+            <Link href="/" className="text-gray-600 hover:text-black transition-colors text-sm md:text-[16px]">
               Home
-            </a>
-            <a href="#about" className="text-gray-600 hover:text-black transition-colors text-sm md:text-[16px]">
+            </Link>
+            <Link href="/about" className="text-gray-600 hover:text-black transition-colors text-sm md:text-[16px]">
               About Us
-            </a>
-            <a href="#projects" className="text-gray-600 hover:text-black transition-colors text-sm md:text-[16px]">
+            </Link>
+            <Link href="/projects" className="text-gray-600 hover:text-black transition-colors text-sm md:text-[16px]">
               Projects
-            </a>
-            <a href="#contact" className="text-gray-600 hover:text-black transition-colors text-sm md:text-[16px]">
+            </Link>
+            <Link href="/contact" className="text-gray-600 hover:text-black transition-colors text-sm md:text-[16px]">
               Contact us
-            </a>
+            </Link>
           </div>
 
           {/* Logo */}

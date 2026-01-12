@@ -28,7 +28,7 @@ export default function ContactForm() {
         {/* Form Section */}
         <div className="bg-white px-6 py-8">
           <div className="text-center mb-8">
-            <h2 className="font-gc-palioka text-[20px] sm:text-[24px] text-black mb-2 leading-tight">
+            <h2 className="font-gc-palioka text-[45px] sm:text-[45px] text-black mb-2 leading-tight">
               We&apos;ll get in touch with you soon
             </h2>
           </div>
@@ -41,14 +41,17 @@ export default function ContactForm() {
                 id="name"
                 name="name"
                 placeholder="Your name *"
-                className="w-full px-4 py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-gray-500"
+                className="w-full px-4 py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-[#757575]"
               />
               <div className="absolute bottom-0 left-4 right-12 h-[1px] bg-gray-300"></div>
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
+                <Image
+                  src="/contact-us/Vector.png"
+                  alt="Name"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
               </div>
             </div>
 
@@ -59,14 +62,17 @@ export default function ContactForm() {
                 id="email"
                 name="email"
                 placeholder="Your email address *"
-                className="w-full px-4 py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-gray-500"
+                className="w-full px-4 py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-[#757575]"
               />
               <div className="absolute bottom-0 left-4 right-12 h-[1px] bg-gray-300"></div>
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
+                <Image
+                  src="/contact-us/mail.png"
+                  alt="Email"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
               </div>
             </div>
 
@@ -77,7 +83,7 @@ export default function ContactForm() {
                 id="phone"
                 name="phone"
                 placeholder="Your phone"
-                className="w-full px-4 py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-gray-500"
+                className="w-full px-4 py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-[#757575]"
               />
               <div className="absolute bottom-0 left-4 right-12 h-[1px] bg-gray-300"></div>
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
@@ -94,13 +100,17 @@ export default function ContactForm() {
                 name="message"
                 rows={4}
                 placeholder="Your message"
-                className="w-full px-4 py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-gray-500 resize-none"
+                className="w-full px-4 py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-[#757575] resize-none"
               ></textarea>
               <div className="absolute bottom-0 left-4 right-12 h-[1px] bg-gray-300"></div>
               <div className="absolute right-3 top-3">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
+                <Image
+                  src="/contact-us/message.png"
+                  alt="Message"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
               </div>
             </div>
 
@@ -121,7 +131,7 @@ export default function ContactForm() {
         <div className="bg-white px-6 py-8">
           <div className="flex justify-between items-start mb-6">
             <div>
-              <h3 className="font-gc-palioka text-[20px] sm:text-[24px] text-black mb-2 leading-tight">
+              <h3 className="font-gc-palioka text-[28px] sm:text-[24px] text-black mb-2 leading-tight">
                 Hyderabad
               </h3>
               <p className="text-black text-[16px] font-bold">
@@ -174,7 +184,7 @@ export default function ContactForm() {
             <div className="absolute top-full right-40 transform -translate-y-1/6" style={{ width: '580px', height: '660px' }}>
               <div className="bg-white shadow-lg p-8 pr-12">
                 <div className="text-center mb-8">
-                  <h2 className="font-gc-palioka text-2xl sm:text-3xl text-black mb-2 leading-tight">
+                  <h2 className="font-gc-palioka text-[45px] text-black mb-2 leading-tight">
                     We&apos;ll get in touch with
                     <br />
                     you soon
@@ -189,14 +199,17 @@ export default function ContactForm() {
                       id="name"
                       name="name"
                       placeholder="Your name *"
-                      className="w-full px-[66px] py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-gray-500"
+                      className="w-full px-[66px] py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-[#757575]"
                     />
                     <div className="absolute bottom-0 left-[66px] right-[66px] h-[2px] bg-gray-300 transition-colors group-focus-within:bg-[#8D957E]"></div>
                     <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                      </svg>
+                      <Image
+                        src="/contact-us/Vector.png"
+                        alt="Name"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
                     </div>
                   </div>
 
@@ -207,14 +220,17 @@ export default function ContactForm() {
                       id="email"
                       name="email"
                       placeholder="Your email address *"
-                      className="w-full px-[66px] py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-gray-500"
+                      className="w-full px-[66px] py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-[#757575]"
                     />
                     <div className="absolute bottom-0 left-[66px] right-[66px] h-[2px] bg-gray-300 transition-colors group-focus-within:bg-[#8D957E]"></div>
                     <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                      </svg>
+                      <Image
+                        src="/contact-us/mail.png"
+                        alt="Email"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
                     </div>
                   </div>
 
@@ -225,7 +241,7 @@ export default function ContactForm() {
                       id="phone"
                       name="phone"
                       placeholder="Your phone"
-                      className="w-full px-[66px] py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-gray-500"
+                      className="w-full px-[66px] py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-[#757575]"
                     />
                     <div className="absolute bottom-0 left-[66px] right-[66px] h-[2px] bg-gray-300 transition-colors group-focus-within:bg-[#8D957E]"></div>
                     <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
@@ -242,13 +258,17 @@ export default function ContactForm() {
                       name="message"
                       rows={4}
                       placeholder="Your message"
-                      className="w-full px-[66px] py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-gray-500 resize-none"
+                      className="w-full px-[66px] py-3 border-0 bg-transparent focus:outline-none transition-colors placeholder-[#757575] resize-none"
                     ></textarea>
                     <div className="absolute bottom-0 left-[66px] right-[66px] h-[2px] bg-gray-300 transition-colors group-focus-within:bg-[#8D957E]"></div>
                     <div className="absolute right-3 top-3">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                      </svg>
+                      <Image
+                        src="/contact-us/message.png"
+                        alt="Message"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
                     </div>
                   </div>
 
@@ -276,7 +296,7 @@ export default function ContactForm() {
               <div className="space-y-6">
                 {/* Location Header */}
                 <div>
-                  <h3 className="font-gc-palioka text-[20px] sm:text-[28px] text-black mb-4 leading-tight">
+                  <h3 className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black mb-4 leading-tight">
                     Hyderabad
                   </h3>
                   
@@ -304,10 +324,10 @@ export default function ContactForm() {
 
                   {/* Contact Info */}
                   <div className="space-y-2">
-                    <p className="text-gray-600 text-base">
+                    <p className="text-[#717580]-600 text-base">
                       +1234 567 8910
                     </p>
-                    <p className="text-gray-600 text-base underline">
+                    <p className="text-[#262B35]-600 text-base underline">
                       info@agasti.com
                     </p>
                   </div>

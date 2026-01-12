@@ -39,7 +39,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
     >
       <div className="flex h-full w-full">
         {/* Left Side - Image (Desktop only) */}
-        <div className="hidden lg:block lg:w-1/2 relative">
+        <div className="hidden xl:block xl:w-1/2 relative">
           <Image
             src="/menu-image.jpg"
             alt="Interior"
@@ -50,7 +50,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
         </div>
 
         {/* Right Side - Menu Content */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12 md:px-16 lg:px-24 relative min-h-screen">
+        <div className="w-full xl:w-1/2 flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12 md:px-16 xl:px-24 relative min-h-screen">
           {/* Close Button */}
           <button
             onClick={handleClose}
@@ -115,7 +115,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           </nav>
 
           {/* Footer Content */}
-          <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 left-4 right-4 sm:left-6 sm:right-6 md:left-8 md:right-8 lg:left-24 lg:right-24 w-auto">
+          <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 left-4 right-4 sm:left-6 sm:right-6 md:left-8 md:right-8 xl:left-24 xl:right-24 w-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 md:mb-8">
               {/* Need Support */}
               <div className="text-center sm:text-left">

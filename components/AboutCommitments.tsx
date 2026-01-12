@@ -132,7 +132,7 @@ export default function AboutCommitments() {
               >
                 {/* Text Content */}
                 <div className="mb-6">
-                  <h3 className="font-gc-palioka text-[20px] sm:text-[22px] text-[#8D957E] mb-3">
+                  <h3 className="font-gc-palioka text-[20px] sm:text-[22px] text-[#8D957E]">
                     {commitment.title}
                   </h3>
                   <p className="text-[#717580] text-sm leading-relaxed">
@@ -197,8 +197,8 @@ export default function AboutCommitments() {
                 </div>
                 
                 {/* Text Content Below Card */}
-                <div className="bg-white text-[#8D957E] text-center p-6 sm:p-8" style={{ width: '662px' }}>
-                  <h3 className="font-gc-palioka text-[20px] sm:text-[22px] mb-3">
+                <div className="bg-white text-[#8D957E] text-center pt-[20px] px-6 pb-6 sm:px-8 sm:pb-8" style={{ width: '662px' }}>
+                  <h3 className="font-gc-palioka text-[20px] sm:text-[22px] mb-1">
                     {commitment.title}
                   </h3>
                   <p className="text-sm sm:text-base leading-relaxed text-[#717580]-600">

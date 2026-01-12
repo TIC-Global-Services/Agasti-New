@@ -30,7 +30,7 @@ export default function InsideVilla({ showTitle = true, showPadding = true }: In
         <div className="col-span-2">
           <div className="relative overflow-hidden" style={{ width: '100%', height: '400px' }}>
             <Image
-              src="/projects-imgs/insidevilla1.png"
+              src="/projects-imgs/topvillainside.png"
               alt="Villa Interior - Pool Area"
               fill
               sizes="100vw"

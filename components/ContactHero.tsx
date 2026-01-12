@@ -75,7 +75,7 @@ export default function ContactHero() {
               </p>
               <h1 
                 ref={titleRef}
-                className={`font-gc-palioka text-[20px] sm:text-[28px] text-black leading-[1.1] tracking-[-0.03em] mb-4 transition-all duration-700 ease-out ${titleBlur}`}
+                className={`font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4 transition-all duration-700 ease-out ${titleBlur}`}
               >
                 Let's Build Your Dream
                 <br />
@@ -87,7 +87,7 @@ export default function ContactHero() {
             </div>
 
             {/* Mobile Image */}
-            <div className="relative overflow-hidden rounded-lg" style={{ width: '100%', height: '400px' }}>
+            <div className="relative overflow-hidden rounded-lg h-[400px] md:h-[500px]" style={{ width: '100%' }}>
               <div
                 style={{
                   transform: `translateY(${Math.min(0, offsetY * 3)}px)`,
@@ -132,12 +132,12 @@ export default function ContactHero() {
             </div>
 
             {/* Content Grid - Properly aligned below image */}
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-16 items-start pb-12 sm:pb-16 md:pb-18 mt-2">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-16 items-start pb-12 sm:pb-16 md:pb-18 mt-12">
               {/* Left Side - Contact Header */}
               <div className="lg:col-span-2">
                 <p 
                   ref={contactRef}
-                  className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-lg mb-1 sm:mb-2 font-bold transition-all duration-700 ease-out ${contactBlur}`}
+                  className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-lg mb-1 sm:mb-2 font-regular transition-all duration-700 ease-out ${contactBlur}`}
                 >
                   Crafting Connections that last
                 </p>

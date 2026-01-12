@@ -75,7 +75,7 @@ export default function AboutStory() {
               </p>
               <h1 
                 ref={titleRef}
-                className={`font-gc-palioka text-[20px] sm:text-[28px] text-black leading-[1.1] tracking-[-0.03em] mb-4 transition-all duration-700 ease-out ${titleBlur}`}
+                className={`font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4 transition-all duration-700 ease-out ${titleBlur}`}
               >
                 Crafting Luxury Villas
                 <br />
@@ -87,7 +87,7 @@ export default function AboutStory() {
             </div>
 
             {/* Mobile Image */}
-            <div className="relative overflow-hidden rounded-lg" style={{ width: '100%', height: '400px' }}>
+            <div className="relative overflow-hidden rounded-lg h-[400px] md:h-[500px]" style={{ width: '100%' }}>
               <div
                 style={{
                   transform: `translateY(${Math.min(0, offsetY * 3)}px)`,
@@ -132,12 +132,12 @@ export default function AboutStory() {
             </div>
 
             {/* Content Grid - Properly aligned below image */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start pb-12 sm:pb-16 md:pb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start pb-12 sm:pb-16 md:pb-20">
               {/* Left Side - Story Header */}
               <div>
                 <p 
                   ref={storyRef}
-                  className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-lg mb-3 sm:mb-4 font-bold transition-all duration-700 ease-out ${storyBlur}`}
+                  className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-lg mb-2 sm:mb-4 font-bold transition-all duration-700 ease-out ${storyBlur}`}
                 >
                   Our story
                 </p>

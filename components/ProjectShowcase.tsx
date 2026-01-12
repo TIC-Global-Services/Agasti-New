@@ -17,7 +17,7 @@ export default function ProjectShowcase() {
           <div className="mb-12">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h2 className="font-gc-palioka text-[20px] sm:text-[28px] text-black mb-2 leading-tight">
+                <h2 className="font-gc-palioka text-[20px] text-black mb-2 leading-tight">
                   Agasti Verve
                 </h2>
                 <div className="flex items-center">
@@ -30,13 +30,13 @@ export default function ProjectShowcase() {
                       className="object-contain"
                     />
                   </div>
-                  <p className="text-gray-500 text-[12px] sm:text-[16px]">
+                  <p className="text-gray-500 text-[12px]">
                     Kokapet, Hyderabad
                   </p>
                 </div>
               </div>
               
-              <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px]" style={{ width: '113px', height: '30px' }}>
+              <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px] w-[113px] h-[30px]">
                 STAY UPDATED
               </button>
             </div>
@@ -62,7 +62,7 @@ export default function ProjectShowcase() {
           <div className="mb-12">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h2 className="font-gc-palioka text-[20px] sm:text-[28px] text-black mb-2 leading-tight">
+                <h2 className="font-gc-palioka text-[20px] text-black mb-2 leading-tight">
                   Agasti Arbor
                 </h2>
                 <div className="flex items-center">
@@ -75,13 +75,13 @@ export default function ProjectShowcase() {
                       className="object-contain"
                     />
                   </div>
-                  <p className="text-gray-500 text-[12px] sm:text-[16px]">
+                  <p className="text-gray-500 text-[12px]">
                     Nanakramguda, Hyderabad
                   </p>
                 </div>
               </div>
               
-              <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px]" style={{ width: '113px', height: '30px' }}>
+              <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px] w-[113px] h-[30px]">
                 STAY UPDATED
               </button>
             </div>
@@ -102,8 +102,99 @@ export default function ProjectShowcase() {
           </div>
         </div>
 
-        {/* Desktop Layout - Hidden on mobile */}
-        <div className="hidden sm:block">
+        {/* Tablet Layout */}
+        <div className="hidden sm:block lg:hidden">
+          {/* First Villa - Agasti Verve */}
+          <div className="mb-16">
+            <div className="flex justify-between items-start mb-8">
+              <div>
+                <h2 className="font-gc-palioka text-[32px] text-black mb-3 leading-tight">
+                  Agasti Verve
+                </h2>
+                <div className="flex items-center">
+                  <div className="relative mr-3" style={{ width: '24px', height: '24px' }}>
+                    <Image
+                      src="/projects-imgs/locationicon.png"
+                      alt="Location"
+                      fill
+                      sizes="24px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-gray-500 text-[16px]">
+                    Kokapet, Hyderabad
+                  </p>
+                </div>
+              </div>
+              
+              <button className="bg-[#8D957E] text-white text-[10px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px] w-[140px] h-[36px]">
+                STAY UPDATED
+              </button>
+            </div>
+
+            <div className="relative overflow-hidden mb-8 rounded-lg h-[500px]">
+              <Image
+                src="/projects-imgs/agastiverve.png"
+                alt="Agasti Verve Villa"
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <p className="text-gray-600 text-[16px] leading-relaxed mb-10">
+              Luxury residences inspired by contemporary minimalism, combining open spaces, modern design, and community living.
+            </p>
+
+            <hr className="border-gray-300 mb-10" />
+          </div>
+
+          {/* Second Villa - Agasti Arbor */}
+          <div className="mb-16">
+            <div className="flex justify-between items-start mb-8">
+              <div>
+                <h2 className="font-gc-palioka text-[32px] text-black mb-3 leading-tight">
+                  Agasti Arbor
+                </h2>
+                <div className="flex items-center">
+                  <div className="relative mr-3" style={{ width: '24px', height: '24px' }}>
+                    <Image
+                      src="/projects-imgs/locationicon.png"
+                      alt="Location"
+                      fill
+                      sizes="24px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-gray-500 text-[16px]">
+                    Nanakramguda, Hyderabad
+                  </p>
+                </div>
+              </div>
+              
+              <button className="bg-[#8D957E] text-white text-[10px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px] w-[140px] h-[36px]">
+                STAY UPDATED
+              </button>
+            </div>
+
+            <div className="relative overflow-hidden mb-8 rounded-lg h-[500px]">
+              <Image
+                src="/projects-imgs/agastiarbor.png"
+                alt="Agasti Arbor Villa"
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <p className="text-gray-600 text-[16px] leading-relaxed">
+              A boutique villa enclave surrounded by lush landscapes, designed for serene, sustainable living.
+            </p>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:block">
           {/* First Villa - Agasti Verve */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center mb-16 sm:mb-20 md:mb-24">
             {/* Left Side - Title and Location */}
@@ -197,7 +288,7 @@ export default function ProjectShowcase() {
             </div>
 
             {/* Right Side - Description and Button */}
-            <div className="lg:col-span-1 ml-8">
+            <div className="lg:col-span-1 ml-7" style={{ minWidth: '300px' }}>
               <div className="relative">
                 <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#8D957E]"></div>
                 <p className="text-[#717580] text-[16px] text-left sm:text-base leading-tight mb-6 pl-4">
