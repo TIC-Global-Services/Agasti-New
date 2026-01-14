@@ -33,10 +33,10 @@ export default function AboutTestimonial() {
   }, []);
 
   // Better line breaks that maintain natural flow
-  const quoteText = "\"At Agasti, we believe true innovation emerges where nature and design come together. By elevating sustainable practices and refined craftsmanship, we continue to push boundaries and inspire a higher standard of living—for our residents and within every space we create.\"";
+  const quoteText = "\"Kiron Cheerla Architecture Design is dedicated to designing buildings that go beyond function and aesthetics, integrating structure, context, client needs, materials, and technology. The firm critically engages with the site to create solutions that feel intrinsic to their surroundings, as if the building had always been there. Its work seeks to recall the fundamental elements of architecture, enabling flexibility across scales, materials, and programs-transcending styles. With a strong commitment to building, the firm continually explores innovative approaches to enhance the built environment.\"";
   
   // Split into words for more granular control
-  const words = quoteText.split(' ');
+  const words = quoteText.split('8');
   
   // Calculate opacity for each word based on scroll progress
   const getWordOpacity = (wordIndex: number) => {
