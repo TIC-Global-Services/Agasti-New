@@ -2,14 +2,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import { useLetterReveal } from "@/hooks/useLetterReveal";
 
 export default function VillaSeries() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   
-  // Blur effects for headings
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
+  // Letter reveal effects for headings
+  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
 
   const villas = [
     {
@@ -50,7 +50,7 @@ export default function VillaSeries() {
           <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">The Agasti Villa Series</p>
           <h2 
             ref={titleRef}
-            className={`font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+            className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight"
           >
             Villas Crafted for Every Lifestyle and Every Direction
           </h2>

@@ -2,14 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import { useLetterReveal } from "@/hooks/useLetterReveal";
 
 export default function LifestyleGallery() {
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false, false]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   
-  // Blur effects for headings
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
+  // Letter reveal effects for headings
+  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
 
   useEffect(() => {
     const observers = cardRefs.current.map((card, index) => {
@@ -76,11 +76,9 @@ export default function LifestyleGallery() {
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 
             ref={titleRef}
-            className={`font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+            className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight"
           >
-            Experience a Life of Convenience
-            <br />
-            and Indulgence
+            Experience a Life of Convenience and Indulgence
           </h2>
         </div>
 

@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import { useLetterReveal } from "@/hooks/useLetterReveal";
 
 export default function AboutAgasti() {
-  // Blur effects for headings
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
+  // Letter reveal effects for headings
+  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
 
   return (
     <section className="w-full">
@@ -28,9 +28,9 @@ export default function AboutAgasti() {
             
             <h2 
               ref={titleRef}
-              className={`font-gc-palioka text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black mb-6 leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+              className="font-gc-palioka text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black mb-6 leading-tight"
             >
-              An Urban Sanctuary <br></br>for the Elite
+              An Urban Sanctuary for the Elite
             </h2>
             
             <div className="space-y-3 sm:space-y-4 text-gray-600 mb-6 sm:mb-8">

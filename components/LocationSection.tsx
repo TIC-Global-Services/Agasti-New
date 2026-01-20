@@ -1,10 +1,10 @@
 "use client";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import { useLetterReveal } from "@/hooks/useLetterReveal";
 
 export default function LocationSection() {
-  // Blur effects for headings
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
+  // Letter reveal effects for headings
+  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
 
   return (
     <section className="bg-white py-[40px]">
@@ -16,11 +16,9 @@ export default function LocationSection() {
               <div className="max-w-lg">
                 <h2 
                   ref={titleRef}
-                  className={`font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-5 leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+                  className="font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-5 leading-tight"
                 >
-                  Your Gateway
-                  to Comfort, Connection,
-                  and Ease
+                  Your Gateway to Comfort, Connection, and Ease
                 </h2>
                 
                 <p className="text-gray-600 plus-jakarta-sans text-[16px] sm:text-base leading-relaxed">

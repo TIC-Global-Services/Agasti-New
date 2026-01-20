@@ -2,14 +2,14 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import { useLetterReveal } from "@/hooks/useLetterReveal";
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   
-  // Blur effects for headings
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
+  // Letter reveal effects for headings
+  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
 
   const handleScroll = () => {
     if (scrollRef.current) {
@@ -70,9 +70,9 @@ export default function Services() {
           <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">Where Luxury Meets Nature</p>
           <h2 
             ref={titleRef}
-            className={`font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+            className="font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight"
           >
-            Elegance curated with care,<br />serenity framed in every vista.
+            Elegance curated with care, serenity framed in every vista.
           </h2>
         </div>
 
