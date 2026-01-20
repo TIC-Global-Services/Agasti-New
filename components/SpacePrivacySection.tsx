@@ -39,7 +39,7 @@ export default function SpacePrivacySection() {
       <div className="max-w-7xl mx-auto text-center px-4">
         {/* Main Title with Animation */}
         <h2 
-          className={`font-gc-palioka text-[24px] xs:text-[28px] sm:text-[32px] md:text-[40px] lg:text-[40px] xl:text-[40px] text-black mb-2 sm:mb-3 md:mb-4 leading-tight transition-all duration-1000 ease-out ${
+          className={`font-gc-palioka text-[24px] xs:text-[28px] sm:text-[32px] md:text-[50px] lg:text-[50px] xl:text-[50px] text-black mb-2 sm:mb-3 md:mb-4 leading-tight transition-all duration-1000 ease-out ${
             isVisible 
               ? 'translate-y-0 opacity-100' 
               : 'translate-y-8 opacity-0'
@@ -93,7 +93,7 @@ export default function SpacePrivacySection() {
 
         {/* Subtitle with Animation */}
         <p 
-          className={`text-[#262626] text-[14px] xs:text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[24px] leading-relaxed max-w-4xl mx-auto transition-all duration-1000 ease-out ${
+          className={`text-[#262626] text-[14px] xs:text-[16px] sm:text-[18px] md:text-[30px] lg:text-[34px] xl:text-[34px] leading-relaxed max-w-4xl mx-auto transition-all duration-1000 ease-out ${
             isVisible 
               ? 'translate-y-0 opacity-100' 
               : 'translate-y-8 opacity-0'

@@ -41,7 +41,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
         {/* Left Side - Image (Desktop only) */}
         <div className="hidden xl:block xl:w-1/2 relative">
           <Image
-            src="/menu-image.jpg"
+            src="/menubarimg.png"
             alt="Interior"
             fill
             sizes="50vw"

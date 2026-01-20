@@ -16,7 +16,7 @@ export default function LocationSection() {
               <div className="max-w-lg">
                 <h2 
                   ref={titleRef}
-                  className={`font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-6 leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+                  className={`font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-5 leading-tight transition-all duration-700 ease-out ${titleBlur}`}
                 >
                   Your Gateway
                   to Comfort, Connection,
@@ -34,7 +34,7 @@ export default function LocationSection() {
 
             {/* Right Side - Map */}
             <div className="relative h-[300px] sm:h-[400px] lg:h-auto lg:min-h-[400px] p-4 sm:p-6 lg:p-8">
-              <div className="relative w-full h-full overflow-hidden">
+              <div className="relative w-full h-full overflow-hidden rounded">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.87257665632!2d78.1792147!3d17.465811899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbee5d7d3a293d%3A0x84b36b8b9bc70b0d!2sBhanur%2C%20Telangana%20502305!5e0!3m2!1sen!2sin!4v1765877925651!5m2!1sen!2sin"
                   width="100%"
@@ -44,7 +44,7 @@ export default function LocationSection() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Agasti Estates Location"
-                  className="absolute inset-0"
+                  className="absolute inset-0 rounded"
                 />
                 
                 {/* Expand Icon */}

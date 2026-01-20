@@ -4,7 +4,7 @@ import ContainerLayout from "@/layout/ContainerLayout";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#E8E6E1] py-[40px]">
+    <footer className="bg-[#F0EDE4] py-[40px]">
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Mobile Layout */}
         <div className="block sm:hidden">
