@@ -50,7 +50,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
         </div>
 
         {/* Right Side - Menu Content */}
-        <div className="w-full xl:w-1/2 flex flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12 md:px-16 xl:px-24 relative min-h-screen">
+        <div className="w-full xl:w-1/2 flex flex-col items-center justify-center px-6 py-8 sm:px-8 sm:py-12 md:px-16 xl:px-24 relative min-h-screen">
           {/* Close Button */}
           <button
             onClick={handleClose}
@@ -115,7 +115,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           </nav>
 
           {/* Footer Content */}
-          <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 left-4 right-4 sm:left-6 sm:right-6 md:left-8 md:right-8 xl:left-24 xl:right-[72px] w-auto">
+          <div className="w-full max-w-2xl xl:max-w-none">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 md:mb-8">
               {/* Need Support */}
               <div className="text-left">
@@ -124,7 +124,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
               </div>
 
               {/* Address */}
-              <div className="text-left">
+              <div className="text-left pl-4 sm:pl-6 md:pl-8">
                 <h3 className="font-semibold mb-1 sm:mb-2 text-gray-700 text-xs sm:text-sm">ADDRESS</h3>
                 <p className="text-xs sm:text-sm">AGASTIESTATES, GACHIBOWLI,</p>
                 <p className="text-xs sm:text-sm">HYDERABAD - 500032</p>
@@ -153,7 +153,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
               </div>
 
               {/* Customer Care */}
-              <div className="text-left">
+              <div className="text-left pl-4 sm:pl-6 md:pl-8">
                 <h3 className="font-semibold mb-1 sm:mb-2 text-gray-700 text-xs sm:text-sm">CUSTOMER CARE</h3>
                 <p className="text-xs sm:text-sm">+1 234 567 8910</p>
               </div>

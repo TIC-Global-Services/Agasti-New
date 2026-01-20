@@ -1,7 +1,11 @@
 "use client";
 import ContainerLayout from "@/layout/ContainerLayout";
+import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 
 export default function LocationSection() {
+  // Blur effects for headings
+  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
+
   return (
     <section className="bg-white py-[40px]">
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
@@ -10,7 +14,10 @@ export default function LocationSection() {
             {/* Left Side - Content */}
             <div className="flex items-center px-6 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-20">
               <div className="max-w-lg">
-                <h2 className="font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-6 leading-tight">
+                <h2 
+                  ref={titleRef}
+                  className={`font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-6 leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+                >
                   Your Gateway
                   to Comfort, Connection,
                   and Ease

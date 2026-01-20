@@ -2,10 +2,14 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
+import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 
 export default function WhyLiveWithAgasti() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  
+  // Blur effects for headings
+  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
 
   const features = [
     {
@@ -80,7 +84,10 @@ export default function WhyLiveWithAgasti() {
         <div className="mb-8 sm:mb-12">
           <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[26px] mb-4 sm:mb-6 font-bold">Why Live With Agasti</p>
           
-          <h2 className="font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-6 sm:mb-8 leading-tight max-w-4xl">
+          <h2 
+            ref={titleRef}
+            className={`font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-6 sm:mb-8 leading-tight max-w-4xl transition-all duration-700 ease-out ${titleBlur}`}
+          >
             Agasti brings together luxury, nature, and thoughtful design.
             <br />
             With premium materials, open layouts, and serene green
@@ -92,7 +99,7 @@ export default function WhyLiveWithAgasti() {
           
           <p className="text-gray-500 text-[16px] sm:text-sm leading-relaxed max-w-3xl">
             Designed for those who value privacy, quality, and timeless elegance, Agasti offers a peaceful retreat 
-            that stays connected to the city's best schools, hospitals, and business hubs—giving you the ideal 
+            that stays connected to the city&apos;s best schools, hospitals, and business hubs—giving you the ideal 
             blend of exclusivity and convenience.
           </p>
         </div>

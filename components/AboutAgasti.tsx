@@ -1,6 +1,11 @@
+"use client";
 import Image from "next/image";
+import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 
 export default function AboutAgasti() {
+  // Blur effects for headings
+  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
+
   return (
     <section className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
@@ -21,13 +26,16 @@ export default function AboutAgasti() {
           <div className="max-w-xl">
             <p className="font-gc-palioka text-[#8D957E] text-lg sm:text-xl md:text-[25px] mb-4 tracking-wider font-bold">About AGASTI</p>
             
-            <h2 className="font-gc-palioka text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black mb-6 leading-tight">
+            <h2 
+              ref={titleRef}
+              className={`font-gc-palioka text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black mb-6 leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+            >
               An Urban Sanctuary <br></br>for the Elite
             </h2>
             
             <div className="space-y-3 sm:space-y-4 text-gray-600 mb-6 sm:mb-8">
               <p className="text-sm sm:text-base">
-                Atara is more than a home — it's a living experience that celebrates 
+                Atara is more than a home — it&apos;s a living experience that celebrates 
                 tranquility, space, and sophistication.
               <br></br>
                 Every villa is enveloped in lush greenery, crafted with premium 
@@ -38,7 +46,7 @@ export default function AboutAgasti() {
             <button className="text-black text-sm sm:text-base font-medium hover:opacity-70 transition-opacity group">
               <span className="relative inline-block">
                 Know More
-                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
               </span>
             </button>
           </div>

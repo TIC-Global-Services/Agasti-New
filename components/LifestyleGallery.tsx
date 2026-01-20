@@ -2,10 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
+import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 
 export default function LifestyleGallery() {
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false, false]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  // Blur effects for headings
+  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>(0.1);
 
   useEffect(() => {
     const observers = cardRefs.current.map((card, index) => {
@@ -70,7 +74,10 @@ export default function LifestyleGallery() {
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight">
+          <h2 
+            ref={titleRef}
+            className={`font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight transition-all duration-700 ease-out ${titleBlur}`}
+          >
             Experience a Life of Convenience
             <br />
             and Indulgence
