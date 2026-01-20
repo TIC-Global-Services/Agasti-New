@@ -17,7 +17,7 @@ export default function AboutAgasti() {
         </div>
 
         {/* Right Side - Content */}
-        <div className="bg-[#F5F3EE] flex items-center justify-center px-6 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-24">
+        <div className="bg-[#F5F3EE] flex items-center justify-center px-6 sm:px-[48px] py-[40px]">
           <div className="max-w-xl">
             <p className="font-gc-palioka text-[#8D957E] text-lg sm:text-xl md:text-[25px] mb-4 tracking-wider font-bold">About AGASTI</p>
             

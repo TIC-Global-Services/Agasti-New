@@ -34,7 +34,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20">
+    <section className="bg-white py-[40px]">
       <style dangerouslySetInnerHTML={{
         __html: `
           .scrollbar-thin::-webkit-scrollbar {
@@ -60,7 +60,7 @@ export default function Services() {
           }
         `
       }} />
-      <ContainerLayout>
+      <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header Section */}
         <div className="mb-8 sm:mb-12">
           <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">Where Luxury Meets Nature</p>

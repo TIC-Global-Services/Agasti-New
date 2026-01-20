@@ -4,18 +4,18 @@ import ContainerLayout from "@/layout/ContainerLayout";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#E8E6E1] py-8 sm:py-4">
-      <ContainerLayout>
+    <footer className="bg-[#E8E6E1] py-[40px]">
+      <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Mobile Layout */}
         <div className="block sm:hidden">
           {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <div className="relative h-[60px] w-auto aspect-[4/1]">
+          <div className="flex justify-center mb-8 mt-4">
+            <div className="relative h-[80px] w-auto aspect-[4/1]">
               <Image
                 src="/Agasti_Logo.png"
                 alt="Agasti Logo"
                 fill
-                sizes="420px"
+                sizes="480px"
                 className="object-contain"
               />
             </div>
@@ -91,13 +91,13 @@ export default function Footer() {
           </div>
 
           {/* Logo */}
-          <div className="flex justify-center mb-4 md:mb-6">
-            <div className="relative h-[60px] w-auto aspect-[4/1]">
+          <div className="flex justify-center mb-4 md:mb-6 mt-6">
+            <div className="relative h-[80px] w-auto aspect-[4/1]">
               <Image
                 src="/Agasti_Logo.png"
                 alt="Agasti Logo"
                 fill
-                sizes="320px"
+                sizes="480px"
                 className="object-contain"
               />
             </div>
@@ -131,7 +131,7 @@ export default function Footer() {
           <hr className="border-gray-400 mb-2 md:mb-3" />
 
           {/* Bottom Section */}
-          <div className="flex flex-row justify-between items-center gap-3 md:gap-4 text-xs md:text-[18px] text-gray-600">
+          <div className="flex flex-row justify-between items-center gap-3 md:gap-4 text-xs md:text-[14px] text-gray-600">
             <p>© 2025 Atara by Agasti . All Rights Reserved.</p>
             <p>Designed & Developed By TIC Global Services</p>
           </div>

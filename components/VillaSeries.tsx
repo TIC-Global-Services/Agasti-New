@@ -39,8 +39,8 @@ export default function VillaSeries() {
   };
 
   return (
-    <section className="bg-[#F5F3EE] py-12 sm:py-16 md:py-20">
-      <ContainerLayout>
+    <section className="bg-[#F5F3EE] py-[40px]">
+      <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="mb-8 sm:mb-12 pb-6 sm:pb-8 border-b border-gray-300">
           <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">The Agasti Villa Series</p>

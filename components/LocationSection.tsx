@@ -3,9 +3,9 @@ import ContainerLayout from "@/layout/ContainerLayout";
 
 export default function LocationSection() {
   return (
-    <section className="bg-white py-8 sm:py-12 md:py-16 mt-8 sm:mt-48 px-[48px]">
-      <ContainerLayout disablePaddingX={true}>
-        <div className="bg-[#E8E6E1] rounded-lg overflow-hidden">
+    <section className="bg-white py-[40px]">
+      <ContainerLayout paddingX="px-6 sm:px-[48px]">
+        <div className="bg-[#F0EDE4] rounded-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Left Side - Content */}
             <div className="flex items-center px-6 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-20">

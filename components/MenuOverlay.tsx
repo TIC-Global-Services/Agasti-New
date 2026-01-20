@@ -115,23 +115,23 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           </nav>
 
           {/* Footer Content */}
-          <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 left-4 right-4 sm:left-6 sm:right-6 md:left-8 md:right-8 xl:left-24 xl:right-24 w-auto">
+          <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 left-4 right-4 sm:left-6 sm:right-6 md:left-8 md:right-8 xl:left-24 xl:right-[72px] w-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 md:mb-8">
               {/* Need Support */}
-              <div className="text-center sm:text-left">
+              <div className="text-left">
                 <h3 className="font-semibold mb-1 sm:mb-2 text-gray-700 text-xs sm:text-sm">NEED SUPPORT?</h3>
                 <p className="text-xs sm:text-sm">INFO@AGASTI.COM</p>
               </div>
 
               {/* Address */}
-              <div className="text-center sm:text-right">
+              <div className="text-left">
                 <h3 className="font-semibold mb-1 sm:mb-2 text-gray-700 text-xs sm:text-sm">ADDRESS</h3>
                 <p className="text-xs sm:text-sm">AGASTIESTATES, GACHIBOWLI,</p>
                 <p className="text-xs sm:text-sm">HYDERABAD - 500032</p>
               </div>
 
               {/* Socials */}
-              <div className="text-center sm:text-left">
+              <div className="text-left">
                 <h3 className="font-semibold mb-1 sm:mb-2 text-gray-700 text-xs sm:text-sm">SOCIALS</h3>
                 <ul className="space-y-1">
                   <li>
@@ -153,7 +153,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
               </div>
 
               {/* Customer Care */}
-              <div className="text-center sm:text-right">
+              <div className="text-left">
                 <h3 className="font-semibold mb-1 sm:mb-2 text-gray-700 text-xs sm:text-sm">CUSTOMER CARE</h3>
                 <p className="text-xs sm:text-sm">+1 234 567 8910</p>
               </div>

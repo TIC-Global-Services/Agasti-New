@@ -22,19 +22,28 @@ export default function SmartFutureHomes() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-12 sm:py-16 md:py-20">
-      <ContainerLayout>
+    <section ref={sectionRef} className="bg-white py-[40px]">
+      <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">Smart, Future-Ready Engineering</p>
+          <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-6 sm:mb-2">Smart, Future-Ready Engineering</p>
           
-          <h2 className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight mb-6 sm:mb-8">
-            Crafting Homes Designed for Intelligent Living, Lasting Strength, and a Future-Ready Lifestyle
-          </h2>
-          
-          <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-3xl">
-            Agasti homes use advanced structures, planned MEP systems, quality waterproofing, and solar integration to ensure long-term durability, easy upkeep, and a modern living experience built for the future.
-          </p>
+          {/* Side by side layout for heading and paragraph */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-6 items-start">
+            {/* Left side - Heading (smaller container) */}
+            <div className="lg:col-span-3">
+              <h2 className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-[32px] text-black leading-tight">
+                Crafting Homes Designed for Intelligent Living, <br />Lasting Strength, and a Future-Ready Lifestyle
+              </h2>
+            </div>
+            
+            {/* Right side - Paragraph (moved further left) */}
+            <div className="lg:col-span-2 lg:-ml-12">
+              <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
+                Agasti homes use advanced structures, planned MEP systems, quality waterproofing, and solar integration to ensure long-term durability, easy upkeep, and a modern living experience built for the future.
+              </p>
+            </div>
+          </div>
         </div>
 
         <hr className="border-gray-400 mb-12" />

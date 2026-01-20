@@ -66,8 +66,8 @@ export default function LifestyleGallery() {
   ];
 
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20">
-      <ContainerLayout>
+    <section className="bg-white py-[40px]">
+      <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight">

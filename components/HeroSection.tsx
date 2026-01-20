@@ -27,7 +27,7 @@ export default function HeroSection() {
         {/* Content */}
         <div className="relative z-10 flex h-full flex-col">
           {/* Header with Text and Menu */}
-          <div className="relative px-4 py-6 sm:px-6 sm:py-8 xl:px-[145px] lg:px-[50px]">
+          <div className="relative px-6 sm:px-[48px] py-6 sm:py-8">
             <div className="flex items-center justify-between">
               {/* Spacer for left side */}
               <div className="w-6 sm:w-8" />

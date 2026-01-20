@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import SpacePrivacySection from "@/components/SpacePrivacySection";
 import AboutAgasti from "@/components/AboutAgasti";
 import Services from "@/components/Services";
 import WhyLiveWithAgasti from "@/components/WhyLiveWithAgasti";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <SpacePrivacySection />
       <AboutAgasti />
       <Services />
       <WhyLiveWithAgasti />

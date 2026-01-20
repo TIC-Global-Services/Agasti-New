@@ -63,23 +63,9 @@ export default function WhyLiveWithAgasti() {
   }, [activeIndex]);
 
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20">
+    <section className="bg-white py-[40px]">
       <style dangerouslySetInnerHTML={{
         __html: `
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          .animate-infinite-scroll {
-            animation: scroll 30s linear infinite;
-          }
-          .animate-infinite-scroll:hover {
-            animation-play-state: paused;
-          }
           .hide-scrollbar::-webkit-scrollbar {
             display: none;
           }
@@ -89,7 +75,7 @@ export default function WhyLiveWithAgasti() {
           }
         `
       }} />
-      <ContainerLayout>
+      <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
           <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[26px] mb-4 sm:mb-6 font-bold">Why Live With Agasti</p>
@@ -104,7 +90,7 @@ export default function WhyLiveWithAgasti() {
             everyday living.
           </h2>
           
-          <p className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-3xl">
+          <p className="text-gray-500 text-[16px] sm:text-sm leading-relaxed max-w-3xl">
             Designed for those who value privacy, quality, and timeless elegance, Agasti offers a peaceful retreat 
             that stays connected to the city's best schools, hospitals, and business hubs—giving you the ideal 
             blend of exclusivity and convenience.
@@ -154,14 +140,13 @@ export default function WhyLiveWithAgasti() {
           </div>
         </div>
 
-        {/* Desktop Infinite Scroll - Hidden on mobile */}
-        <div className="hidden md:block mt-16 overflow-hidden">
-          <div className="flex gap-0 animate-infinite-scroll">
-            {/* Duplicate features 4 times for seamless loop */}
-            {[...features, ...features, ...features, ...features].map((feature, index) => (
-              <div key={index} className="relative flex flex-col items-center justify-center px-12 py-16 min-w-[250px] flex-shrink-0">
+        {/* Desktop & Tablet Static Layout - Hidden on mobile */}
+        <div className="hidden md:block mt-16">
+          <div className="grid grid-cols-5 gap-8 lg:gap-12">
+            {features.map((feature, index) => (
+              <div key={index} className="flex flex-col items-center justify-center py-8">
                 {/* Icon */}
-                <div className="relative w-20 h-20 mb-4">
+                <div className="relative w-16 h-16 lg:w-20 lg:h-20 mb-4">
                   <Image
                     src={feature.icon}
                     alt={feature.label}
@@ -172,12 +157,9 @@ export default function WhyLiveWithAgasti() {
                 </div>
                 
                 {/* Label */}
-                <p className="text-black text-sm font-semibold tracking-wide text-center">
+                <p className="text-black text-xs lg:text-sm font-semibold tracking-wide text-center">
                   {feature.label}
                 </p>
-                
-                {/* Vertical Line */}
-                <div className="absolute right-0 top-0 h-full w-px bg-gray-300" />
               </div>
             ))}
           </div>
