@@ -40,19 +40,41 @@ export default function WhyLiveWithAgasti() {
 
     // Auto-advance carousel
     const interval = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % features.length;
-      setActiveIndex(nextIndex);
-      
-      // Scroll to next card
-      const cardWidth = carousel.offsetWidth;
-      carousel.scrollTo({
-        left: nextIndex * cardWidth,
-        behavior: 'smooth'
+      setActiveIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % features.length;
+        
+        // Scroll to next card
+        const cardWidth = carousel.offsetWidth;
+        carousel.scrollTo({
+          left: nextIndex * cardWidth,
+          behavior: 'smooth'
+        });
+        
+        return nextIndex;
       });
     }, 3000); // Change card every 3 seconds
 
     return () => clearInterval(interval);
-  }, [activeIndex, features.length]);
+  }, [features.length]);
+
+  // Handle manual scroll detection
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const handleScroll = () => {
+      const cardWidth = carousel.offsetWidth;
+      const scrollLeft = carousel.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      
+      if (newIndex !== activeIndex) {
+        setActiveIndex(newIndex);
+      }
+    };
+
+    carousel.addEventListener('scroll', handleScroll);
+    return () => carousel.removeEventListener('scroll', handleScroll);
+  }, [activeIndex]);
 
   useEffect(() => {
     // Update progress bars
