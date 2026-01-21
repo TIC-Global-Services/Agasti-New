@@ -2,12 +2,12 @@
 import ContainerLayout from "@/layout/ContainerLayout";
 import { useLetterReveal } from "@/hooks/useLetterReveal";
 
-export default function LocationSection() {
+export default function ContactLocation() {
   // Letter reveal effects for headings
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
 
   return (
-    <section className="bg-white py-[40px] ">
+    <section className="bg-white py-[40px] mt-[200px] sm:mt-[240px] lg:mt-[280px]">
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         <div className="bg-[#F0EDE4] rounded-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">

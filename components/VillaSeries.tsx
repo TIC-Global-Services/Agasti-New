@@ -73,13 +73,13 @@ export default function VillaSeries() {
             />
           </div>
 
-          {/* Vertical Line */}
-          {/* <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-y-1/2 w-px bg-gray-400 h-[90%] -translate-x-1/2" /> */}
+          {/* Vertical Line - Positioned to intersect with horizontal borders */}
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-400 -translate-x-1/2 z-10" />
 
           {/* Right Side - Accordion */}
           <div className="flex flex-col h-auto lg:h-[600px]">
             {villas.map((villa, index) => (
-              <div key={index} className="border-b border-gray-300 flex-1 flex flex-col">
+              <div key={index} className={`flex-1 flex flex-col ${index < villas.length - 1 ? 'border-b border-gray-300' : ''}`}>
                 {/* Accordion Header */}
                 <button
                   onClick={() => toggleAccordion(index)}
@@ -101,7 +101,7 @@ export default function VillaSeries() {
                     activeIndex === index ? "max-h-96 pb-8" : "max-h-0"
                   }`}
                 >
-                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed mt-6 sm:mt-8 md:mt-12">
+                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed mt-8 sm:mt-10 md:mt-16 lg:mt-[200px]">
                     <span className="font-semibold text-gray-600">{villa.title}</span> {villa.description.replace(villa.title, '')}
                   </p>
                 </div>
