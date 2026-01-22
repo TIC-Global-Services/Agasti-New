@@ -107,11 +107,10 @@ export default function AboutExcellence() {
     <section className="bg-white">
       <style jsx>{`
         .glass-card {
-          width: 275px;
           height: 289px;
           background: rgba(255, 255, 255, 0.09);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(60px);
+          -webkit-backdrop-filter: blur(60px);
           border-radius: 10px;
           border: 1px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
@@ -221,8 +220,8 @@ export default function AboutExcellence() {
         }
         .glass-card-vision {
           background: rgba(255, 255, 255, 0.24);
-          backdrop-filter: blur(40px) saturate(150%);
-          -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(60px) saturate(150%);
+          -webkit-backdrop-filter: blur(60px);
           border-radius: 10px;
           border: 1px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
@@ -434,9 +433,9 @@ export default function AboutExcellence() {
 
                 {/* Stats Cards */}
                 <div className="flex-1 min-w-0" ref={statsRef}>
-                  <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 justify-items-center xl:justify-items-start">
+                  <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 w-full">
                     {/* 7+ Years */}
-                    <div className="glass-card flex flex-col p-6">
+                    <div className="glass-card flex flex-col p-6 w-full">
                       <div className="flex-grow-0 mb-4">
                         <div className="text-black text-[74px] font-bold leading-none mb-1">
                           {animatedNumbers.years}+
@@ -451,7 +450,7 @@ export default function AboutExcellence() {
                     </div>
 
                     {/* 18 Signature Villas */}
-                    <div className="glass-card flex flex-col p-6">
+                    <div className="glass-card flex flex-col p-6 w-full">
                       <div className="flex-grow-0 mb-4">
                         <div className="text-black text-[74px] font-urbanist font-bold leading-none mb-1">
                           {animatedNumbers.villas}
@@ -466,7 +465,7 @@ export default function AboutExcellence() {
                     </div>
 
                     {/* 95% Client Satisfaction */}
-                    <div className="glass-card flex flex-col p-6">
+                    <div className="glass-card flex flex-col p-6 w-full">
                       <div className="flex-grow-0 mb-4">
                         <div className="text-black text-[74px] font-bold leading-none mb-1">
                           {animatedNumbers.satisfaction}%
