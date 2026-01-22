@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import MenuOverlay from "./MenuOverlay";
 import { gsap } from "gsap";
@@ -14,177 +13,142 @@ if (typeof window !== "undefined") {
 export default function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentFrame, setCurrentFrame] = useState(1);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
-  const frameIndexRef = useRef({ frame: 1 });
-
-  // Total number of frames
   const totalFrames = 80;
 
+  // Preload all images
   useEffect(() => {
-    if (!sectionRef.current || !canvasRef.current) return;
-
-    // Immediately hide scrollbars when component mounts
-    const hideScrollbarsStyle = document.createElement('style');
-    hideScrollbarsStyle.id = 'hero-hide-scrollbars';
-    hideScrollbarsStyle.textContent = `
-      html {
-        overflow: hidden !important;
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-      }
-      body {
-        overflow: hidden !important;
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-      }
-      html::-webkit-scrollbar,
-      body::-webkit-scrollbar,
-      *::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-        height: 0 !important;
-      }
-      * {
-        scrollbar-width: none !important;
-        -ms-overflow-style: none !important;
-      }
-    `;
-    document.head.appendChild(hideScrollbarsStyle);
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // Set canvas size
-    const setCanvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    setCanvasSize();
-    window.addEventListener("resize", setCanvasSize);
-
-    // Preload all images
-    const images: HTMLImageElement[] = [];
-    let loadedImages = 0;
-
-    const loadImages = () => {
+    const loadImages = async () => {
+      const imagePromises: Promise<HTMLImageElement>[] = [];
+      
       for (let i = 1; i <= totalFrames; i++) {
-        const img = document.createElement('img') as HTMLImageElement;
-        const paddedNum = i.toString().padStart(4, '0');
-        img.src = `/Agasti Frames/${paddedNum}.png`;
-        
-        img.onload = () => {
-          loadedImages++;
-          if (loadedImages === totalFrames) {
-            // All images loaded, start animation
-            startScrollAnimation();
-          }
-        };
-        
-        img.onerror = () => {
-          console.error(`Failed to load frame ${i}`);
-          loadedImages++;
-          if (loadedImages === totalFrames) {
-            startScrollAnimation();
-          }
-        };
-        
-        images.push(img);
-      }
-      imagesRef.current = images;
-    };
-
-    const drawFrame = (frameNumber: number) => {
-      const img = images[frameNumber - 1];
-      if (img && img.complete) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Calculate aspect ratio to cover the canvas
-        const canvasAspect = canvas.width / canvas.height;
-        const imgAspect = img.width / img.height;
-        
-        let drawWidth, drawHeight, offsetX, offsetY;
-        
-        if (canvasAspect > imgAspect) {
-          // Canvas is wider than image
-          drawWidth = canvas.width;
-          drawHeight = canvas.width / imgAspect;
-          offsetX = 0;
-          offsetY = (canvas.height - drawHeight) / 2;
-        } else {
-          // Canvas is taller than image
-          drawWidth = canvas.height * imgAspect;
-          drawHeight = canvas.height;
-          offsetX = (canvas.width - drawWidth) / 2;
-          offsetY = 0;
-        }
-        
-        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-      }
-    };
-
-    const startScrollAnimation = () => {
-      // Create a timeline for the frame sequence
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: `+=${totalFrames * 100}`, // 100px per frame
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            const frameNumber = Math.floor(progress * (totalFrames - 1)) + 1;
-            const clampedFrame = Math.min(totalFrames, Math.max(1, frameNumber));
-            
-            if (frameIndexRef.current.frame !== clampedFrame) {
-              frameIndexRef.current.frame = clampedFrame;
-              setCurrentFrame(clampedFrame);
-              drawFrame(clampedFrame);
+        const promise = new Promise<HTMLImageElement>((resolve, reject) => {
+          const img = document.createElement('img');
+          const paddedNum = i.toString().padStart(4, '0');
+          img.src = `/Agasti Frames/${paddedNum}.png`;
+          img.onload = () => resolve(img);
+          img.onerror = () => {
+            console.warn(`Failed to load frame ${paddedNum}`);
+            // Create a fallback transparent image
+            const canvas = document.createElement('canvas');
+            canvas.width = 1920;
+            canvas.height = 1080;
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+              ctx.fillStyle = 'transparent';
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
             }
-          },
-          onComplete: () => {
-            // Restore scrollbars when animation completes
-            const hideScrollbarsStyle = document.getElementById('hero-hide-scrollbars');
-            if (hideScrollbarsStyle) {
-              hideScrollbarsStyle.remove();
-            }
-          }
-        }
-      });
+            const fallbackImg = document.createElement('img');
+            fallbackImg.src = canvas.toDataURL();
+            fallbackImg.onload = () => resolve(fallbackImg);
+          };
+        });
+        imagePromises.push(promise);
+      }
 
-      // Animate the frame index
-      tl.to(frameIndexRef.current, {
-        frame: totalFrames,
-        duration: 1,
-        ease: "none"
-      });
-
-      // Draw initial frame
-      drawFrame(1);
+      try {
+        const loadedImages = await Promise.all(imagePromises);
+        imagesRef.current = loadedImages;
+        setImagesLoaded(true);
+        console.log('All frames loaded successfully');
+      } catch (error) {
+        console.error('Error loading images:', error);
+        setImagesLoaded(true); // Still proceed with available images
+      }
     };
 
     loadImages();
+  }, []);
 
-    return () => {
-      window.removeEventListener("resize", setCanvasSize);
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      // Restore scrollbars on cleanup
-      const hideScrollbarsStyle = document.getElementById('hero-hide-scrollbars');
-      if (hideScrollbarsStyle) {
-        hideScrollbarsStyle.remove();
+  // Initialize animation after images are loaded
+  useEffect(() => {
+    if (!imagesLoaded) return;
+
+    const timer = setTimeout(() => {
+      initializeAnimation();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [imagesLoaded]);
+
+  const initializeAnimation = () => {
+    if (!sectionRef.current || !canvasRef.current) return;
+
+    // Kill existing ScrollTriggers
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    // Draw initial frame
+    drawFrame(1);
+
+    // Create scroll-triggered frame animation
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: `+=${totalFrames * 50}`,
+        scrub: 1,
+        pin: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const frameNumber = Math.floor(progress * (totalFrames - 1)) + 1;
+          const clampedFrame = Math.min(totalFrames, Math.max(1, frameNumber));
+          setCurrentFrame(clampedFrame);
+          drawFrame(clampedFrame);
+        }
+      }
+    });
+  };
+
+  const drawFrame = (frameNum: number) => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext('2d');
+    if (!canvas || !ctx || !imagesRef.current[frameNum - 1]) return;
+
+    const img = imagesRef.current[frameNum - 1];
+    
+    // Set canvas size to match viewport
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // Calculate aspect ratio and positioning
+    const imgAspect = img.naturalWidth / img.naturalHeight;
+    const canvasAspect = canvas.width / canvas.height;
+    
+    let drawWidth, drawHeight, drawX, drawY;
+    
+    if (imgAspect > canvasAspect) {
+      // Image is wider than canvas
+      drawHeight = canvas.height;
+      drawWidth = drawHeight * imgAspect;
+      drawX = (canvas.width - drawWidth) / 2;
+      drawY = 0;
+    } else {
+      // Image is taller than canvas
+      drawWidth = canvas.width;
+      drawHeight = drawWidth / imgAspect;
+      drawX = 0;
+      drawY = (canvas.height - drawHeight) / 2;
+    }
+    
+    // Clear and draw
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
+  };
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (imagesLoaded) {
+        drawFrame(currentFrame);
       }
     };
-  }, [totalFrames]);
 
-  // Format frame number with leading zeros
-  const getFramePath = (frameNum: number) => {
-    const paddedNum = frameNum.toString().padStart(4, '0');
-    return `/Agasti Frames/${paddedNum}.png`;
-  };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [currentFrame, imagesLoaded]);
 
   return (
     <>
@@ -193,10 +157,15 @@ export default function HeroSection() {
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ display: imagesLoaded ? 'block' : 'none' }}
         />
 
-        {/* Overlay for better text visibility */}
-        <div className="absolute inset-0" />
+        {/* Loading state */}
+        {!imagesLoaded && (
+          <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+            <div className="text-gray-600">Loading...</div>
+          </div>
+        )}
 
         {/* Content */}
         <div className="relative z-10 flex h-full flex-col">
@@ -208,13 +177,11 @@ export default function HeroSection() {
               
               {/* Centered AGASTI Logo */}
               <div className="flex-1 flex justify-center">
-                <Link href="/" className="relative h-[36px] sm:h-[44px] w-auto aspect-[4/1] hover:opacity-80 transition-opacity">
-                  <Image
+                <Link href="/" className="relative h-[36px] sm:h-[44px] w-auto aspect-4/1 hover:opacity-80 transition-opacity">
+                  <img
                     src="/Agasti_Logo.png"
                     alt="Agasti Logo"
-                    fill
-                    sizes="(max-width: 640px) 144px, 176px"
-                    className="object-contain"
+                    className="h-full w-auto object-contain"
                   />
                 </Link>
               </div>
@@ -232,7 +199,7 @@ export default function HeroSection() {
           </div>
 
           {/* Keep scrolling indicator */}
-          {currentFrame < totalFrames && (
+          {imagesLoaded && currentFrame < totalFrames && (
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
               <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
                 <span className="text-white text-sm font-medium">Keep Scrolling</span>

@@ -8,6 +8,7 @@ interface BlurTextProps {
   direction?: "top" | "bottom" | "left" | "right";
   onAnimationComplete?: () => void;
   className?: string;
+  threshold?: number;
 }
 
 export default function BlurText({
@@ -17,6 +18,7 @@ export default function BlurText({
   direction = "top",
   onAnimationComplete,
   className = "",
+  threshold = 0.1,
 }: BlurTextProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [animatedItems, setAnimatedItems] = useState<boolean[]>([]);
@@ -34,7 +36,7 @@ export default function BlurText({
           observer.disconnect(); // Disconnect immediately after first trigger
         }
       },
-      { threshold: 0.1 }
+      { threshold }
     );
 
     if (elementRef.current) {
@@ -42,7 +44,7 @@ export default function BlurText({
     }
 
     return () => observer.disconnect();
-  }, [isVisible]);
+  }, [isVisible, threshold]);
 
   useEffect(() => {
     if (!isVisible) return;
