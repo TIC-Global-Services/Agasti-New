@@ -48,7 +48,7 @@ export default function VillaSeries() {
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="mb-8 sm:mb-12 pb-6 sm:pb-8 border-b border-gray-300">
-          <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">The Agasti Villa Series</p>
+          <p className="text-[#8D957E] font-bold text-sm sm:text-base md:text-[24px] mb-2 sm:mb-2">The Agasti Villa Series</p>
           <BlurText
             text="Villas Crafted for Every Lifestyle and Every Direction"
             delay={60}

@@ -161,10 +161,10 @@ export default function ProjectHero() {
               </div>
 
               {/* Right Side - Description */}
-              <div className="lg:pt-10 lg:pl-4">
+              <div className="lg:pt-12 lg:pl-4">
                 <div className="bg-white p-7 sm:p-4 md:p-0 relative">
                   <div className="relative">
-                    <p className="text-[#717580] text-[16px] sm:text-base leading-relaxed text-right pr-4">
+                    <p className="text-[#717580] text-[16px] sm:text-base leading-tight text-right pr-4">
                       Atara is an exclusive community of 18 tropical villas nestled in the heart of Hyderabad's Financial District.Designed for those who seek calm without compromise, each villa merges architectural finesse with the tranquility of nature.
                     </p>
                     {/* Vertical line on the right side */}

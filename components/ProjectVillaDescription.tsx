@@ -169,7 +169,7 @@ export default function ProjectVillaDescription() {
               <div className="mb-4 w-full">
                 <div className="flex justify-between items-start mb-2">
                   <h2 className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-tight">
-                    The Agasti west
+                    The Agasti West Facing Villa
                   </h2>
                   <button 
                     onClick={() => toggleVillaDetails('zenith')}
@@ -311,7 +311,7 @@ export default function ProjectVillaDescription() {
                       ref={crestTitleMobileRef}
                       className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-tight"
                     >
-                      The Agasti Crest
+                      The Agasti North Facing Villa
                     </h2>
                     <button 
                       onClick={() => toggleVillaDetails('crest')}
@@ -577,13 +577,13 @@ export default function ProjectVillaDescription() {
         {/* Desktop Layout - Hidden on mobile */}
         <div className="hidden sm:block">
           {/* Header Section */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6">
             <div className="mb-4 sm:mb-0">
               <h2 
                 ref={titleRef}
                 className="font-gc-palioka text-[20px] sm:text-4xl md:text-[44px] lg:text-[44px] text-black mb-2 leading-tight"
               >
-                The Agasti Zenith
+                The Agasti West Facing Villa
               </h2>
               <div className="flex items-center">
                 <div className="relative mr-2" style={{ width: '23.5px', height: '24px' }}>
@@ -623,7 +623,7 @@ export default function ProjectVillaDescription() {
           </div>
           {/* Parallax Image */}
           {!expandedVilla && (
-            <div className="overflow-hidden mb-8 sm:mb-12" style={{ width: '1344px', height: '444px', maxWidth: '100%' }}>
+            <div className="overflow-hidden mb-4 sm:mb-6" style={{ width: '1344px', height: '444px', maxWidth: '100%' }}>
               <div
                 style={{
                   transform: `translateY(${Math.min(0, offsetY * 2)}px) scale(1.1)`,
@@ -769,11 +769,11 @@ export default function ProjectVillaDescription() {
           {/* Explore More Villas Component - Displayed below dropdown */}
           {expandedVilla === 'zenith' && <ExploreMoreVillas currentVilla="zenith" />}
           
-          {!expandedVilla && <hr className="border-gray-300 mb-10 sm:mb-12 mt-8 sm:mt-10 md:mt-12" />}
+          {!expandedVilla && <hr className="border-gray-300 mb-10 sm:mb-12 mt-4 sm:mt-6" />}
 
           {/* Second Villa - The Agasti Crest */}
           {!expandedVilla && (
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6">
               <div className="mb-4 sm:mb-0">
                 <h2 
                   ref={crestTitleRef}
@@ -818,7 +818,7 @@ export default function ProjectVillaDescription() {
 
           {/* Second Villa Parallax Image */}
           {!expandedVilla && (
-            <div className="overflow-hidden mb-8 sm:mb-12" style={{ width: '1344px', height: '444px', maxWidth: '100%' }}>
+            <div className="overflow-hidden mb-4 sm:mb-6" style={{ width: '1344px', height: '444px', maxWidth: '100%' }}>
               <div
                 style={{
                   transform: `translateY(${Math.min(0, offsetY * 2)}px) scale(1.1)`,
@@ -964,11 +964,11 @@ export default function ProjectVillaDescription() {
           {/* Explore More Villas Component - Displayed below dropdown */}
           {expandedVilla === 'crest' && <ExploreMoreVillas currentVilla="crest" />}
           
-          {!expandedVilla && <hr className="border-gray-300 mb-10 sm:mb-12 mt-8 sm:mt-10 md:mt-12" />}
+          {!expandedVilla && <hr className="border-gray-300 mb-10 sm:mb-12 mt-4 sm:mt-6" />}
 
           {/* Third Villa - The Agasti Horizon */}
           {!expandedVilla && (
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6">
               <div className="mb-4 sm:mb-0">
                 <h2 
                   ref={horizonTitleRef}
@@ -1013,7 +1013,7 @@ export default function ProjectVillaDescription() {
 
           {/* Third Villa Parallax Image */}
           {!expandedVilla && (
-            <div ref={secondImageRef} className="overflow-hidden mb-8 sm:mb-12" style={{ width: '1344px', height: '444px', maxWidth: '100%' }}>
+            <div ref={secondImageRef} className="overflow-hidden mb-4 sm:mb-6" style={{ width: '1344px', height: '444px', maxWidth: '100%' }}>
               <div
                 style={{
                   transform: `translateY(${Math.min(0, offsetY2 * 2)}px) scale(1.1)`,
@@ -1159,7 +1159,7 @@ export default function ProjectVillaDescription() {
           {/* Explore More Villas Component - Displayed below dropdown */}
           {expandedVilla === 'horizon' && <ExploreMoreVillas currentVilla="horizon" />}
           
-          {!expandedVilla && <hr className="border-gray-300 mb-10 sm:mb-12 mt-8 sm:mt-10 md:mt-12" />}
+          {!expandedVilla && <hr className="border-gray-300 mb-10 sm:mb-12 mt-4 sm:mt-6" />}
         </div>
       </ContainerLayout>
     </section>

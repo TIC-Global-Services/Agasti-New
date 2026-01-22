@@ -141,7 +141,7 @@ export default function ContactHero() {
             </div>
 
             {/* Content Grid - Properly aligned below image */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 items-start pt-6 pb-12 sm:pb-16 md:pb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 items-start pt-12 pb-12 sm:pb-16 md:pb-20">
               {/* Left Side - Contact Header */}
               <div>
                 <p 
@@ -161,10 +161,10 @@ export default function ContactHero() {
               </div>
 
               {/* Right Side - Description */}
-              <div className="lg:pt-10 lg:pl-4">
+              <div className="lg:pt-20 lg:pl-4">
                 <div className="bg-white p-7 sm:p-4 md:p-0 relative">
                   <div className="relative">
-                    <p className="text-[#717580] text-[16px] sm:text-base leading-relaxed text-right pr-4">
+                    <p className="text-[#717580] text-[16px] sm:text-base leading-tight text-right pr-4">
                       Reach out, our team is here to guide you every step of the way, turning <br />your vision of luxury living into a beautiful reality.
                     </p>
                     {/* Vertical line on the right side */}

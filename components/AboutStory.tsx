@@ -164,7 +164,7 @@ export default function AboutStory() {
               <div className="lg:pt-10 lg:pl-4">
                 <div className="bg-white p-7 sm:p-4 md:p-0 relative">
                   <div className="relative">
-                    <p className="text-[#717580] text-[16px] sm:text-base leading-relaxed text-right pr-8">
+                    <p className="text-[#717580] text-[16px] sm:text-base leading-tight text-right pr-8">
                       From lush landscapes to world-class amenities, each <br />home reflects precision, elegance, and timeless<br /> craftsmanship.
                     </p>
                     {/* Vertical line on the right side */}

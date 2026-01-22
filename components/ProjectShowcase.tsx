@@ -242,7 +242,7 @@ export default function ProjectShowcase() {
                   Luxury residences inspired by contemporary minimalism, combining open spaces, modern design, and community living.
                 </p>
               </div>
-              <button className="bg-[#8D957E] text-white text-sm font-medium tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px]" style={{ width: '197px', height: '50px' }}>
+              <button className="bg-[#8D957E] text-white text-[12px] font-medium tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px]" style={{ width: '197px', height: '50px' }}>
                 STAY UPDATED
               </button>
             </div>
@@ -295,7 +295,7 @@ export default function ProjectShowcase() {
                   A boutique villa enclave surrounded by lush landscapes, designed for serene, sustainable living.
                 </p>
               </div>
-              <button className="bg-[#8D957E] text-white text-sm font-medium tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px]" style={{ width: '197px', height: '50px' }}>
+              <button className="bg-[#8D957E] text-white text-[12px] font-medium tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded-[4px]" style={{ width: '197px', height: '50px' }}>
                 STAY UPDATED
               </button>
             </div>

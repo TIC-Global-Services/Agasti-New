@@ -134,7 +134,7 @@ export default function AboutExcellence() {
           backdrop-filter: blur(60px);
           -webkit-backdrop-filter: blur(60px);
           border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 0.5px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
                       inset 0 1px 0 rgba(255, 255, 255, 0.5),
                       inset 0 -1px 0 rgba(255, 255, 255, 0.1),
@@ -171,7 +171,7 @@ export default function AboutExcellence() {
           backdrop-filter: blur(6px);
           -webkit-backdrop-filter: blur(6px);
           border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 0.5px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
                       inset 0 1px 0 rgba(255, 255, 255, 0.5),
                       inset 0 -1px 0 rgba(255, 255, 255, 0.1),
@@ -208,7 +208,7 @@ export default function AboutExcellence() {
           backdrop-filter: blur(6px);
           -webkit-backdrop-filter: blur(6px);
           border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 0.5px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
                       inset 0 1px 0 rgba(255, 255, 255, 0.5),
                       inset 0 -1px 0 rgba(255, 255, 255, 0.1),
@@ -246,8 +246,8 @@ export default function AboutExcellence() {
           backdrop-filter: blur(4px) saturate(100%) contrast(100%);
           -webkit-backdrop-filter: blur(4px);
           opacity: 60%;
-          border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 6px;
+          border: 0.2px solid rgba(255, 255, 255, 0.01);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
                       inset 0 1px 0 rgba(255, 255, 255, 0.5),
                       inset 0 -1px 0 rgba(255, 255, 255, 0.1),
@@ -284,7 +284,7 @@ export default function AboutExcellence() {
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.24);
+          border: 0.5px solid rgba(255, 255, 255, 0.24);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
                       inset 0 1px 0 rgba(255, 255, 255, 0.5),
                       inset 0 -1px 0 rgba(255, 255, 255, 0.1),
@@ -325,7 +325,7 @@ export default function AboutExcellence() {
           background-image: url('data:image/svg+xml;base64,CiAgICAgIDxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpzdmdqcz0iaHR0cDovL3N2Z2pzLmRldi9zdmdqcyIgdmlld0JveD0iMCAwIDcwMCA3MDAiIHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBvcGFjaXR5PSIwLjM0Ij4KICAgICAgICA8ZGVmcz4KICAgICAgICAgIDxmaWx0ZXIgaWQ9Im5ubm9pc2UtZmlsdGVyIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHByaW1pdGl2ZVVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJsaW5lYXJSR0IiPgogICAgICAgICAgICA8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC4wNzEiIG51bU9jdGF2ZXM9IjQiIHNlZWQ9IjE1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHJlc3VsdD0idHVyYnVsZW5jZSI+PC9mZVR1cmJ1bGVuY2U+CiAgICAgICAgICAgIDxmZVNwZWN1bGFyTGlnaHRpbmcgc3VyZmFjZVNjYWxlPSIwIiBzcGVjdWxhckNvbnN0YW50PSIwLjciIHNwZWN1bGFyRXhwb25lbnQ9IjIwIiBsaWdodGluZy1jb2xvcj0iIzc5NTdBOCIgeD0iMCUiIHk9IjAlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpbj0idHVyYnVsZW5jZSIgcmVzdWx0PSJzcGVjdWxhckxpZ2h0aW5nIj4KICAgICAgICAgICAgICA8ZmVEaXN0YW50TGlnaHQgYXppbXV0aD0iMyIgZWxldmF0aW9uPSIxMDAiPjwvZmVEaXN0YW50TGlnaHQ+CiAgICAgICAgICAgIDwvZmVTcGVjdWxhckxpZ2h0aW5nPgogICAgICAgICAgICA8ZmVDb2xvck1hdHJpeCB0eXBlPSJzYXR1cmF0ZSIgdmFsdWVzPSIwIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGluPSJzcGVjdWxhckxpZ2h0aW5nIiByZXN1bHQ9ImNvbG9ybWF0cml4Ij48L2ZlQ29sb3JNYXRyaXg+CiAgICAgICAgICA8L2ZpbHRlcj4KICAgICAgICA8L2RlZnM+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9InRyYW5zcGFyZW50Ij48L3JlY3Q+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9IiM3OTU3YTgiIGZpbHRlcj0idXJsKCNubm5vaXNlLWZpbHRlcikiPjwvcmVjdD4KICAgICAgPC9zdmc+CiAgICA=');
           background-blend-mode: overlay;
           border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 0.5px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
                       inset 0 1px 0 rgba(255, 255, 255, 0.5),
                       inset 0 -1px 0 rgba(255, 255, 255, 0.1),
@@ -458,7 +458,7 @@ export default function AboutExcellence() {
                     animateBy="words"
                     direction="top"
                     onAnimationComplete={handleExcellenceAnimationComplete}
-                    className="text-white font-gc-palioka-demo text-[20px] sm:text-[24px] font-bold"
+                    className="text-white font-gc-palioka-demo text-[20px] sm:text-[24px] leading-tight font-bold"
                   />
                   <BlurText
                     text="Where every property reflects uncompromised quality"
@@ -685,7 +685,7 @@ export default function AboutExcellence() {
 
           {/* Desktop Layout */}
           <div className="hidden lg:block relative z-10 p-8 sm:p-12 md:p-16 min-h-[600px] flex items-start">
-            <div className="glass-card-craftsmanship p-6 max-w-sm">
+            <div className="glass-card-craftsmanship p-8 max-w-[435px]">
               <div>
                 <BlurText
                   text="Craftsmanship"
@@ -701,7 +701,7 @@ export default function AboutExcellence() {
                   animateBy="words"
                   direction="top"
                   onAnimationComplete={() => {}}
-                  className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-4"
+                  className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-6"
                 />
               </div>
               <p className="text-black-600 text-sm leading-tight tracking-[-0.02em]">

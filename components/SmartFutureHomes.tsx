@@ -35,7 +35,7 @@ export default function SmartFutureHomes() {
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-6 sm:mb-2">Smart, Future-Ready Engineering</p>
+          <p className="text-[#8D957E] font-bold text-[24px] sm:text-[24px] md:text-[24px] mb-6 sm:mb-2">Smart, Future-Ready Engineering</p>
           
           {/* Responsive layout for heading and paragraph */}
           <div className="block xl:grid xl:grid-cols-5 xl:gap-6 xl:items-start">

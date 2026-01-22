@@ -68,15 +68,24 @@ export default function Services() {
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header Section */}
         <div className="mb-8 sm:mb-12">
-          <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">Where Luxury Meets Nature</p>
-          <BlurText
-            text="Elegance curated with care, serenity framed in every vista."
-            delay={60}
-            animateBy="words"
-            direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight"
-          />
+          <p className="text-[#8D957E] font-bold text-sm sm:text-base md:text-[24px] mb-3 sm:mb-4">Where Luxury Meets Nature</p>
+          <div className="font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
+            <BlurText
+              text="Elegance curated with care,"
+              delay={60}
+              animateBy="words"
+              direction="top"
+              className="block"
+            />
+            <BlurText
+              text="serenity framed in every vista."
+              delay={60}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={handleAnimationComplete}
+              className="block"
+            />
+          </div>
         </div>
 
         <hr className="border-gray-300 mb-6 sm:mb-8" />
@@ -92,7 +101,7 @@ export default function Services() {
               {services.map((service, index) => (
                 <div key={index} className="flex flex-col w-screen flex-shrink-0 snap-center px-6">
                   {/* Text Content */}
-                  <div className="mb-6">
+                  <div className="mb-6 max-w-xs">
                     <h3 className="text-[20px] font-semibold text-black mb-3">
                       {service.title}
                     </h3>
@@ -135,10 +144,10 @@ export default function Services() {
             <div key={index} className="flex flex-col">
               {/* Text Content */}
               <div className="mb-4 sm:mb-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-black mb-2 sm:mb-3">
+                <h3 className="text-lg sm:text-xl font-semibold text-black mb-2 sm:mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-500 max-w-xl text-sm leading-tight">
                   {service.description}
                 </p>
               </div>

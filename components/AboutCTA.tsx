@@ -39,8 +39,8 @@ export default function AboutCTA() {
                   Ready to Experience Agasti
                 </h2>
                 
-                <p className="text-black text-[14px] leading-relaxed mb-6 max-w-[280px]">
-                  Step into a world where craftsmanship, nature, and refined design come together to create a truly elevated way of living. Explore our vision, discover our communities, and see how Agasti is shaping the future of luxury villas.
+                <p className="text-black text-[14px] leading-tight mb-6 max-w-[280px]">
+                  Step into a world where craftsmanship, nature, and refined design come together to <br />create a truly elevated way of living. Explore our vision, discover our communities, and see how Agasti is shaping the future of luxury villas.
                 </p>
 
                 <Link href="/contact">
@@ -119,10 +119,10 @@ export default function AboutCTA() {
             
             {/* Text Overlay */}
             <div className="absolute top-0 right-0 flex items-start justify-end z-10 p-10">
-              <div className="text-right text-black w-full max-w-3xl">
+              <div className="text-right text-black w-full max-w-2xl">
                 <h2 
                   ref={titleRef}
-                  className={`font-gc-palioka text-[34px] mb-3 leading-tight font-regular transition-all duration-700 ${titleBlur}`}
+                  className={`font-gc-palioka text-[34px] mb-2 leading-tight font-regular transition-all duration-700 ${titleBlur}`}
                 >
                   Ready to Experience Agasti
                 </h2>
@@ -130,7 +130,7 @@ export default function AboutCTA() {
                 <p className="text-white font-plus-jakarta-sans text-[16px] leading-tight mb-6">
                   Step into a world where craftsmanship, nature, and refined design come together to 
                   create a truly elevated way of living. Explore our vision, discover our communities, and 
-                  see how Agasti is shaping the future of luxury villas.
+                  <br />see how Agasti is shaping the future of luxury villas.
                 </p>
 
                 <Link href="/contact">

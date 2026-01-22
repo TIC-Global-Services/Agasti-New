@@ -76,7 +76,7 @@ export default function AboutTestimonial() {
               transition: 'color 0.2s ease-out'
             }}
           >
-          LUPIN (GENERAL MANAGER)
+           - LUPIN (GENERAL MANAGER)
           </cite>
         </div>
       </ContainerLayout>

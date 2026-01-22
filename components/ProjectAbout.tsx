@@ -34,7 +34,7 @@ export default function ProjectAbout() {
             
             <h2 
               ref={titleRef}
-              className="font-gc-palioka text-[20px] sm:text-4xl md:text-5xl lg:text-[54px] text-black mb-3 leading-tight"
+              className="font-gc-palioka text-[20px] sm:text-4xl md:text-5xl tracking-tight lg:text-[54px] text-black mb-3 leading-none"
             >
               A Commitment to <br />Quality and Timeless <br />Living
             </h2>

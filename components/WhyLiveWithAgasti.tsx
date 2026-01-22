@@ -94,7 +94,7 @@ export default function WhyLiveWithAgasti() {
   }, [activeIndex]);
 
   return (
-    <section className="bg-white py-[40px]">
+    <section className="bg-white ">
       <style dangerouslySetInnerHTML={{
         __html: `
           .hide-scrollbar::-webkit-scrollbar {
@@ -109,7 +109,7 @@ export default function WhyLiveWithAgasti() {
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[26px] mb-4 sm:mb-6 font-bold">Why Live With Agasti</p>
+          <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[26px] mb-2 sm:mb-2 font-bold">Why Live With Agasti</p>
           
           <BlurText
             text="Agasti brings together luxury, nature, and thoughtful design. With premium materials, open layouts, and serene green spaces, every villa is crafted with precision to elevate your everyday living."
@@ -117,7 +117,7 @@ export default function WhyLiveWithAgasti() {
             animateBy="words"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
-            className="font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-6 sm:mb-8 leading-tight max-w-4xl"
+            className="font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-[14px] leading-tight max-w-4xl"
           />
           
           <p className="text-gray-500 text-[16px] sm:text-sm leading-relaxed max-w-3xl">
