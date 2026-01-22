@@ -2,14 +2,15 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import BlurText from "./BlurText";
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
-  
-  // Blur effects for headings
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
+
+  const handleAnimationComplete = () => {
+    console.log('Services animation completed!');
+  };
 
   const handleScroll = () => {
     if (scrollRef.current) {
@@ -68,12 +69,14 @@ export default function Services() {
         {/* Header Section */}
         <div className="mb-8 sm:mb-12">
           <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">Where Luxury Meets Nature</p>
-          <h2 
-            ref={titleRef}
-            className={`font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight transition-all duration-700 ${titleBlur}`}
-          >
-            Elegance curated with care, serenity framed in every vista.
-          </h2>
+          <BlurText
+            text="Elegance curated with care, serenity framed in every vista."
+            delay={60}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
+            className="font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight"
+          />
         </div>
 
         <hr className="border-gray-300 mb-6 sm:mb-8" />

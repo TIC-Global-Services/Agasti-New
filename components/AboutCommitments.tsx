@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import BlurText from "./BlurText";
 
 export default function AboutCommitments() {
   const [translateX, setTranslateX] = useState(0);
@@ -13,7 +14,10 @@ export default function AboutCommitments() {
 
   // Blur effects for headings
   const { elementRef: commitmentsRef, blurClass: commitmentsBlur } = useBlurOnScroll<HTMLParagraphElement>();
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
+
+  const handleAnimationComplete = () => {
+    console.log('AboutCommitments title animation completed!');
+  };
 
   const handleScroll = () => {
     if (scrollRef.current) {
@@ -106,12 +110,14 @@ export default function AboutCommitments() {
           >
             Our commitments
           </p>
-          <h2 
-            ref={titleRef}
-            className={`font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight max-w-4xl transition-all duration-700 ${titleBlur}`}
-          >
-            With every Agasti Villa, we aim to deliver outcomes that prioritize quality, comfort, and long-term value.
-          </h2>
+          <BlurText
+            text="With every Agasti Villa, we aim to deliver outcomes that prioritize quality, comfort, and long-term value."
+            delay={60}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
+            className="font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight max-w-4xl"
+          />
         </div>
       </ContainerLayout>
 

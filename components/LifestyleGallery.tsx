@@ -2,14 +2,15 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useLetterReveal } from "@/hooks/useLetterReveal";
+import BlurText from "./BlurText";
 
 export default function LifestyleGallery() {
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false, false]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  
-  // Letter reveal effects for headings
-  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
+
+  const handleAnimationComplete = () => {
+    console.log('LifestyleGallery title animation completed!');
+  };
 
   useEffect(() => {
     const observers = cardRefs.current.map((card, index) => {
@@ -74,12 +75,14 @@ export default function LifestyleGallery() {
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 
-            ref={titleRef}
+          <BlurText
+            text="Experience a Life of Convenience and Indulgence"
+            delay={60}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
             className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight"
-          >
-            Experience a Life of Convenience and Indulgence
-          </h2>
+          />
         </div>
 
         {/* Gallery - Horizontal scroll on mobile, grid on desktop */}

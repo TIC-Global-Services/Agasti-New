@@ -1,10 +1,11 @@
 "use client";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import BlurText from "./BlurText";
 
 export default function LocationSection() {
-  // Blur effects for headings
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
+  const handleAnimationComplete = () => {
+    console.log('LocationSection title animation completed!');
+  };
 
   return (
     <section className="bg-white py-[40px] ">
@@ -14,12 +15,14 @@ export default function LocationSection() {
             {/* Left Side - Content */}
             <div className="flex items-center px-6 py-12 sm:px-8 sm:py-16 md:px-16 lg:px-20">
               <div className="max-w-lg">
-                <h2 
-                  ref={titleRef}
-                  className={`font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-5 leading-tight transition-all duration-700 ${titleBlur}`}
-                >
-                  Your Gateway to Comfort, Connection, and Ease
-                </h2>
+                <BlurText
+                  text="Your Gateway to Comfort, Connection, and Ease"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleAnimationComplete}
+                  className="font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-5 leading-tight"
+                />
                 
                 <p className="text-gray-600 plus-jakarta-sans text-[16px] sm:text-base leading-relaxed">
                   Atara by Agasti is strategically placed to offer peaceful living without 

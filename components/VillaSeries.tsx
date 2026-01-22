@@ -2,14 +2,15 @@
 import { useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useLetterReveal } from "@/hooks/useLetterReveal";
+import BlurText from "./BlurText";
 
 export default function VillaSeries() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  
-  // Letter reveal effects for headings
-  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
+
+  const handleAnimationComplete = () => {
+    console.log('VillaSeries title animation completed!');
+  };
 
   const villas = [
     {
@@ -48,12 +49,14 @@ export default function VillaSeries() {
         {/* Header */}
         <div className="mb-8 sm:mb-12 pb-6 sm:pb-8 border-b border-gray-300">
           <p className="text-[#8D957E] text-sm sm:text-base md:text-lg mb-3 sm:mb-4">The Agasti Villa Series</p>
-          <h2 
-            ref={titleRef}
+          <BlurText
+            text="Villas Crafted for Every Lifestyle and Every Direction"
+            delay={60}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
             className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight"
-          >
-            Villas Crafted for Every Lifestyle and Every Direction
-          </h2>
+          />
         </div>
 
         {/* Content Grid */}

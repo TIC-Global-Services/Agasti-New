@@ -1,11 +1,15 @@
 "use client";
 import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 import ContainerLayout from "@/layout/ContainerLayout";
+import BlurText from "./BlurText";
 
 export default function ProjectContentGrid() {
   // Blur effects for headings
   const { elementRef: sectionRef, blurClass: sectionBlur } = useBlurOnScroll<HTMLParagraphElement>();
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
+
+  const handleAnimationComplete = () => {
+    console.log('ProjectContentGrid title animation completed!');
+  };
 
   return (
     <section className="bg-white">
@@ -20,14 +24,24 @@ export default function ProjectContentGrid() {
             >
               Upcoming Projects
             </p>
-            <h2 
-              ref={titleRef}
-              className={`font-gc-palioka text-[20px] sm:text-3xl md:text-4xl lg:text-[32px] text-black leading-[1.1] tracking-[-0.03em] transition-all duration-700 ${titleBlur}`}
-            >
-              Continuing the Agasti
-              <br />
-              legacy of crafted excellence.
-            </h2>
+            <div>
+              <BlurText
+                text="Continuing the Agasti"
+                delay={60}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="font-gc-palioka text-[20px] sm:text-3xl md:text-4xl lg:text-[32px] text-black leading-[1.1] tracking-[-0.03em]"
+              />
+              <BlurText
+                text="legacy of crafted excellence."
+                delay={60}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={() => {}}
+                className="font-gc-palioka text-[20px] sm:text-3xl md:text-4xl lg:text-[32px] text-black leading-[1.1] tracking-[-0.03em]"
+              />
+            </div>
           </div>
 
           {/* Right Side - Description */}

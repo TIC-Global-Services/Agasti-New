@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import BlurText from "./BlurText";
 
 export default function WhyLiveWithAgasti() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -10,6 +11,10 @@ export default function WhyLiveWithAgasti() {
   
   // Blur effects for headings
   const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
+
+  const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+  };
 
   const features = [
     {
@@ -106,12 +111,14 @@ export default function WhyLiveWithAgasti() {
         <div className="mb-8 sm:mb-12">
           <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[26px] mb-4 sm:mb-6 font-bold">Why Live With Agasti</p>
           
-          <h2 
-            ref={titleRef}
-            className={`font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-6 sm:mb-8 leading-tight max-w-4xl transition-all duration-700 ${titleBlur}`}
-          >
-            Agasti brings together luxury, nature, and thoughtful design. With premium materials, open layouts, and serene green spaces, every villa is crafted with precision to elevate your everyday living.
-          </h2>
+          <BlurText
+            text="Agasti brings together luxury, nature, and thoughtful design. With premium materials, open layouts, and serene green spaces, every villa is crafted with precision to elevate your everyday living."
+            delay={60}
+            animateBy="words"
+            direction="top"
+            onAnimationComplete={handleAnimationComplete}
+            className="font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-6 sm:mb-8 leading-tight max-w-4xl"
+          />
           
           <p className="text-gray-500 text-[16px] sm:text-sm leading-relaxed max-w-3xl">
             Designed for those who value privacy, quality, and timeless elegance, Agasti offers a peaceful retreat 

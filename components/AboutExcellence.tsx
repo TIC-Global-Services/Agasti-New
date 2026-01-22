@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import BlurText from "./BlurText";
 
 export default function AboutExcellence() {
   const [isVisionVisible, setIsVisionVisible] = useState(false);
@@ -18,6 +19,27 @@ export default function AboutExcellence() {
   const { elementRef: visionTitleRef, blurClass: visionTitleBlur } = useBlurOnScroll<HTMLHeadingElement>();
   const { elementRef: craftsmanshipRef, blurClass: craftsmanshipBlur } = useBlurOnScroll<HTMLHeadingElement>();
   const { elementRef: sustainabilityRef, blurClass: sustainabilityBlur } = useBlurOnScroll<HTMLHeadingElement>();
+
+  // Animation completion handlers
+  const handleExcellenceAnimationComplete = () => {
+    console.log('Excellence animation completed!');
+  };
+
+  const handleExcellenceTitleAnimationComplete = () => {
+    console.log('Excellence title animation completed!');
+  };
+
+  const handleVisionAnimationComplete = () => {
+    console.log('Vision animation completed!');
+  };
+
+  const handleCraftsmanshipAnimationComplete = () => {
+    console.log('Craftsmanship animation completed!');
+  };
+
+  const handleSustainabilityAnimationComplete = () => {
+    console.log('Sustainability animation completed!');
+  };
 
   // Animation for stats numbers
   useEffect(() => {
@@ -354,12 +376,22 @@ export default function AboutExcellence() {
           <div className="block lg:hidden px-6">
             {/* Mobile Header */}
             <div className="mb-8">
-              <h2 className="text-white font-gc-palioka text-[20px] sm:text-[24px] md:text-[28px] font-normal mb-4">
-                Built on Excellence
-              </h2>
-              <h3 className="font-gc-palioka text-[#262B35] text-[20px] sm:text-[28px] md:text-[32px] leading-tight mb-4">
-                Where every property reflects uncompromised quality
-              </h3>
+              <BlurText
+                text="Built on Excellence"
+                delay={60}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleExcellenceAnimationComplete}
+                className="text-white font-gc-palioka text-[20px] sm:text-[24px] md:text-[28px] font-normal mb-4"
+              />
+              <BlurText
+                text="Where every property reflects uncompromised quality"
+                delay={60}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleExcellenceTitleAnimationComplete}
+                className="font-gc-palioka text-[#262B35] text-[20px] sm:text-[28px] md:text-[32px] leading-tight mb-4"
+              />
               <p className="text-[#3C3C3C]/80 text-[14px] leading-relaxed">
                 Building exclusive communities for individuals who seek refined elegance, elevated comfort, and a truly distinguished way of living.
               </p>
@@ -420,18 +452,22 @@ export default function AboutExcellence() {
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
                 {/* Left Side - Built on Excellence */}
                 <div className="flex-shrink-0 lg:w-[435px] flex flex-col gap-[10px]">
-                  <h2 
-                    ref={excellenceRef}
-                    className={`text-white font-gc-palioka-demo text-[20px] sm:text-[24px] font-bold transition-all duration-700 ${excellenceBlur}`}
-                  >
-                    Built on Excellence
-                  </h2>
-                  <h3 
-                    ref={excellenceTitleRef}
-                    className={`font-gc-palioka text-[#262B35] text-[20px] sm:text-3xl md:text-[32px] leading-tight transition-all duration-700 ${excellenceTitleBlur}`}
-                  >
-                    Where every property reflects uncompromised quality
-                  </h3>
+                  <BlurText
+                    text="Built on Excellence"
+                    delay={60}
+                    animateBy="words"
+                    direction="top"
+                    onAnimationComplete={handleExcellenceAnimationComplete}
+                    className="text-white font-gc-palioka-demo text-[20px] sm:text-[24px] font-bold"
+                  />
+                  <BlurText
+                    text="Where every property reflects uncompromised quality"
+                    delay={60}
+                    animateBy="words"
+                    direction="top"
+                    onAnimationComplete={handleExcellenceTitleAnimationComplete}
+                    className="font-gc-palioka text-[#262B35] text-[20px] sm:text-3xl md:text-[32px] leading-tight"
+                  />
                   <p className="text-[#3C3C3C]/80 text-[16px] font-regular leading-tight font-plus-jakarta-sans">
                     Building exclusive communities for individuals who seek refined elegance, elevated comfort, and a truly distinguished way of living.
                   </p>
@@ -515,14 +551,24 @@ export default function AboutExcellence() {
                   : 'translate-y-8 opacity-0'
               }`}
             >
-              <h3 
-                ref={visionTitleRef}
-                className={`font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4 transition-all duration-700 ${visionTitleBlur}`}
-              >
-                Our Vision
-                <br />
-                for Elevated Living
-              </h3>
+              <div>
+                <BlurText
+                  text="Our Vision"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleVisionAnimationComplete}
+                  className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight"
+                />
+                <BlurText
+                  text="for Elevated Living"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={() => {}}
+                  className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4"
+                />
+              </div>
               <p className="text-black text-[14px] font-medium leading-relaxed">
                 At Agasti, our vision is to redefine luxury living by creating communities that harmonize architecture, nature, and human experience. We aim to build spaces that feel timeless—crafted with enduring quality, thoughtful engineering, and an unwavering attention to detail.
               </p>
@@ -541,14 +587,24 @@ export default function AboutExcellence() {
                     : 'translate-x-full opacity-0'
                 }`}
               >
-                <h3 
-                  ref={visionTitleRef}
-                  className={`font-gc-palioka text-2xl sm:text-3xl text-black leading-none tracking-[-0.02] mb-6 transition-all duration-700 ${visionTitleBlur}`}
-                >
-                  Our Vision
-                  <br />
-                  for Elevated Living
-                </h3>
+                <div>
+                  <BlurText
+                    text="Our Vision"
+                    delay={60}
+                    animateBy="words"
+                    direction="top"
+                    onAnimationComplete={handleVisionAnimationComplete}
+                    className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none tracking-[-0.02]"
+                  />
+                  <BlurText
+                    text="for Elevated Living"
+                    delay={60}
+                    animateBy="words"
+                    direction="top"
+                    onAnimationComplete={() => {}}
+                    className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none tracking-[-0.02] mb-6"
+                  />
+                </div>
                 <p className="text-black-600 text-[14px] font-medium leading-tight tracking-[-0.02em]">
                   At Agasti, our vision is to redefine luxury living by creating communities that harmonize architecture, nature, and human experience. We aim to build spaces that feel timeless—crafted with enduring quality, thoughtful engineering, and an unwavering attention to detail.
                 </p>
@@ -576,14 +632,24 @@ export default function AboutExcellence() {
           {/* Mobile Layout */}
           <div className="block sm:hidden relative z-10 py-16 flex items-start justify-center min-h-[600px] px-6 pt-20">
             <div className="glass-card-craftsmanship p-6 max-w-sm w-full text-center">
-              <h3 
-                ref={craftsmanshipRef}
-                className={`font-gc-palioka text-2xl text-black leading-tight mb-4 transition-all duration-700 ${craftsmanshipBlur}`}
-              >
-                Craftsmanship
-                <br />
-                & Quality
-              </h3>
+              <div>
+                <BlurText
+                  text="Craftsmanship"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleCraftsmanshipAnimationComplete}
+                  className="font-gc-palioka text-2xl text-black leading-tight"
+                />
+                <BlurText
+                  text="& Quality"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={() => {}}
+                  className="font-gc-palioka text-2xl text-black leading-tight mb-4"
+                />
+              </div>
               <p className="text-black text-sm leading-relaxed">
                 A section that highlights the details, premium materials, and artisanal finishes that beautifully define every Agasti villa.
               </p>
@@ -593,14 +659,24 @@ export default function AboutExcellence() {
           {/* Tablet Layout */}
           <div className="hidden sm:block lg:hidden relative z-10 py-16 flex items-start justify-center min-h-[700px] px-6 pt-20">
             <div className="glass-card-craftsmanship p-8 max-w-md w-full text-center mx-auto">
-              <h3 
-                ref={craftsmanshipRef}
-                className={`font-gc-palioka text-3xl text-black leading-tight mb-4 transition-all duration-700 ${craftsmanshipBlur}`}
-              >
-                Craftsmanship
-                <br />
-                & Quality
-              </h3>
+              <div>
+                <BlurText
+                  text="Craftsmanship"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleCraftsmanshipAnimationComplete}
+                  className="font-gc-palioka text-3xl text-black leading-tight"
+                />
+                <BlurText
+                  text="& Quality"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={() => {}}
+                  className="font-gc-palioka text-3xl text-black leading-tight mb-4"
+                />
+              </div>
               <p className="text-black text-sm leading-relaxed">
                 A section that highlights the details, premium materials, and artisanal finishes that beautifully define every Agasti villa.
               </p>
@@ -610,14 +686,24 @@ export default function AboutExcellence() {
           {/* Desktop Layout */}
           <div className="hidden lg:block relative z-10 p-8 sm:p-12 md:p-16 min-h-[600px] flex items-start">
             <div className="glass-card-craftsmanship p-6 max-w-sm">
-              <h3 
-                ref={craftsmanshipRef}
-                className={`font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-4 transition-all duration-700 ${craftsmanshipBlur}`}
-              >
-                Craftsmanship
-                <br />
-                & Quality
-              </h3>
+              <div>
+                <BlurText
+                  text="Craftsmanship"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleCraftsmanshipAnimationComplete}
+                  className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none"
+                />
+                <BlurText
+                  text="& Quality"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={() => {}}
+                  className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-4"
+                />
+              </div>
               <p className="text-black-600 text-sm leading-tight tracking-[-0.02em]">
                 A section that highlights the details, premium materials, and artisanal finishes that beautifully define every Agasti villa.
               </p>
@@ -641,14 +727,24 @@ export default function AboutExcellence() {
           {/* Mobile Layout */}
           <div className="block sm:hidden relative z-10 py-16 flex items-center justify-center min-h-[600px] px-6">
             <div className="glass-card-sustainability p-6 max-w-sm w-full text-center">
-              <h3 
-                ref={sustainabilityRef}
-                className={`font-gc-palioka text-2xl text-black leading-tight mb-4 transition-all duration-700 ${sustainabilityBlur}`}
-              >
-                Sustainability
-                <br />
-                & Integrity
-              </h3>
+              <div>
+                <BlurText
+                  text="Sustainability"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleSustainabilityAnimationComplete}
+                  className="font-gc-palioka text-2xl text-black leading-tight"
+                />
+                <BlurText
+                  text="& Integrity"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={() => {}}
+                  className="font-gc-palioka text-2xl text-black leading-tight mb-4"
+                />
+              </div>
               <p className="text-black text-sm leading-relaxed">
                 We build with honesty and responsibility, creating homes that uphold trust while preserving the environment for generations.
               </p>
@@ -658,14 +754,24 @@ export default function AboutExcellence() {
           {/* Tablet Layout */}
           <div className="hidden sm:block lg:hidden relative z-10 py-16 flex items-center justify-center min-h-[700px] px-6">
             <div className="glass-card-sustainability p-8 max-w-md w-full text-center">
-              <h3 
-                ref={sustainabilityRef}
-                className={`font-gc-palioka text-3xl text-black leading-tight mb-4 transition-all duration-700 ${sustainabilityBlur}`}
-              >
-                Sustainability
-                <br />
-                & Integrity
-              </h3>
+              <div>
+                <BlurText
+                  text="Sustainability"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={handleSustainabilityAnimationComplete}
+                  className="font-gc-palioka text-3xl text-black leading-tight"
+                />
+                <BlurText
+                  text="& Integrity"
+                  delay={60}
+                  animateBy="words"
+                  direction="top"
+                  onAnimationComplete={() => {}}
+                  className="font-gc-palioka text-3xl text-black leading-tight mb-4"
+                />
+              </div>
               <p className="text-black text-sm leading-relaxed">
                 We build with honesty and responsibility, creating homes that uphold trust while preserving the environment for generations.
               </p>
@@ -676,14 +782,24 @@ export default function AboutExcellence() {
           <div className="hidden lg:block relative z-10 h-[600px]">
             <div className="absolute bottom-16 right-12">
               <div className="glass-card-sustainability p-8 max-w-[435px]">
-                <h3 
-                  ref={sustainabilityRef}
-                  className={`font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-6 transition-all duration-700 ${sustainabilityBlur}`}
-                >
-                  Sustainability
-                  <br />
-                  & Integrity
-                </h3>
+                <div>
+                  <BlurText
+                    text="Sustainability"
+                    delay={60}
+                    animateBy="words"
+                    direction="top"
+                    onAnimationComplete={handleSustainabilityAnimationComplete}
+                    className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none"
+                  />
+                  <BlurText
+                    text="& Integrity"
+                    delay={60}
+                    animateBy="words"
+                    direction="top"
+                    onAnimationComplete={() => {}}
+                    className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-6"
+                  />
+                </div>
                 <p className="text-black-600 text-sm leading-tight tracking-[-0.02em]">
                   We build with honesty and responsibility, creating homes that uphold trust while preserving the environment for generations.
                 </p>

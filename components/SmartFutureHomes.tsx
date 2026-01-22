@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
+import BlurText from "./BlurText";
 
 export default function SmartFutureHomes() {
   const [offsetY, setOffsetY] = useState(0);
@@ -10,6 +11,10 @@ export default function SmartFutureHomes() {
   
   // Blur effects for headings
   const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
+
+  const handleAnimationComplete = () => {
+    console.log('SmartFutureHomes animation completed!');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,12 +41,14 @@ export default function SmartFutureHomes() {
           <div className="block xl:grid xl:grid-cols-5 xl:gap-6 xl:items-start">
             {/* Heading */}
             <div className="xl:col-span-3 mb-6 xl:mb-0">
-              <h2 
-                ref={titleRef}
-                className={`font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-[32px] text-black leading-tight transition-all duration-700 ${titleBlur}`}
-              >
-                Crafting Homes Designed for Intelligent Living,<br /> Lasting Strength, and a Future-Ready Lifestyle
-              </h2>
+              <BlurText
+                text="Crafting Homes Designed for Intelligent Living ,     Lasting Strength, and a Future-Ready Lifestyle"
+                delay={60}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-[32px] text-black leading-tight"
+              />
             </div>
             
             {/* Paragraph */}
