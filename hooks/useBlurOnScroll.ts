@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useBlurOnScroll = <T extends HTMLElement = HTMLElement>(threshold: number = 0.2) => {
+export const useBlurOnScroll = <T extends HTMLElement = HTMLElement>(threshold: number = 0.5) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const elementRef = useRef<T>(null);
@@ -18,23 +18,25 @@ export const useBlurOnScroll = <T extends HTMLElement = HTMLElement>(threshold: 
   }, []);
 
   useEffect(() => {
+    const currentElement = elementRef.current;
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
       {
         threshold,
-        rootMargin: "50px 0px 50px 0px"
+        rootMargin: "-100px 0px -100px 0px" // Element needs to be more in view before triggering
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [threshold]);

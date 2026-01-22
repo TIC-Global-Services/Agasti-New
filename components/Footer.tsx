@@ -67,7 +67,15 @@ export default function Footer() {
             <p className="text-center">© 2025 Atara by Agasti . All Rights Reserved.</p>
             <p className="text-center">
               Designed & Developed By<br />
-              TIC Global Services
+              <a 
+                href="https://www.theinternetcompany.one/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="relative inline-block group hover:text-black transition-colors"
+              >
+                TIC Global Services
+                <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
+              </a>
             </p>
           </div>
         </div>
@@ -133,7 +141,18 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className="flex flex-row justify-between items-center gap-3 md:gap-4 text-xs md:text-[14px] text-gray-600">
             <p>© 2025 Atara by Agasti . All Rights Reserved.</p>
-            <p>Designed & Developed By TIC Global Services</p>
+            <p>
+              Designed & Developed By{" "}
+              <a 
+                href="https://www.theinternetcompany.one/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="relative inline-block group hover:text-black transition-colors"
+              >
+                TIC Global Services
+                <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </p>
           </div>
         </div>
       </ContainerLayout>

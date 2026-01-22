@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useLetterReveal } from "@/hooks/useLetterReveal";
+import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 
 export default function AboutExcellence() {
   const [isVisionVisible, setIsVisionVisible] = useState(false);
@@ -12,12 +12,12 @@ export default function AboutExcellence() {
   const visionRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  // Letter reveal effects for headings
-  const { elementRef: excellenceRef } = useLetterReveal<HTMLHeadingElement>(0.1);
-  const { elementRef: excellenceTitleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
-  const { elementRef: visionTitleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
-  const { elementRef: craftsmanshipRef } = useLetterReveal<HTMLHeadingElement>(0.1);
-  const { elementRef: sustainabilityRef } = useLetterReveal<HTMLHeadingElement>(0.1);
+  // Blur effects for headings
+  const { elementRef: excellenceRef, blurClass: excellenceBlur } = useBlurOnScroll<HTMLHeadingElement>();
+  const { elementRef: excellenceTitleRef, blurClass: excellenceTitleBlur } = useBlurOnScroll<HTMLHeadingElement>();
+  const { elementRef: visionTitleRef, blurClass: visionTitleBlur } = useBlurOnScroll<HTMLHeadingElement>();
+  const { elementRef: craftsmanshipRef, blurClass: craftsmanshipBlur } = useBlurOnScroll<HTMLHeadingElement>();
+  const { elementRef: sustainabilityRef, blurClass: sustainabilityBlur } = useBlurOnScroll<HTMLHeadingElement>();
 
   // Animation for stats numbers
   useEffect(() => {
@@ -219,9 +219,11 @@ export default function AboutExcellence() {
                       rgba(255, 255, 255, 0.3));
         }
         .glass-card-vision {
-          background: rgba(255, 255, 255, 0.24);
-          backdrop-filter: blur(60px) saturate(150%);
-          -webkit-backdrop-filter: blur(60px);
+          background-color: white;
+          background-clip: padding-box;
+          backdrop-filter: blur(4px) saturate(100%) contrast(100%);
+          -webkit-backdrop-filter: blur(4px);
+          opacity: 60%;
           border-radius: 10px;
           border: 1px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
@@ -293,9 +295,13 @@ export default function AboutExcellence() {
                       rgba(255, 255, 255, 0.3));
         }
         .glass-card-sustainability {
-          background: rgba(255, 255, 255, 0.70);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
+          background-color: white;
+          background-clip: padding-box;
+          backdrop-filter: blur(4px) saturate(100%) contrast(100%);
+          -webkit-backdrop-filter: blur(4px);
+          opacity: 80%;
+          background-image: url('data:image/svg+xml;base64,CiAgICAgIDxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpzdmdqcz0iaHR0cDovL3N2Z2pzLmRldi9zdmdqcyIgdmlld0JveD0iMCAwIDcwMCA3MDAiIHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBvcGFjaXR5PSIwLjM0Ij4KICAgICAgICA8ZGVmcz4KICAgICAgICAgIDxmaWx0ZXIgaWQ9Im5ubm9pc2UtZmlsdGVyIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHByaW1pdGl2ZVVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJsaW5lYXJSR0IiPgogICAgICAgICAgICA8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC4wNzEiIG51bU9jdGF2ZXM9IjQiIHNlZWQ9IjE1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHJlc3VsdD0idHVyYnVsZW5jZSI+PC9mZVR1cmJ1bGVuY2U+CiAgICAgICAgICAgIDxmZVNwZWN1bGFyTGlnaHRpbmcgc3VyZmFjZVNjYWxlPSIwIiBzcGVjdWxhckNvbnN0YW50PSIwLjciIHNwZWN1bGFyRXhwb25lbnQ9IjIwIiBsaWdodGluZy1jb2xvcj0iIzc5NTdBOCIgeD0iMCUiIHk9IjAlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpbj0idHVyYnVsZW5jZSIgcmVzdWx0PSJzcGVjdWxhckxpZ2h0aW5nIj4KICAgICAgICAgICAgICA8ZmVEaXN0YW50TGlnaHQgYXppbXV0aD0iMyIgZWxldmF0aW9uPSIxMDAiPjwvZmVEaXN0YW50TGlnaHQ+CiAgICAgICAgICAgIDwvZmVTcGVjdWxhckxpZ2h0aW5nPgogICAgICAgICAgICA8ZmVDb2xvck1hdHJpeCB0eXBlPSJzYXR1cmF0ZSIgdmFsdWVzPSIwIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGluPSJzcGVjdWxhckxpZ2h0aW5nIiByZXN1bHQ9ImNvbG9ybWF0cml4Ij48L2ZlQ29sb3JNYXRyaXg+CiAgICAgICAgICA8L2ZpbHRlcj4KICAgICAgICA8L2RlZnM+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9InRyYW5zcGFyZW50Ij48L3JlY3Q+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9IiM3OTU3YTgiIGZpbHRlcj0idXJsKCNubm5vaXNlLWZpbHRlcikiPjwvcmVjdD4KICAgICAgPC9zdmc+CiAgICA=');
+          background-blend-mode: overlay;
           border-radius: 10px;
           border: 1px solid rgba(255, 255, 255, 0.3);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
@@ -416,13 +422,13 @@ export default function AboutExcellence() {
                 <div className="flex-shrink-0 lg:w-[435px] flex flex-col gap-[10px]">
                   <h2 
                     ref={excellenceRef}
-                    className="text-white font-gc-palioka-demo text-[20px] sm:text-[24px] font-bold"
+                    className={`text-white font-gc-palioka-demo text-[20px] sm:text-[24px] font-bold transition-all duration-700 ${excellenceBlur}`}
                   >
                     Built on Excellence
                   </h2>
                   <h3 
                     ref={excellenceTitleRef}
-                    className="font-gc-palioka text-[#262B35] text-[20px] sm:text-3xl md:text-[32px] leading-tight"
+                    className={`font-gc-palioka text-[#262B35] text-[20px] sm:text-3xl md:text-[32px] leading-tight transition-all duration-700 ${excellenceTitleBlur}`}
                   >
                     Where every property reflects uncompromised quality
                   </h3>
@@ -511,7 +517,7 @@ export default function AboutExcellence() {
             >
               <h3 
                 ref={visionTitleRef}
-                className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4"
+                className={`font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4 transition-all duration-700 ${visionTitleBlur}`}
               >
                 Our Vision
                 <br />
@@ -537,7 +543,7 @@ export default function AboutExcellence() {
               >
                 <h3 
                   ref={visionTitleRef}
-                  className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none tracking-[-0.02] mb-6"
+                  className={`font-gc-palioka text-2xl sm:text-3xl text-black leading-none tracking-[-0.02] mb-6 transition-all duration-700 ${visionTitleBlur}`}
                 >
                   Our Vision
                   <br />
@@ -572,7 +578,7 @@ export default function AboutExcellence() {
             <div className="glass-card-craftsmanship p-6 max-w-sm w-full text-center">
               <h3 
                 ref={craftsmanshipRef}
-                className="font-gc-palioka text-2xl text-black leading-tight mb-4"
+                className={`font-gc-palioka text-2xl text-black leading-tight mb-4 transition-all duration-700 ${craftsmanshipBlur}`}
               >
                 Craftsmanship
                 <br />
@@ -589,7 +595,7 @@ export default function AboutExcellence() {
             <div className="glass-card-craftsmanship p-8 max-w-md w-full text-center mx-auto">
               <h3 
                 ref={craftsmanshipRef}
-                className="font-gc-palioka text-3xl text-black leading-tight mb-4"
+                className={`font-gc-palioka text-3xl text-black leading-tight mb-4 transition-all duration-700 ${craftsmanshipBlur}`}
               >
                 Craftsmanship
                 <br />
@@ -606,7 +612,7 @@ export default function AboutExcellence() {
             <div className="glass-card-craftsmanship p-6 max-w-sm">
               <h3 
                 ref={craftsmanshipRef}
-                className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-4"
+                className={`font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-4 transition-all duration-700 ${craftsmanshipBlur}`}
               >
                 Craftsmanship
                 <br />
@@ -637,7 +643,7 @@ export default function AboutExcellence() {
             <div className="glass-card-sustainability p-6 max-w-sm w-full text-center">
               <h3 
                 ref={sustainabilityRef}
-                className="font-gc-palioka text-2xl text-black leading-tight mb-4"
+                className={`font-gc-palioka text-2xl text-black leading-tight mb-4 transition-all duration-700 ${sustainabilityBlur}`}
               >
                 Sustainability
                 <br />
@@ -654,7 +660,7 @@ export default function AboutExcellence() {
             <div className="glass-card-sustainability p-8 max-w-md w-full text-center">
               <h3 
                 ref={sustainabilityRef}
-                className="font-gc-palioka text-3xl text-black leading-tight mb-4"
+                className={`font-gc-palioka text-3xl text-black leading-tight mb-4 transition-all duration-700 ${sustainabilityBlur}`}
               >
                 Sustainability
                 <br />
@@ -672,7 +678,7 @@ export default function AboutExcellence() {
               <div className="glass-card-sustainability p-8 max-w-[435px]">
                 <h3 
                   ref={sustainabilityRef}
-                  className="font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-6"
+                  className={`font-gc-palioka text-2xl sm:text-3xl text-black leading-none mb-6 transition-all duration-700 ${sustainabilityBlur}`}
                 >
                   Sustainability
                   <br />

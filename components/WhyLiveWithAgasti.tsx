@@ -2,14 +2,14 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useLetterReveal } from "@/hooks/useLetterReveal";
+import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 
 export default function WhyLiveWithAgasti() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   
-  // Letter reveal effects for headings
-  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
+  // Blur effects for headings
+  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
 
   const features = [
     {
@@ -108,7 +108,7 @@ export default function WhyLiveWithAgasti() {
           
           <h2 
             ref={titleRef}
-            className="font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-6 sm:mb-8 leading-tight max-w-4xl"
+            className={`font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-6 sm:mb-8 leading-tight max-w-4xl transition-all duration-700 ${titleBlur}`}
           >
             Agasti brings together luxury, nature, and thoughtful design. With premium materials, open layouts, and serene green spaces, every villa is crafted with precision to elevate your everyday living.
           </h2>

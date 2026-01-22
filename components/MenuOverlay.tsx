@@ -128,7 +128,10 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                 {/* Need Support */}
                 <div className="text-left">
                   <h3 className="font-semibold mb-1 sm:mb-2 text-gray-700 text-xs sm:text-sm">NEED SUPPORT?</h3>
-                  <p className="text-xs sm:text-sm">INFO@AGASTI.COM</p>
+                  <a href="mailto:info@agasti.com" className="text-xs sm:text-sm hover:text-black transition-colors relative group inline-block">
+                    INFO@AGASTI.COM
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
+                  </a>
                 </div>
 
                 {/* Socials */}
@@ -166,7 +169,10 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                 {/* Customer Care */}
                 <div className="text-left">
                   <h3 className="font-semibold mb-1 sm:mb-2 text-gray-700 text-xs sm:text-sm">CUSTOMER CARE</h3>
-                  <p className="text-xs sm:text-sm">+1 234 567 8910</p>
+                  <a href="tel:+12345678910" className="text-xs sm:text-sm hover:text-black transition-colors relative group inline-block">
+                    +1 234 567 8910
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
+                  </a>
                 </div>
               </div>
             </div>

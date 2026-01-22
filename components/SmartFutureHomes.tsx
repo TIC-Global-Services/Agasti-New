@@ -2,14 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useLetterReveal } from "@/hooks/useLetterReveal";
+import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 
 export default function SmartFutureHomes() {
   const [offsetY, setOffsetY] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   
-  // Letter reveal effects for headings
-  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
+  // Blur effects for headings
+  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +38,7 @@ export default function SmartFutureHomes() {
             <div className="xl:col-span-3 mb-6 xl:mb-0">
               <h2 
                 ref={titleRef}
-                className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-[32px] text-black leading-tight"
+                className={`font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-[32px] text-black leading-tight transition-all duration-700 ${titleBlur}`}
               >
                 Crafting Homes Designed for Intelligent Living,<br /> Lasting Strength, and a Future-Ready Lifestyle
               </h2>

@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useLetterReveal } from "@/hooks/useLetterReveal";
+import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 
 export default function AboutCommitments() {
   const [translateX, setTranslateX] = useState(0);
@@ -11,9 +11,9 @@ export default function AboutCommitments() {
   const animationRef = useRef<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Letter reveal effects for headings
-  const { elementRef: commitmentsRef } = useLetterReveal<HTMLParagraphElement>(0.1);
-  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
+  // Blur effects for headings
+  const { elementRef: commitmentsRef, blurClass: commitmentsBlur } = useBlurOnScroll<HTMLParagraphElement>();
+  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
 
   const handleScroll = () => {
     if (scrollRef.current) {
@@ -102,13 +102,13 @@ export default function AboutCommitments() {
         <div className="mb-6 sm:mb-10">
           <p 
             ref={commitmentsRef}
-            className="text-[#8D957E] text-[20px] sm:text-[24px] font-bold mb-4"
+            className={`text-[#8D957E] text-[20px] sm:text-[24px] font-bold mb-4 transition-all duration-700 ${commitmentsBlur}`}
           >
             Our commitments
           </p>
           <h2 
             ref={titleRef}
-            className="font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight max-w-4xl"
+            className={`font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight max-w-4xl transition-all duration-700 ${titleBlur}`}
           >
             With every Agasti Villa, we aim to deliver outcomes that prioritize quality, comfort, and long-term value.
           </h2>
