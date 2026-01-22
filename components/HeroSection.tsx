@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import MenuOverlay from "./MenuOverlay";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,7 +26,7 @@ export default function HeroSection() {
       const imagePromises: Promise<HTMLImageElement>[] = [];
       
       for (let i = 1; i <= totalFrames; i++) {
-        const promise = new Promise<HTMLImageElement>((resolve, reject) => {
+        const promise = new Promise<HTMLImageElement>((resolve) => {
           const img = document.createElement('img');
           const paddedNum = i.toString().padStart(4, '0');
           img.src = `/Agasti Frames/${paddedNum}.png`;
@@ -64,16 +65,6 @@ export default function HeroSection() {
   }, []);
 
   // Initialize animation after images are loaded
-  useEffect(() => {
-    if (!imagesLoaded) return;
-
-    const timer = setTimeout(() => {
-      initializeAnimation();
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [imagesLoaded]);
-
   const initializeAnimation = () => {
     if (!sectionRef.current || !canvasRef.current) return;
 
@@ -101,6 +92,16 @@ export default function HeroSection() {
       }
     });
   };
+
+  useEffect(() => {
+    if (!imagesLoaded) return;
+
+    const timer = setTimeout(() => {
+      initializeAnimation();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [imagesLoaded]);
 
   const drawFrame = (frameNum: number) => {
     const canvas = canvasRef.current;
@@ -178,9 +179,11 @@ export default function HeroSection() {
               {/* Centered AGASTI Logo */}
               <div className="flex-1 flex justify-center">
                 <Link href="/" className="relative h-[36px] sm:h-[44px] w-auto aspect-4/1 hover:opacity-80 transition-opacity">
-                  <img
+                  <Image
                     src="/Agasti_Logo.png"
                     alt="Agasti Logo"
+                    width={176}
+                    height={44}
                     className="h-full w-auto object-contain"
                   />
                 </Link>
