@@ -8,8 +8,8 @@ import ExploreMoreVillas from "./ExploreMoreVillas";
 
 // Amenity Cards Component
 const AmenityCards = () => (
-  <div className="flex flex-wrap justify-end md:justify-start lg:justify-end gap-4 ml-4 md:ml-4 lg:ml-10">
-    <div className="text-center p-4 lg:p-6 border-r border-gray-300 flex-1 min-w-0 max-w-52 h-30" style={{ backgroundColor: '#F0EDE4' }}>
+  <div className="grid grid-cols-2 gap-4 w-full max-w-md">
+    <div className="text-center p-4 lg:p-6 border border-gray-300 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/club.png"
@@ -22,7 +22,7 @@ const AmenityCards = () => (
       <p className="text-sm font-medium text-gray-700">Clubhouse</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6 border-r border-gray-300 flex-1 min-w-0 max-w-52 h-30" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4 lg:p-6 border border-gray-300 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/badminton.png"
@@ -35,7 +35,7 @@ const AmenityCards = () => (
       <p className="text-sm font-medium text-gray-700">Badminton Court</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6 border-r border-gray-300 flex-1 min-w-0 max-w-52 h-30" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4 lg:p-6 border border-gray-300 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/basketball.png"
@@ -48,7 +48,7 @@ const AmenityCards = () => (
       <p className="text-sm font-medium text-gray-700">Mini Basketball Court</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6 border-r border-gray-300 flex-1 min-w-0 max-w-52 h-30" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4 lg:p-6 border border-gray-300 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/playarea.png"
@@ -66,7 +66,7 @@ const AmenityCards = () => (
 // Mobile Amenity Cards Component
 const MobileAmenityCards = () => (
   <div className="grid grid-cols-2 gap-3 mt-6">
-    <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/club.png"
@@ -79,7 +79,7 @@ const MobileAmenityCards = () => (
       <p className="text-[12px] font-medium text-gray-700">Clubhouse</p>
     </div>
     
-    <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/badminton.png"
@@ -92,7 +92,7 @@ const MobileAmenityCards = () => (
       <p className="text-[12px] font-medium text-gray-700">Badminton Court</p>
     </div>
     
-    <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/basketball.png"
@@ -105,7 +105,7 @@ const MobileAmenityCards = () => (
       <p className="text-[12px] font-medium text-gray-700">Mini Basketball</p>
     </div>
     
-    <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/playarea.png"
@@ -159,7 +159,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
         };
       case 'crest':
         return {
-          title: 'The Agasti Crest',
+          title: 'The Agasti East Facing Villa',
           subtitle: 'East facing villa',
           image: '/projects-imgs/AgastiCrest.jpg',
           propertySize: '915 sq yds',
