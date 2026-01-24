@@ -10,53 +10,73 @@ import ExploreMoreVillas from "./ExploreMoreVillas";
 const AmenityCards = () => (
   <div className="grid grid-cols-2 gap-4 w-full max-w-md ml-0 sm:ml-4 lg:ml-8">
     <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-        <Image
-          src="/projects-imgs/club.png"
-          alt="Clubhouse"
-          width={48}
-          height={48}
-          className="object-contain"
-        />
+      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+        <video
+          width={140}
+          height={140}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full"
+          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+        >
+          <source src="/icons_webm/clubhouse.webm" type="video/webm" />
+        </video>
       </div>
       <p className="text-sm font-medium text-gray-700">Clubhouse</p>
     </div>
     
     <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-        <Image
-          src="/projects-imgs/badminton.png"
-          alt="Badminton Court"
-          width={48}
-          height={48}
-          className="object-contain"
-        />
+      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+        <video
+          width={140}
+          height={140}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full"
+          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+        >
+          <source src="/icons_webm/badminton.webm" type="video/webm" />
+        </video>
       </div>
       <p className="text-sm font-medium text-gray-700">Badminton Court</p>
     </div>
     
     <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-        <Image
-          src="/projects-imgs/basketball.png"
-          alt="Mini Basketball Court"
-          width={48}
-          height={48}
-          className="object-contain"
-        />
+      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+        <video
+          width={140}
+          height={140}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full"
+          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+        >
+          <source src="/icons_webm/basketball.webm" type="video/webm" />
+        </video>
       </div>
       <p className="text-sm font-medium text-gray-700">Mini Basketball Court</p>
     </div>
     
     <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-        <Image
-          src="/projects-imgs/playarea.png"
-          alt="Kids Play Area"
-          width={48}
-          height={48}
-          className="object-contain"
-        />
+      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+        <video
+          width={140}
+          height={140}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full"
+          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+        >
+          <source src="/icons_webm/playground.webm" type="video/webm" />
+        </video>
       </div>
       <p className="text-sm font-medium text-gray-700">Kids Play Area</p>
     </div>
@@ -67,53 +87,73 @@ const AmenityCards = () => (
 const MobileAmenityCards = () => (
   <div className="grid grid-cols-2 gap-3 mt-6">
     <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
-        <Image
-          src="/projects-imgs/club.png"
-          alt="Clubhouse"
-          width={40}
-          height={40}
+      <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center">
+        <video
+          width={56}
+          height={56}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="object-contain"
-        />
+          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+        >
+          <source src="/icons_webm/clubhouse.webm" type="video/webm" />
+        </video>
       </div>
       <p className="text-[12px] font-medium text-gray-700">Clubhouse</p>
     </div>
     
     <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
-        <Image
-          src="/projects-imgs/badminton.png"
-          alt="Badminton Court"
-          width={40}
-          height={40}
+      <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center">
+        <video
+          width={56}
+          height={56}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="object-contain"
-        />
+          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+        >
+          <source src="/icons_webm/badminton.webm" type="video/webm" />
+        </video>
       </div>
       <p className="text-[12px] font-medium text-gray-700">Badminton Court</p>
     </div>
     
     <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
-        <Image
-          src="/projects-imgs/basketball.png"
-          alt="Mini Basketball Court"
-          width={40}
-          height={40}
+      <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center">
+        <video
+          width={56}
+          height={56}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="object-contain"
-        />
+          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+        >
+          <source src="/icons_webm/basketball.webm" type="video/webm" />
+        </video>
       </div>
       <p className="text-[12px] font-medium text-gray-700">Mini Basketball</p>
     </div>
     
     <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-10 h-10 mx-auto mb-2 flex items-center justify-center">
-        <Image
-          src="/projects-imgs/playarea.png"
-          alt="Kids Play Area"
-          width={40}
-          height={40}
+      <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center">
+        <video
+          width={56}
+          height={56}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="object-contain"
-        />
+          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+        >
+          <source src="/icons_webm/playground.webm" type="video/webm" />
+        </video>
       </div>
       <p className="text-[12px] font-medium text-gray-700">Kids Play Area</p>
     </div>

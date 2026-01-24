@@ -2,15 +2,11 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 import BlurText from "./BlurText";
 
 export default function WhyLiveWithAgasti() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  
-  // Blur effects for headings
-  const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
 
   const handleAnimationComplete = () => {
     console.log('Animation completed!');
@@ -18,19 +14,19 @@ export default function WhyLiveWithAgasti() {
 
   const features = [
     {
-      icon: "/innovation.png",
+      icon: "/icons_webm/buildings.webm",
       label: "INNOVATION",
     },
     {
-      icon: "/sustainable.png",
+      icon: "/icons_webm/eco building.webm",
       label: "SUSTAINABLE",
     },
     {
-      icon: "/highstrength.png",
+      icon: "/icons_webm/blocks.webm",
       label: "HIGH-STRENGTH",
     },
     {
-      icon: "/luxury.png",
+      icon: "/icons_webm/big building.webm",
       label: "LUXURY",
     },
     {
@@ -136,16 +132,31 @@ export default function WhyLiveWithAgasti() {
           >
             <div className="flex">
               {features.map((feature, index) => (
-                <div key={index} className="flex flex-col items-center justify-center py-12 w-screen flex-shrink-0 snap-center">
+                <div key={index} className="flex flex-col items-center justify-center py-12 w-screen shrink-0 snap-center">
                   {/* Icon */}
-                  <div className="relative w-20 h-20 mb-4">
-                    <Image
-                      src={feature.icon}
-                      alt={feature.label}
-                      fill
-                      sizes="80px"
-                      className="object-contain"
-                    />
+                  <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
+                    {feature.icon.endsWith('.webm') ? (
+                      <video
+                        width={80}
+                        height={80}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="object-contain"
+                        style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+                      >
+                        <source src={feature.icon} type="video/webm" />
+                      </video>
+                    ) : (
+                      <Image
+                        src={feature.icon}
+                        alt={feature.label}
+                        fill
+                        sizes="80px"
+                        className="object-contain"
+                      />
+                    )}
                   </div>
                   
                   {/* Label */}
@@ -176,14 +187,29 @@ export default function WhyLiveWithAgasti() {
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col items-center justify-center py-8">
                 {/* Icon */}
-                <div className="relative w-16 h-16 lg:w-20 lg:h-20 mb-4">
-                  <Image
-                    src={feature.icon}
-                    alt={feature.label}
-                    fill
-                    sizes="80px"
-                    className="object-contain"
-                  />
+                <div className="relative w-16 h-16 lg:w-20 lg:h-20 mb-4 flex items-center justify-center">
+                  {feature.icon.endsWith('.webm') ? (
+                    <video
+                      width={120}
+                      height={120}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="object-cover w-full h-full"
+                      style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+                    >
+                      <source src={feature.icon} type="video/webm" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={feature.icon}
+                      alt={feature.label}
+                      fill
+                      sizes="80px"
+                      className="object-contain"
+                    />
+                  )}
                 </div>
                 
                 {/* Label */}
