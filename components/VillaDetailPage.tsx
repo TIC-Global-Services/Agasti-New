@@ -8,7 +8,7 @@ import ExploreMoreVillas from "./ExploreMoreVillas";
 
 // Amenity Cards Component
 const AmenityCards = () => (
-  <div className="grid grid-cols-2 gap-4 w-full max-w-md ml-8">
+  <div className="grid grid-cols-2 gap-4 w-full max-w-md ml-0 sm:ml-4 lg:ml-8">
     <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
