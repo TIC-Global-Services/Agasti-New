@@ -8,8 +8,8 @@ import ExploreMoreVillas from "./ExploreMoreVillas";
 
 // Amenity Cards Component
 const AmenityCards = () => (
-  <div className="grid grid-cols-2 gap-4 w-full max-w-md">
-    <div className="text-center p-4 lg:p-6 border border-gray-300 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
+  <div className="grid grid-cols-2 gap-4 w-full max-w-md ml-8">
+    <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/club.png"
@@ -22,7 +22,7 @@ const AmenityCards = () => (
       <p className="text-sm font-medium text-gray-700">Clubhouse</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6 border border-gray-300 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/badminton.png"
@@ -35,7 +35,7 @@ const AmenityCards = () => (
       <p className="text-sm font-medium text-gray-700">Badminton Court</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6 border border-gray-300 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/basketball.png"
@@ -48,7 +48,7 @@ const AmenityCards = () => (
       <p className="text-sm font-medium text-gray-700">Mini Basketball Court</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6 border border-gray-300 rounded-lg" style={{ backgroundColor: '#F0EDE4' }}>
+    <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
         <Image
           src="/projects-imgs/playarea.png"
@@ -167,7 +167,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
         };
       case 'horizon':
         return {
-          title: 'The Agasti Horizon',
+          title: 'The Agasti North Facing Villa',
           subtitle: 'North facing villa',
           image: '/projects-imgs/agastihorizon.jpg',
           propertySize: '915 sq yds',
