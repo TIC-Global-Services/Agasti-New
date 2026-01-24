@@ -28,7 +28,7 @@ export default function InsideVilla({ showTitle = true, showPadding = true }: In
       <div className="grid grid-cols-2 gap-2">
         {/* Top Row - Large image spanning full width */}
         <div className="col-span-2">
-          <div className="relative overflow-hidden" style={{ width: '100%', height: '400px' }}>
+          <div className="relative overflow-hidden w-full h-64 sm:h-80 lg:h-96 xl:h-[400px]">
             <Image
               src="/projects-imgs/topvillainside.png"
               alt="Villa Interior - Pool Area"
@@ -40,7 +40,7 @@ export default function InsideVilla({ showTitle = true, showPadding = true }: In
         </div>
 
         {/* Middle Row - Two images side by side */}
-        <div className="relative overflow-hidden" style={{ height: '412px' }}>
+        <div className="relative overflow-hidden h-64 sm:h-80 lg:h-96 xl:h-[412px]">
           <Image
             src="/projects-imgs/insidevilla2.png"
             alt="Villa Interior - Garden View"
@@ -50,7 +50,7 @@ export default function InsideVilla({ showTitle = true, showPadding = true }: In
           />
         </div>
         
-        <div className="relative overflow-hidden" style={{ height: '412px' }}>
+        <div className="relative overflow-hidden h-64 sm:h-80 lg:h-96 xl:h-[412px]">
           <Image
             src="/projects-imgs/insidevilla3.png"
             alt="Villa Interior - Living Area"
@@ -62,7 +62,7 @@ export default function InsideVilla({ showTitle = true, showPadding = true }: In
 
         {/* Bottom Row - Large image spanning full width */}
         <div className="col-span-2">
-          <div className="relative overflow-hidden" style={{ width: '100%', height: '400px' }}>
+          <div className="relative overflow-hidden w-full h-64 sm:h-80 lg:h-96 xl:h-[400px]">
             <Image
               src="/projects-imgs/insidevilla5.jpg"
               alt="Villa Interior - Pool Deck"

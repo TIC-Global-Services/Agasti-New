@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useLetterReveal } from "@/hooks/useLetterReveal";
 
 interface ExploreMoreVillasProps {
@@ -17,12 +18,14 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
           {
             name: 'The Agasti Crest',
             description: 'East facing villa',
-            image: '/projects-imgs/AgastiCrest.jpg'
+            image: '/projects-imgs/AgastiCrest.jpg',
+            slug: 'crest'
           },
           {
             name: 'The Agasti Horizon',
             description: 'North facing villa',
-            image: '/projects-imgs/agastihorizon.jpg'
+            image: '/projects-imgs/agastihorizon.jpg',
+            slug: 'horizon'
           }
         ];
       case 'crest':
@@ -30,12 +33,14 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
           {
             name: 'The Agasti Zenith',
             description: 'West facing villa',
-            image: '/mainvilla.jpg'
+            image: '/mainvilla.jpg',
+            slug: 'zenith'
           },
           {
             name: 'The Agasti Horizon',
             description: 'North facing villa',
-            image: '/projects-imgs/agastihorizon.jpg'
+            image: '/projects-imgs/agastihorizon.jpg',
+            slug: 'horizon'
           }
         ];
       case 'horizon':
@@ -43,12 +48,14 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
           {
             name: 'The Agasti Zenith',
             description: 'West facing villa',
-            image: '/mainvilla.jpg'
+            image: '/mainvilla.jpg',
+            slug: 'zenith'
           },
           {
             name: 'The Agasti Crest',
             description: 'East facing villa',
-            image: '/projects-imgs/AgastiCrest.jpg'
+            image: '/projects-imgs/AgastiCrest.jpg',
+            slug: 'crest'
           }
         ];
       default:
@@ -85,13 +92,15 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
                 {/* Horizontal line below image */}
                 <div className="w-full h-px bg-gray-300 mb-4"></div>
                 <div className="flex justify-between items-center">
-                  <div>
+                  <div className="flex-1 mr-4">
                     <h5 className="font-gc-palioka text-[20px] text-black mb-1">{villa.name}</h5>
                     <p className="text-gray-600 text-[14px]">{villa.description}</p>
                   </div>
-                  <button className="bg-[#8D957E] text-white text-[10px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors" style={{ width: '100px', height: '36px' }}>
-                    VIEW DETAILS
-                  </button>
+                  <Link href={`/projects/${villa.slug}`}>
+                    <button className="bg-[#8D957E] text-white text-[10px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors px-3 py-2 min-w-[100px] h-[36px] shrink-0">
+                      VIEW DETAILS
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -100,10 +109,10 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
 
         {/* Tablet Layout */}
         <div className="hidden sm:block lg:hidden">
-          <div className="space-y-12 max-w-2xl mx-auto">
+          <div className="space-y-12 w-full max-w-2xl mx-auto">
             {otherVillas.map((villa, index) => (
               <div key={index} className="group">
-                <div className="relative overflow-hidden mb-4 rounded-lg w-full h-[400px]">
+                <div className="relative overflow-hidden mb-4 rounded-lg w-full h-64 sm:h-80 md:h-[400px]">
                   <Image
                     src={villa.image}
                     alt={villa.name}
@@ -119,9 +128,11 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
                     <h5 className="font-gc-palioka text-[24px] text-black mb-1">{villa.name}</h5>
                     <p className="text-gray-600 text-[16px]">{villa.description}</p>
                   </div>
-                  <button className="bg-[#8D957E] text-white text-[12px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors w-[130px] h-[40px]">
-                    VIEW DETAILS
-                  </button>
+                  <Link href={`/projects/${villa.slug}`}>
+                    <button className="bg-[#8D957E] text-white text-[12px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors px-4 py-2 min-w-[130px] h-[40px] shrink-0">
+                      VIEW DETAILS
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -130,28 +141,30 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
 
         {/* Desktop Layout */}
         <div className="hidden lg:block">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1400px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             {otherVillas.map((villa, index) => (
-              <div key={index} className="group">
-                <div className="relative overflow-hidden mb-4" style={{ width: '662px', height: '321px' }}>
+              <div key={index} className="group w-full">
+                <div className="relative overflow-hidden mb-4 w-full h-64 lg:h-80 xl:h-[321px]">
                   <Image
                     src={villa.image}
                     alt={villa.name}
                     fill
-                    sizes="662px"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 {/* Horizontal line below image */}
-                <div className="w-full h-px bg-gray-300 mb-4" style={{ width: '662px' }}></div>
+                <div className="w-full h-px bg-gray-300 mb-4"></div>
                 <div className="flex justify-between items-center">
                   <div>
                     <h5 className="font-gc-palioka text-[24px] text-black mb-[6px]">{villa.name}</h5>
                     <p className="text-gray-600 font-gc-palioka text-[16px]">{villa.description}</p>
                   </div>
-                  <button className="bg-[#8D957E] text-white text-[11px] font-urbanist px-4 py-2 rounded hover:bg-[#7A8470] transition-colors" style={{ width: '115px', height: '41px' }}>
-                    VIEW DETAILS
-                  </button>
+                  <Link href={`/projects/${villa.slug}`}>
+                    <button className="bg-[#8D957E] text-white text-[11px] font-urbanist px-4 py-2 rounded hover:bg-[#7A8470] transition-colors w-[115px] h-[41px] shrink-0">
+                      VIEW DETAILS
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
