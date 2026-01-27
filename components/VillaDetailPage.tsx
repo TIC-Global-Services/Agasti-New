@@ -8,12 +8,12 @@ import ExploreMoreVillas from "./ExploreMoreVillas";
 
 // Amenity Cards Component
 const AmenityCards = () => (
-  <div className="grid grid-cols-2 gap-4 w-full max-w-md">
-    <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+  <div className="grid grid-cols-2 gap-4 w-full max-w-xl">
+    <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
         <video
-          width={140}
-          height={140}
+          width={180}
+          height={180}
           autoPlay
           loop
           muted
@@ -32,14 +32,14 @@ const AmenityCards = () => (
           <img src="/clubhouse.png" alt="Clubhouse" className="w-full h-full object-contain" />
         </video>
       </div>
-      <p className="text-sm font-medium text-gray-700">Clubhouse</p>
+      <p className="text-lg font-medium text-gray-700">Clubhouse</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+    <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
         <video
-          width={140}
-          height={140}
+          width={180}
+          height={180}
           autoPlay
           loop
           muted
@@ -58,14 +58,14 @@ const AmenityCards = () => (
           <img src="/projects-imgs/badminton.png" alt="Badminton Court" className="w-full h-full object-contain" />
         </video>
       </div>
-      <p className="text-sm font-medium text-gray-700">Badminton Court</p>
+      <p className="text-lg font-medium text-gray-700">Badminton Court</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+    <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
         <video
-          width={140}
-          height={140}
+          width={180}
+          height={180}
           autoPlay
           loop
           muted
@@ -84,14 +84,14 @@ const AmenityCards = () => (
           <img src="/projects-imgs/basketball.png" alt="Mini Basketball Court" className="w-full h-full object-contain" />
         </video>
       </div>
-      <p className="text-sm font-medium text-gray-700">Mini Basketball Court</p>
+      <p className="text-lg font-medium text-gray-700">Mini Basketball Court</p>
     </div>
     
-    <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+    <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
         <video
-          width={140}
-          height={140}
+          width={180}
+          height={180}
           autoPlay
           loop
           muted
@@ -110,19 +110,19 @@ const AmenityCards = () => (
           <img src="/projects-imgs/playarea.png" alt="Kids Play Area" className="w-full h-full object-contain" />
         </video>
       </div>
-      <p className="text-sm font-medium text-gray-700">Kids Play Area</p>
+      <p className="text-lg font-medium text-gray-700">Kids Play Area</p>
     </div>
   </div>
 );
 
 // Mobile Amenity Cards Component
 const MobileAmenityCards = () => (
-  <div className="grid grid-cols-2 gap-3 mt-6">
-    <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center">
+  <div className="grid grid-cols-2 gap-4 mt-6">
+    <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
+      <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
         <video
-          width={56}
-          height={56}
+          width={64}
+          height={64}
           autoPlay
           loop
           muted
@@ -141,14 +141,14 @@ const MobileAmenityCards = () => (
           <img src="/clubhouse.png" alt="Clubhouse" className="w-full h-full object-contain" />
         </video>
       </div>
-      <p className="text-[12px] font-medium text-gray-700">Clubhouse</p>
+      <p className="text-[13px] font-medium text-gray-700">Clubhouse</p>
     </div>
     
-    <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center">
+    <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
+      <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
         <video
-          width={56}
-          height={56}
+          width={64}
+          height={64}
           autoPlay
           loop
           muted
@@ -167,14 +167,14 @@ const MobileAmenityCards = () => (
           <img src="/projects-imgs/badminton.png" alt="Badminton Court" className="w-full h-full object-contain" />
         </video>
       </div>
-      <p className="text-[12px] font-medium text-gray-700">Badminton Court</p>
+      <p className="text-[13px] font-medium text-gray-700">Badminton Court</p>
     </div>
     
-    <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center">
+    <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
+      <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
         <video
-          width={56}
-          height={56}
+          width={64}
+          height={64}
           autoPlay
           loop
           muted
@@ -193,14 +193,14 @@ const MobileAmenityCards = () => (
           <img src="/projects-imgs/basketball.png" alt="Mini Basketball" className="w-full h-full object-contain" />
         </video>
       </div>
-      <p className="text-[12px] font-medium text-gray-700">Mini Basketball</p>
+      <p className="text-[13px] font-medium text-gray-700">Mini Basketball</p>
     </div>
     
-    <div className="text-center p-4" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center">
+    <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
+      <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
         <video
-          width={56}
-          height={56}
+          width={64}
+          height={64}
           autoPlay
           loop
           muted
@@ -219,7 +219,7 @@ const MobileAmenityCards = () => (
           <img src="/projects-imgs/playarea.png" alt="Kids Play Area" className="w-full h-full object-contain" />
         </video>
       </div>
-      <p className="text-[12px] font-medium text-gray-700">Kids Play Area</p>
+      <p className="text-[13px] font-medium text-gray-700">Kids Play Area</p>
     </div>
   </div>
 );
@@ -462,6 +462,9 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
           <div className="bg-white-50 rounded-lg mb-8 mt-8 transition-all duration-300 ease-in-out">
             <div className="flex justify-start">
               <div className="w-full">
+                {/* Grey line above the section */}
+                <div className="w-full h-px bg-gray-300 mb-12"></div>
+                
                 {/* Top Section - Property Description and Amenities */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 mb-8">
                   {/* Left Side - Property Description */}
