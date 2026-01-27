@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MenuOverlay from "./MenuOverlay";
+import Loader from "./Loader";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,54 +16,57 @@ export default function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentFrame, setCurrentFrame] = useState(1);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const totalFrames = 80;
 
-  // Preload all images
-  useEffect(() => {
-    const loadImages = async () => {
-      const imagePromises: Promise<HTMLImageElement>[] = [];
-      
-      for (let i = 1; i <= totalFrames; i++) {
-        const promise = new Promise<HTMLImageElement>((resolve) => {
-          const img = document.createElement('img');
-          const paddedNum = i.toString().padStart(4, '0');
-          img.src = `/Agasti Frames/${paddedNum}.png`;
-          img.onload = () => resolve(img);
-          img.onerror = () => {
-            console.warn(`Failed to load frame ${paddedNum}`);
-            // Create a fallback transparent image
-            const canvas = document.createElement('canvas');
-            canvas.width = 1920;
-            canvas.height = 1080;
-            const ctx = canvas.getContext('2d');
-            if (ctx) {
-              ctx.fillStyle = 'transparent';
-              ctx.fillRect(0, 0, canvas.width, canvas.height);
-            }
-            const fallbackImg = document.createElement('img');
-            fallbackImg.src = canvas.toDataURL();
-            fallbackImg.onload = () => resolve(fallbackImg);
-          };
-        });
-        imagePromises.push(promise);
-      }
-
-      try {
-        const loadedImages = await Promise.all(imagePromises);
-        imagesRef.current = loadedImages;
-        setImagesLoaded(true);
-        console.log('All frames loaded successfully');
-      } catch (error) {
-        console.error('Error loading images:', error);
-        setImagesLoaded(true); // Still proceed with available images
-      }
-    };
-
+  const handleLoadingComplete = () => {
+    setShowLoader(false);
+    // Start preloading images for the animation after loader is hidden
     loadImages();
-  }, []);
+  };
+
+  // Preload all images
+  const loadImages = async () => {
+    const imagePromises: Promise<HTMLImageElement>[] = [];
+    
+    for (let i = 1; i <= totalFrames; i++) {
+      const promise = new Promise<HTMLImageElement>((resolve) => {
+        const img = document.createElement('img');
+        const paddedNum = i.toString().padStart(4, '0');
+        img.src = `/Agasti Frames/${paddedNum}.png`;
+        img.onload = () => resolve(img);
+        img.onerror = () => {
+          console.warn(`Failed to load frame ${paddedNum}`);
+          // Create a fallback transparent image
+          const canvas = document.createElement('canvas');
+          canvas.width = 1920;
+          canvas.height = 1080;
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.fillStyle = 'transparent';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+          }
+          const fallbackImg = document.createElement('img');
+          fallbackImg.src = canvas.toDataURL();
+          fallbackImg.onload = () => resolve(fallbackImg);
+        };
+      });
+      imagePromises.push(promise);
+    }
+
+    try {
+      const loadedImages = await Promise.all(imagePromises);
+      imagesRef.current = loadedImages;
+      setImagesLoaded(true);
+      console.log('All frames loaded successfully');
+    } catch (error) {
+      console.error('Error loading images:', error);
+      setImagesLoaded(true); // Still proceed with available images
+    }
+  };
 
   useEffect(() => {
     if (!imagesLoaded) return;
@@ -152,6 +156,9 @@ export default function HeroSection() {
 
   return (
     <>
+      {/* Loader Screen */}
+      {showLoader && <Loader onLoadingComplete={handleLoadingComplete} />}
+      
       <section ref={sectionRef} className="relative h-screen w-full min-h-[600px]">
         {/* Canvas for frame sequence */}
         <canvas
@@ -161,7 +168,7 @@ export default function HeroSection() {
         />
 
         {/* Loading state */}
-        {!imagesLoaded && (
+        {!imagesLoaded && !showLoader && (
           <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
             <div className="text-gray-600">Loading...</div>
           </div>
