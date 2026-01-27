@@ -566,7 +566,7 @@ export default function AboutExcellence() {
           <ContainerLayout className="relative z-10 py-16 min-h-[600px] overflow-hidden" paddingX="px-6">
             <div className="absolute bottom-8 left-12 right-12">
               <div 
-                className={`glass-card-vision p-6 md:p-8 max-w-sm md:max-w-md w-full text-center transition-all duration-1000 ease-out mx-auto ${
+                className={`glass-card-vision p-6 md:p-8 max-w-sm md:max-w-md w-full text-left transition-all duration-1000 ease-out mx-auto ${
                   isVisionVisible 
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-8 opacity-0'
@@ -590,7 +590,7 @@ export default function AboutExcellence() {
                     className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4"
                   />
                 </div>
-                <p className="text-black text-[14px] font-medium leading-relaxed">
+                <p className="text-black text-left text-[14px] font-medium leading-relaxed">
                   At Agasti, our vision is to redefine luxury living by creating communities that harmonize architecture, nature, and human experience. We aim to build spaces that feel timeless—crafted with enduring quality, thoughtful engineering, and an unwavering attention to detail.
                 </p>
               </div>
@@ -653,7 +653,7 @@ export default function AboutExcellence() {
           
           {/* Mobile Layout */}
           <div className="block sm:hidden relative z-10 py-16 flex items-start justify-center min-h-[600px] px-6 pt-20">
-            <div className="glass-card-craftsmanship p-6 max-w-sm w-full text-center">
+            <div className="glass-card-craftsmanship p-6 max-w-sm w-full text-left">
               <div>
                 <BlurText
                   text="Craftsmanship"
@@ -672,7 +672,7 @@ export default function AboutExcellence() {
                   className="font-gc-palioka text-2xl text-black leading-tight mb-4"
                 />
               </div>
-              <p className="text-black text-sm leading-relaxed">
+              <p className="text-black text-left text-sm leading-relaxed">
                 A section that highlights the details, premium materials, and artisanal finishes that beautifully define every Agasti villa.
               </p>
             </div>
@@ -748,7 +748,7 @@ export default function AboutExcellence() {
           
           {/* Mobile Layout */}
           <div className="block sm:hidden relative z-10 py-16 flex items-end justify-center min-h-[600px] px-6 pb-20">
-            <div className="glass-card-sustainability p-6 max-w-sm w-full text-center">
+            <div className="glass-card-sustainability p-6 max-w-sm w-full text-left">
               <div>
                 <BlurText
                   text="Sustainability"
@@ -767,7 +767,7 @@ export default function AboutExcellence() {
                   className="font-gc-palioka text-2xl text-black leading-tight mb-4"
                 />
               </div>
-              <p className="text-black text-sm leading-relaxed">
+              <p className="text-black text-left text-sm leading-relaxed">
                 We build with honesty and responsibility, creating homes that uphold trust while preserving the environment for generations.
               </p>
             </div>
@@ -775,7 +775,7 @@ export default function AboutExcellence() {
 
           {/* Tablet Layout */}
           <div className="hidden sm:block lg:hidden relative z-10 py-16 flex items-center justify-center min-h-[700px] px-6">
-            <div className="glass-card-sustainability p-8 max-w-md w-full text-center">
+            <div className="glass-card-sustainability p-8 max-w-md w-full text-left">
               <div>
                 <BlurText
                   text="Sustainability"

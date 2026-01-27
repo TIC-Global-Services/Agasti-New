@@ -139,18 +139,8 @@ export default function AboutCommitments() {
                   scrollSnapAlign: 'center'
                 }}
               >
-                {/* Text Content */}
-                <div className="mb-6">
-                  <h3 className="font-gc-palioka text-[20px] sm:text-[22px] text-[#8D957E]">
-                    {commitment.title}
-                  </h3>
-                  <p className="text-[#717580] text-sm leading-relaxed">
-                    {commitment.description}
-                  </p>
-                </div>
-
                 {/* Image */}
-                <div className="relative aspect-[9/16] w-full overflow-hidden">
+                <div className="relative aspect-[9/16] w-full overflow-hidden mb-6">
                   <Image
                     src={commitment.image}
                     alt={commitment.title}
@@ -158,6 +148,16 @@ export default function AboutCommitments() {
                     sizes="100vw"
                     className="object-cover"
                   />
+                </div>
+
+                {/* Text Content Below Image - Center Aligned */}
+                <div className="text-center">
+                  <h3 className="font-gc-palioka text-[20px] sm:text-[22px] text-[#8D957E] mb-2">
+                    {commitment.title}
+                  </h3>
+                  <p className="text-[#717580] text-sm leading-relaxed">
+                    {commitment.description}
+                  </p>
                 </div>
               </div>
             ))}

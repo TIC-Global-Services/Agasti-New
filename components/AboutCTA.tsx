@@ -30,7 +30,7 @@ export default function AboutCTA() {
             ></div>
             
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-start items-start z-10 p-6 pt-8">
+            <div className="absolute inset-0 flex flex-col justify-start items-start z-10 p-6 pt-4">
               <div className="text-left text-black w-full">
                 <h2 
                   ref={titleRef}

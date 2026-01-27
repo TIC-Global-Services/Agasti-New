@@ -3,7 +3,7 @@ import BlurText from "./BlurText";
 
 export default function SpacePrivacySection() {
   return (
-    <section className="bg-white px-6 sm:px-[60px] h-screen w-full flex items-center justify-center min-h-[600px]">
+    <section className="hidden sm:flex bg-white px-6 sm:px-[60px] h-screen w-full items-center justify-center min-h-[600px]">
       <div className="max-w-9xl mx-auto text-center px-4">
         {/* Main Title with BlurText Animation */}
         <BlurText
