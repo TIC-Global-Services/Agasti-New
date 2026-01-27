@@ -64,37 +64,36 @@ export default function HeroSection() {
     loadImages();
   }, []);
 
-  // Initialize animation after images are loaded
-  const initializeAnimation = () => {
-    if (!sectionRef.current || !canvasRef.current) return;
-
-    // Kill existing ScrollTriggers
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
-    // Draw initial frame
-    drawFrame(1);
-
-    // Create scroll-triggered frame animation
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: `+=${totalFrames * 50}`,
-        scrub: 1,
-        pin: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const frameNumber = Math.floor(progress * (totalFrames - 1)) + 1;
-          const clampedFrame = Math.min(totalFrames, Math.max(1, frameNumber));
-          setCurrentFrame(clampedFrame);
-          drawFrame(clampedFrame);
-        }
-      }
-    });
-  };
-
   useEffect(() => {
     if (!imagesLoaded) return;
+
+    const initializeAnimation = () => {
+      if (!sectionRef.current || !canvasRef.current) return;
+
+      // Kill existing ScrollTriggers
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+      // Draw initial frame
+      drawFrame(1);
+
+      // Create scroll-triggered frame animation
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: `+=${totalFrames * 50}`,
+          scrub: 1,
+          pin: true,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const frameNumber = Math.floor(progress * (totalFrames - 1)) + 1;
+            const clampedFrame = Math.min(totalFrames, Math.max(1, frameNumber));
+            setCurrentFrame(clampedFrame);
+            drawFrame(clampedFrame);
+          }
+        }
+      });
+    };
 
     const timer = setTimeout(() => {
       initializeAnimation();
@@ -204,11 +203,34 @@ export default function HeroSection() {
           {/* Keep scrolling indicator */}
           {imagesLoaded && currentFrame < totalFrames && (
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-              <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
+              <div className="bg-transparent backdrop-transparent rounded-full px-6 py-3 flex items-center gap-3">
+                {/* Pulsing Circle */}
+                <div className="relative">
+                  <div 
+                    className="w-3 h-3 bg-white rounded-full"
+                    style={{
+                      animation: 'pulse-circle 2s ease-in-out infinite'
+                    }}
+                  />
+                </div>
                 <span className="text-white text-sm font-medium">Keep Scrolling</span>
               </div>
             </div>
           )}
+
+          {/* CSS Animation for pulsing circle */}
+          <style jsx>{`
+            @keyframes pulse-circle {
+              0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+              }
+              50% {
+                transform: scale(0.6);
+                opacity: 0.7;
+              }
+            }
+          `}</style>
         </div>
       </section>
 

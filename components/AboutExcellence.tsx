@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 import BlurText from "./BlurText";
 
 export default function AboutExcellence() {
@@ -12,13 +11,6 @@ export default function AboutExcellence() {
   
   const visionRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
-
-  // Blur effects for headings
-  const { elementRef: excellenceRef, blurClass: excellenceBlur } = useBlurOnScroll<HTMLHeadingElement>();
-  const { elementRef: excellenceTitleRef, blurClass: excellenceTitleBlur } = useBlurOnScroll<HTMLHeadingElement>();
-  const { elementRef: visionTitleRef, blurClass: visionTitleBlur } = useBlurOnScroll<HTMLHeadingElement>();
-  const { elementRef: craftsmanshipRef, blurClass: craftsmanshipBlur } = useBlurOnScroll<HTMLHeadingElement>();
-  const { elementRef: sustainabilityRef, blurClass: sustainabilityBlur } = useBlurOnScroll<HTMLHeadingElement>();
 
   // Animation completion handlers
   const handleExcellenceAnimationComplete = () => {
@@ -126,7 +118,7 @@ export default function AboutExcellence() {
     };
   }, []);
   return (
-    <section className="bg-white">
+    <section className="bg-white overflow-x-hidden">
       <style jsx>{`
         .glass-card {
           height: 289px;
@@ -451,7 +443,7 @@ export default function AboutExcellence() {
             <div className="px-[48px]">
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
                 {/* Left Side - Built on Excellence */}
-                <div className="flex-shrink-0 lg:w-[435px] flex flex-col gap-[10px]">
+                <div className="shrink-0 lg:w-[435px] flex flex-col gap-[10px]">
                   <BlurText
                     text="Built on Excellence"
                     delay={60}
@@ -478,7 +470,7 @@ export default function AboutExcellence() {
                   <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 w-full">
                     {/* 7+ Years */}
                     <div className="glass-card flex flex-col p-6 w-full">
-                      <div className="flex-grow-0 mb-4">
+                      <div className="grow-0 mb-4">
                         <div className="text-black text-[74px] font-bold leading-none mb-1">
                           {animatedNumbers.years}+
                         </div>
@@ -493,7 +485,7 @@ export default function AboutExcellence() {
 
                     {/* 18 Signature Villas */}
                     <div className="glass-card flex flex-col p-6 w-full">
-                      <div className="flex-grow-0 mb-4">
+                      <div className="grow-0 mb-4">
                         <div className="text-black text-[74px] font-urbanist font-bold leading-none mb-1">
                           {animatedNumbers.villas}
                         </div>
@@ -508,7 +500,7 @@ export default function AboutExcellence() {
 
                     {/* 95% Client Satisfaction */}
                     <div className="glass-card flex flex-col p-6 w-full">
-                      <div className="flex-grow-0 mb-4">
+                      <div className="grow-0 mb-4">
                         <div className="text-black text-[74px] font-bold leading-none mb-1">
                           {animatedNumbers.satisfaction}%
                         </div>
@@ -578,13 +570,13 @@ export default function AboutExcellence() {
 
         {/* Desktop Layout */}
         <div className="hidden lg:block">
-          <ContainerLayout className="relative z-10 py-16 sm:py-20 md:py-24 h-[600px]" paddingX="px-6 xl:px-[48px] lg:px-[48px]">
-            <div className="absolute bottom-8 right-8">
+          <ContainerLayout className="relative z-10 py-16 sm:py-20 md:py-24 h-[600px] overflow-hidden" paddingX="px-6 xl:px-[48px] lg:px-[48px]">
+            <div className="absolute bottom-8 right-8 max-w-xl">
               <div 
-                className={`max-w-xl glass-card-vision p-8 transition-all duration-1000 ease-out ${
+                className={`glass-card-vision p-8 transition-all duration-1000 ease-out ${
                   isVisionVisible 
                     ? 'translate-x-0 opacity-100' 
-                    : 'translate-x-full opacity-0'
+                    : 'translate-x-8 opacity-0'
                 }`}
               >
                 <div>
@@ -615,7 +607,7 @@ export default function AboutExcellence() {
       </div>
 
       {/* Bottom Section - Craftsmanship & Sustainability */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
         {/* Craftsmanship & Quality */}
         <div className="relative">
           {/* Background Image */}
@@ -779,9 +771,9 @@ export default function AboutExcellence() {
           </div>
 
           {/* Desktop Layout */}
-          <div className="hidden lg:block relative z-10 h-[600px]">
-            <div className="absolute bottom-16 right-12">
-              <div className="glass-card-sustainability p-8 max-w-[435px]">
+          <div className="hidden lg:block relative z-10 h-[600px] overflow-hidden">
+            <div className="absolute bottom-16 right-12 max-w-[435px]">
+              <div className="glass-card-sustainability p-8">
                 <div>
                   <BlurText
                     text="Sustainability"
