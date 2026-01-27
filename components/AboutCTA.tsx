@@ -11,7 +11,7 @@ export default function AboutCTA() {
       <div className="px-6 sm:px-[48px]">
         {/* Mobile Layout */}
         <div className="block sm:hidden">
-          <div className="relative overflow-hidden rounded-lg h-[400px] w-full">
+          <div className="relative overflow-hidden rounded-lg h-[480px] w-full">
             {/* Background Image */}
             <Image
               src="/about-us/contactimg.png"
@@ -30,7 +30,7 @@ export default function AboutCTA() {
             ></div>
             
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-center items-start z-10 p-6">
+            <div className="absolute inset-0 flex flex-col justify-start items-start z-10 p-6 pt-8">
               <div className="text-left text-black w-full">
                 <h2 
                   ref={titleRef}

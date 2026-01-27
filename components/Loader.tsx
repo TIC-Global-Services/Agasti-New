@@ -18,7 +18,7 @@ export default function Loader({ onLoadingComplete }: LoaderProps) {
         return new Promise<void>((resolve) => {
           const img = new Image();
           const paddedNum = (i + 1).toString().padStart(4, '0');
-          img.src = `/Agasti Frames/${paddedNum}.png`;
+          img.src = `/Agasti Frames/${paddedNum}.webp`;
           
           const handleLoad = () => {
             loadedCount++;

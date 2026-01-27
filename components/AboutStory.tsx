@@ -70,31 +70,10 @@ export default function AboutStory() {
         <div className="pt-20 sm:pt-24 md:pt-28 px-6 xl:px-[48px] lg:px-[48px]">
           {/* Mobile Layout */}
           <div className="block lg:hidden">
-            {/* Mobile Content - Above Image */}
-            <div className="mb-6">
-              <p 
-                ref={storyRef}
-                className="text-[#8D957E] font-gc-palioka text-[16px] mb-2 font-normal"
-              >
-                Our story
-              </p>
-              <h1 
-                ref={titleRef}
-                className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4"
-              >
-                Crafting Luxury Villas
-                <br />
-                Since <span className="font-bold">2018</span>
-              </h1>
-              <p className="text-[#717580] text-[14px] leading-relaxed">
-                From lush landscapes to world-class amenities, each home reflects precision, elegance, and timeless craftsmanship.
-              </p>
-            </div>
-
             {/* Mobile Image */}
             <div 
               ref={imageRef}
-              className="overflow-hidden h-[400px] md:h-[500px] w-full mb-[10px]"
+              className="overflow-hidden h-[400px] md:h-[500px] w-full mb-6"
             >
               <div
                 style={{
@@ -112,6 +91,27 @@ export default function AboutStory() {
                   priority
                 />
               </div>
+            </div>
+
+            {/* Mobile Content - Below Image */}
+            <div className="mb-[10px]">
+              <p 
+                ref={storyRef}
+                className="text-[#8D957E] font-gc-palioka text-[16px] mb-2 font-normal"
+              >
+                Our story
+              </p>
+              <h1 
+                ref={titleRef}
+                className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4"
+              >
+                Crafting Luxury Villas
+                <br />
+                Since <span className="font-bold">2018</span>
+              </h1>
+              <p className="text-[#717580] text-[14px] leading-relaxed">
+                From lush landscapes to world-class amenities, each home reflects precision, elegance, and timeless craftsmanship.
+              </p>
             </div>
           </div>
 

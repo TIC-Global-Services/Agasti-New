@@ -8,7 +8,7 @@ import ExploreMoreVillas from "./ExploreMoreVillas";
 
 // Amenity Cards Component
 const AmenityCards = () => (
-  <div className="grid grid-cols-2 gap-4 w-full max-w-md ml-0 sm:ml-4 lg:ml-8">
+  <div className="grid grid-cols-2 gap-4 w-full max-w-md">
     <div className="text-center p-4 lg:p-6" style={{ backgroundColor: '#F0EDE4' }}>
       <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
         <video
@@ -288,7 +288,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg mb-8">
+            <div className="bg-white rounded-lg mb-8">
               <h3 className="text-[20px] font-bold text-black mb-4">Property description</h3>
               <p className="text-gray-600 text-[14px] leading-relaxed mb-6">
                 {villaData.description}
@@ -399,7 +399,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
             <div className="flex justify-start px-4 sm:px-6 lg:px-12 xl:px-12">
               <div className="w-full">
                 {/* Top Section - Property Description and Amenities */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 mb-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 mb-8">
                   {/* Left Side - Property Description */}
                   <div className="w-full">
                     <h3 className="text-[34px] font-bold text-black mb-4">Property description</h3>
@@ -415,7 +415,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                   </div>
                   
                   {/* Right Side - Amenities */}
-                  <div className="w-full">
+                  <div className="w-full flex justify-end">
                     <AmenityCards />
                   </div>
                 </div>

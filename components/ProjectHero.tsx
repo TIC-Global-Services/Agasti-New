@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ContainerLayout from "@/layout/ContainerLayout";
 import MenuOverlay from "./MenuOverlay";
 import { useLetterReveal } from "@/hooks/useLetterReveal";
 
@@ -44,7 +43,7 @@ export default function ProjectHero() {
             
             {/* Centered AGASTI Logo */}
             <div className="flex-1 flex justify-center">
-              <Link href="/" className="relative h-[36px] sm:h-[44px] w-auto aspect-[4/1] hover:opacity-80 transition-opacity">
+              <Link href="/" className="relative h-[36px] sm:h-[44px] w-auto aspect-4/1 hover:opacity-80 transition-opacity">
                 <Image
                   src="/Agasti_Logo.png"
                   alt="Agasti Logo"
@@ -70,31 +69,10 @@ export default function ProjectHero() {
         <div className="pt-20 sm:pt-24 md:pt-28 px-6 xl:px-[48px] lg:px-[48px]">
           {/* Mobile Layout */}
           <div className="block lg:hidden">
-            {/* Mobile Content - Above Image */}
-            <div className="mb-6">
-              <p 
-                ref={projectsRef}
-                className="text-[#8D957E] font-gc-palioka text-[16px] mb-2 font-normal"
-              >
-                Our projects
-              </p>
-              <h1 
-                ref={titleRef}
-                className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4"
-              >
-                Designing
-                <br />
-                Spaces That Elevate
-              </h1>
-              <p className="text-[#717580] text-[14px] leading-relaxed">
-                Atara is an exclusive community of 18 tropical villas nestled in the heart of Hyderabad's Financial District. Designed for those who seek calm without compromise, each villa merges architectural finesse with the tranquility of nature.
-              </p>
-            </div>
-
             {/* Mobile Image */}
             <div 
               ref={imageRef}
-              className="overflow-hidden h-[400px] md:h-[500px] w-full"
+              className="overflow-hidden h-[400px] md:h-[500px] w-full mb-6"
             >
               <div
                 style={{
@@ -112,6 +90,27 @@ export default function ProjectHero() {
                   priority
                 />
               </div>
+            </div>
+
+            {/* Mobile Content - Below Image */}
+            <div className="mb-6">
+              <p 
+                ref={projectsRef}
+                className="text-[#8D957E] font-gc-palioka text-[16px] mb-2 font-normal"
+              >
+                Our projects
+              </p>
+              <h1 
+                ref={titleRef}
+                className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4"
+              >
+                Designing
+                <br />
+                Spaces That Elevate
+              </h1>
+              <p className="text-[#717580] text-[14px] leading-relaxed">
+                Atara is an exclusive community of 18 tropical villas nestled in the heart of Hyderabad&apos;s Financial District. Designed for those who seek calm without compromise, each villa merges architectural finesse with the tranquility of nature.
+              </p>
             </div>
           </div>
 
@@ -165,7 +164,7 @@ export default function ProjectHero() {
                 <div className="bg-white p-7 sm:p-4 md:p-0 relative">
                   <div className="relative">
                     <p className="text-[#717580] text-[16px] sm:text-base leading-tight text-right pr-4">
-                      Atara is an exclusive community of 18 tropical villas nestled in the heart of Hyderabad's Financial District.Designed for those who seek calm without compromise, each villa merges architectural finesse with the tranquility of nature.
+                      Atara is an exclusive community of 18 tropical villas nestled in the heart of Hyderabad&apos;s Financial District.Designed for those who seek calm without compromise, each villa merges architectural finesse with the tranquility of nature.
                     </p>
                     {/* Vertical line on the right side */}
                     <div className="absolute right-0 top-0 bottom-0 w-[2px] bg-black"></div>

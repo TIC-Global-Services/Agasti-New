@@ -36,16 +36,8 @@ export default function AboutExcellence() {
   // Animation for stats numbers
   useEffect(() => {
     if (isStatsVisible) {
-      // Check if it's tablet (768px to 1023px)
-      const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-      
-      if (isTablet) {
-        // No animation on tablet - set final values immediately
-        setAnimatedNumbers({ years: 7, villas: 18, satisfaction: 95 });
-        return;
-      }
-      
-      // Animation for mobile and desktop
+      console.log('Stats animation starting...'); // Debug log
+      // Animation for all screen sizes
       const duration = 2000; // 2 seconds
       const steps = 60; // 60 steps for smooth animation
       const stepDuration = duration / steps;
@@ -65,6 +57,7 @@ export default function AboutExcellence() {
         if (currentStep >= steps) {
           clearInterval(timer);
           setAnimatedNumbers({ years: 7, villas: 18, satisfaction: 95 });
+          console.log('Stats animation completed!'); // Debug log
         }
       }, stepDuration);
       
@@ -90,13 +83,15 @@ export default function AboutExcellence() {
 
     const statsObserver = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        console.log('Stats intersection:', entry.isIntersecting, 'ratio:', entry.intersectionRatio); // Debug log
+        if (entry.isIntersecting && !isStatsVisible) {
+          console.log('Setting stats visible to true'); // Debug log
           setIsStatsVisible(true);
         }
       },
       {
-        threshold: 0.3,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.05, // Lower threshold for better mobile detection
+        rootMargin: "0px 0px -10px 0px" // Reduced margin for better mobile detection
       }
     );
 
@@ -108,6 +103,37 @@ export default function AboutExcellence() {
       statsObserver.observe(currentStatsRef);
     }
 
+    // Additional scroll-based detection for mobile
+    const handleScroll = () => {
+      if (currentStatsRef && !isStatsVisible) {
+        const rect = currentStatsRef.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Check if any part of the stats section is visible
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          console.log('Scroll-based detection: triggering stats animation'); // Debug log
+          setIsStatsVisible(true);
+        }
+      }
+    };
+
+    // Check if mobile device
+    const isMobile = window.innerWidth < 768;
+    const fallbackDelay = isMobile ? 1500 : 3000; // Shorter delay for mobile
+
+    // Fallback mechanism - trigger animation after delay if not already triggered
+    const fallbackTimer = setTimeout(() => {
+      if (!isStatsVisible) {
+        console.log('Fallback: triggering stats animation'); // Debug log
+        setIsStatsVisible(true);
+      }
+    }, fallbackDelay);
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check in case the element is already in view
+    handleScroll();
+
     return () => {
       if (currentVisionRef) {
         visionObserver.unobserve(currentVisionRef);
@@ -115,8 +141,10 @@ export default function AboutExcellence() {
       if (currentStatsRef) {
         statsObserver.unobserve(currentStatsRef);
       }
+      clearTimeout(fallbackTimer);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isStatsVisible]);
   return (
     <section className="bg-white overflow-x-hidden">
       <style jsx>{`

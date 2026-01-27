@@ -70,31 +70,10 @@ export default function ContactHero() {
         <div className="pt-20 sm:pt-24 md:pt-28 px-6 xl:px-[48px] lg:px-[48px]">
           {/* Mobile Layout */}
           <div className="block lg:hidden">
-            {/* Mobile Content - Above Image */}
-            <div className="mb-6">
-              <p 
-                ref={contactRef}
-                className="text-[#8D957E] font-gc-palioka text-[16px] mb-2 font-normal"
-              >
-                Crafting Connections that last
-              </p>
-              <h1 
-                ref={titleRef}
-                className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4"
-              >
-                Let's Build Your Dream
-                <br />
-                Villa Together
-              </h1>
-              <p className="text-[#717580] text-[14px] leading-relaxed">
-                Reach out, our team is here to guide you every step of the way, turning your vision of luxury living into a beautiful reality.
-              </p>
-            </div>
-
             {/* Mobile Image */}
             <div 
               ref={imageRef}
-              className="overflow-hidden h-[400px] md:h-[500px] w-full mb-[10px]"
+              className="overflow-hidden h-[400px] md:h-[500px] w-full mb-6"
             >
               <div
                 style={{
@@ -112,6 +91,27 @@ export default function ContactHero() {
                   priority
                 />
               </div>
+            </div>
+
+            {/* Mobile Content - Below Image */}
+            <div className="mb-[10px]">
+              <p 
+                ref={contactRef}
+                className="text-[#8D957E] font-gc-palioka text-[16px] mb-2 font-normal"
+              >
+                Crafting Connections that last
+              </p>
+              <h1 
+                ref={titleRef}
+                className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4"
+              >
+                Let's Build Your Dream
+                <br />
+                Villa Together
+              </h1>
+              <p className="text-[#717580] text-[14px] leading-relaxed">
+                Reach out, our team is here to guide you every step of the way, turning your vision of luxury living into a beautiful reality.
+              </p>
             </div>
           </div>
 

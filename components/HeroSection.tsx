@@ -36,7 +36,7 @@ export default function HeroSection() {
       const promise = new Promise<HTMLImageElement>((resolve) => {
         const img = document.createElement('img');
         const paddedNum = i.toString().padStart(4, '0');
-        img.src = `/Agasti Frames/${paddedNum}.png`;
+        img.src = `/Agasti Frames/${paddedNum}.webp`;
         img.onload = () => resolve(img);
         img.onerror = () => {
           console.warn(`Failed to load frame ${paddedNum}`);
