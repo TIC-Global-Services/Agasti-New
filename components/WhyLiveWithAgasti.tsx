@@ -34,7 +34,7 @@ export default function WhyLiveWithAgasti() {
       label: "LUXURY",
     },
     {
-        icon: "/serenity.png",
+        icon: "/icons_webm/serenity.webm",
         fallback: "/serenity.png",
         label: "SERENITY"
     }
