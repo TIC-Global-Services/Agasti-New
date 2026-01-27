@@ -20,8 +20,16 @@ const AmenityCards = () => (
           playsInline
           className="object-cover w-full h-full"
           style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+          onError={(e) => {
+            const target = e.target as HTMLVideoElement;
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<img src="/clubhouse.png" alt="Clubhouse" class="w-full h-full object-contain" />`;
+            }
+          }}
         >
           <source src="/icons_webm/clubhouse.webm" type="video/webm" />
+          <img src="/clubhouse.png" alt="Clubhouse" className="w-full h-full object-contain" />
         </video>
       </div>
       <p className="text-sm font-medium text-gray-700">Clubhouse</p>
@@ -38,8 +46,16 @@ const AmenityCards = () => (
           playsInline
           className="object-cover w-full h-full"
           style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+          onError={(e) => {
+            const target = e.target as HTMLVideoElement;
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<img src="/projects-imgs/badminton.png" alt="Badminton Court" class="w-full h-full object-contain" />`;
+            }
+          }}
         >
           <source src="/icons_webm/badminton.webm" type="video/webm" />
+          <img src="/projects-imgs/badminton.png" alt="Badminton Court" className="w-full h-full object-contain" />
         </video>
       </div>
       <p className="text-sm font-medium text-gray-700">Badminton Court</p>
@@ -56,8 +72,16 @@ const AmenityCards = () => (
           playsInline
           className="object-cover w-full h-full"
           style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+          onError={(e) => {
+            const target = e.target as HTMLVideoElement;
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<img src="/projects-imgs/basketball.png" alt="Mini Basketball Court" class="w-full h-full object-contain" />`;
+            }
+          }}
         >
           <source src="/icons_webm/basketball.webm" type="video/webm" />
+          <img src="/projects-imgs/basketball.png" alt="Mini Basketball Court" className="w-full h-full object-contain" />
         </video>
       </div>
       <p className="text-sm font-medium text-gray-700">Mini Basketball Court</p>
@@ -74,8 +98,16 @@ const AmenityCards = () => (
           playsInline
           className="object-cover w-full h-full"
           style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+          onError={(e) => {
+            const target = e.target as HTMLVideoElement;
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<img src="/projects-imgs/playarea.png" alt="Kids Play Area" class="w-full h-full object-contain" />`;
+            }
+          }}
         >
           <source src="/icons_webm/playground.webm" type="video/webm" />
+          <img src="/projects-imgs/playarea.png" alt="Kids Play Area" className="w-full h-full object-contain" />
         </video>
       </div>
       <p className="text-sm font-medium text-gray-700">Kids Play Area</p>
@@ -97,8 +129,16 @@ const MobileAmenityCards = () => (
           playsInline
           className="object-contain"
           style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+          onError={(e) => {
+            const target = e.target as HTMLVideoElement;
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<img src="/clubhouse.png" alt="Clubhouse" class="w-full h-full object-contain" />`;
+            }
+          }}
         >
           <source src="/icons_webm/clubhouse.webm" type="video/webm" />
+          <img src="/clubhouse.png" alt="Clubhouse" className="w-full h-full object-contain" />
         </video>
       </div>
       <p className="text-[12px] font-medium text-gray-700">Clubhouse</p>
@@ -115,8 +155,16 @@ const MobileAmenityCards = () => (
           playsInline
           className="object-contain"
           style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+          onError={(e) => {
+            const target = e.target as HTMLVideoElement;
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<img src="/projects-imgs/badminton.png" alt="Badminton Court" class="w-full h-full object-contain" />`;
+            }
+          }}
         >
           <source src="/icons_webm/badminton.webm" type="video/webm" />
+          <img src="/projects-imgs/badminton.png" alt="Badminton Court" className="w-full h-full object-contain" />
         </video>
       </div>
       <p className="text-[12px] font-medium text-gray-700">Badminton Court</p>
@@ -133,8 +181,16 @@ const MobileAmenityCards = () => (
           playsInline
           className="object-contain"
           style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+          onError={(e) => {
+            const target = e.target as HTMLVideoElement;
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<img src="/projects-imgs/basketball.png" alt="Mini Basketball" class="w-full h-full object-contain" />`;
+            }
+          }}
         >
           <source src="/icons_webm/basketball.webm" type="video/webm" />
+          <img src="/projects-imgs/basketball.png" alt="Mini Basketball" className="w-full h-full object-contain" />
         </video>
       </div>
       <p className="text-[12px] font-medium text-gray-700">Mini Basketball</p>
@@ -151,8 +207,16 @@ const MobileAmenityCards = () => (
           playsInline
           className="object-contain"
           style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+          onError={(e) => {
+            const target = e.target as HTMLVideoElement;
+            const parent = target.parentElement;
+            if (parent) {
+              parent.innerHTML = `<img src="/projects-imgs/playarea.png" alt="Kids Play Area" class="w-full h-full object-contain" />`;
+            }
+          }}
         >
           <source src="/icons_webm/playground.webm" type="video/webm" />
+          <img src="/projects-imgs/playarea.png" alt="Kids Play Area" className="w-full h-full object-contain" />
         </video>
       </div>
       <p className="text-[12px] font-medium text-gray-700">Kids Play Area</p>

@@ -15,22 +15,27 @@ export default function WhyLiveWithAgasti() {
   const features = [
     {
       icon: "/icons_webm/buildings.webm",
+      fallback: "/innovation.png",
       label: "INNOVATION",
     },
     {
-      icon: "/icons_webm/eco building.webm",
+      icon: "/icons_webm/eco%20building.webm",
+      fallback: "/sustainable.png",
       label: "SUSTAINABLE",
     },
     {
       icon: "/icons_webm/blocks.webm",
+      fallback: "/highstrength.png",
       label: "HIGH-STRENGTH",
     },
     {
-      icon: "/icons_webm/big building.webm",
+      icon: "/icons_webm/big%20building.webm",
+      fallback: "/luxury.png",
       label: "LUXURY",
     },
     {
-        icon:"/serenity.png",
+        icon: "/serenity.png",
+        fallback: "/serenity.png",
         label: "SERENITY"
     }
   ];
@@ -145,8 +150,17 @@ export default function WhyLiveWithAgasti() {
                         playsInline
                         className="object-contain"
                         style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+                        onError={(e) => {
+                          // Fallback to PNG if WebM fails
+                          const target = e.target as HTMLVideoElement;
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<img src="${feature.fallback}" alt="${feature.label}" class="w-full h-full object-contain" />`;
+                          }
+                        }}
                       >
                         <source src={feature.icon} type="video/webm" />
+                        <img src={feature.fallback} alt={feature.label} className="w-full h-full object-contain" />
                       </video>
                     ) : (
                       <Image
@@ -198,8 +212,17 @@ export default function WhyLiveWithAgasti() {
                       playsInline
                       className="object-cover w-full h-full"
                       style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+                      onError={(e) => {
+                        // Fallback to PNG if WebM fails
+                        const target = e.target as HTMLVideoElement;
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.innerHTML = `<img src="${feature.fallback}" alt="${feature.label}" class="w-full h-full object-contain" />`;
+                        }
+                      }}
                     >
                       <source src={feature.icon} type="video/webm" />
+                      <img src={feature.fallback} alt={feature.label} className="w-full h-full object-contain" />
                     </video>
                   ) : (
                     <Image
