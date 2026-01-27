@@ -67,7 +67,7 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
 
   return (
     <section className="bg-white py-12">
-      <div className="px-5">
+      <div className="">
         <h4 
           ref={titleRef}
           className="font-gc-palioka text-[20px] sm:text-[34px] md:text-[28px] lg:text-[34px] text-black mb-6 sm:mb-8"

@@ -459,8 +459,8 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
             </div>
           </div>
 
-          <div className="bg-white-50 p-6 lg:p-8 rounded-lg mb-8 mt-8 transition-all duration-300 ease-in-out">
-            <div className="flex justify-start px-4 sm:px-6 lg:px-12 xl:px-12">
+          <div className="bg-white-50 rounded-lg mb-8 mt-8 transition-all duration-300 ease-in-out">
+            <div className="flex justify-start">
               <div className="w-full">
                 {/* Top Section - Property Description and Amenities */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 mb-8">
