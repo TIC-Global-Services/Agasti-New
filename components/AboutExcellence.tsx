@@ -563,35 +563,37 @@ export default function AboutExcellence() {
         
         {/* Mobile Layout */}
         <div className="block lg:hidden">
-          <ContainerLayout className="relative z-10 py-16 flex items-center justify-center min-h-[600px]" paddingX="px-6">
-            <div 
-              className={`glass-card-vision p-6 md:p-8 max-w-sm md:max-w-md w-full text-center transition-all duration-1000 ease-out ${
-                isVisionVisible 
-                  ? 'translate-y-0 opacity-100' 
-                  : 'translate-y-8 opacity-0'
-              }`}
-            >
-              <div>
-                <BlurText
-                  text="Our Vision"
-                  delay={60}
-                  animateBy="words"
-                  direction="top"
-                  onAnimationComplete={handleVisionAnimationComplete}
-                  className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight"
-                />
-                <BlurText
-                  text="for Elevated Living"
-                  delay={60}
-                  animateBy="words"
-                  direction="top"
-                  onAnimationComplete={() => {}}
-                  className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4"
-                />
+          <ContainerLayout className="relative z-10 py-16 min-h-[600px] overflow-hidden" paddingX="px-6">
+            <div className="absolute bottom-8 left-12 right-12">
+              <div 
+                className={`glass-card-vision p-6 md:p-8 max-w-sm md:max-w-md w-full text-center transition-all duration-1000 ease-out mx-auto ${
+                  isVisionVisible 
+                    ? 'translate-y-0 opacity-100' 
+                    : 'translate-y-8 opacity-0'
+                }`}
+              >
+                <div>
+                  <BlurText
+                    text="Our Vision"
+                    delay={60}
+                    animateBy="words"
+                    direction="top"
+                    onAnimationComplete={handleVisionAnimationComplete}
+                    className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight"
+                  />
+                  <BlurText
+                    text="for Elevated Living"
+                    delay={60}
+                    animateBy="words"
+                    direction="top"
+                    onAnimationComplete={() => {}}
+                    className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4"
+                  />
+                </div>
+                <p className="text-black text-[14px] font-medium leading-relaxed">
+                  At Agasti, our vision is to redefine luxury living by creating communities that harmonize architecture, nature, and human experience. We aim to build spaces that feel timeless—crafted with enduring quality, thoughtful engineering, and an unwavering attention to detail.
+                </p>
               </div>
-              <p className="text-black text-[14px] font-medium leading-relaxed">
-                At Agasti, our vision is to redefine luxury living by creating communities that harmonize architecture, nature, and human experience. We aim to build spaces that feel timeless—crafted with enduring quality, thoughtful engineering, and an unwavering attention to detail.
-              </p>
             </div>
           </ContainerLayout>
         </div>
@@ -745,7 +747,7 @@ export default function AboutExcellence() {
           </div>
           
           {/* Mobile Layout */}
-          <div className="block sm:hidden relative z-10 py-16 flex items-center justify-center min-h-[600px] px-6">
+          <div className="block sm:hidden relative z-10 py-16 flex items-end justify-center min-h-[600px] px-6 pb-20">
             <div className="glass-card-sustainability p-6 max-w-sm w-full text-center">
               <div>
                 <BlurText
