@@ -71,7 +71,7 @@ export default function LifestyleGallery() {
   ];
 
   return (
-    <section className="bg-white py-[40px]">
+    <section className="bg-transparent py-[40px]">
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
@@ -92,12 +92,14 @@ export default function LifestyleGallery() {
               <div 
                 key={index} 
                 ref={(el) => { cardRefs.current[index] = el; }}
-                className={`group cursor-pointer flex-shrink-0 w-[75vw] sm:w-[65vw] md:w-auto transition-all duration-700 ease-out ${
+                className={`group cursor-pointer flex-shrink-0 w-[75vw] sm:w-[65vw] md:w-auto md:transition-all md:duration-700 md:ease-out ${
                   visibleCards[index] 
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-8'
+                    ? 'opacity-100 md:translate-y-0' 
+                    : 'opacity-100 md:opacity-0 md:translate-y-8'
                 }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                style={{ 
+                  transitionDelay: visibleCards[index] ? `${index * 150}ms` : '0ms'
+                } as React.CSSProperties}
               >
                 {/* Image */}
                 <div className={`relative aspect-[3/4] lg:${feature.aspectRatio} overflow-hidden mb-3 sm:mb-4`}>

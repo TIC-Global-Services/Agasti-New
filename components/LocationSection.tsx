@@ -8,8 +8,8 @@ export default function LocationSection() {
   };
 
   return (
-    <section className="bg-white py-[50px] ">
-      <ContainerLayout paddingX="px-6 sm:px-[48px]" paddingY="py-[80px] md:py-16">
+    <section className="bg-white py-0 md:py-[50px]">
+      <ContainerLayout paddingX="px-6 sm:px-[48px]" paddingY="pb-[40px] md:py-16">
         <div className="bg-[#F0EDE4] rounded-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Left Side - Content */}
@@ -21,10 +21,10 @@ export default function LocationSection() {
                   animateBy="words"
                   direction="top"
                   onAnimationComplete={handleAnimationComplete}
-                  className="font-gc-palioka text-[44px] sm:text-3xl md:text-4xl tracking-tight lg:text-5xl text-black mb-4 sm:mb-5 leading-tight"
+                  className="font-gc-palioka text-[20px] sm:text-3xl md:text-[44px] tracking-tight lg:text-[44px] text-black mb-4 sm:mb-5 leading-tight"
                 />
                 
-                <p className="text-gray-600 plus-jakarta-sans text-[16px] sm:text-base leading-tight">
+                <p className="text-gray-600 plus-jakarta-sans text-[14px] sm:text-base leading-tight">
                   Atara by Agasti is strategically placed to offer peaceful living without 
                   compromising accessibility. From top schools and hospitals to 
                   business hubs, entertainment, and the airport—everything you need is 
@@ -34,7 +34,7 @@ export default function LocationSection() {
             </div>
 
             {/* Right Side - Map */}
-            <div className="relative h-[300px] sm:h-[400px] lg:h-auto lg:min-h-[400px] p-4 sm:p-6 lg:p-12 bg-[#F0EDE4]">
+            <div className="relative h-[400px] sm:h-[400px] lg:h-auto lg:min-h-[400px] p-4 sm:p-6 lg:p-12 bg-[#F0EDE4]">
               <div className="relative w-full h-full overflow-hidden rounded bg-[#F0EDE4]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.87257665632!2d78.1792147!3d17.465811899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbee5d7d3a293d%3A0x84b36b8b9bc70b0d!2sBhanur%2C%20Telangana%20502305!5e0!3m2!1sen!2sin!4v1765877925651!5m2!1sen!2sin"

@@ -72,7 +72,7 @@ export default function ProjectHero() {
             {/* Mobile Image */}
             <div 
               ref={imageRef}
-              className="overflow-hidden h-[400px] md:h-[500px] w-full mb-6"
+              className="overflow-hidden h-[600px] md:h-[500px] w-full mb-6"
             >
               <div
                 style={{

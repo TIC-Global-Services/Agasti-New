@@ -73,7 +73,7 @@ export default function AboutStory() {
             {/* Mobile Image */}
             <div 
               ref={imageRef}
-              className="overflow-hidden h-[400px] md:h-[500px] w-full mb-6"
+              className="overflow-hidden h-[600px] md:h-[500px] w-full mb-6"
             >
               <div
                 style={{
@@ -109,7 +109,7 @@ export default function AboutStory() {
                 <br />
                 Since <span className="font-bold">2018</span>
               </h1>
-              <p className="text-[#717580] text-[14px] leading-relaxed">
+              <p className="text-[#717580] text-[14px] leading-tight mb-[40px]">
                 From lush landscapes to world-class amenities, each home reflects precision, elegance, and timeless craftsmanship.
               </p>
             </div>

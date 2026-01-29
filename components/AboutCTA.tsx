@@ -7,11 +7,11 @@ export default function AboutCTA() {
   // Blur effect for headings
   const { elementRef: titleRef, blurClass: titleBlur } = useBlurOnScroll<HTMLHeadingElement>();
   return (
-    <section className="bg-white py-[80px]">
+    <section className="bg-white py-[40px]">
       <div className="px-6 sm:px-[48px]">
         {/* Mobile Layout */}
         <div className="block sm:hidden">
-          <div className="relative overflow-hidden rounded-lg h-[480px] w-full">
+          <div className="relative overflow-hidden h-[520px] w-full">
             {/* Background Image */}
             <Image
               src="/about-us/contactimg.png"
@@ -34,13 +34,13 @@ export default function AboutCTA() {
               <div className="text-left text-black w-full">
                 <h2 
                   ref={titleRef}
-                  className={`font-gc-palioka text-[20px] mb-4 leading-tight transition-all duration-700 ${titleBlur}`}
+                  className={`font-gc-palioka text-[20px] mt-3 mb-1 leading-tight transition-all duration-700 ${titleBlur}`}
                 >
                   Ready to Experience Agasti
                 </h2>
                 
-                <p className="text-black text-[14px] leading-tight mb-6 max-w-[280px]">
-                  Step into a world where craftsmanship, nature, and refined design come together to <br />create a truly elevated way of living. Explore our vision, discover our communities, and see how Agasti is shaping the future of luxury villas.
+                <p className="text-black text-[12px] leading-tight mb-6 max-w-[280px]">
+                  Step into a world where craftsmanship, nature, and refined design come together to create a truly elevated way of living. Explore our vision, discover our communities, and see how Agasti is shaping the future of luxury villas.
                 </p>
 
                 <Link href="/contact">

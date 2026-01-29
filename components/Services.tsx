@@ -67,8 +67,8 @@ export default function Services() {
       }} />
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header Section */}
-        <div className="mb-8 sm:mb-12">
-          <p className="text-[#8D957E] font-bold text-sm sm:text-base md:text-[24px] mb-3 sm:mb-4">Where Luxury Meets Nature</p>
+        <div className="mb-2 sm:mb-12">
+          <p className="text-[#8D957E] font-bold text-[16px] sm:text-base md:text-[24px] mb-3 sm:mb-4">Where Luxury Meets Nature</p>
           <div className="font-gc-palioka text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
             <BlurText
               text="Elegance curated with care,"
@@ -88,7 +88,7 @@ export default function Services() {
           </div>
         </div>
 
-        <hr className="border-gray-300 mb-6 sm:mb-8" />
+        <hr className="border-gray-300 mb-4 sm:mb-8" />
 
         {/* Mobile Carousel */}
         <div className="block sm:hidden -mx-6">

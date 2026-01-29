@@ -7,7 +7,7 @@ export default function ContactLocation() {
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
 
   return (
-    <section className="bg-white py-[40px] mt-[200px] sm:mt-[240px] lg:mt-[280px]">
+    <section className="bg-white py-[20px] mt-[30px] sm:mt-[240px] lg:mt-[280px]">
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         <div className="bg-[#F0EDE4] rounded-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
@@ -16,12 +16,12 @@ export default function ContactLocation() {
               <div className="max-w-lg">
                 <h2 
                   ref={titleRef}
-                  className="font-gc-palioka text-[44px] sm:text-3xl md:text-4xl lg:text-5xl text-black mb-4 sm:mb-5 leading-tight"
+                  className="font-gc-palioka text-[20px] sm:text-[20px] md:text-4xl lg:text-[44px] text-black mb-4 sm:mb-5 leading-tight"
                 >
                   Your Gateway to Comfort, Connection, and Ease
                 </h2>
                 
-                <p className="text-gray-600 plus-jakarta-sans text-[16px] sm:text-base leading-relaxed">
+                <p className="text-gray-600 plus-jakarta-sans text-[14px] sm:text-base leading-tight">
                   Atara by Agasti is strategically placed to offer peaceful living without 
                   compromising accessibility. From top schools and hospitals to 
                   business hubs, entertainment, and the airport—everything you need is 

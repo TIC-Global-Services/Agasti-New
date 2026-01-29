@@ -10,11 +10,11 @@ export default function ProjectShowcase() {
 
   return (
     <section className="bg-white">
-      <ContainerLayout paddingX="px-5 xl:px-[48px] lg:px-[40px]" paddingY="py-0 pb-16">
+      <ContainerLayout paddingX="px-5 xl:px-[48px] lg:px-[40px]" paddingY="py-0 lg:pb-16 sm:pb-8">
         {/* Mobile Layout */}
         <div className="block sm:hidden">
           {/* First Villa - Agasti Verve */}
-          <div className="mb-12">
+          <div className="mb-8">
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h2 className="font-gc-palioka text-[20px] text-black mb-2 leading-tight">

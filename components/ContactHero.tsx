@@ -73,7 +73,7 @@ export default function ContactHero() {
             {/* Mobile Image */}
             <div 
               ref={imageRef}
-              className="overflow-hidden h-[400px] md:h-[500px] w-full mb-6"
+              className="overflow-hidden h-[600px] md:h-[500px] w-full mb-6"
             >
               <div
                 style={{
@@ -97,7 +97,7 @@ export default function ContactHero() {
             <div className="mb-[10px]">
               <p 
                 ref={contactRef}
-                className="text-[#8D957E] font-gc-palioka text-[16px] mb-2 font-normal"
+                className="text-[#8D957E] font-gc-palioka text-[16px] mt-3 mb-2 font-normal"
               >
                 Crafting Connections that last
               </p>
@@ -109,7 +109,7 @@ export default function ContactHero() {
                 <br />
                 Villa Together
               </h1>
-              <p className="text-[#717580] text-[14px] leading-relaxed">
+              <p className="text-[#717580] text-[14px] mb-[20px] leading-tight">
                 Reach out, our team is here to guide you every step of the way, turning your vision of luxury living into a beautiful reality.
               </p>
             </div>

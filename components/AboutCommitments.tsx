@@ -89,7 +89,7 @@ export default function AboutCommitments() {
   }, [commitments.length, isPaused]);
 
   return (
-    <section className="bg-white pt-[85px]">
+    <section className="bg-white pt-[65px]">
       <style dangerouslySetInnerHTML={{
         __html: `
           .hide-scrollbar::-webkit-scrollbar {

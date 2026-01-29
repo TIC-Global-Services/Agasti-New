@@ -47,8 +47,8 @@ export default function VillaSeries() {
     <section className="bg-[#F5F3EE] py-[40px]">
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
-        <div className="mb-8 sm:mb-12 pb-6 sm:pb-8 border-b border-gray-300">
-          <p className="text-[#8D957E] font-bold text-sm sm:text-base md:text-[24px] mb-2 sm:mb-2">The Agasti Villa Series</p>
+        <div className="mb-8 sm:mb-12 pb-3 sm:pb-8 border-">
+          <p className="text-[#8D957E] bg-transparent font-bold text-[16px] sm:text-base md:text-[24px] mb-2 sm:mb-2">The Agasti Villa Series</p>
           <BlurText
             text="Villas Crafted for Every Lifestyle and Every Direction"
             delay={60}
@@ -62,7 +62,7 @@ export default function VillaSeries() {
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-12 relative">
           {/* Left Side - Image */}
-          <div className="relative h-[300px] sm:h-[400px] lg:h-[600px] overflow-hidden">
+          <div className="relative h-[500px] sm:h-[400px] lg:h-[600px] overflow-hidden">
             <Image
               src={villas[activeIndex].image}
               alt={villas[activeIndex].title}

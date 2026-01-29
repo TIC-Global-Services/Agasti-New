@@ -34,13 +34,13 @@ export default function SmartFutureHomes() {
     <section ref={sectionRef} className="bg-white py-[40px]">
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
-        <div className="mb-8 sm:mb-12">
-          <p className="text-[#8D957E] font-bold text-[24px] sm:text-[24px] md:text-[24px] mb-6 sm:mb-2">Smart, Future-Ready Engineering</p>
+        <div className="mb-6 sm:mb-8">
+          <p className="text-[#8D957E] font-bold text-[16px] sm:text-[16px] md:text-[24px] mb-2 sm:mb-2">Smart, Future-Ready Engineering</p>
           
           {/* Responsive layout for heading and paragraph */}
           <div className="block xl:grid xl:grid-cols-5 xl:gap-6 xl:items-start">
             {/* Heading */}
-            <div className="xl:col-span-3 mb-6 xl:mb-0">
+            <div className="xl:col-span-3 mb-2 xl:mb-0">
   <div className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-[32px] text-black leading-tight">
     <BlurText
       text="Crafting Homes Designed for Intelligent Living ,"
@@ -63,17 +63,17 @@ export default function SmartFutureHomes() {
             
             {/* Paragraph */}
             <div className="xl:col-span-2 xl:-ml-12">
-              <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-500 text-sm sm:text-base leading-tight">
                 Agasti homes use advanced structures, planned MEP systems, quality waterproofing, and solar integration to ensure long-term durability, easy upkeep, and a modern living experience built for the future.
               </p>
             </div>
           </div>
         </div>
 
-        <hr className="border-gray-400 mb-12" />
+        <hr className="border-gray-400 mb-10" />
 
         {/* Parallax Image */}
-        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+        <div className="relative h-[500px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
           <div
             style={{
               transform: `translateY(${Math.min(0, offsetY * 3)}px)`,

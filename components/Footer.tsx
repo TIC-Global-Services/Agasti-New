@@ -43,7 +43,7 @@ export default function Footer() {
               <p className="text-gray-500 text-sm mb-1">Need support?</p>
               <a 
                 href="mailto:info@agasti.com" 
-                className="text-gray-700 text-sm hover:text-black transition-colors underline"
+                className="text-gray-700 text-sm hover:text-black font-bold transition-colors underline"
               >
                 info@agasti.com
               </a>
@@ -52,7 +52,7 @@ export default function Footer() {
               <p className="text-gray-500 text-sm mb-1">Customer care</p>
               <a 
                 href="tel:+12345678910" 
-                className="text-gray-700 text-sm hover:text-black transition-colors"
+                className="text-gray-700 text-sm hover:text-black font-bold underline transition-colors"
               >
                 +1 234 567 8910
               </a>

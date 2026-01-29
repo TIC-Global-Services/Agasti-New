@@ -49,7 +49,7 @@ export default function AboutTestimonial() {
   };
 
   return (
-    <section ref={sectionRef} className="bg-[#F0EDE4] py-12 sm:py-16 md:py-20 lg:min-h-screen lg:flex lg:items-center">
+    <section ref={sectionRef} className="bg-[#F0EDE4] py-12 sm:py-16 md:py-20 min-h-screen flex items-center">
       <ContainerLayout paddingX="px-6 xl:px-[48px] lg:px-[48px]">
         <div className="max-w-5xl mx-auto text-center">
           {/* Main Quote - Letter Group by Letter Group */}

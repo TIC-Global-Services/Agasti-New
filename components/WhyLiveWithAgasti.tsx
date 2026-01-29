@@ -136,8 +136,6 @@ const LineByLineBlur = ({
 };
 
 export default function WhyLiveWithAgasti() {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const handleAnimationComplete = () => {
@@ -146,27 +144,27 @@ export default function WhyLiveWithAgasti() {
 
   const features = [
     {
-      icon: "/icons webm 3/innovation.webm",
+      icon: "/icons%20webm%203/innovation.webm",
       fallback: "/innovation.png",
       label: "INNOVATION",
     },
     {
-      icon: "/icons webm 3/sustainable.webm",
+      icon: "/icons%20webm%203/sustainable.webm",
       fallback: "/sustainable.png",
       label: "SUSTAINABLE",
     },
     {
-      icon: "/icons webm 3/highstrength.webm",
+      icon: "/icons%20webm%203/highstrength.webm",
       fallback: "/highstrength.png",
       label: "HIGH-STRENGTH",
     },
     {
-      icon: "/icons webm 3/luxury.webm",
+      icon: "/icons%20webm%203/luxury.webm",
       fallback: "/luxury.png",
       label: "LUXURY",
     },
     {
-        icon: "/icons webm 3/serenity.webm",
+        icon: "/icons%20webm%203/serenity.webm",
         fallback: "/serenity.png",
         label: "SERENITY"
     }
@@ -200,60 +198,6 @@ export default function WhyLiveWithAgasti() {
   const setVideoRef = (index: number) => (ref: HTMLVideoElement | null) => {
     videoRefs.current[index] = ref;
   };
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    // Auto-advance carousel
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % features.length;
-        
-        // Scroll to next card
-        const cardWidth = carousel.offsetWidth;
-        carousel.scrollTo({
-          left: nextIndex * cardWidth,
-          behavior: 'smooth'
-        });
-        
-        return nextIndex;
-      });
-    }, 3000); // Change card every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [features.length]);
-
-  // Handle manual scroll detection
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const handleScroll = () => {
-      const cardWidth = carousel.offsetWidth;
-      const scrollLeft = carousel.scrollLeft;
-      const newIndex = Math.round(scrollLeft / cardWidth);
-      
-      if (newIndex !== activeIndex) {
-        setActiveIndex(newIndex);
-      }
-    };
-
-    carousel.addEventListener('scroll', handleScroll);
-    return () => carousel.removeEventListener('scroll', handleScroll);
-  }, [activeIndex]);
-
-  useEffect(() => {
-    // Update progress bars
-    const progressBars = document.querySelectorAll('[id^="progress-"]');
-    progressBars.forEach((bar, index) => {
-      if (index === activeIndex) {
-        (bar as HTMLElement).style.backgroundColor = '#000000';
-      } else {
-        (bar as HTMLElement).style.backgroundColor = '#d1d5db';
-      }
-    });
-  }, [activeIndex]);
 
   return (
     <section className="bg-white ">
@@ -289,74 +233,137 @@ export default function WhyLiveWithAgasti() {
           </p>
         </div>
 
-        {/* Mobile Carousel - Visible only on mobile */}
-        <div className="block md:hidden mt-12 -mx-6 sm:-mx-8 md:mx-0">
-          <div 
-            ref={carouselRef}
-            className="overflow-x-auto overflow-y-hidden snap-x snap-mandatory hide-scrollbar" 
-            id="features-carousel"
-          >
-            <div className="flex">
-              {features.map((feature, index) => (
-                <div key={index} className="flex flex-col items-center justify-center py-12 w-screen shrink-0 snap-center">
-                  {/* Icon */}
-                  <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
-                    {feature.icon.endsWith('.webm') ? (
-                      <video
-                        ref={setVideoRef(index)}
-                        width={80}
-                        height={80}
-                        muted
-                        playsInline
-                        className="object-contain"
-                        style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-                        onError={(e) => {
-                          // Fallback to PNG if WebM fails
-                          const target = e.target as HTMLVideoElement;
-                          const parent = target.parentElement;
-                          if (parent) {
-                            const img = document.createElement('img');
-                            img.src = feature.fallback;
-                            img.alt = feature.label;
-                            img.className = 'w-full h-full object-contain';
-                            parent.innerHTML = '';
-                            parent.appendChild(img);
-                          }
-                        }}
-                      >
-                        <source src={feature.icon} type="video/webm" />
-                      </video>
-                    ) : (
-                      <Image
-                        src={feature.icon}
-                        alt={feature.label}
-                        fill
-                        sizes="80px"
-                        className="object-contain"
-                      />
-                    )}
-                  </div>
-                  
-                  {/* Label */}
-                  <p className="text-black text-sm font-semibold tracking-wide text-center">
-                    {feature.label}
-                  </p>
+        {/* Mobile Grid Layout - Visible only on mobile */}
+        <div className="block md:hidden mt-12">
+          {/* First 4 icons in 2x2 grid */}
+          <div className="grid grid-cols-2 gap-8 mb-8">
+            {features.slice(0, 4).map((feature, index) => (
+              <div key={index} className="flex flex-col items-center justify-center py-8">
+                {/* Icon */}
+                <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
+                  {feature.icon.endsWith('.webm') ? (
+                    <video
+                      ref={setVideoRef(index)}
+                      width={80}
+                      height={80}
+                      muted
+                      playsInline
+                      preload="metadata"
+                      className="object-contain"
+                      style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+                      poster={feature.fallback}
+                      onLoadStart={() => console.log(`Loading mobile video: ${feature.icon}`)}
+                      onLoadedData={() => console.log(`Mobile video loaded successfully: ${feature.icon}`)}
+                      onError={(e) => {
+                        console.error(`Failed to load mobile video: ${feature.icon}`, e);
+                        // Fallback to PNG if WebM fails
+                        const target = e.target as HTMLVideoElement;
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const img = document.createElement('img');
+                          img.src = feature.fallback;
+                          img.alt = feature.label;
+                          img.className = 'w-full h-full object-contain';
+                          img.style.filter = 'brightness(0.7) contrast(1.3) saturate(1.2)';
+                          parent.innerHTML = '';
+                          parent.appendChild(img);
+                        }
+                      }}
+                      onCanPlay={() => {
+                        // Hide poster once video can play
+                        const target = event?.target as HTMLVideoElement;
+                        if (target) {
+                          target.style.backgroundImage = 'none';
+                        }
+                      }}
+                    >
+                      <source src={feature.icon} type="video/webm" />
+                      <source src={feature.fallback} type="image/png" />
+                      <img src={feature.fallback} alt={feature.label} className="w-full h-full object-contain" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={feature.icon}
+                      alt={feature.label}
+                      fill
+                      sizes="80px"
+                      className="object-contain"
+                    />
+                  )}
                 </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Progress Bar */}
-          <div className="flex justify-center gap-2 mt-6 px-6 sm:px-8">
-            {features.map((_, index) => (
-              <div 
-                key={index} 
-                className="h-1 bg-gray-300 rounded-full transition-all duration-500"
-                style={{ width: '40px' }}
-                id={`progress-${index}`}
-              />
+                
+                {/* Label */}
+                <p className="text-black text-xs font-semibold tracking-wide text-center">
+                  {feature.label}
+                </p>
+              </div>
             ))}
           </div>
+
+          {/* 5th icon centered separately */}
+          {features[4] && (
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center justify-center py-8">
+                {/* Icon */}
+                <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
+                  {features[4].icon.endsWith('.webm') ? (
+                    <video
+                      ref={setVideoRef(4)}
+                      width={80}
+                      height={80}
+                      muted
+                      playsInline
+                      preload="metadata"
+                      className="object-contain"
+                      style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+                      poster={features[4].fallback}
+                      onLoadStart={() => console.log(`Loading mobile video: ${features[4].icon}`)}
+                      onLoadedData={() => console.log(`Mobile video loaded successfully: ${features[4].icon}`)}
+                      onError={(e) => {
+                        console.error(`Failed to load mobile video: ${features[4].icon}`, e);
+                        // Fallback to PNG if WebM fails
+                        const target = e.target as HTMLVideoElement;
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const img = document.createElement('img');
+                          img.src = features[4].fallback;
+                          img.alt = features[4].label;
+                          img.className = 'w-full h-full object-contain';
+                          img.style.filter = 'brightness(0.7) contrast(1.3) saturate(1.2)';
+                          parent.innerHTML = '';
+                          parent.appendChild(img);
+                        }
+                      }}
+                      onCanPlay={() => {
+                        // Hide poster once video can play
+                        const target = event?.target as HTMLVideoElement;
+                        if (target) {
+                          target.style.backgroundImage = 'none';
+                        }
+                      }}
+                    >
+                      <source src={features[4].icon} type="video/webm" />
+                      <source src={features[4].fallback} type="image/png" />
+                      <img src={features[4].fallback} alt={features[4].label} className="w-full h-full object-contain" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={features[4].icon}
+                      alt={features[4].label}
+                      fill
+                      sizes="80px"
+                      className="object-contain"
+                    />
+                  )}
+                </div>
+                
+                {/* Label */}
+                <p className="text-black text-xs font-semibold tracking-wide text-center">
+                  {features[4].label}
+                </p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Desktop & Tablet Static Layout - Hidden on mobile */}
@@ -373,9 +380,14 @@ export default function WhyLiveWithAgasti() {
                       height={120}
                       muted
                       playsInline
+                      preload="metadata"
                       className="object-cover w-full h-full"
                       style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+                      poster={feature.fallback}
+                      onLoadStart={() => console.log(`Loading desktop video: ${feature.icon}`)}
+                      onLoadedData={() => console.log(`Desktop video loaded successfully: ${feature.icon}`)}
                       onError={(e) => {
+                        console.error(`Failed to load desktop video: ${feature.icon}`, e);
                         // Fallback to PNG if WebM fails
                         const target = e.target as HTMLVideoElement;
                         const parent = target.parentElement;
@@ -384,12 +396,22 @@ export default function WhyLiveWithAgasti() {
                           img.src = feature.fallback;
                           img.alt = feature.label;
                           img.className = 'w-full h-full object-contain';
+                          img.style.filter = 'brightness(0.7) contrast(1.3) saturate(1.2)';
                           parent.innerHTML = '';
                           parent.appendChild(img);
                         }
                       }}
+                      onCanPlay={() => {
+                        // Hide poster once video can play
+                        const target = event?.target as HTMLVideoElement;
+                        if (target) {
+                          target.style.backgroundImage = 'none';
+                        }
+                      }}
                     >
                       <source src={feature.icon} type="video/webm" />
+                      <source src={feature.fallback} type="image/png" />
+                      <img src={feature.fallback} alt={feature.label} className="w-full h-full object-contain" />
                     </video>
                   ) : (
                     <Image

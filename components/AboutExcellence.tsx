@@ -391,7 +391,7 @@ export default function AboutExcellence() {
           />
         </div>
         
-        <ContainerLayout className="relative z-10 py-[86px] sm:py-[110px] md:py-[126px]" disablePaddingX={true}>
+        <ContainerLayout className="relative z-10 py-[50px] sm:py-[110px] md:py-[126px]" disablePaddingX={true}>
           {/* Mobile Layout */}
           <div className="block lg:hidden px-6">
             {/* Mobile Header */}
@@ -412,7 +412,7 @@ export default function AboutExcellence() {
                 onAnimationComplete={handleExcellenceTitleAnimationComplete}
                 className="font-gc-palioka text-[#262B35] text-[20px] sm:text-[28px] md:text-[32px] leading-tight mb-4"
               />
-              <p className="text-[#3C3C3C]/80 text-[14px] leading-relaxed">
+              <p className="text-[#3C3C3C]/80 text-[14px] leading-tight">
                 Building exclusive communities for individuals who seek refined elegance, elevated comfort, and a truly distinguished way of living.
               </p>
             </div>
@@ -426,7 +426,7 @@ export default function AboutExcellence() {
                     <div className="text-black text-[64px] font-bold leading-none mb-1">
                       {animatedNumbers.years}+
                     </div>
-                    <div className="text-black text-[16px] font-medium">Years of Excellence</div>
+                    <div className="text-black text-[16px] font-bold">Years of Excellence</div>
                   </div>
                   <p className="text-black text-[12px] leading-relaxed">
                     delivering premium Villas since 2018
@@ -441,7 +441,7 @@ export default function AboutExcellence() {
                     <div className="text-black text-[64px] font-bold leading-none mb-1">
                       {animatedNumbers.villas}
                     </div>
-                    <div className="text-black text-[16px] font-medium">Signature Villas</div>
+                    <div className="text-black text-[16px] font-bold">Signature Villas</div>
                   </div>
                   <p className="text-black text-[12px] leading-relaxed">
                     crafted with precision and refined exclusivity
@@ -456,7 +456,7 @@ export default function AboutExcellence() {
                     <div className="text-black text-[64px] font-bold leading-none mb-1">
                       {animatedNumbers.satisfaction}%
                     </div>
-                    <div className="text-black text-[16px] font-medium">Client Satisfaction</div>
+                    <div className="text-black text-[16px] font-bold">Client Satisfaction</div>
                   </div>
                   <p className="text-black text-[12px] leading-relaxed">
                     reflecting our commitment to quality and trust
@@ -590,7 +590,7 @@ export default function AboutExcellence() {
                     className="font-gc-palioka text-2xl md:text-3xl text-black leading-tight mb-4"
                   />
                 </div>
-                <p className="text-black text-left text-[14px] font-medium leading-relaxed">
+                <p className="text-black text-left text-[14px] font-medium tracking-[0.1 rem]leading-tight">
                   At Agasti, our vision is to redefine luxury living by creating communities that harmonize architecture, nature, and human experience. We aim to build spaces that feel timeless—crafted with enduring quality, thoughtful engineering, and an unwavering attention to detail.
                 </p>
               </div>

@@ -28,7 +28,7 @@ export default function ContactForm() {
         {/* Form Section */}
         <div className="bg-white px-6 py-8">
           <div className="text-center mb-8">
-            <h2 className="font-gc-palioka text-[45px] sm:text-[45px] text-black mb-2 leading-none">
+            <h2 className="font-gc-palioka text-[20px] sm:text-[20px] text-black mt-[8px] mb-2 leading-none">
               We&apos;ll get in touch with you soon
             </h2>
           </div>
@@ -128,42 +128,41 @@ export default function ContactForm() {
         </div>
 
         {/* Contact Information */}
-        <div className="bg-white px-6 py-8">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h3 className="font-gc-palioka text-[28px] sm:text-[24px] text-black mb-2 leading-tight pt-4">
-                Hyderabad
-              </h3>
-              <p className="text-black text-[16px] font-bold">
-                Agasti - INDIA
-              </p>
-            </div>
-            <div className="text-right">
-              <h4 className="text-black text-[20px] font-bold mb-2">
-                Get in touch
-              </h4>
-            </div>
-          </div>
+        {/* Contact Information */}
+{/* Contact Information */}
+<div className="bg-white px-6 py-12">
+  <div className="grid grid-cols-2 gap-6">
+    {/* Left Column */}
+    <div>
+      <h3 className="font-gc-palioka text-[28px] sm:text-[24px] text-black mb-2 leading-tight">
+        Hyderabad
+      </h3>
+      <p className="text-black text-[16px] font-bold mb-4">
+        Agasti - INDIA
+      </p>
+      <p className="text-black text-[14px] leading-relaxed">
+        9-4-76/A/2 Nizam Colony,
+        HYDERABAD, Telangana,<br />
+        India - 500008
+      </p>
+    </div>
 
-          <div className="flex justify-between items-start">
-            <div className="text-black">
-              <p className="text-[14px] leading-relaxed">
-                9-4-76/A/2 Nizam Colony ,<br />
-                HYDERABAD, Telangana,<br />
-                India - 500008
-              </p>
-            </div>
-
-            <div className="text-right space-y-1">
-              <p className="text-gray-600 text-[14px]">
-                +1 234 567 8910
-              </p>
-              <p className="text-gray-600 text-[14px] underline">
-                info@agasti.com
-              </p>
-            </div>
-          </div>
-        </div>
+    {/* Right Column */}
+    <div className="flex-justify-end">
+      <h4 className="text-black text-[20px] font-bold mb-2">
+        Get in touch
+      </h4>
+      <div className="space-y-1">
+        <p className="text-gray-600 text-[14px]">
+          +1 234 567 8910
+        </p>
+        <p className="text-gray-600 text-[14px] underline">
+          info@agasti.com
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
 
       {/* Tablet Layout */}
