@@ -10,7 +10,7 @@ export default function ProjectShowcase() {
 
   return (
     <section className="bg-white">
-      <ContainerLayout paddingX="px-5 xl:px-[48px] lg:px-[40px]" paddingY="py-0">
+      <ContainerLayout paddingX="px-5 xl:px-[48px] lg:px-[40px]" paddingY="py-0 pb-16">
         {/* Mobile Layout */}
         <div className="block sm:hidden">
           {/* First Villa - Agasti Verve */}

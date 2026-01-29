@@ -132,11 +132,11 @@ const AmenityCards = () => {
         <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
           <video
             ref={setVideoRef(3)}
-            width={180}
+            width={250}
             height={180}
             muted
             playsInline
-            className="object-cover w-full h-full"
+            className="object-contain w-full h-full"
             style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
             onError={(e) => {
               const target = e.target as HTMLVideoElement;
@@ -447,7 +447,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               <p className="text-gray-600 text-[14px] leading-relaxed mb-6">
                 {villaData.description}
               </p>
-              <button className="text-black text-[12px] font-medium hover:opacity-70 transition-opacity underline">
+              <button className="text-black text-[12px] font-bold hover:opacity-70 transition-opacity underline">
                 SCHEDULE A VISIT →
               </button>
               
@@ -523,14 +523,14 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
             <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">{villaData.propertySize}</span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">{villaData.propertySize}</span>
               </div>
               
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
               
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">2024</span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">2024</span>
               </div>
               
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
@@ -564,7 +564,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                       {villaData.description}
                     </p>
                     <button className="text-black text-sm font-medium hover:opacity-70 transition-opacity group">
-                      <span className="relative inline-block">
+                      <span className="relative inline-block font-bold">
                         SCHEDULE A VISIT →
                         <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
                       </span>
