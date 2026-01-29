@@ -7,254 +7,312 @@ import InsideVilla from "./InsideVilla";
 import ExploreMoreVillas from "./ExploreMoreVillas";
 
 // Amenity Cards Component
-const AmenityCards = () => (
-  <div className="grid grid-cols-2 gap-4 w-full max-w-xl">
-    <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
-        <video
-          width={180}
-          height={180}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="object-cover w-full h-full"
-          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-          onError={(e) => {
-            const target = e.target as HTMLVideoElement;
-            const parent = target.parentElement;
-            if (parent) {
-              const img = document.createElement('img');
-              img.src = '/clubhouse.png';
-              img.alt = 'Clubhouse';
-              img.className = 'w-full h-full object-contain';
-              parent.innerHTML = '';
-              parent.appendChild(img);
+const AmenityCards = () => {
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  // Intersection Observer for video playback
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              video.play().catch(console.error);
+              observer.unobserve(video); // Play only once
             }
-          }}
-        >
-          <source src="/icons_webm/clubhouse.webm" type="video/webm" />
-        </video>
+          },
+          { threshold: 0.5 }
+        );
+        observer.observe(video);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
+
+  const setVideoRef = (index: number) => (ref: HTMLVideoElement | null) => {
+    videoRefs.current[index] = ref;
+  };
+
+  return (
+    <div className="grid grid-cols-2 gap-4 w-full max-w-xl">
+      <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+        <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+          <video
+            ref={setVideoRef(0)}
+            width={180}
+            height={180}
+            muted
+            playsInline
+            className="object-cover w-full h-full"
+            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            onError={(e) => {
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/clubhouse.png';
+                img.alt = 'Clubhouse';
+                img.className = 'w-full h-full object-contain';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/icons_webm/clubhouse.webm" type="video/webm" />
+          </video>
+        </div>
+        <p className="text-lg font-medium text-gray-700">Clubhouse</p>
       </div>
-      <p className="text-lg font-medium text-gray-700">Clubhouse</p>
-    </div>
-    
-    <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
-        <video
-          width={180}
-          height={180}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="object-cover w-full h-full"
-          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-          onError={(e) => {
-            const target = e.target as HTMLVideoElement;
-            const parent = target.parentElement;
-            if (parent) {
-              const img = document.createElement('img');
-              img.src = '/projects-imgs/badminton.png';
-              img.alt = 'Badminton Court';
-              img.className = 'w-full h-full object-contain';
-              parent.innerHTML = '';
-              parent.appendChild(img);
-            }
-          }}
-        >
-          <source src="/icons_webm/badminton.webm" type="video/webm" />
-        </video>
+      
+      <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+        <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+          <video
+            ref={setVideoRef(1)}
+            width={180}
+            height={180}
+            muted
+            playsInline
+            className="object-cover w-full h-full"
+            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            onError={(e) => {
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/projects-imgs/badminton.png';
+                img.alt = 'Badminton Court';
+                img.className = 'w-full h-full object-contain';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/icons_webm/badminton.webm" type="video/webm" />
+          </video>
+        </div>
+        <p className="text-lg font-medium text-gray-700">Badminton Court</p>
       </div>
-      <p className="text-lg font-medium text-gray-700">Badminton Court</p>
-    </div>
-    
-    <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
-        <video
-          width={180}
-          height={180}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="object-cover w-full h-full"
-          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-          onError={(e) => {
-            const target = e.target as HTMLVideoElement;
-            const parent = target.parentElement;
-            if (parent) {
-              const img = document.createElement('img');
-              img.src = '/projects-imgs/basketball.png';
-              img.alt = 'Mini Basketball Court';
-              img.className = 'w-full h-full object-contain';
-              parent.innerHTML = '';
-              parent.appendChild(img);
-            }
-          }}
-        >
-          <source src="/icons_webm/basketball.webm" type="video/webm" />
-        </video>
+      
+      <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+        <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+          <video
+            ref={setVideoRef(2)}
+            width={180}
+            height={180}
+            muted
+            playsInline
+            className="object-cover w-full h-full"
+            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            onError={(e) => {
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/projects-imgs/basketball.png';
+                img.alt = 'Mini Basketball Court';
+                img.className = 'w-full h-full object-contain';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/icons_webm/basketball.webm" type="video/webm" />
+          </video>
+        </div>
+        <p className="text-lg font-medium text-gray-700">Mini Basketball Court</p>
       </div>
-      <p className="text-lg font-medium text-gray-700">Mini Basketball Court</p>
-    </div>
-    
-    <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
-        <video
-          width={180}
-          height={180}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="object-cover w-full h-full"
-          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-          onError={(e) => {
-            const target = e.target as HTMLVideoElement;
-            const parent = target.parentElement;
-            if (parent) {
-              const img = document.createElement('img');
-              img.src = '/projects-imgs/playarea.png';
-              img.alt = 'Kids Play Area';
-              img.className = 'w-full h-full object-contain';
-              parent.innerHTML = '';
-              parent.appendChild(img);
-            }
-          }}
-        >
-          <source src="/icons_webm/playground.webm" type="video/webm" />
-        </video>
+      
+      <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+        <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+          <video
+            ref={setVideoRef(3)}
+            width={180}
+            height={180}
+            muted
+            playsInline
+            className="object-cover w-full h-full"
+            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            onError={(e) => {
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/projects-imgs/playarea.png';
+                img.alt = 'Kids Play Area';
+                img.className = 'w-full h-full object-contain';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/icons_webm/playground.webm" type="video/webm" />
+          </video>
+        </div>
+        <p className="text-lg font-medium text-gray-700">Kids Play Area</p>
       </div>
-      <p className="text-lg font-medium text-gray-700">Kids Play Area</p>
     </div>
-  </div>
-);
+  );
+};
 
 // Mobile Amenity Cards Component
-const MobileAmenityCards = () => (
-  <div className="grid grid-cols-2 gap-4 mt-6">
-    <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-        <video
-          width={64}
-          height={64}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="object-contain"
-          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-          onError={(e) => {
-            const target = e.target as HTMLVideoElement;
-            const parent = target.parentElement;
-            if (parent) {
-              const img = document.createElement('img');
-              img.src = '/clubhouse.png';
-              img.alt = 'Clubhouse';
-              img.className = 'w-full h-full object-contain';
-              parent.innerHTML = '';
-              parent.appendChild(img);
+const MobileAmenityCards = () => {
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  // Intersection Observer for video playback
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              video.play().catch(console.error);
+              observer.unobserve(video); // Play only once
             }
-          }}
-        >
-          <source src="/icons_webm/clubhouse.webm" type="video/webm" />
-        </video>
+          },
+          { threshold: 0.5 }
+        );
+        observer.observe(video);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
+
+  const setVideoRef = (index: number) => (ref: HTMLVideoElement | null) => {
+    videoRefs.current[index] = ref;
+  };
+
+  return (
+    <div className="grid grid-cols-2 gap-4 mt-6">
+      <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
+        <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+          <video
+            ref={setVideoRef(0)}
+            width={64}
+            height={64}
+            muted
+            playsInline
+            className="object-contain"
+            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            onError={(e) => {
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/clubhouse.png';
+                img.alt = 'Clubhouse';
+                img.className = 'w-full h-full object-contain';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/icons_webm/clubhouse.webm" type="video/webm" />
+          </video>
+        </div>
+        <p className="text-[13px] font-medium text-gray-700">Clubhouse</p>
       </div>
-      <p className="text-[13px] font-medium text-gray-700">Clubhouse</p>
-    </div>
-    
-    <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-        <video
-          width={64}
-          height={64}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="object-contain"
-          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-          onError={(e) => {
-            const target = e.target as HTMLVideoElement;
-            const parent = target.parentElement;
-            if (parent) {
-              const img = document.createElement('img');
-              img.src = '/projects-imgs/badminton.png';
-              img.alt = 'Badminton Court';
-              img.className = 'w-full h-full object-contain';
-              parent.innerHTML = '';
-              parent.appendChild(img);
-            }
-          }}
-        >
-          <source src="/icons_webm/badminton.webm" type="video/webm" />
-        </video>
+      
+      <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
+        <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+          <video
+            ref={setVideoRef(1)}
+            width={64}
+            height={64}
+            muted
+            playsInline
+            className="object-contain"
+            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            onError={(e) => {
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/projects-imgs/badminton.png';
+                img.alt = 'Badminton Court';
+                img.className = 'w-full h-full object-contain';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/icons_webm/badminton.webm" type="video/webm" />
+          </video>
+        </div>
+        <p className="text-[13px] font-medium text-gray-700">Badminton Court</p>
       </div>
-      <p className="text-[13px] font-medium text-gray-700">Badminton Court</p>
-    </div>
-    
-    <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-        <video
-          width={64}
-          height={64}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="object-contain"
-          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-          onError={(e) => {
-            const target = e.target as HTMLVideoElement;
-            const parent = target.parentElement;
-            if (parent) {
-              const img = document.createElement('img');
-              img.src = '/projects-imgs/basketball.png';
-              img.alt = 'Mini Basketball';
-              img.className = 'w-full h-full object-contain';
-              parent.innerHTML = '';
-              parent.appendChild(img);
-            }
-          }}
-        >
-          <source src="/icons_webm/basketball.webm" type="video/webm" />
-        </video>
+      
+      <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
+        <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+          <video
+            ref={setVideoRef(2)}
+            width={64}
+            height={64}
+            muted
+            playsInline
+            className="object-contain"
+            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            onError={(e) => {
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/projects-imgs/basketball.png';
+                img.alt = 'Mini Basketball';
+                img.className = 'w-full h-full object-contain';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/icons_webm/basketball.webm" type="video/webm" />
+          </video>
+        </div>
+        <p className="text-[13px] font-medium text-gray-700">Mini Basketball</p>
       </div>
-      <p className="text-[13px] font-medium text-gray-700">Mini Basketball</p>
-    </div>
-    
-    <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
-      <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-        <video
-          width={64}
-          height={64}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="object-contain"
-          style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-          onError={(e) => {
-            const target = e.target as HTMLVideoElement;
-            const parent = target.parentElement;
-            if (parent) {
-              const img = document.createElement('img');
-              img.src = '/projects-imgs/playarea.png';
-              img.alt = 'Kids Play Area';
-              img.className = 'w-full h-full object-contain';
-              parent.innerHTML = '';
-              parent.appendChild(img);
-            }
-          }}
-        >
-          <source src="/icons_webm/playground.webm" type="video/webm" />
-        </video>
+      
+      <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
+        <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+          <video
+            ref={setVideoRef(3)}
+            width={64}
+            height={64}
+            muted
+            playsInline
+            className="object-contain"
+            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            onError={(e) => {
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/projects-imgs/playarea.png';
+                img.alt = 'Kids Play Area';
+                img.className = 'w-full h-full object-contain';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/icons_webm/playground.webm" type="video/webm" />
+          </video>
+        </div>
+        <p className="text-[13px] font-medium text-gray-700">Kids Play Area</p>
       </div>
-      <p className="text-[13px] font-medium text-gray-700">Kids Play Area</p>
     </div>
-  </div>
-);
+  );
+};
 
 interface VillaDetailPageProps {
   villaType: 'zenith' | 'crest' | 'horizon';
