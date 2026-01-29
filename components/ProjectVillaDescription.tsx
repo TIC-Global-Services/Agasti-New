@@ -42,7 +42,7 @@ export default function ProjectVillaDescription() {
                 className="font-gc-palioka text-xl text-black leading-tight flex-1 mr-4"
               />
               <Link href="/projects/zenith">
-                <button className="bg-[#8D957E] text-white text-xs font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded px-4 py-2 whitespace-nowrap">
+                <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded px-4 py-2 whitespace-nowrap">
                   EXPLORE VILLA
                   <div className="relative w-3 h-3 ml-2">
                     <Image
@@ -114,7 +114,7 @@ export default function ProjectVillaDescription() {
                 className="font-gc-palioka text-xl text-black leading-tight flex-1 mr-4"
               />
               <Link href="/projects/crest">
-                <button className="bg-[#8D957E] text-white text-xs font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded px-4 py-2 whitespace-nowrap">
+                <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded px-4 py-2 whitespace-nowrap">
                   EXPLORE VILLA
                   <div className="relative w-3 h-3 ml-2">
                     <Image
@@ -184,7 +184,7 @@ export default function ProjectVillaDescription() {
                 className="font-gc-palioka text-xl text-black leading-tight flex-1 mr-4"
               />
               <Link href="/projects/horizon">
-                <button className="bg-[#8D957E] text-white text-xs font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded px-4 py-2 whitespace-nowrap">
+                <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider hover:bg-[#7A8470] transition-colors duration-300 flex items-center justify-center rounded px-4 py-2 whitespace-nowrap">
                   EXPLORE VILLA
                   <div className="relative w-3 h-3 ml-2">
                     <Image
