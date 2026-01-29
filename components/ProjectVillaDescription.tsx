@@ -110,7 +110,7 @@ export default function ProjectVillaDescription() {
           <div className="mb-6">
             <div className="flex justify-between items-start mb-4">
               <BlurText
-                text="The Agasti North Facing Villa"
+                text="The Agasti East Facing Villa"
                 className="font-gc-palioka text-xl text-black leading-tight flex-1 mr-4"
               />
               <Link href="/projects/crest">
@@ -180,7 +180,7 @@ export default function ProjectVillaDescription() {
           <div className="mb-6">
             <div className="flex justify-between items-start mb-4">
               <BlurText
-                text="The Agasti Horizon"
+                text="The Agasti North Facing Villa"
                 className="font-gc-palioka text-xl text-black leading-tight flex-1 mr-4"
               />
               <Link href="/projects/horizon">
@@ -333,7 +333,7 @@ export default function ProjectVillaDescription() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
             <div className="mb-6 lg:mb-0">
               <BlurText
-                text="The Agasti Crest"
+                text="The Agasti East Facing Villa"
                 className="font-gc-palioka text-3xl lg:text-4xl xl:text-5xl text-black mb-4 leading-tight"
               />
               <div className="flex items-center">
@@ -412,7 +412,7 @@ export default function ProjectVillaDescription() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
             <div className="mb-6 lg:mb-0">
               <BlurText
-                text="The Agasti Horizon"
+                text="The Agasti North Facing Villa"
                 className="font-gc-palioka text-3xl lg:text-4xl xl:text-5xl text-black mb-4 leading-tight"
               />
               <div className="flex items-center">
