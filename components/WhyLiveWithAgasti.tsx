@@ -4,6 +4,114 @@ import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
 import BlurText from "./BlurText";
 
+const LineByLineBlur = ({ 
+  text, 
+  className = "",
+  delay = 60,
+  onAnimationComplete 
+}: { 
+  text: string;
+  className?: string;
+  delay?: number;
+  onAnimationComplete?: () => void;
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [lines, setLines] = useState<string[]>([]);
+  const [animatedLines, setAnimatedLines] = useState<number>(0);
+
+  // Split text into lines based on actual rendering
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const measureLines = () => {
+      const words = text.split(' ');
+      const tempDiv = document.createElement('div');
+      tempDiv.style.cssText = window.getComputedStyle(containerRef.current!).cssText;
+      tempDiv.style.position = 'absolute';
+      tempDiv.style.visibility = 'hidden';
+      tempDiv.style.width = containerRef.current!.offsetWidth + 'px';
+      document.body.appendChild(tempDiv);
+
+      const measuredLines: string[] = [];
+      let currentLine = '';
+      let lastTop = -1;
+
+      words.forEach((word, index) => {
+        const testLine = currentLine ? `${currentLine} ${word}` : word;
+        tempDiv.textContent = testLine;
+        
+        const span = document.createElement('span');
+        span.textContent = word;
+        tempDiv.textContent = currentLine;
+        tempDiv.appendChild(span);
+        
+        const rect = span.getBoundingClientRect();
+        const top = rect.top;
+
+        if (lastTop !== -1 && top > lastTop) {
+          // New line detected
+          measuredLines.push(currentLine.trim());
+          currentLine = word;
+        } else {
+          currentLine = testLine;
+        }
+        lastTop = top;
+      });
+
+      if (currentLine) {
+        measuredLines.push(currentLine.trim());
+      }
+
+      document.body.removeChild(tempDiv);
+      setLines(measuredLines);
+    };
+
+    measureLines();
+
+    const handleResize = () => {
+      setAnimatedLines(0);
+      measureLines();
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [text]);
+
+  // Animate lines sequentially
+  useEffect(() => {
+    if (animatedLines >= lines.length) {
+      if (onAnimationComplete) onAnimationComplete();
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setAnimatedLines(prev => prev + 1);
+    }, delay * (animatedLines === 0 ? 1 : 15)); // Adjust timing between lines
+
+    return () => clearTimeout(timer);
+  }, [animatedLines, lines.length, delay, onAnimationComplete]);
+
+  return (
+    <div ref={containerRef} className={className}>
+      {lines.map((line, index) => (
+        <span
+          key={index}
+          className={`inline-block transition-all duration-500 ${
+            index < animatedLines
+              ? 'opacity-100 blur-0 translate-y-0'
+              : 'opacity-0 blur-sm translate-y-2'
+          }`}
+          style={{
+            transitionDelay: `${index * 100}ms`
+          }}
+        >
+          {line}{' '}
+        </span>
+      ))}
+    </div>
+  );
+};
+
 export default function WhyLiveWithAgasti() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -110,15 +218,15 @@ export default function WhyLiveWithAgasti() {
       <ContainerLayout paddingX="px-6 sm:px-[48px]">
         {/* Header */}
         <div className="mb-8 sm:mb-12">
-          <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[26px] mb-2 sm:mb-2 font-bold">Why Live With Agasti</p>
+          <p className="text-[#8D957E] text-base sm:text-lg md:text-xl lg:text-[26px] mb-2 sm:mb-2 font-bold">
+            Why Live With Agasti
+          </p>
           
-          <BlurText
+          <LineByLineBlur
             text="Agasti brings together luxury, nature, and thoughtful design. With premium materials, open layouts, and serene green spaces, every villa is crafted with precision to elevate your everyday living."
-            delay={60}
-            animateBy="words"
-            direction="top"
             onAnimationComplete={handleAnimationComplete}
             className="font-gc-palioka text-xl sm:text-2xl md:text-[28px] lg:text-[32px] text-black mb-[14px] leading-tight max-w-4xl"
+            delay={60}
           />
           
           <p className="text-gray-500 text-[16px] sm:text-sm leading-relaxed max-w-3xl">
@@ -155,12 +263,16 @@ export default function WhyLiveWithAgasti() {
                           const target = e.target as HTMLVideoElement;
                           const parent = target.parentElement;
                           if (parent) {
-                            parent.innerHTML = `<img src="${feature.fallback}" alt="${feature.label}" class="w-full h-full object-contain" />`;
+                            const img = document.createElement('img');
+                            img.src = feature.fallback;
+                            img.alt = feature.label;
+                            img.className = 'w-full h-full object-contain';
+                            parent.innerHTML = '';
+                            parent.appendChild(img);
                           }
                         }}
                       >
                         <source src={feature.icon} type="video/webm" />
-                        <img src={feature.fallback} alt={feature.label} className="w-full h-full object-contain" />
                       </video>
                     ) : (
                       <Image
@@ -217,12 +329,16 @@ export default function WhyLiveWithAgasti() {
                         const target = e.target as HTMLVideoElement;
                         const parent = target.parentElement;
                         if (parent) {
-                          parent.innerHTML = `<img src="${feature.fallback}" alt="${feature.label}" class="w-full h-full object-contain" />`;
+                          const img = document.createElement('img');
+                          img.src = feature.fallback;
+                          img.alt = feature.label;
+                          img.className = 'w-full h-full object-contain';
+                          parent.innerHTML = '';
+                          parent.appendChild(img);
                         }
                       }}
                     >
                       <source src={feature.icon} type="video/webm" />
-                      <img src={feature.fallback} alt={feature.label} className="w-full h-full object-contain" />
                     </video>
                   ) : (
                     <Image
