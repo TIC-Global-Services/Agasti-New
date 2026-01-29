@@ -2,7 +2,6 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import BlurText from "./BlurText";
 
 const LineByLineBlur = ({ 
   text, 
@@ -41,7 +40,7 @@ const LineByLineBlur = ({
       const measuredLines: string[] = [];
       let currentLine = '';
 
-      words.forEach((word, index) => {
+      words.forEach((word) => {
         const testLine = currentLine ? `${currentLine} ${word}` : word;
         tempDiv.innerHTML = testLine;
         
@@ -139,6 +138,7 @@ const LineByLineBlur = ({
 export default function WhyLiveWithAgasti() {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const handleAnimationComplete = () => {
     console.log('Animation completed!');
@@ -171,6 +171,35 @@ export default function WhyLiveWithAgasti() {
         label: "SERENITY"
     }
   ];
+
+  // Intersection Observer for video playback
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              video.play().catch(console.error);
+              observer.unobserve(video); // Play only once
+            }
+          },
+          { threshold: 0.5 }
+        );
+        observer.observe(video);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
+
+  const setVideoRef = (index: number) => (ref: HTMLVideoElement | null) => {
+    videoRefs.current[index] = ref;
+  };
 
   useEffect(() => {
     const carousel = carouselRef.current;
@@ -274,10 +303,9 @@ export default function WhyLiveWithAgasti() {
                   <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
                     {feature.icon.endsWith('.webm') ? (
                       <video
+                        ref={setVideoRef(index)}
                         width={80}
                         height={80}
-                        autoPlay
-                        loop
                         muted
                         playsInline
                         className="object-contain"
@@ -340,10 +368,9 @@ export default function WhyLiveWithAgasti() {
                 <div className="relative w-16 h-16 lg:w-20 lg:h-20 mb-4 flex items-center justify-center">
                   {feature.icon.endsWith('.webm') ? (
                     <video
+                      ref={setVideoRef(index + features.length)} // Offset for desktop videos
                       width={120}
                       height={120}
-                      autoPlay
-                      loop
                       muted
                       playsInline
                       className="object-cover w-full h-full"
