@@ -18,44 +18,40 @@ const LineByLineBlur = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [lines, setLines] = useState<string[]>([]);
   const [animatedLines, setAnimatedLines] = useState<number>(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Split text into lines based on actual rendering
   useEffect(() => {
     if (!containerRef.current) return;
 
     const measureLines = () => {
+      const container = containerRef.current!;
       const words = text.split(' ');
+      
+      // Create a temporary element to measure line breaks
       const tempDiv = document.createElement('div');
-      tempDiv.style.cssText = window.getComputedStyle(containerRef.current!).cssText;
+      tempDiv.style.cssText = window.getComputedStyle(container).cssText;
       tempDiv.style.position = 'absolute';
       tempDiv.style.visibility = 'hidden';
-      tempDiv.style.width = containerRef.current!.offsetWidth + 'px';
+      tempDiv.style.height = 'auto';
+      tempDiv.style.width = container.offsetWidth + 'px';
+      tempDiv.style.whiteSpace = 'normal';
       document.body.appendChild(tempDiv);
 
       const measuredLines: string[] = [];
       let currentLine = '';
-      let lastTop = -1;
 
       words.forEach((word, index) => {
         const testLine = currentLine ? `${currentLine} ${word}` : word;
-        tempDiv.textContent = testLine;
+        tempDiv.innerHTML = testLine;
         
-        const span = document.createElement('span');
-        span.textContent = word;
-        tempDiv.textContent = currentLine;
-        tempDiv.appendChild(span);
-        
-        const rect = span.getBoundingClientRect();
-        const top = rect.top;
-
-        if (lastTop !== -1 && top > lastTop) {
-          // New line detected
+        // If adding this word makes it taller, start a new line
+        if (tempDiv.scrollHeight > tempDiv.clientHeight && currentLine) {
           measuredLines.push(currentLine.trim());
           currentLine = word;
         } else {
           currentLine = testLine;
         }
-        lastTop = top;
       });
 
       if (currentLine) {
@@ -63,50 +59,78 @@ const LineByLineBlur = ({
       }
 
       document.body.removeChild(tempDiv);
-      setLines(measuredLines);
+      
+      // Fallback: if no lines detected, split by sentences
+      if (measuredLines.length === 0) {
+        const sentences = text.split('. ');
+        setLines(sentences.map(s => s.endsWith('.') ? s : s + '.'));
+      } else {
+        setLines(measuredLines);
+      }
     };
 
-    measureLines();
+    // Initial measurement
+    setTimeout(measureLines, 100);
 
     const handleResize = () => {
       setAnimatedLines(0);
-      measureLines();
+      setTimeout(measureLines, 100);
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [text]);
 
-  // Animate lines sequentially
+  // Intersection Observer to trigger animation when visible
   useEffect(() => {
-    if (animatedLines >= lines.length) {
-      if (onAnimationComplete) onAnimationComplete();
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  // Animate lines sequentially when visible
+  useEffect(() => {
+    if (!isVisible || animatedLines >= lines.length) {
+      if (animatedLines >= lines.length && onAnimationComplete) {
+        onAnimationComplete();
+      }
       return;
     }
 
     const timer = setTimeout(() => {
       setAnimatedLines(prev => prev + 1);
-    }, delay * (animatedLines === 0 ? 1 : 15)); // Adjust timing between lines
+    }, animatedLines === 0 ? delay : delay * 8);
 
     return () => clearTimeout(timer);
-  }, [animatedLines, lines.length, delay, onAnimationComplete]);
+  }, [isVisible, animatedLines, lines.length, delay, onAnimationComplete]);
 
   return (
     <div ref={containerRef} className={className}>
       {lines.map((line, index) => (
-        <span
+        <div
           key={index}
-          className={`inline-block transition-all duration-500 ${
+          className={`transition-all duration-700 ease-out ${
             index < animatedLines
               ? 'opacity-100 blur-0 translate-y-0'
-              : 'opacity-0 blur-sm translate-y-2'
+              : 'opacity-0 blur-sm translate-y-4'
           }`}
           style={{
-            transitionDelay: `${index * 100}ms`
+            transitionDelay: `${index * 150}ms`
           }}
         >
-          {line}{' '}
-        </span>
+          {line}
+        </div>
       ))}
     </div>
   );
