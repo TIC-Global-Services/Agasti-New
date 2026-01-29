@@ -305,23 +305,34 @@ export default function ProjectVillaDescription() {
             </div>
           </div>
 
-          {/* Property Details - Simplified Grid Layout */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property size:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base">653 <span className="font-bold">sq yds</span></span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Year of build:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base">2024</span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property status:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base font-bold">Ongoing</span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property type:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base font-bold">Villa</span>
+          {/* Property Details - Horizontal Layout with Separators */}
+          <div className="flex justify-center px-4 sm:px-6 lg:px-12 xl:px-12 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg">653 <span className="font-bold">sq yds</span></span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg">2024</span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property status:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg font-bold">Ongoing</span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property type:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg font-bold">Villa</span>
+              </div>
             </div>
           </div>
           
@@ -385,22 +396,34 @@ export default function ProjectVillaDescription() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property size:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base">915 <span className="font-bold">sq yds</span></span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Year of build:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base">2024</span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property status:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base font-bold">Ongoing</span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property type:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base font-bold">Villa</span>
+          {/* Property Details - Horizontal Layout with Separators */}
+          <div className="flex justify-center px-4 sm:px-6 lg:px-12 xl:px-12 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg">915 <span className="font-bold">sq yds</span></span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg">2024</span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property status:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg font-bold">Ongoing</span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property type:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg font-bold">Villa</span>
+              </div>
             </div>
           </div>
           
@@ -464,22 +487,34 @@ export default function ProjectVillaDescription() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property size:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base">915 <span className="font-bold">sq yds</span></span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Year of build:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base">2024</span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property status:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base font-bold">Ongoing</span>
-            </div>
-            <div className="text-center lg:text-left">
-              <span className="text-black text-sm lg:text-base font-bold block mb-2">Property type:</span>
-              <span className="text-[#8D957E] text-sm lg:text-base font-bold">Villa</span>
+          {/* Property Details - Horizontal Layout with Separators */}
+          <div className="flex justify-center px-4 sm:px-6 lg:px-12 xl:px-12 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg">915 <span className="font-bold">sq yds</span></span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg">2024</span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property status:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg font-bold">Ongoing</span>
+              </div>
+              
+              <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
+              
+              <div className="flex items-center justify-center min-w-0">
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property type:</span>
+                <span className="text-[#8D957E] text-base lg:text-lg font-bold">Villa</span>
+              </div>
             </div>
           </div>
         </div>

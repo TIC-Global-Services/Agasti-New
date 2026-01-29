@@ -80,7 +80,7 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
           <div className="space-y-8">
             {otherVillas.map((villa, index) => (
               <div key={index} className="group">
-                <div className="relative overflow-hidden mb-4 rounded-lg aspect-16/10 w-full">
+                <div className="relative overflow-hidden mb-4 w-full h-[400px]">
                   <Image
                     src={villa.image}
                     alt={villa.name}
@@ -112,7 +112,7 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
           <div className="space-y-12 w-full max-w-2xl mx-auto">
             {otherVillas.map((villa, index) => (
               <div key={index} className="group">
-                <div className="relative overflow-hidden mb-4 rounded-lg w-full h-64 sm:h-80 md:h-[400px]">
+                <div className="relative overflow-hidden mb-4 w-full h-64 sm:h-80 md:h-[400px]">
                   <Image
                     src={villa.image}
                     alt={villa.name}

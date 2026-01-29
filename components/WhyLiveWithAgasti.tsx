@@ -146,27 +146,27 @@ export default function WhyLiveWithAgasti() {
 
   const features = [
     {
-      icon: "/icons_webm/buildings.webm",
+      icon: "/icons webm 3/innovation.webm",
       fallback: "/innovation.png",
       label: "INNOVATION",
     },
     {
-      icon: "/icons_webm/eco%20building.webm",
+      icon: "/icons webm 3/sustainable.webm",
       fallback: "/sustainable.png",
       label: "SUSTAINABLE",
     },
     {
-      icon: "/icons_webm/blocks.webm",
+      icon: "/icons webm 3/highstrength.webm",
       fallback: "/highstrength.png",
       label: "HIGH-STRENGTH",
     },
     {
-      icon: "/icons_webm/big%20building.webm",
+      icon: "/icons webm 3/luxury.webm",
       fallback: "/luxury.png",
       label: "LUXURY",
     },
     {
-        icon: "/icons_webm/serenity.webm",
+        icon: "/icons webm 3/serenity.webm",
         fallback: "/serenity.png",
         label: "SERENITY"
     }

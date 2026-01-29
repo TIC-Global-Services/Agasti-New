@@ -64,7 +64,7 @@ const AmenityCards = () => {
               }
             }}
           >
-            <source src="/icons_webm/clubhouse.webm" type="video/webm" />
+            <source src="/icons webm 3/clubhouse.webm" type="video/webm" />
           </video>
         </div>
         <p className="text-lg font-medium text-gray-700">Clubhouse</p>
@@ -93,7 +93,7 @@ const AmenityCards = () => {
               }
             }}
           >
-            <source src="/icons_webm/badminton.webm" type="video/webm" />
+            <source src="/icons webm 3/badminton.webm" type="video/webm" />
           </video>
         </div>
         <p className="text-lg font-medium text-gray-700">Badminton Court</p>
@@ -122,7 +122,7 @@ const AmenityCards = () => {
               }
             }}
           >
-            <source src="/icons_webm/basketball.webm" type="video/webm" />
+            <source src="/icons webm 3/basketball.webm" type="video/webm" />
           </video>
         </div>
         <p className="text-lg font-medium text-gray-700">Mini Basketball Court</p>
@@ -151,7 +151,7 @@ const AmenityCards = () => {
               }
             }}
           >
-            <source src="/icons_webm/playground.webm" type="video/webm" />
+            <source src="/icons webm 3/playground.webm" type="video/webm" />
           </video>
         </div>
         <p className="text-lg font-medium text-gray-700">Kids Play Area</p>
@@ -218,7 +218,7 @@ const MobileAmenityCards = () => {
               }
             }}
           >
-            <source src="/icons_webm/clubhouse.webm" type="video/webm" />
+            <source src="/icons webm 3/clubhouse.webm" type="video/webm" />
           </video>
         </div>
         <p className="text-[13px] font-medium text-gray-700">Clubhouse</p>
@@ -247,7 +247,7 @@ const MobileAmenityCards = () => {
               }
             }}
           >
-            <source src="/icons_webm/badminton.webm" type="video/webm" />
+            <source src="/icons webm 3/badminton.webm" type="video/webm" />
           </video>
         </div>
         <p className="text-[13px] font-medium text-gray-700">Badminton Court</p>
@@ -276,7 +276,7 @@ const MobileAmenityCards = () => {
               }
             }}
           >
-            <source src="/icons_webm/basketball.webm" type="video/webm" />
+            <source src="/icons webm 3/basketball.webm" type="video/webm" />
           </video>
         </div>
         <p className="text-[13px] font-medium text-gray-700">Mini Basketball</p>
@@ -305,7 +305,7 @@ const MobileAmenityCards = () => {
               }
             }}
           >
-            <source src="/icons_webm/playground.webm" type="video/webm" />
+            <source src="/icons webm 3/playground.webm" type="video/webm" />
           </video>
         </div>
         <p className="text-[13px] font-medium text-gray-700">Kids Play Area</p>
@@ -411,7 +411,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
             </div>
 
             {/* Villa Image */}
-            <div className="relative overflow-hidden mb-6 rounded-lg h-[400px] md:h-[500px]">
+            <div className="relative overflow-hidden mb-6 h-[400px] md:h-[500px]">
               <Image
                 src={villaData.image}
                 alt={villaData.title}
