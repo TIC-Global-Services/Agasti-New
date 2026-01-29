@@ -164,15 +164,15 @@ export default function HeroSection() {
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ display: imagesLoaded ? 'block' : 'none' }}
+          // style={{ display: imagesLoaded ? 'block' : 'none' }}
         />
 
         {/* Loading state */}
-        {!imagesLoaded && !showLoader && (
+        {/* {!imagesLoaded && !showLoader && (
           <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
             <div className="text-gray-600">Loading...</div>
           </div>
-        )}
+        )} */}
 
         {/* Content */}
         <div className="relative z-10 flex h-full flex-col">

@@ -41,7 +41,7 @@ export default function ProjectShowcase() {
               </button>
             </div>
 
-            <div className="relative overflow-hidden mb-6 rounded-lg h-[400px]">
+            <div className="relative overflow-hidden mb-6 h-[400px]">
               <Image
                 src="/projects-imgs/agastiverve.png"
                 alt="Agasti Verve Villa"
@@ -86,7 +86,7 @@ export default function ProjectShowcase() {
               </button>
             </div>
 
-            <div className="relative overflow-hidden mb-6 rounded-lg h-[400px]">
+            <div className="relative overflow-hidden mb-6 h-[400px]">
               <Image
                 src="/projects-imgs/agastiarbor.png"
                 alt="Agasti Arbor Villa"
@@ -132,7 +132,7 @@ export default function ProjectShowcase() {
               </button>
             </div>
 
-            <div className="relative overflow-hidden mb-8 rounded-lg h-[500px]">
+            <div className="relative overflow-hidden mb-8 h-[500px]">
               <Image
                 src="/projects-imgs/agastiverve.png"
                 alt="Agasti Verve Villa"
@@ -177,7 +177,7 @@ export default function ProjectShowcase() {
               </button>
             </div>
 
-            <div className="relative overflow-hidden mb-8 rounded-lg h-[500px]">
+            <div className="relative overflow-hidden mb-8 h-[500px]">
               <Image
                 src="/projects-imgs/agastiarbor.png"
                 alt="Agasti Arbor Villa"

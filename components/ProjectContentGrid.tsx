@@ -15,16 +15,16 @@ export default function ProjectContentGrid() {
     <section className="bg-white">
       <ContainerLayout paddingX="px-6 xl:px-[48px] lg:px-[48px]" paddingY="py-[40px]">
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-16 items-start">
           {/* Left Side - Section Header */}
           <div>
             <p 
               ref={sectionRef}
-              className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-[24px] mb-3 sm:mb-4 font-regular transition-all duration-700 ${sectionBlur}`}
+              className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-[24px] mb-1 sm:mb-3 md:mb-4 font-regular transition-all duration-700 ${sectionBlur}`}
             >
               Upcoming Projects
             </p>
-            <div>
+            <div className="mb-3 lg:mb-0">
               <BlurText
                 text="Continuing the Agasti"
                 delay={60}
@@ -46,7 +46,7 @@ export default function ProjectContentGrid() {
 
           {/* Right Side - Description */}
           <div className="lg:pt-12 lg:pl-10">
-            <div className="bg-white p-7 sm:p-4 md:p-0 relative max-w-4xl">
+            <div className="bg-white p-0 sm:p-4 md:p-0 relative max-w-4xl">
               <div className="relative">
                 <p className="text-[#717580] text-[16px] font-plus-jakarta-sans sm:text-base leading-tight text-left pr-8">
                   Our upcoming projects reflect Agasti’s vision of refined, nature-led luxury. Each new community is thoughtfully planned with elegant design and smart engineering to bring elevated living to new locations.
@@ -56,7 +56,7 @@ export default function ProjectContentGrid() {
             </div>
           </div>
         </div>
-        <hr className="border-gray-300 mb-10 sm:mb-12 mt-8 sm:mt-10 md:mt-12" />
+        <hr className="border-gray-300 mb-3 sm:mb-12 mt-8 sm:mt-10 md:mt-12" />
       </ContainerLayout>
     </section>
   );

@@ -71,7 +71,7 @@ export default function ProjectVillaDescription() {
           </div>
 
           {/* Villa Image */}
-          <div className="relative overflow-hidden mb-6 rounded-lg h-80">
+          <div className="relative overflow-hidden mb-6 h-80">
             <Image
               src="/mainvilla.jpg"
               alt="The Agasti Zenith Villa"
@@ -85,20 +85,20 @@ export default function ProjectVillaDescription() {
           {/* Property Details */}
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property size:</span>
-              <span className="text-gray-600 text-sm">653 <span className="font-bold">sq yds</span></span>
+              <span className="text-black text-sm font-bold">Property size: </span>
+              <span className="text-[#8D957E] text-sm">653 <span className="font-bold">sq yds</span></span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property type:</span>
-              <span className="text-gray-600 text-sm font-bold">Villa</span>
+              <span className="text-black text-sm font-bold">Property type: </span>
+              <span className="text-[#8D957E] text-sm font-bold">Villa</span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Year of build:</span>
-              <span className="text-gray-600 text-sm">2024</span>
+              <span className="text-black text-sm font-bold">Year of build: </span>
+              <span className="text-[#8D957E] text-sm">2024</span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property status:</span>
-              <span className="text-gray-600 text-sm font-bold">Ongoing</span>
+              <span className="text-black text-sm font-bold">Property status: </span>
+              <span className="text-[#8D957E] text-sm font-bold">Ongoing</span>
             </div>
           </div>
 
@@ -142,7 +142,7 @@ export default function ProjectVillaDescription() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden mb-6 rounded-lg h-80">
+          <div className="relative overflow-hidden mb-6 h-80">
             <Image
               src="/projects-imgs/AgastiCrest.jpg"
               alt="The Agasti Crest Villa"
@@ -155,20 +155,20 @@ export default function ProjectVillaDescription() {
 
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property size:</span>
-              <span className="text-gray-600 text-sm">915 <span className="font-bold">sq yds</span></span>
+              <span className="text-black text-sm font-bold">Property size: </span>
+              <span className="text-[#8D957E] text-sm">915 <span className="font-bold">sq yds</span></span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property type:</span>
-              <span className="text-gray-600 text-sm font-bold">Villa</span>
+              <span className="text-black text-sm font-bold">Property type: </span>
+              <span className="text-[#8D957E] text-sm font-bold">Villa</span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Year of build:</span>
-              <span className="text-gray-600 text-sm">2024</span>
+              <span className="text-black text-sm font-bold">Year of build: </span>
+              <span className="text-[#8D957E] text-sm">2024</span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property status:</span>
-              <span className="text-gray-600 text-sm font-bold">Ongoing</span>
+              <span className="text-black text-sm font-bold">Property status: </span>
+              <span className="text-[#8D957E] text-sm font-bold">Ongoing</span>
             </div>
           </div>
 
@@ -212,7 +212,7 @@ export default function ProjectVillaDescription() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden mb-6 rounded-lg h-80">
+          <div className="relative overflow-hidden mb-6 h-80">
             <Image
               src="/projects-imgs/agastihorizon.jpg"
               alt="The Agasti Horizon Villa"
@@ -225,20 +225,20 @@ export default function ProjectVillaDescription() {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property size:</span>
-              <span className="text-gray-600 text-sm">915 <span className="font-bold">sq yds</span></span>
+              <span className="text-black text-sm font-bold">Property size: </span>
+              <span className="text-[#8D957E] text-sm">915 <span className="font-bold">sq yds</span></span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property type:</span>
-              <span className="text-gray-600 text-sm font-bold">Villa</span>
+              <span className="text-black text-sm font-bold">Property type: </span>
+              <span className="text-[#8D957E] text-sm font-bold">Villa</span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Year of build:</span>
-              <span className="text-gray-600 text-sm">2024</span>
+              <span className="text-black text-sm font-bold">Year of build: </span>
+              <span className="text-[#8D957E] text-sm">2024</span>
             </div>
             <div>
-              <span className="text-black text-sm font-bold block mb-1">Property status:</span>
-              <span className="text-gray-600 text-sm font-bold">Ongoing</span>
+              <span className="text-black text-sm font-bold">Property status: </span>
+              <span className="text-[#8D957E] text-sm font-bold">Ongoing</span>
             </div>
           </div>
         </div>
@@ -286,7 +286,7 @@ export default function ProjectVillaDescription() {
           </div>
 
           {/* Parallax Image */}
-          <div className="overflow-hidden mb-8 w-full h-64 sm:h-80 lg:h-96 xl:h-112 rounded-lg">
+          <div className="overflow-hidden mb-8 w-full h-64 sm:h-80 lg:h-96 xl:h-112">
             <div
               style={{
                 transform: `translateY(${Math.min(0, offsetY * 2)}px) scale(1.1)`,
@@ -366,7 +366,7 @@ export default function ProjectVillaDescription() {
             </Link>
           </div>
 
-          <div className="overflow-hidden mb-8 w-full h-64 sm:h-80 lg:h-96 xl:h-112 rounded-lg">
+          <div className="overflow-hidden mb-8 w-full h-64 sm:h-80 lg:h-96 xl:h-112">
             <div
               style={{
                 transform: `translateY(${Math.min(0, offsetY * 2)}px) scale(1.1)`,
@@ -445,7 +445,7 @@ export default function ProjectVillaDescription() {
             </Link>
           </div>
 
-          <div ref={secondImageRef} className="overflow-hidden mb-8 w-full h-64 sm:h-80 lg:h-96 xl:h-112 rounded-lg">
+          <div ref={secondImageRef} className="overflow-hidden mb-8 w-full h-64 sm:h-80 lg:h-96 xl:h-112">
             <div
               style={{
                 transform: `translateY(${Math.min(0, offsetY2 * 2)}px) scale(1.1)`,

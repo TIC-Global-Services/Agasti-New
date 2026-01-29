@@ -425,20 +425,20 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
             {/* Property Details */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div>
-                <span className="text-black text-[16px] font-bold block mb-1">Property size:</span>
-                <span className="text-gray-500 text-[14px]">{villaData.propertySize}</span>
+                <span className="text-black text-[16px] font-bold">Property size: </span>
+                <span className="text-[#8D957E] text-[14px] font-bold">{villaData.propertySize}</span>
               </div>
               <div>
-                <span className="text-black text-[16px] font-bold block mb-1">Property type:</span>
-                <span className="text-gray-500 text-[14px] font-bold">Villa</span>
+                <span className="text-black text-[16px] font-bold">Property type: </span>
+                <span className="text-[#8D957E] text-[14px] font-bold">Villa</span>
               </div>
               <div>
-                <span className="text-black text-[16px] font-bold block mb-1">Year of build:</span>
-                <span className="text-gray-500 text-[14px]">2024</span>
+                <span className="text-black text-[16px] font-bold">Year of build: </span>
+                <span className="text-[#8D957E] text-[14px] font-bold">2024</span>
               </div>
               <div>
-                <span className="text-black text-[16px] font-bold block mb-1">Property status:</span>
-                <span className="text-gray-500 text-[14px] font-bold">Ongoing</span>
+                <span className="text-black text-[16px] font-bold">Property status: </span>
+                <span className="text-[#8D957E] text-[14px] font-bold">Ongoing</span>
               </div>
             </div>
 
