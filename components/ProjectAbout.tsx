@@ -27,7 +27,7 @@ export default function ProjectAbout() {
           <div className="max-w-xl">
             <p 
               ref={subtitleRef}
-              className="font-gc-palioka text-[#8D957E] text-[20px] sm:text-xl md:text-[24px] mb-[14px] tracking-wider font-bold"
+              className="font-gc-palioka text-[#8D957E] text-[20px] sm:text-xl md:text-[24px] mb-1 sm:mb-[14px] tracking-wider font-bold"
             >
               Why Choose Agasti
             </p>
@@ -49,7 +49,7 @@ export default function ProjectAbout() {
 
             <button className="text-black text-sm sm:text-base font-medium hover:opacity-70 transition-opacity group">
               <span className="relative inline-block">
-                <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
               </span>
             </button>
           </div>
