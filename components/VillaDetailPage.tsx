@@ -210,7 +210,7 @@ const MobileAmenityCards = () => {
               const parent = target.parentElement;
               if (parent) {
                 const img = document.createElement('img');
-                img.src = 'public/icons%20webm%203/clubhouse.webm';
+                img.src = '/clubhouse.png';
                 img.alt = 'Clubhouse';
                 img.className = 'w-full h-full object-contain';
                 parent.innerHTML = '';
@@ -442,6 +442,8 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               </div>
             </div>
 
+            <div className="w-full h-px bg-gray-300 mt-2 mb-4"></div>
+
             <div className="bg-white rounded-lg mb-8">
               <h3 className="text-[16px] font-bold  font-gc-palioka text-black mb-2">Property description</h3>
               <p className="text-gray-600 text-[12px] leading-relaxed mb-2">
@@ -450,6 +452,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               <button className="text-black text-[12px] font-bold hover:opacity-70 transition-opacity underline">
                 SCHEDULE A VISIT →
               </button>
+
               
               {/* Mobile Amenities */}
               <div className="mt-6">
