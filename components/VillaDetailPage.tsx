@@ -210,7 +210,7 @@ const MobileAmenityCards = () => {
               const parent = target.parentElement;
               if (parent) {
                 const img = document.createElement('img');
-                img.src = '/clubhouse.png';
+                img.src = 'public/icons%20webm%203/clubhouse.webm';
                 img.alt = 'Clubhouse';
                 img.className = 'w-full h-full object-contain';
                 parent.innerHTML = '';
@@ -345,7 +345,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
     switch (villaType) {
       case 'zenith':
         return {
-          title: 'The Agasti West Facing Villa',
+          title: 'The Agasti West',
           subtitle: 'West facing villa',
           image: '/mainvilla.jpg',
           propertySize: '653 sq yds',
@@ -353,7 +353,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
         };
       case 'crest':
         return {
-          title: 'The Agasti East Facing Villa',
+          title: 'The Agasti East',
           subtitle: 'East facing villa',
           image: '/projects-imgs/AgastiCrest.jpg',
           propertySize: '915 sq yds',
@@ -361,7 +361,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
         };
       case 'horizon':
         return {
-          title: 'The Agasti North Facing Villa',
+          title: 'The Agasti North',
           subtitle: 'North facing villa',
           image: '/projects-imgs/agastihorizon.jpg',
           propertySize: '915 sq yds',
@@ -425,26 +425,26 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
             {/* Property Details */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div>
-                <span className="text-black text-[16px] font-bold">Property size: </span>
+                <span className="text-black font-gc-palioka text-[14px] font-bold">Property size: </span>
                 <span className="text-[#8D957E] text-[14px] font-bold">{villaData.propertySize}</span>
               </div>
               <div>
-                <span className="text-black text-[16px] font-bold">Property type: </span>
+                <span className="text-black font-gc-palioka text-[14px] font-bold">Property type: </span>
                 <span className="text-[#8D957E] text-[14px] font-bold">Villa</span>
               </div>
               <div>
-                <span className="text-black text-[16px] font-bold">Year of build: </span>
+                <span className="text-black font-gc-palioka text-[14px] font-bold">Year of build: </span>
                 <span className="text-[#8D957E] text-[14px] font-bold">2024</span>
               </div>
               <div>
-                <span className="text-black text-[16px] font-bold">Property status: </span>
+                <span className="text-black font-gc-palioka text-[14px] font-bold">Property status: </span>
                 <span className="text-[#8D957E] text-[14px] font-bold">Ongoing</span>
               </div>
             </div>
 
             <div className="bg-white rounded-lg mb-8">
-              <h3 className="text-[20px] font-bold text-black mb-4">Property description</h3>
-              <p className="text-gray-600 text-[14px] leading-relaxed mb-6">
+              <h3 className="text-[16px] font-bold  font-gc-palioka text-black mb-2">Property description</h3>
+              <p className="text-gray-600 text-[12px] leading-relaxed mb-2">
                 {villaData.description}
               </p>
               <button className="text-black text-[12px] font-bold hover:opacity-70 transition-opacity underline">

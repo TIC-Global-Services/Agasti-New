@@ -3,6 +3,7 @@ import VillaDetailPage from "@/components/VillaDetailPage";
 import Footer from "@/components/Footer";
 import ProjectContentGrid from "@/components/ProjectContentGrid";
 import ProjectShowcase from "@/components/ProjectShowcase";
+import AboutCTA from "@/components/AboutCTA";
 
 export default function CrestVillaPage() {
   return (
@@ -11,6 +12,7 @@ export default function CrestVillaPage() {
       <VillaDetailPage villaType="crest" />
       <ProjectContentGrid />
       <ProjectShowcase />
+      <AboutCTA />
       <Footer />
     </main>
   );

@@ -20,7 +20,7 @@ export default function ProjectContentGrid() {
           <div>
             <p 
               ref={sectionRef}
-              className={`text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-[24px] mb-1 sm:mb-3 md:mb-4 font-regular transition-all duration-700 ${sectionBlur}`}
+              className={`text-[#8D957E] font-gc-palioka text-[16px] sm:text-[16px] md:text-[24px] mb-1 sm:mb-2 md:mb-4 font-regular transition-all duration-700 ${sectionBlur}`}
             >
               Upcoming Projects
             </p>
@@ -45,10 +45,10 @@ export default function ProjectContentGrid() {
           </div>
 
           {/* Right Side - Description */}
-          <div className="lg:pt-12 lg:pl-10">
-            <div className="bg-white p-0 sm:p-4 md:p-0 relative max-w-4xl">
+          <div className="lg:pt-12 lg:pl-10 sm:pt-4">
+            <div className="bg-white p-0 sm:p-2 md:p-0 relative max-w-4xl">
               <div className="relative">
-                <p className="text-[#717580] text-[16px] font-plus-jakarta-sans sm:text-base leading-tight text-left pr-8">
+                <p className="text-[#717580] text-[14px] font-plus-jakarta-sans sm:text-base leading-tight text-left pr-8">
                   Our upcoming projects reflect Agasti’s vision of refined, nature-led luxury. Each new community is thoughtfully planned with elegant design and smart engineering to bring elevated living to new locations.
                 </p>
                 {/* Vertical line on the right side */}

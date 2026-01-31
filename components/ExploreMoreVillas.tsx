@@ -77,9 +77,14 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
         
         {/* Mobile Layout */}
         <div className="block sm:hidden">
-          <div className="space-y-8">
+          <div className="space-y-8 mb-4">
             {otherVillas.map((villa, index) => (
               <div key={index} className="group">
+                {/* Villa title above image */}
+                {/* <div className="mb-4">
+                  <h5 className="font-gc-palioka text-[20px] text-black mb-1">{villa.name}</h5>
+                </div> */}
+                
                 <div className="relative overflow-hidden mb-4 w-full h-[400px]">
                   <Image
                     src={villa.image}
@@ -89,19 +94,20 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                {/* Horizontal line below image */}
-                <div className="w-full h-px bg-gray-300 mb-4"></div>
-                <div className="flex justify-between items-center">
-                  <div className="flex-1 mr-4">
-                    <h5 className="font-gc-palioka text-[20px] text-black mb-1">{villa.name}</h5>
-                    <p className="text-gray-600 text-[14px]">{villa.description}</p>
-                  </div>
+                {/* Gray line below villa title and button */}
+                <div className="w-full h-px bg-gray-300 mt-4 mb-4"></div>
+                {/* Villa title below image */}
+                <div className="mb-2">
+                  <h5 className="font-gc-palioka text-[20px] text-black mb-1">{villa.name}</h5>
+                  <p className="text-gray-600 text-[14px] mb-4">{villa.description}</p>
                   <Link href={`/projects/${villa.slug}`}>
                     <button className="bg-[#8D957E] text-white text-[10px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors px-3 py-2 min-w-[100px] h-[36px] shrink-0">
                       VIEW DETAILS
                     </button>
                   </Link>
                 </div>
+                
+                
               </div>
             ))}
           </div>

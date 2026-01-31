@@ -9,7 +9,7 @@ export default function LocationSection() {
 
   return (
     <section className="bg-white py-0 md:py-[50px]">
-      <ContainerLayout paddingX="px-6 sm:px-[48px]" paddingY="pb-[40px] md:py-16">
+      <ContainerLayout paddingX="px-0 sm:px-[48px]" paddingY="pb-[40px] md:py-16">
         <div className="bg-[#F0EDE4] rounded-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Left Side - Content */}

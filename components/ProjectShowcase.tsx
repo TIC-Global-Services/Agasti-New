@@ -51,7 +51,7 @@ export default function ProjectShowcase() {
               />
             </div>
 
-            <p className="text-gray-600 text-[14px] leading-relaxed mb-8">
+            <p className="text-gray-600 text-[12px] leading-tight mb-8">
               Luxury residences inspired by contemporary minimalism, combining open spaces, modern design, and community living.
             </p>
 
@@ -96,7 +96,7 @@ export default function ProjectShowcase() {
               />
             </div>
 
-            <p className="text-gray-600 text-[14px] leading-relaxed">
+            <p className="text-gray-600 text-[12px] leading-tight">
               A boutique villa enclave surrounded by lush landscapes, designed for serene, sustainable living.
             </p>
           </div>
