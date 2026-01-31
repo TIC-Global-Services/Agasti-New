@@ -16,13 +16,13 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
       case 'zenith':
         return [
           {
-            name: 'The Agasti Crest',
+            name: 'The Agasti East',
             description: 'East facing villa',
             image: '/projects-imgs/AgastiCrest.jpg',
             slug: 'crest'
           },
           {
-            name: 'The Agasti Horizon',
+            name: 'The Agasti North',
             description: 'North facing villa',
             image: '/projects-imgs/agastihorizon.jpg',
             slug: 'horizon'
@@ -31,13 +31,13 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
       case 'crest':
         return [
           {
-            name: 'The Agasti Zenith',
+            name: 'The Agasti West',
             description: 'West facing villa',
             image: '/mainvilla.jpg',
             slug: 'zenith'
           },
           {
-            name: 'The Agasti Horizon',
+            name: 'The Agasti North',
             description: 'North facing villa',
             image: '/projects-imgs/agastihorizon.jpg',
             slug: 'horizon'
@@ -46,13 +46,13 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
       case 'horizon':
         return [
           {
-            name: 'The Agasti Zenith',
+            name: 'The Agasti West',
             description: 'West facing villa',
             image: '/mainvilla.jpg',
             slug: 'zenith'
           },
           {
-            name: 'The Agasti Crest',
+            name: 'The Agasti East',
             description: 'East facing villa',
             image: '/projects-imgs/AgastiCrest.jpg',
             slug: 'crest'
@@ -97,11 +97,13 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
                 {/* Gray line below villa title and button */}
                 <div className="w-full h-px bg-gray-300 mt-4 mb-4"></div>
                 {/* Villa title below image */}
-                <div className="mb-2">
-                  <h5 className="font-gc-palioka text-[20px] text-black mb-1">{villa.name}</h5>
-                  <p className="text-gray-600 text-[14px] mb-4">{villa.description}</p>
+                <div className="flex justify-between items-center mb-2">
+                  <div className="flex-1 mr-4">
+                    <h5 className="font-gc-palioka text-[20px] text-black mb-1">{villa.name}</h5>
+                    <p className="text-gray-600 text-[14px]">{villa.description}</p>
+                  </div>
                   <Link href={`/projects/${villa.slug}`}>
-                    <button className="bg-[#8D957E] text-white text-[10px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors px-3 py-2 min-w-[100px] h-[36px] shrink-0">
+                    <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors px-3 py-2 min-w-[100px] h-[36px] shrink-0">
                       VIEW DETAILS
                     </button>
                   </Link>

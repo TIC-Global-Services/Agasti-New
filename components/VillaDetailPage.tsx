@@ -458,7 +458,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               </div>
               
               <div className="mt-8">
-                <h4 className="font-gc-palioka text-[20px] sm:text-[24px] text-black mb-4">Inside The Villa</h4>
+                <h4 className="font-gc-palioka text-[20px] sm:text-[24px] text-black mb-8 sm:mb-4">Inside The Villa</h4>
                 <InsideVilla showTitle={false} showPadding={false} />
               </div>
             </div>
@@ -579,7 +579,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                 
                 {/* Inside The Villa Component */}
                 <div>
-                  <h4 className="font-gc-palioka text-[34px] text-black mb-4">Inside The Villa</h4>
+                  <h4 className="font-gc-palioka text-[34px] text-black mb-8 sm:mb-4">Inside The Villa</h4>
                   <InsideVilla showTitle={false} showPadding={false} />
                 </div>
               </div>
