@@ -15,13 +15,13 @@ export default function ProjectShowcase() {
         <div className="block sm:hidden">
           {/* First Villa - Agasti Verve */}
           <div className="mb-8">
-            <div className="flex justify-between items-start mb-6">
+            <div className="flex justify-between items-end mb-[30px]">
               <div>
                 <h2 className="font-gc-palioka text-[20px] text-black mb-2 leading-tight">
                   Agasti Verve
                 </h2>
                 <div className="flex items-center">
-                  <div className="relative mr-2" style={{ width: '20px', height: '20px' }}>
+                  <div className="relative mr-1" style={{ width: '20px', height: '20px' }}>
                     <Image
                       src="/projects-imgs/locationicon.png"
                       alt="Location"
@@ -41,7 +41,7 @@ export default function ProjectShowcase() {
               </button>
             </div>
 
-            <div className="relative overflow-hidden mb-6 h-[400px]">
+            <div className="relative overflow-hidden mb-[30px] h-[400px]">
               <Image
                 src="/projects-imgs/agastiverve.png"
                 alt="Agasti Verve Villa"
@@ -60,13 +60,13 @@ export default function ProjectShowcase() {
 
           {/* Second Villa - Agasti Arbor */}
           <div className="mb-12">
-            <div className="flex justify-between items-start mb-6">
+            <div className="flex justify-between items-end mb-[30px]">
               <div>
                 <h2 className="font-gc-palioka text-[20px] text-black mb-2 leading-tight">
                   Agasti Arbor
                 </h2>
                 <div className="flex items-center">
-                  <div className="relative mr-2" style={{ width: '20px', height: '20px' }}>
+                  <div className="relative mr-1" style={{ width: '20px', height: '20px' }}>
                     <Image
                       src="/projects-imgs/locationicon.png"
                       alt="Location"

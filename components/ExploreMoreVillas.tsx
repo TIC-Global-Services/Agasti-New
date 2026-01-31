@@ -66,7 +66,7 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
   const otherVillas = getOtherVillas();
 
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-6 sm:py-12">
       <div className="">
         <h4 
           ref={titleRef}
@@ -97,16 +97,18 @@ export default function ExploreMoreVillas({ currentVilla }: ExploreMoreVillasPro
                 {/* Gray line below villa title and button */}
                 <div className="w-full h-px bg-gray-300 mt-4 mb-4"></div>
                 {/* Villa title below image */}
-                <div className="flex justify-between items-center mb-2">
-                  <div className="flex-1 mr-4">
+                <div className="flex flex-col mb-[70px]">
+                  <div className="mb-4">
                     <h5 className="font-gc-palioka text-[20px] text-black mb-1">{villa.name}</h5>
                     <p className="text-gray-600 text-[14px]">{villa.description}</p>
                   </div>
-                  <Link href={`/projects/${villa.slug}`}>
-                    <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors px-3 py-2 min-w-[100px] h-[36px] shrink-0">
-                      VIEW DETAILS
-                    </button>
-                  </Link>
+                  <div className="flex justify-start">
+                    <Link href={`/projects/${villa.slug}`}>
+                      <button className="bg-[#8D957E] text-white text-[8px] font-bold tracking-wider rounded hover:bg-[#7A8470] transition-colors px-3 py-2 min-w-[100px] h-[36px] shrink-0">
+                        VIEW DETAILS
+                      </button>
+                    </Link>
+                  </div>
                 </div>
                 
                 

@@ -221,7 +221,7 @@ const MobileAmenityCards = () => {
             <source src="/icons webm 3/clubhouse.webm" type="video/webm" />
           </video>
         </div>
-        <p className="text-[13px] font-medium text-gray-700">Clubhouse</p>
+        <p className="text-[10px] font-medium text-gray-700">Clubhouse</p>
       </div>
       
       <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
@@ -250,7 +250,7 @@ const MobileAmenityCards = () => {
             <source src="/icons webm 3/badminton.webm" type="video/webm" />
           </video>
         </div>
-        <p className="text-[13px] font-medium text-gray-700">Badminton Court</p>
+        <p className="text-[10px] font-medium text-gray-700">Badminton Court</p>
       </div>
       
       <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
@@ -279,7 +279,7 @@ const MobileAmenityCards = () => {
             <source src="/icons webm 3/basketball.webm" type="video/webm" />
           </video>
         </div>
-        <p className="text-[13px] font-medium text-gray-700">Mini Basketball</p>
+        <p className="text-[10px] font-medium text-gray-700">Mini Basketball</p>
       </div>
       
       <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
@@ -308,7 +308,7 @@ const MobileAmenityCards = () => {
             <source src="/icons webm 3/playground.webm" type="video/webm" />
           </video>
         </div>
-        <p className="text-[13px] font-medium text-gray-700">Kids Play Area</p>
+        <p className="text-[10px] font-medium text-gray-700">Kids Play Area</p>
       </div>
     </div>
   );
@@ -456,12 +456,11 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               
               {/* Mobile Amenities */}
               <div className="mt-6">
-                <h4 className="text-[20px] font-bold text-black mb-3">Amenities</h4>
                 <MobileAmenityCards />
               </div>
               
               <div className="mt-8">
-                <h4 className="font-gc-palioka text-[20px] sm:text-[24px] text-black mb-8 sm:mb-4">Inside The Villa</h4>
+                <h4 className="font-gc-palioka text-[16px] sm:text-[24px] text-black mb-8 sm:mb-4">Inside The Villa</h4>
                 <InsideVilla showTitle={false} showPadding={false} />
               </div>
             </div>

@@ -13,7 +13,7 @@ export default function ProjectContentGrid() {
 
   return (
     <section className="bg-white">
-      <ContainerLayout paddingX="px-6 xl:px-[48px] lg:px-[48px]" paddingY="py-[40px]">
+      <ContainerLayout paddingX="px-6 xl:px-[48px] lg:px-[48px]" paddingY="pb-[40px] sm:py-[40px]">
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-16 items-start">
           {/* Left Side - Section Header */}

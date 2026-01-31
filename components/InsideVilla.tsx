@@ -18,7 +18,7 @@ export default function InsideVilla({ showTitle = true, showPadding = true }: In
       {showTitle && (
         <h2 
           ref={titleRef}
-          className="font-gc-palioka text-[16px] sm:text-[16px] md:text-[34px] text-black mt-8 mb-16 sm:mb-8 sm:mt-10 leading-tight"
+          className="font-gc-palioka text-[16px] sm:text-[34px] md:text-[34px] text-black mt-8 mb-16 sm:mb-8 sm:mt-10 leading-tight"
         >
           Inside The Villa
         </h2>
