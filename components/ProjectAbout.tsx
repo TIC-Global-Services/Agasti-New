@@ -9,7 +9,7 @@ export default function AboutAgasti() {
     <section className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
         {/* Right Side - Content (appears first on mobile) */}
-        <div className="bg-[#F5F3EE] flex items-center justify-center px-6 sm:px-[48px] py-[40px] order-1 lg:order-2">
+        <div className="bg-white flex items-center justify-center px-6 sm:px-[48px] py-[40px] order-1 lg:order-2">
           <div className="max-w-xl">
             <p className="font-gc-palioka text-[#8D957E] text-lg sm:text-xl md:text-[25px] mb-4 tracking-wider font-bold">Why Choose AGASTI?</p>
             
