@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useLetterReveal } from "@/hooks/useLetterReveal";
 
 export default function AboutAgasti() {
@@ -30,12 +31,14 @@ export default function AboutAgasti() {
               </p>
             </div>
 
-            <button className="text-black text-sm sm:text-base font-medium hover:opacity-70 transition-opacity group">
-              <span className="relative inline-block">
-                Know More
-                <span className="absolute left-0 bottom-0 w-full lg:w-4 h-px bg-black transition-all duration-300 lg:group-hover:w-full"></span>
-              </span>
-            </button>
+            <Link href="/about">
+              <button className="text-black text-sm sm:text-base font-medium hover:opacity-70 transition-opacity group">
+                <span className="relative inline-block">
+                  Know More
+                  <span className="absolute left-0 bottom-0 w-full lg:w-4 h-px bg-black transition-all duration-300 lg:group-hover:w-full"></span>
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
 

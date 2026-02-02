@@ -110,14 +110,23 @@ export default function AboutCommitments() {
           >
             Our commitments
           </p>
-          <BlurText
-            text="With every Agasti Villa, we aim to deliver outcomes that prioritize quality, comfort, and long-term value."
-            delay={60}
-            animateBy="words"
-            direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight max-w-4xl"
-          />
+          <div className="max-w-4xl">
+  <BlurText
+    text="With every Agasti Villa, we aim to deliver outcomes"
+    delay={0}
+    animateBy="words"
+    direction="top"
+    className="font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight"
+  />
+  <BlurText
+    text="that prioritize quality, comfort, and long-term value."
+    delay={150}
+    animateBy="words"
+    direction="top"
+    onAnimationComplete={handleAnimationComplete}
+    className="font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight"
+  />
+</div>
         </div>
       </ContainerLayout>
 

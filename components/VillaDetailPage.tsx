@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { useLetterReveal } from "@/hooks/useLetterReveal";
 import InsideVilla from "./InsideVilla";
@@ -449,9 +450,11 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               <p className="text-gray-600 text-[12px] leading-relaxed mb-2">
                 {villaData.description}
               </p>
-              <button className="text-black text-[12px] font-bold hover:opacity-70 transition-opacity underline">
-                SCHEDULE A VISIT →
-              </button>
+              <Link href="/contact">
+                <button className="text-black text-[12px] font-bold hover:opacity-70 transition-opacity underline">
+                  SCHEDULE A VISIT →
+                </button>
+              </Link>
 
               
               {/* Mobile Amenities */}
@@ -565,12 +568,14 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                     <p className="text-gray-600 text-base leading-[1.3] mb-6">
                       {villaData.description}
                     </p>
-                    <button className="text-black text-sm font-medium hover:opacity-70 transition-opacity group">
-                      <span className="relative inline-block font-bold">
-                        SCHEDULE A VISIT →
-                        <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
-                      </span>
-                    </button>
+                    <Link href="/contact">
+                      <button className="text-black text-sm font-medium hover:opacity-70 transition-opacity group">
+                        <span className="relative inline-block font-bold">
+                          SCHEDULE A VISIT →
+                          <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
+                        </span>
+                      </button>
+                    </Link>
                   </div>
                   
                   {/* Right Side - Amenities */}
