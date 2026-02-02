@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useLetterReveal } from "@/hooks/useLetterReveal";
 
 export default function AboutAgasti() {
@@ -36,16 +35,36 @@ export default function AboutAgasti() {
           </div>
         </div>
 
-        {/* Left Side - Image (appears second on mobile) */}
+        {/* Left Side - Video (appears second on mobile) */}
         <div className="relative h-[70vh] lg:h-auto order-2 lg:order-1">
-          <Image
-            src="/aboutus.png"
-            alt="Agasti Interior"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-            priority
-          />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => {
+              // Fallback to image if video fails to load
+              const target = e.target as HTMLVideoElement;
+              const parent = target.parentElement;
+              if (parent) {
+                const img = document.createElement('img');
+                img.src = '/aboutus.png';
+                img.alt = 'Agasti Interior';
+                img.className = 'absolute inset-0 w-full h-full object-cover';
+                parent.innerHTML = '';
+                parent.appendChild(img);
+              }
+            }}
+          >
+            <source src="/livingroom_1.webm" type="video/webm" />
+            {/* Fallback image for browsers that don't support video */}
+            <img
+              src="/aboutus.png"
+              alt="Agasti Interior"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </video>
         </div>
       </div>
     </section>
