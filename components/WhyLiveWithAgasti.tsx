@@ -86,8 +86,14 @@ const LineByLineBlur = ({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
+        if (entry.isIntersecting) {
+          // Reset and start animation when entering
+          setAnimatedLines(0);
           setIsVisible(true);
+        } else {
+          // Reset when leaving the section
+          setIsVisible(false);
+          setAnimatedLines(0);
         }
       },
       { threshold: 0.1 }
@@ -96,7 +102,7 @@ const LineByLineBlur = ({
     observer.observe(containerRef.current);
 
     return () => observer.disconnect();
-  }, [isVisible]);
+  }, []);
 
   // Animate lines sequentially when visible
   useEffect(() => {
@@ -179,8 +185,12 @@ export default function WhyLiveWithAgasti() {
         const observer = new IntersectionObserver(
           ([entry]) => {
             if (entry.isIntersecting) {
+              // Reset video to beginning and play
+              video.currentTime = 0;
               video.play().catch(console.error);
-              observer.unobserve(video); // Play only once
+            } else {
+              // Pause video when out of view
+              video.pause();
             }
           },
           { threshold: 0.5 }
@@ -372,12 +382,12 @@ export default function WhyLiveWithAgasti() {
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col items-center justify-center py-8">
                 {/* Icon */}
-                <div className="relative w-16 h-16 lg:w-20 lg:h-20 mb-4 flex items-center justify-center">
+                <div className="relative w-16 h-16 lg:w-28 lg:h-28 mb-4 flex items-center justify-center">
                   {feature.icon.endsWith('.webm') ? (
                     <video
                       ref={setVideoRef(index + features.length)} // Offset for desktop videos
-                      width={120}
-                      height={120}
+                      width={200}
+                      height={200}
                       muted
                       playsInline
                       preload="metadata"
