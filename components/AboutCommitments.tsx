@@ -2,18 +2,65 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import ContainerLayout from "@/layout/ContainerLayout";
-import { useBlurOnScroll } from "@/hooks/useBlurOnScroll";
 import BlurText from "./BlurText";
 
 export default function AboutCommitments() {
   const [translateX, setTranslateX] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [hasExitedSection, setHasExitedSection] = useState(false);
+  const [isInSection, setIsInSection] = useState(false);
   const animationRef = useRef<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
-  // Blur effects for headings
-  const { elementRef: commitmentsRef, blurClass: commitmentsBlur } = useBlurOnScroll<HTMLParagraphElement>();
+  // Custom intersection observer for "Our commitments" text
+  useEffect(() => {
+    const currentSection = sectionRef.current;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInSection(true);
+        } else {
+          setIsInSection(false);
+          // Only set hasExitedSection to true when completely out of view
+          if (entry.intersectionRatio === 0) {
+            setHasExitedSection(true);
+          }
+        }
+      },
+      {
+        threshold: [0, 0.1], // Track when completely out of view (0) and when entering (0.1)
+        rootMargin: "0px"
+      }
+    );
+
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
+  }, []);
+
+  // Determine blur class based on section state
+  const getCommitmentsBlurClass = () => {
+    const isMobileOrTablet = window.innerWidth < 1024;
+    
+    if (isMobileOrTablet) {
+      return ''; // No blur on mobile/tablet
+    }
+    
+    if (isInSection || !hasExitedSection) {
+      return 'filter-none opacity-100'; // Clear when in section or hasn't exited yet
+    } else {
+      return 'filter blur-sm opacity-70'; // Blur only after completely exiting
+    }
+  };
 
   const handleAnimationComplete = () => {
     console.log('AboutCommitments title animation completed!');
@@ -89,7 +136,7 @@ export default function AboutCommitments() {
   }, [commitments.length, isPaused]);
 
   return (
-    <section className="bg-white pt-[65px]">
+    <section ref={sectionRef} className="bg-white pt-[65px]">
       <style dangerouslySetInnerHTML={{
         __html: `
           .hide-scrollbar::-webkit-scrollbar {
@@ -105,8 +152,7 @@ export default function AboutCommitments() {
         {/* Header */}
         <div className="mb-6 sm:mb-10">
           <p 
-            ref={commitmentsRef}
-            className={`text-[#8D957E] text-[20px] sm:text-[24px] font-bold mb-4 transition-all duration-700 ${commitmentsBlur}`}
+            className={`text-[#8D957E] text-[20px] sm:text-[24px] font-bold mb-4 transition-all duration-900 ${getCommitmentsBlurClass()}`}
           >
             Our commitments
           </p>
