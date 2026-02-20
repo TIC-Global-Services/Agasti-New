@@ -17,6 +17,7 @@ export default function AboutStory() {
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const handleScroll = () => {
       // Use imageRef for mobile, imageContainerRef for desktop
       const targetRef = window.innerWidth >= 1024 ? imageContainerRef.current : imageRef.current;

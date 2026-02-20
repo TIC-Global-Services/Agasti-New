@@ -35,6 +35,8 @@ export default function AboutExcellence() {
 
   // Animation for stats numbers
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     if (isStatsVisible) {
       console.log('Stats animation starting...'); // Debug log
       // Animation for all screen sizes

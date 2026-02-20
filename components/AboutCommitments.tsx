@@ -49,6 +49,8 @@ export default function AboutCommitments() {
 
   // Determine blur class based on section state
   const getCommitmentsBlurClass = () => {
+    if (typeof window === "undefined") return;
+    
     const isMobileOrTablet = window.innerWidth < 1024;
     
     if (isMobileOrTablet) {
