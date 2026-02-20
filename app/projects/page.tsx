@@ -5,15 +5,16 @@ import ProjectContentGrid from "@/components/ProjectContentGrid";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import AboutCTA from "@/components/AboutCTA";
 import Footer from "@/components/Footer";
+import PropertyDesc from "@/components/Project/PropertyDesc";
 
 export default function ProjectsPage() {
   return (
     <main>
       <ProjectHero />
       <ProjectAbout />
+      <PropertyDesc />
       <ProjectVillaDescription />
       <ProjectContentGrid />
-      <ProjectShowcase />
       <AboutCTA />
       <Footer />
     </main>

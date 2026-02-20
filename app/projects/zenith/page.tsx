@@ -11,7 +11,6 @@ export default function ZenithVillaPage() {
       <Navbar />
       <VillaDetailPage villaType="zenith" />
       <ProjectContentGrid />
-      <ProjectShowcase />
       <AboutCTA/>
       <Footer />
     </main>

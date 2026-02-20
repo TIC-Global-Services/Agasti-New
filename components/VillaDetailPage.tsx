@@ -161,159 +161,6 @@ const AmenityCards = () => {
   );
 };
 
-// Mobile Amenity Cards Component
-const MobileAmenityCards = () => {
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-
-  // Intersection Observer for video playback
-  useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-
-    videoRefs.current.forEach((video, index) => {
-      if (video) {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              video.play().catch(console.error);
-              observer.unobserve(video); // Play only once
-            }
-          },
-          { threshold: 0.5 }
-        );
-        observer.observe(video);
-        observers.push(observer);
-      }
-    });
-
-    return () => {
-      observers.forEach(observer => observer.disconnect());
-    };
-  }, []);
-
-  const setVideoRef = (index: number) => (ref: HTMLVideoElement | null) => {
-    videoRefs.current[index] = ref;
-  };
-
-  return (
-    <div className="grid grid-cols-2 gap-4 mt-6">
-      <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
-        <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-          <video
-            ref={setVideoRef(0)}
-            width={64}
-            height={64}
-            muted
-            playsInline
-            className="object-contain"
-            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-            onError={(e) => {
-              const target = e.target as HTMLVideoElement;
-              const parent = target.parentElement;
-              if (parent) {
-                const img = document.createElement('img');
-                img.src = '/clubhouse.png';
-                img.alt = 'Clubhouse';
-                img.className = 'w-full h-full object-contain';
-                parent.innerHTML = '';
-                parent.appendChild(img);
-              }
-            }}
-          >
-            <source src="/icons webm 3/clubhouse.webm" type="video/webm" />
-          </video>
-        </div>
-        <p className="text-[10px] font-medium text-gray-700">Clubhouse</p>
-      </div>
-      
-      <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
-        <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-          <video
-            ref={setVideoRef(1)}
-            width={64}
-            height={64}
-            muted
-            playsInline
-            className="object-contain"
-            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-            onError={(e) => {
-              const target = e.target as HTMLVideoElement;
-              const parent = target.parentElement;
-              if (parent) {
-                const img = document.createElement('img');
-                img.src = '/projects-imgs/badminton.png';
-                img.alt = 'Badminton Court';
-                img.className = 'w-full h-full object-contain';
-                parent.innerHTML = '';
-                parent.appendChild(img);
-              }
-            }}
-          >
-            <source src="/icons webm 3/badminton.webm" type="video/webm" />
-          </video>
-        </div>
-        <p className="text-[10px] font-medium text-gray-700">Badminton Court</p>
-      </div>
-      
-      <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
-        <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-          <video
-            ref={setVideoRef(2)}
-            width={64}
-            height={64}
-            muted
-            playsInline
-            className="object-contain"
-            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-            onError={(e) => {
-              const target = e.target as HTMLVideoElement;
-              const parent = target.parentElement;
-              if (parent) {
-                const img = document.createElement('img');
-                img.src = '/projects-imgs/basketball.png';
-                img.alt = 'Mini Basketball';
-                img.className = 'w-full h-full object-contain';
-                parent.innerHTML = '';
-                parent.appendChild(img);
-              }
-            }}
-          >
-            <source src="/icons webm 3/basketball.webm" type="video/webm" />
-          </video>
-        </div>
-        <p className="text-[10px] font-medium text-gray-700">Mini Basketball</p>
-      </div>
-      
-      <div className="text-center p-5" style={{ backgroundColor: '#F0EDE4' }}>
-        <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-          <video
-            ref={setVideoRef(3)}
-            width={64}
-            height={64}
-            muted
-            playsInline
-            className="object-contain"
-            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
-            onError={(e) => {
-              const target = e.target as HTMLVideoElement;
-              const parent = target.parentElement;
-              if (parent) {
-                const img = document.createElement('img');
-                img.src = '/projects-imgs/playarea.png';
-                img.alt = 'Kids Play Area';
-                img.className = 'w-full h-full object-contain';
-                parent.innerHTML = '';
-                parent.appendChild(img);
-              }
-            }}
-          >
-            <source src="/icons webm 3/playground.webm" type="video/webm" />
-          </video>
-        </div>
-        <p className="text-[10px] font-medium text-gray-700">Kids Play Area</p>
-      </div>
-    </div>
-  );
-};
 
 interface VillaDetailPageProps {
   villaType: 'zenith' | 'crest' | 'horizon';
@@ -445,7 +292,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
 
             <div className="w-full h-px bg-gray-300 mt-2 mb-4"></div>
 
-            <div className="bg-white rounded-lg mb-8">
+            {/* <div className="bg-white rounded-lg mb-8">
               <h3 className="text-[16px] font-bold  font-gc-palioka text-black mb-2">Property description</h3>
               <p className="text-gray-600 text-[12px] leading-relaxed mb-2">
                 {villaData.description}
@@ -457,7 +304,6 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               </Link>
 
               
-              {/* Mobile Amenities */}
               <div className="mt-6">
                 <MobileAmenityCards />
               </div>
@@ -466,7 +312,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                 <h4 className="font-gc-palioka text-[16px] sm:text-[24px] text-black mb-8 sm:mb-4">Inside The Villa</h4>
                 <InsideVilla showTitle={false} showPadding={false} />
               </div>
-            </div>
+            </div> */}
 
             <ExploreMoreVillas currentVilla={villaType} />
           </div>
@@ -561,8 +407,8 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                 <div className="w-full h-px bg-gray-300 mb-12"></div>
                 
                 {/* Top Section - Property Description and Amenities */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 mb-8">
-                  {/* Left Side - Property Description */}
+                {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 mb-8">
+                 
                   <div className="w-full">
                     <h3 className="text-[34px] font-bold text-black mb-4">Property description</h3>
                     <p className="text-gray-600 text-base leading-[1.3] mb-6">
@@ -578,11 +424,10 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                     </Link>
                   </div>
                   
-                  {/* Right Side - Amenities */}
                   <div className="w-full flex justify-end">
                     <AmenityCards />
                   </div>
-                </div>
+                </div> */}
                 
                 {/* Inside The Villa Component */}
                 <div>

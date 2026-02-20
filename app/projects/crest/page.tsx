@@ -11,7 +11,6 @@ export default function CrestVillaPage() {
       <Navbar />
       <VillaDetailPage villaType="crest" />
       <ProjectContentGrid />
-      <ProjectShowcase />
       <AboutCTA />
       <Footer />
     </main>

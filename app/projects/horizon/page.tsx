@@ -11,7 +11,6 @@ export default function HorizonVillaPage() {
       <Navbar />
       <VillaDetailPage villaType="horizon" />
       <ProjectContentGrid />
-      <ProjectShowcase />
       <AboutCTA />
       <Footer />
     </main>

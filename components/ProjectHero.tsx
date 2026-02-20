@@ -118,7 +118,7 @@ export default function ProjectHero() {
           <div className="hidden lg:block">
             {/* Parallax Image Container - Isolated */}
             <div className="mb-0">
-              <div className="overflow-hidden h-[500px] w-full">
+              <div className="overflow-hidden h-[70dvh] w-full">
                 <div
                   ref={imageContainerRef}
                   style={{
