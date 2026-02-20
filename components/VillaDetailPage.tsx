@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import ContainerLayout from "@/layout/ContainerLayout";
 import { useLetterReveal } from "@/hooks/useLetterReveal";
-import InsideVilla from "./InsideVilla";
+import HorizonInsideVilla from "./Project/Horizon/HorizonInsideVilla";
+import ZenithInsideVilla from "./Project/Zenith/ZenithInsideVilla";
+import CrestInsideVilla from "./Project/Crest/CrestInsideVilla";
 import ExploreMoreVillas from "./ExploreMoreVillas";
 
 // Amenity Cards Component
@@ -24,7 +26,7 @@ const AmenityCards = () => {
               observer.unobserve(video); // Play only once
             }
           },
-          { threshold: 0.5 }
+          { threshold: 0.5 },
         );
         observer.observe(video);
         observers.push(observer);
@@ -32,7 +34,7 @@ const AmenityCards = () => {
     });
 
     return () => {
-      observers.forEach(observer => observer.disconnect());
+      observers.forEach((observer) => observer.disconnect());
     };
   }, []);
 
@@ -42,7 +44,10 @@ const AmenityCards = () => {
 
   return (
     <div className="grid grid-cols-2 gap-4 w-full max-w-xl">
-      <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+      <div
+        className="text-center p-8 lg:p-10"
+        style={{ backgroundColor: "#F0EDE4" }}
+      >
         <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
           <video
             ref={setVideoRef(0)}
@@ -51,16 +56,16 @@ const AmenityCards = () => {
             muted
             playsInline
             className="object-cover w-full h-full"
-            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            style={{ filter: "brightness(0.7) contrast(1.3) saturate(1.2)" }}
             onError={(e) => {
               const target = e.target as HTMLVideoElement;
               const parent = target.parentElement;
               if (parent) {
-                const img = document.createElement('img');
-                img.src = '/clubhouse.png';
-                img.alt = 'Clubhouse';
-                img.className = 'w-full h-full object-contain';
-                parent.innerHTML = '';
+                const img = document.createElement("img");
+                img.src = "/clubhouse.png";
+                img.alt = "Clubhouse";
+                img.className = "w-full h-full object-contain";
+                parent.innerHTML = "";
                 parent.appendChild(img);
               }
             }}
@@ -70,8 +75,11 @@ const AmenityCards = () => {
         </div>
         <p className="text-lg font-medium text-gray-700">Clubhouse</p>
       </div>
-      
-      <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+
+      <div
+        className="text-center p-8 lg:p-10"
+        style={{ backgroundColor: "#F0EDE4" }}
+      >
         <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
           <video
             ref={setVideoRef(1)}
@@ -80,16 +88,16 @@ const AmenityCards = () => {
             muted
             playsInline
             className="object-cover w-full h-full"
-            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            style={{ filter: "brightness(0.7) contrast(1.3) saturate(1.2)" }}
             onError={(e) => {
               const target = e.target as HTMLVideoElement;
               const parent = target.parentElement;
               if (parent) {
-                const img = document.createElement('img');
-                img.src = '/projects-imgs/badminton.png';
-                img.alt = 'Badminton Court';
-                img.className = 'w-full h-full object-contain';
-                parent.innerHTML = '';
+                const img = document.createElement("img");
+                img.src = "/projects-imgs/badminton.png";
+                img.alt = "Badminton Court";
+                img.className = "w-full h-full object-contain";
+                parent.innerHTML = "";
                 parent.appendChild(img);
               }
             }}
@@ -99,8 +107,11 @@ const AmenityCards = () => {
         </div>
         <p className="text-lg font-medium text-gray-700">Badminton Court</p>
       </div>
-      
-      <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+
+      <div
+        className="text-center p-8 lg:p-10"
+        style={{ backgroundColor: "#F0EDE4" }}
+      >
         <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
           <video
             ref={setVideoRef(2)}
@@ -109,16 +120,16 @@ const AmenityCards = () => {
             muted
             playsInline
             className="object-cover w-full h-full"
-            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            style={{ filter: "brightness(0.7) contrast(1.3) saturate(1.2)" }}
             onError={(e) => {
               const target = e.target as HTMLVideoElement;
               const parent = target.parentElement;
               if (parent) {
-                const img = document.createElement('img');
-                img.src = '/projects-imgs/basketball.png';
-                img.alt = 'Mini Basketball Court';
-                img.className = 'w-full h-full object-contain';
-                parent.innerHTML = '';
+                const img = document.createElement("img");
+                img.src = "/projects-imgs/basketball.png";
+                img.alt = "Mini Basketball Court";
+                img.className = "w-full h-full object-contain";
+                parent.innerHTML = "";
                 parent.appendChild(img);
               }
             }}
@@ -126,10 +137,15 @@ const AmenityCards = () => {
             <source src="/icons webm 3/basketball.webm" type="video/webm" />
           </video>
         </div>
-        <p className="text-lg font-medium text-gray-700">Mini Basketball Court</p>
+        <p className="text-lg font-medium text-gray-700">
+          Mini Basketball Court
+        </p>
       </div>
-      
-      <div className="text-center p-8 lg:p-10" style={{ backgroundColor: '#F0EDE4' }}>
+
+      <div
+        className="text-center p-8 lg:p-10"
+        style={{ backgroundColor: "#F0EDE4" }}
+      >
         <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
           <video
             ref={setVideoRef(3)}
@@ -138,16 +154,16 @@ const AmenityCards = () => {
             muted
             playsInline
             className="object-contain w-full h-full"
-            style={{ filter: 'brightness(0.7) contrast(1.3) saturate(1.2)' }}
+            style={{ filter: "brightness(0.7) contrast(1.3) saturate(1.2)" }}
             onError={(e) => {
               const target = e.target as HTMLVideoElement;
               const parent = target.parentElement;
               if (parent) {
-                const img = document.createElement('img');
-                img.src = '/projects-imgs/playarea.png';
-                img.alt = 'Kids Play Area';
-                img.className = 'w-full h-full object-contain';
-                parent.innerHTML = '';
+                const img = document.createElement("img");
+                img.src = "/projects-imgs/playarea.png";
+                img.alt = "Kids Play Area";
+                img.className = "w-full h-full object-contain";
+                parent.innerHTML = "";
                 parent.appendChild(img);
               }
             }}
@@ -161,24 +177,27 @@ const AmenityCards = () => {
   );
 };
 
-
 interface VillaDetailPageProps {
-  villaType: 'zenith' | 'crest' | 'horizon';
+  villaType: "zenith" | "crest" | "horizon";
 }
 
 export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
   const [offsetY, setOffsetY] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+
   // Letter reveal effects for headings
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>(0.1);
-  const { elementRef: subtitleRef } = useLetterReveal<HTMLParagraphElement>(0.1);
+  const { elementRef: subtitleRef } =
+    useLetterReveal<HTMLParagraphElement>(0.1);
 
   useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
-        const scrollProgress = Math.max(0, -rect.top / (rect.height + window.innerHeight));
+        const scrollProgress = Math.max(
+          0,
+          -rect.top / (rect.height + window.innerHeight),
+        );
         setOffsetY((scrollProgress - 0.3) * 100);
       }
     };
@@ -191,37 +210,41 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
   // Villa data configuration
   const getVillaData = () => {
     switch (villaType) {
-      case 'zenith':
+      case "zenith":
         return {
-          title: 'The Agasti West',
-          subtitle: 'West facing villa',
-          image: '/mainvilla.jpg',
-          propertySize: '653 sq yds',
-          description: 'The Agasti Zenith is a thoughtfully crafted villa community that blends refined architecture with modern comfort. Designed for elevated living, each villa showcases seamless planning, natural ventilation, and premium detailing. With serene surroundings, curated amenities, and a focus on privacy, The Agasti Zenith offers a lifestyle where elegance and functionality come together effortlessly.'
+          title: "The Agasti West",
+          subtitle: "West facing villa",
+          image: "/mainvilla.jpg",
+          propertySize: "653 sq yds",
+          description:
+            "The Agasti Zenith is a thoughtfully crafted villa community that blends refined architecture with modern comfort. Designed for elevated living, each villa showcases seamless planning, natural ventilation, and premium detailing. With serene surroundings, curated amenities, and a focus on privacy, The Agasti Zenith offers a lifestyle where elegance and functionality come together effortlessly.",
         };
-      case 'crest':
+      case "crest":
         return {
-          title: 'The Agasti East',
-          subtitle: 'East facing villa',
-          image: '/projects-imgs/AgastiCrest.jpg',
-          propertySize: '915 sq yds',
-          description: 'The Agasti Crest represents the pinnacle of luxury living with its sophisticated design and premium amenities. Each villa is meticulously planned to offer spacious interiors, modern conveniences, and stunning architectural details that create an atmosphere of refined elegance.'
+          title: "The Agasti East",
+          subtitle: "East facing villa",
+          image: "/projects-imgs/AgastiCrest.jpg",
+          propertySize: "915 sq yds",
+          description:
+            "The Agasti Crest represents the pinnacle of luxury living with its sophisticated design and premium amenities. Each villa is meticulously planned to offer spacious interiors, modern conveniences, and stunning architectural details that create an atmosphere of refined elegance.",
         };
-      case 'horizon':
+      case "horizon":
         return {
-          title: 'The Agasti North',
-          subtitle: 'North facing villa',
-          image: '/projects-imgs/agastihorizon.jpg',
-          propertySize: '915 sq yds',
-          description: 'The Agasti Horizon offers expansive living spaces with panoramic views and contemporary design elements. These villas are designed to maximize natural light and ventilation while providing the ultimate in comfort and luxury for modern families.'
+          title: "The Agasti North",
+          subtitle: "North facing villa",
+          image: "/projects-imgs/agastihorizon.jpg",
+          propertySize: "915 sq yds",
+          description:
+            "The Agasti Horizon offers expansive living spaces with panoramic views and contemporary design elements. These villas are designed to maximize natural light and ventilation while providing the ultimate in comfort and luxury for modern families.",
         };
       default:
         return {
-          title: 'The Agasti Villa',
-          subtitle: 'Premium villa',
-          image: '/mainvilla.jpg',
-          propertySize: '653 sq yds',
-          description: 'A premium villa offering luxury living with modern amenities.'
+          title: "The Agasti Villa",
+          subtitle: "Premium villa",
+          image: "/mainvilla.jpg",
+          propertySize: "653 sq yds",
+          description:
+            "A premium villa offering luxury living with modern amenities.",
         };
     }
   };
@@ -242,7 +265,10 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                   </h2>
                 </div>
                 <div className="flex items-center mb-4">
-                  <div className="relative mr-2" style={{ width: '20px', height: '20px' }}>
+                  <div
+                    className="relative mr-2"
+                    style={{ width: "20px", height: "20px" }}
+                  >
                     <Image
                       src="/projects-imgs/locationicon.png"
                       alt="Location"
@@ -273,46 +299,58 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
             {/* Property Details */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div>
-                <span className="text-black font-gc-palioka text-[14px] font-bold">Property size: </span>
-                <span className="text-[#8D957E] text-[14px] font-bold">{villaData.propertySize}</span>
+                <span className="text-black font-gc-palioka text-[14px] font-bold">
+                  Property size:{" "}
+                </span>
+                <span className="text-[#8D957E] text-[14px] font-bold">
+                  {villaData.propertySize}
+                </span>
               </div>
               <div>
-                <span className="text-black font-gc-palioka text-[14px] font-bold">Property type: </span>
-                <span className="text-[#8D957E] text-[14px] font-bold">Villa</span>
+                <span className="text-black font-gc-palioka text-[14px] font-bold">
+                  Property type:{" "}
+                </span>
+                <span className="text-[#8D957E] text-[14px] font-bold">
+                  Villa
+                </span>
               </div>
               <div>
-                <span className="text-black font-gc-palioka text-[14px] font-bold">Year of build: </span>
-                <span className="text-[#8D957E] text-[14px] font-bold">2024</span>
+                <span className="text-black font-gc-palioka text-[14px] font-bold">
+                  Year of build:{" "}
+                </span>
+                <span className="text-[#8D957E] text-[14px] font-bold">
+                  2024
+                </span>
               </div>
               <div>
-                <span className="text-black font-gc-palioka text-[14px] font-bold">Property status: </span>
-                <span className="text-[#8D957E] text-[14px] font-bold">Ongoing</span>
+                <span className="text-black font-gc-palioka text-[14px] font-bold">
+                  Property status:{" "}
+                </span>
+                <span className="text-[#8D957E] text-[14px] font-bold">
+                  Ongoing
+                </span>
               </div>
             </div>
 
             <div className="w-full h-px bg-gray-300 mt-2 mb-4"></div>
 
-            {/* <div className="bg-white rounded-lg mb-8">
-              <h3 className="text-[16px] font-bold  font-gc-palioka text-black mb-2">Property description</h3>
-              <p className="text-gray-600 text-[12px] leading-relaxed mb-2">
-                {villaData.description}
-              </p>
-              <Link href="/contact">
-                <button className="text-black text-[12px] font-bold hover:opacity-70 transition-opacity underline">
-                  SCHEDULE A VISIT →
-                </button>
-              </Link>
-
-              
-              <div className="mt-6">
-                <MobileAmenityCards />
-              </div>
-              
+            <div className="bg-white rounded-lg mb-8">
               <div className="mt-8">
-                <h4 className="font-gc-palioka text-[16px] sm:text-[24px] text-black mb-8 sm:mb-4">Inside The Villa</h4>
-                <InsideVilla showTitle={false} showPadding={false} />
+                <h4 className="font-gc-palioka text-[16px] sm:text-[24px] text-black mb-8 sm:mb-4">
+                  Inside The Villa
+                </h4>
+
+                {villaType === "zenith" && (
+                  <ZenithInsideVilla showTitle={false} showPadding={false} />
+                )}
+                {villaType === "horizon" && (
+                  <HorizonInsideVilla showTitle={false} showPadding={false} />
+                )}
+                {villaType === "crest" && (
+                  <CrestInsideVilla showTitle={false} showPadding={false} />
+                )}
               </div>
-            </div> */}
+            </div>
 
             <ExploreMoreVillas currentVilla={villaType} />
           </div>
@@ -323,14 +361,17 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
           {/* Header Section */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6">
             <div className="mb-4 sm:mb-0">
-              <h2 
+              <h2
                 ref={titleRef}
                 className="font-gc-palioka text-[20px] sm:text-4xl md:text-[44px] lg:text-[44px] text-black mb-2 leading-tight"
               >
                 {villaData.title}
               </h2>
               <div className="flex items-center">
-                <div className="relative mr-2" style={{ width: '23.5px', height: '24px' }}>
+                <div
+                  className="relative mr-2"
+                  style={{ width: "23.5px", height: "24px" }}
+                >
                   <Image
                     src="/projects-imgs/locationicon.png"
                     alt="Location"
@@ -339,7 +380,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                     className="object-contain"
                   />
                 </div>
-                <p 
+                <p
                   ref={subtitleRef}
                   className="text-gray-600 text-sm sm:text-[20px]"
                 >
@@ -373,29 +414,45 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
           <div className="flex justify-center px-4 sm:px-6 lg:px-12 xl:px-12 mb-8">
             <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
               <div className="flex items-center justify-center min-w-0">
-                <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
-                <span className="text-[#8D957E] text-base font-bold lg:text-lg">{villaData.propertySize}</span>
+                <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">
+                  Property size:
+                </span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">
+                  {villaData.propertySize}
+                </span>
               </div>
-              
+
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
-              
+
               <div className="flex items-center justify-center min-w-0">
-                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
-                <span className="text-[#8D957E] text-base font-bold lg:text-lg">2024</span>
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">
+                  Year of build:
+                </span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">
+                  2024
+                </span>
               </div>
-              
+
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
-              
+
               <div className="flex items-center justify-center min-w-0">
-                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property status:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg font-bold">Ongoing</span>
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">
+                  Property status:
+                </span>
+                <span className="text-[#8D957E] text-base lg:text-lg font-bold">
+                  Ongoing
+                </span>
               </div>
-              
+
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
-              
+
               <div className="flex items-center justify-center min-w-0">
-                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property type:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg font-bold">Villa</span>
+                <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">
+                  Property type:
+                </span>
+                <span className="text-[#8D957E] text-base lg:text-lg font-bold">
+                  Villa
+                </span>
               </div>
             </div>
           </div>
@@ -405,7 +462,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               <div className="w-full">
                 {/* Grey line above the section */}
                 <div className="w-full h-px bg-gray-300 mb-12"></div>
-                
+
                 {/* Top Section - Property Description and Amenities */}
                 {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 mb-8">
                  
@@ -428,11 +485,22 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                     <AmenityCards />
                   </div>
                 </div> */}
-                
+
                 {/* Inside The Villa Component */}
                 <div>
-                  <h4 className="font-gc-palioka text-[34px] text-black mb-8 sm:mb-4">Inside The Villa</h4>
-                  <InsideVilla showTitle={false} showPadding={false} />
+                  <h4 className="font-gc-palioka text-[34px] text-black mb-8 sm:mb-4">
+                    Inside The Villa
+                  </h4>
+
+                  {villaType === "zenith" && (
+                    <ZenithInsideVilla showTitle={false} showPadding={false} />
+                  )}
+                  {villaType === "horizon" && (
+                    <HorizonInsideVilla showTitle={false} showPadding={false} />
+                  )}
+                  {villaType === "crest" && (
+                    <CrestInsideVilla showTitle={false} showPadding={false} />
+                  )}
                 </div>
               </div>
             </div>
