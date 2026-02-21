@@ -58,9 +58,9 @@ const AmenityCards = () => {
       {amenities.map((item, index) => (
         <div
           key={index}
-          className="text-center p-6 sm:p-8 lg:p-10 bg-[#F0EDE4] transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+          className="text-center p-4 sm:p-6 bg-[#F0EDE4] transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
         >
-          <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 flex items-center justify-center">
+          <div className="w-20 h-20 sm:w-40 sm:h-40 mx-auto mb-4 flex items-center justify-center">
             <video
               ref={setVideoRef(index)}
               muted
