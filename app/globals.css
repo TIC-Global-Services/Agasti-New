@@ -12,6 +12,36 @@
   --font-jarkata-sans: var(--font-jarkata-sans);
 }
 
+@layer components {
+
+  .glass-card {
+    @apply relative overflow-hidden rounded-[10px] border-[0.5px] border-white/30 bg-white/[0.09] backdrop-blur-[60px] shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+  }
+
+  .glass-card-mobile {
+    @apply relative overflow-hidden rounded-[10px] border-[0.5px] border-white/30 bg-white/[0.09] backdrop-blur-[6px] shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+  }
+
+  .glass-card-content {
+    @apply relative overflow-hidden rounded-[10px] border-[0.5px] border-white/30 bg-white/[0.09] backdrop-blur-[6px] shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+  }
+
+  .glass-card-vision {
+    @apply relative overflow-hidden rounded-[6px] border border-white/10 bg-white/20 backdrop-blur-[4px] shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+  }
+
+  .glass-card-craftsmanship {
+    @apply relative overflow-hidden rounded-[10px] border-[0.5px] border-white/25 bg-white/10 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+  }
+
+  .glass-card-sustainability {
+    @apply relative overflow-hidden rounded-[10px] border-[0.5px] border-white/30 bg-white/40 backdrop-blur-[5px] shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+  }
+
+}
+
+
+
 body {
   background: var(--background);
   color: var(--foreground);
