@@ -140,10 +140,11 @@ export default function ContactForm() {
       <p className="text-black text-[16px] font-bold mb-4">
         Agasti - INDIA
       </p>
-      <p className="text-black text-[14px] leading-relaxed">
-        9-4-76/A/2 Nizam Colony,
-        HYDERABAD, Telangana,<br />
-        India - 500008
+      <p className="text-black text-[14px] leading-relaxed max-w-md">
+        Agasti Ventures LLP.
+Plot no. 34, Sy no. 66 & 67,
+5th floor, Alekhya Pranava, Jubilee Enclave, 
+Hitech City, Hyderabad. 500081.
       </p>
     </div>
 
@@ -153,12 +154,12 @@ export default function ContactForm() {
         Get in touch
       </h4>
       <div className="space-y-1">
-        <p className="text-gray-600 text-[14px]">
-          +1 234 567 8910
-        </p>
-        <p className="text-gray-600 text-[14px] underline">
-          info@agasti.com
-        </p>
+        <a href="tel:+919704539055" className="text-gray-600 text-[14px]">
+          +91 97045 39055
+        </a>
+        <a href="mailto:info@agastirealty.com"  className="text-gray-600 text-[14px] underline">
+          info@agastirealty.com
+        </a>
       </div>
     </div>
   </div>
@@ -308,10 +309,11 @@ export default function ContactForm() {
               {/* Address */}
               <div className="text-center">
                 <h5 className="text-black font-bold mb-2">Address</h5>
-                <p className="text-black text-base leading-relaxed">
-                  9-4-76/A/2 Nizam Colony,<br />
-                  HYDERABAD, Telangana,<br />
-                  India - 500008
+                <p className="text-black text-base leading-relaxed max-w-md">
+                  Agasti Ventures LLP.
+Plot no. 34, Sy no. 66 & 67,
+5th floor, Alekhya Pranava, Jubilee Enclave, 
+Hitech City, Hyderabad. 500081.
                 </p>
               </div>
 
@@ -319,12 +321,12 @@ export default function ContactForm() {
               <div className="text-center">
                 <h5 className="text-black font-bold mb-2">Contact</h5>
                 <div className="space-y-2">
-                  <p className="text-[#717580] text-base">
-                    +1234 567 8910
-                  </p>
-                  <p className="text-[#262B35] text-base underline">
-                    info@agasti.com
-                  </p>
+                  <a href="tel:+919704539055" className="text-[#717580] text-base">
+                    +919704539055
+                  </a>
+                  <a href="mailto:info@agastirealty.com" className="text-[#262B35] text-base underline">
+                    info@agastirealty.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -481,21 +483,22 @@ export default function ContactForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                   {/* Address */}
                   <div className="text-black">
-                    <p className="text-base leading-relaxed">
-                      9-4-76/A/2 Nizam Colony ,<br />
-                      HYDERABAD, Telangana,<br />
-                      India - 500008
+                    <p className="text-base leading-relaxed max-w-md">
+                     Agasti Ventures LLP.
+Plot no. 34, Sy no. 66 & 67,
+5th floor, Alekhya Pranava, Jubilee Enclave, 
+Hitech City, Hyderabad. 500081.
                     </p>
                   </div>
 
                   {/* Contact Info */}
-                  <div className="space-y-2">
-                    <p className="text-[#717580]-600 text-base">
-                      +1234 567 8910
-                    </p>
-                    <p className="text-[#262B35]-600 text-base underline">
-                      info@agasti.com
-                    </p>
+                  <div className="space-y-2 flex flex-col">
+                    <a href="tel:+919704539055" className="text-[#717580]-600 text-base">
+                      +919704539055
+                    </a>
+                    <a href="mailto:Info@agastirealty.com" className="text-[#262B35]-600 text-base underline">
+                      Info@agastirealty.com
+                    </a>
                   </div>
                 </div>
               </div>

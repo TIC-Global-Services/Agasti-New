@@ -42,19 +42,19 @@ export default function Footer() {
             <div className="text-center">
               <p className="text-gray-500 text-sm mb-1">Need support?</p>
               <a 
-                href="mailto:info@agasti.com" 
+                href="mailto:info@agastirealty.com" 
                 className="text-gray-700 text-sm hover:text-black font-bold transition-colors underline"
               >
-                info@agasti.com
+                info@agastirealty.com
               </a>
             </div>
             <div className="text-center">
               <p className="text-gray-500 text-sm mb-1">Customer care</p>
               <a 
-                href="tel:+12345678910" 
+                href="tel:+919704539055" 
                 className="text-gray-700 text-sm hover:text-black font-bold underline transition-colors"
               >
-                +1 234 567 8910
+                +919704539055
               </a>
             </div>
           </div>
@@ -116,20 +116,20 @@ export default function Footer() {
             <div className="text-right">
               <p className="text-gray-500 text-xs md:text-sm mb-1">Need support?</p>
               <a 
-                href="mailto:info@agasti.com" 
+                href="mailto:info@agastirealty.com" 
                 className="text-gray-700 text-xs md:text-sm hover:text-black transition-colors relative inline-block group"
               >
-                info@agasti.com
+                info@agastirealty.com
                 <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
             <div className="text-right">
               <p className="text-gray-500 text-xs md:text-sm mb-1">Customer care</p>
               <a 
-                href="tel:+12345678910" 
+                href="tel:+919704539055" 
                 className="text-gray-700 text-xs md:text-sm hover:text-black transition-colors relative inline-block group"
               >
-                +1 234 567 8910
+                +919704539055
                 <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
