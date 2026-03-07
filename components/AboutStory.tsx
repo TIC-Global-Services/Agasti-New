@@ -104,7 +104,7 @@ export default function AboutStory() {
           <div className="block lg:hidden">
             <div
               ref={imageRef}
-              className="overflow-hidden h-[600px] md:h-[500px] w-full mb-6"
+              className="overflow-hidden h-[80dvh] w-full mb-6"
             >
               <div
                 style={{
