@@ -77,29 +77,43 @@ export default function AboutExcellence() {
 
   /* ---------------- INTERSECTION OBSERVER ---------------- */
 
-  useEffect(() => {
-    const visionObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisionVisible(true);
-      },
-      { threshold: 0.3 },
-    );
+ useEffect(() => {
+  const visionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisionVisible(true);
+        }
+      });
+    },
+    {
+      threshold: 0.25,
+    }
+  );
 
-    const statsObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsStatsVisible(true);
-      },
-      { threshold: 0.1 },
-    );
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsStatsVisible(true);
+          statsObserver.disconnect(); // prevent multiple triggers
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -80px 0px",
+    }
+  );
 
-    if (visionRef.current) visionObserver.observe(visionRef.current);
-    if (statsRef.current) statsObserver.observe(statsRef.current);
+  if (visionRef.current) visionObserver.observe(visionRef.current);
+  if (statsRef.current) statsObserver.observe(statsRef.current);
 
-    return () => {
-      if (visionRef.current) visionObserver.unobserve(visionRef.current);
-      if (statsRef.current) statsObserver.unobserve(statsRef.current);
-    };
-  }, []);
+  return () => {
+    visionObserver.disconnect();
+    statsObserver.disconnect();
+  };
+}, []);
 
   return (
     <section className="bg-white overflow-x-hidden">
