@@ -65,6 +65,7 @@ export default function AboutAgasti() {
             }}
           >
             <source src="/livingroom_1.webm" type="video/webm" />
+            <source src="/livingroom_1.mp4" type="video/mp4" />
             {/* Fallback image for browsers that don't support video */}
             <img
               src="/aboutus.png"
