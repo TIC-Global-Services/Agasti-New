@@ -37,7 +37,7 @@ export default function ProjectVillaDescription() {
         <div className="mb-12">
   <div className="mb-6 mt-4">
     <BlurText
-      text="The Agasti West"
+      text="The Agasti Atara"
       className="font-gc-palioka text-xl text-black leading-tight mb-1"
     />
     <div className="flex justify-between items-center">
@@ -108,7 +108,7 @@ export default function ProjectVillaDescription() {
         <div className="mb-12">
   <div className="mb-6">
     <BlurText
-      text="The Agasti East"
+      text="The Agasti Atara"
       className="font-gc-palioka text-xl text-black leading-tight mb-1"
     />
     <div className="flex justify-between items-center">
@@ -178,7 +178,7 @@ export default function ProjectVillaDescription() {
         <div className="mb-8">
   <div className="mb-6">
     <BlurText
-      text="The Agasti North"
+      text="The Agasti Atara"
       className="font-gc-palioka text-xl text-black leading-tight mb-1"
     />
     <div className="flex justify-between items-center">
@@ -251,7 +251,7 @@ export default function ProjectVillaDescription() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
             <div className="mb-6 lg:mb-0">
               <BlurText
-                text="The Agasti West Facing Villa"
+                text="The Agasti Atara"
                 className="font-gc-palioka text-3xl lg:text-4xl xl:text-5xl text-black mb-4 leading-tight"
               />
               <div className="flex items-center">
@@ -343,7 +343,7 @@ export default function ProjectVillaDescription() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
             <div className="mb-6 lg:mb-0">
               <BlurText
-                text="The Agasti East Facing Villa"
+                text="The Agasti Atara"
                 className="font-gc-palioka text-3xl lg:text-4xl xl:text-5xl text-black mb-4 leading-tight"
               />
               <div className="flex items-center">
@@ -434,7 +434,7 @@ export default function ProjectVillaDescription() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
             <div className="mb-6 lg:mb-0">
               <BlurText
-                text="The Agasti North Facing Villa"
+                text="The Agasti Atara"
                 className="font-gc-palioka text-3xl lg:text-4xl xl:text-5xl text-black mb-4 leading-tight"
               />
               <div className="flex items-center">
