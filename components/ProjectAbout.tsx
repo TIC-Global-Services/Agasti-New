@@ -57,6 +57,7 @@ export default function AboutAgasti() {
               }
             }}
           >
+            <source src="/Icons/leavingroom2_15mb.mov" type="video/quicktime" />
             <source src="/livingroom_project.webm" type="video/webm" />
             {/* Fallback image for browsers that don't support video */}
             <img

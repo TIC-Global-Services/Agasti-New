@@ -34,21 +34,27 @@ const AmenityCards = () => {
     {
       title: "Clubhouse",
       video: "/icons webm 3/clubhouse.webm",
+      ios_video: "/Icons/clubhouse_small.mov",
       fallback: "/clubhouse.png",
     },
     {
       title: "Badminton Court",
       video: "/icons webm 3/badminton.webm",
+      ios_video: "/Icons/badminton.mov",
+
       fallback: "/projects-imgs/badminton.png",
     },
     {
       title: "Mini Basketball Court",
       video: "/icons webm 3/basketball.webm",
+      ios_video: "/Icons/basketball.mov",
+
       fallback: "/projects-imgs/basketball.png",
     },
     {
       title: "Kids Play Area",
       video: "/icons webm 3/playground.webm",
+      ios_video: "/Icons/playground_small.mov",
       fallback: "/projects-imgs/playarea.png",
     },
   ];
@@ -64,6 +70,8 @@ const AmenityCards = () => {
             <video
               ref={setVideoRef(index)}
               muted
+              autoPlay
+              loop
               playsInline
               className="object-contain w-full h-full"
               style={{
@@ -82,7 +90,9 @@ const AmenityCards = () => {
                 }
               }}
             >
+              <source src={item.ios_video} type="video/quicktime" />
               <source src={item.video} type="video/webm" />
+              <source src={item.fallback} type="image/png" />
             </video>
           </div>
 
