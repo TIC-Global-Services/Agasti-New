@@ -140,9 +140,10 @@ export default function AboutStory() {
                 ref={titleRef}
                 className="font-gc-palioka text-[20px] sm:text-[28px] md:text-[32px] text-black leading-[1.1] tracking-[-0.03em] mb-4"
               >
-                Crafting Luxury Villas
-                <br />
-                Since <span className="font-bold">2018</span>
+                Bringing a <span className=" font-bold">12</span> year construction experience into luxury and sustainability 
+
+
+               
               </h1>
 
               <p className="text-[#717580] text-[14px] leading-tight mb-[40px]">
@@ -195,11 +196,11 @@ export default function AboutStory() {
 
                 <h1
                   ref={titleRef}
-                  className="font-gc-palioka text-[54px] text-black leading-[1.1] tracking-[-0.03em]"
+                  className="font-gc-palioka text-[44px] text-black leading-[1.1] tracking-[-0.03em]"
                 >
-                  Crafting Luxury Villas
-                  <br />
-                  Since <span className="font-bold">2018</span>
+                  Bringing a <span className=" font-bold">12</span> year construction experience into luxury and sustainability 
+
+
                 </h1>
               </div>
 
