@@ -59,7 +59,7 @@ export default function AboutExcellence() {
       setAnimatedNumbers({
         acres: Math.floor(4 * progress),
         villas: Math.floor(18 * progress),
-        squareft: Math.floor(225 * progress),
+        squareft: Math.floor(22.5 * progress),
       });
 
       if (step >= steps) {
@@ -68,7 +68,7 @@ export default function AboutExcellence() {
         setAnimatedNumbers({
           acres: 4,
           villas: 18,
-          squareft: 225,
+          squareft: 22.5,
         });
       }
     }, stepDuration);
@@ -235,7 +235,7 @@ export default function AboutExcellence() {
                       className="glass-card flex flex-col p-6 w-full h-[289px]"
                     >
                       <div className="mb-4">
-                        <div className="text-black text-5xl font-bold leading-none mb-1">
+                        <div className="text-black text-4xl font-bold leading-none mb-1">
                           {
                             animatedNumbers[
                               stat.key as keyof typeof animatedNumbers
