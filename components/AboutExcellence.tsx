@@ -218,7 +218,7 @@ export default function AboutExcellence() {
                     className="font-gc-palioka text-[#262B35] text-[32px] leading-tight"
                   />
 
-                  <p className="text-[#3C3C3C]/80 text-[16px] font-plus-jakarta-sans">
+                  <p className="text-[#3C3C3C]/80 text-[16px] leading-tight font-plus-jakarta-sans">
                     Building exclusive communities for individuals who seek
                     refined elegance, elevated comfort, and a truly
                     distinguished way of living.

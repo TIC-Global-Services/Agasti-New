@@ -140,7 +140,7 @@ export default function ContactForm() {
       <p className="text-black text-[16px] font-bold mb-4">
         Agasti - INDIA
       </p>
-      <p className="text-black text-[14px] leading-relaxed max-w-md">
+      <p className="text-black text-[14px] leading-tight max-w-md">
         Agasti Ventures LLP.
 Plot no. 34, Sy no. 66 & 67,
 5th floor, Alekhya Pranava, Jubilee Enclave, 
@@ -483,7 +483,7 @@ Hitech City, Hyderabad. 500081.
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                   {/* Address */}
                   <div className="text-black">
-                    <p className="text-base leading-relaxed max-w-md">
+                    <p className="text-base leading-tight max-w-md">
                      Agasti Ventures LLP.
 Plot no. 34, Sy no. 66 & 67,
 5th floor, Alekhya Pranava, Jubilee Enclave, 

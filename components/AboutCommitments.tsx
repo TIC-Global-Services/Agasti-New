@@ -154,7 +154,7 @@ export default function AboutCommitments() {
         {/* Header */}
         <div className="mb-6 sm:mb-10">
           <p 
-            className={`text-[#8D957E] text-[20px] sm:text-[24px] font-bold mb-4 transition-all duration-900 ${getCommitmentsBlurClass()}`}
+            className={`text-[#8D957E] text-[20px] sm:text-[24px] font-bold mb-1 transition-all duration-900 ${getCommitmentsBlurClass()}`}
           >
             Our commitments
           </p>
@@ -269,7 +269,7 @@ export default function AboutCommitments() {
                   <h3 className="font-gc-palioka text-[20px] sm:text-[22px] mb-1">
                     {commitment.title}
                   </h3>
-                  <p className="text-sm sm:text-base leading-relaxed text-[#717580]-600">
+                  <p className="text-sm sm:text-base leading-tight text-[#717580]-600">
                     {commitment.description}
                   </p>
                 </div>

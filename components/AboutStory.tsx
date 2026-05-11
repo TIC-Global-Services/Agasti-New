@@ -196,7 +196,7 @@ export default function AboutStory() {
 
                 <h1
                   ref={titleRef}
-                  className="font-gc-palioka text-[44px] text-black leading-[1.1] tracking-[-0.03em]"
+                  className="font-gc-palioka text-[44px] text-black leading-[1] tracking-[-0.01em]"
                 >
                   Bringing a <span className=" font-bold">12</span> year construction experience into luxury and sustainability 
 

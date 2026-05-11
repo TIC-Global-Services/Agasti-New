@@ -27,7 +27,7 @@ const PropertyDesc = () => {
             Property Description
           </h3>
 
-          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
+          <p className="text-gray-700 text-sm sm:text-base leading-tight mb-6">
             Agasti Atara Ventures is a thoughtfully crafted villa community that blends refined
             architecture with modern comfort. Designed for elevated living, each villa showcases
             seamless planning, natural ventilation, and premium detailing. With serene surroundings,

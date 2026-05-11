@@ -21,7 +21,7 @@ export default function AboutAgasti() {
             </h2>
             
             <div className="space-y-3 sm:space-y-4 text-gray-600 mb-6 sm:mb-8">
-              <p className="text-sm sm:text-base">
+              <p className="text-sm sm:text-base leading-tight">
                 Discover Agasti’s exclusive collection of luxury villa communities—each crafted with precision, nature-driven design, and timeless architectural elegance.
               </p>
             </div>

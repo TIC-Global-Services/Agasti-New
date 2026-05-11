@@ -104,7 +104,7 @@ export default function VillaSeries() {
                     activeIndex === index ? "max-h-96 pb-8" : "max-h-0"
                   }`}
                 >
-                  <p className="text-gray-500 text-sm sm:text-base leading-relaxed mt-8 sm:mt-10 md:mt-16 lg:mt-[200px]">
+                  <p className="text-gray-500 text-sm sm:text-base leading-tight mt-8 sm:mt-10 md:mt-16 lg:mt-[200px]">
                     <span className="font-semibold text-gray-600">{villa.title}</span> {villa.description.replace(villa.title, '')}
                   </p>
                 </div>

@@ -98,7 +98,7 @@ export default function ProjectHero() {
                 ref={projectsRef}
                 className="text-[#8D957E] font-gc-palioka text-[16px] mb-2 font-normal"
               >
-                Our projects
+                Our Projects
               </p>
               <h1 
                 ref={titleRef}
@@ -145,9 +145,9 @@ export default function ProjectHero() {
               <div>
                 <p 
                   ref={projectsRef}
-                  className="text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-lg mb-2 sm:mb-2 font-bold"
+                  className="text-[#8D957E] font-gc-palioka text-[22px] sm:text-base md:text-xl lg:text-[26px] leading-tight mb-2 sm:mb-2 font-bold"
                 >
-                  Our projects
+                  Our Projects
                 </p>
                 <h1 
                   ref={titleRef}

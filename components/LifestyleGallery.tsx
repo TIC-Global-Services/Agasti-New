@@ -117,7 +117,7 @@ export default function LifestyleGallery() {
                   <h3 className="text-[#8D957E] text-lg md:text-xl lg:text-[22px] font-gc-palioka mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 text-sm md:text-[16px] leading-relaxed">
+                  <p className="text-gray-400 text-sm md:text-[16px] leading-tight">
                     {feature.description}
                   </p>
                 </div>

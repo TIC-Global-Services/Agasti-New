@@ -250,7 +250,7 @@ export default function WhyLiveWithAgasti() {
             delay={60}
           />
 
-          <p className="text-gray-500 text-[16px] sm:text-sm leading-relaxed max-w-3xl">
+          <p className="text-gray-500 text-[16px] sm:text-sm leading-tight max-w-3xl">
             Designed for those who value privacy, quality, and timeless
             elegance, Agasti offers a peaceful retreat that stays connected to
             the city&apos;s best schools, hospitals, and business hubs—giving
