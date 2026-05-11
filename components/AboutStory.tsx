@@ -159,7 +159,7 @@ export default function AboutStory() {
 
           <div className="hidden lg:block">
             <div className="mb-0">
-              <div className="overflow-hidden h-[70dvh] w-full">
+              <div className="overflow-hidden h-[65dvh] w-full">
                 <div
                   ref={imageContainerRef}
                   onMouseEnter={playVideo}
@@ -185,8 +185,8 @@ export default function AboutStory() {
 
             {/* Content Grid */}
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 items-start pt-6 pb-12 sm:pb-16 md:pb-20">
-              <div>
+            <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-5 lg:gap-6 items-start pt-10 pb-12 sm:pb-16 md:pb-20">
+              <div className="lg:pr-4">
                 <p
                   ref={storyRef}
                   className="text-[#8D957E] font-gc-palioka text-[22px] font-bold"
@@ -198,7 +198,7 @@ export default function AboutStory() {
                   ref={titleRef}
                   className="font-gc-palioka text-[44px] text-black leading-[1] tracking-[-0.01em]"
                 >
-                  Bringing a <span className=" font-bold">12</span> year construction experience into luxury and sustainability 
+                  Bringing a <span className=" font-bold">12</span> year construction experience into luxury and sustainability
 
 
                 </h1>

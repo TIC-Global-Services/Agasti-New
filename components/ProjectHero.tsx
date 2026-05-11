@@ -79,7 +79,7 @@ export default function ProjectHero() {
                   transform: `translateY(${Math.min(0, offsetY * 2)}px) scale(1.1)`,
                   transition: "transform 0.1s ease-out",
                 }}
-                className="relative w-full h-[130%] -translate-y-[15%]"
+                className="relative w-full h-[130%] -translate-y-[20%]"
               >
                 <Image
                   src="/projects-imgs/projectshero.jpg"
@@ -118,14 +118,14 @@ export default function ProjectHero() {
           <div className="hidden lg:block">
             {/* Parallax Image Container - Isolated */}
             <div className="mb-0">
-              <div className="overflow-hidden h-[70dvh] w-full">
+              <div className="overflow-hidden h-[500px] w-full">
                 <div
                   ref={imageContainerRef}
                   style={{
                     transform: `translateY(${Math.min(0, offsetY * 2)}px) scale(1.1)`,
                     transition: "transform 0.1s ease-out",
                   }}
-                  className="relative w-full h-[130%] -translate-y-[15%]"
+                  className="relative w-full h-[130%] -translate-y-[20%]"
                 >
                   <Image
                     src="/projects-imgs/projectshero.jpg"
