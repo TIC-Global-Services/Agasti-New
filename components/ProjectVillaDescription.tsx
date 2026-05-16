@@ -10,6 +10,17 @@ export default function ProjectVillaDescription() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const secondImageRef = useRef<HTMLDivElement>(null);
 
+  // Rotating property size for Horizon
+  const horizonSizes = ["563", "670", "915"];
+  const [horizonSizeIndex, setHorizonSizeIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHorizonSizeIndex((prev) => (prev + 1) % horizonSizes.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
@@ -85,7 +96,7 @@ export default function ProjectVillaDescription() {
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <span className="text-black text-sm font-bold">Property size: </span>
-              <span className="text-[#8D957E] text-sm">653 <span className="font-bold">sq yds</span></span>
+              <span className="text-[#8D957E] text-sm">663 <span className="font-bold">sq yds</span></span>
             </div>
             <div>
               <span className="text-black text-sm font-bold">Property type: </span>
@@ -155,7 +166,7 @@ export default function ProjectVillaDescription() {
   <div className="grid grid-cols-2 gap-4 mb-6">
     <div>
       <span className="text-black text-sm font-bold">Property size: </span>
-      <span className="text-[#8D957E] text-sm">915 <span className="font-bold">sq yds</span></span>
+      <span className="text-[#8D957E] text-sm">500 <span className="font-bold">sq yds</span></span>
     </div>
     <div>
       <span className="text-black text-sm font-bold">Property type: </span>
@@ -225,7 +236,18 @@ export default function ProjectVillaDescription() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <span className="text-black text-sm font-bold">Property size: </span>
-              <span className="text-[#8D957E] text-sm">915 <span className="font-bold">sq yds</span></span>
+              <span className="text-[#8D957E] text-sm inline-flex items-baseline">
+                <span className="inline-block min-w-[5em]">
+                  <BlurText
+                    key={horizonSizeIndex}
+                    text={horizonSizes[horizonSizeIndex]}
+                    delay={0}
+                    animateBy="words"
+                    direction="top"
+                    className="inline"
+                  />{" "}<span className="font-bold">sq yds</span>
+                </span>
+              </span>
             </div>
             <div>
               <span className="text-black text-sm font-bold">Property type: </span>
@@ -400,7 +422,7 @@ export default function ProjectVillaDescription() {
             <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">915 <span className="font-bold">sq yds</span></span>
+                <span className="text-[#8D957E] text-base lg:text-lg">500 <span className="font-bold">sq yds</span></span>
               </div>
               
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
@@ -491,25 +513,36 @@ export default function ProjectVillaDescription() {
             <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">915 <span className="font-bold">sq yds</span></span>
+                <span className="text-[#8D957E] text-base lg:text-lg inline-flex items-baseline">
+                  <span className="inline-block items-baseline min-w-[5em]">
+                    <BlurText
+                      key={horizonSizeIndex}
+                      text={horizonSizes[horizonSizeIndex]}
+                      delay={0}
+                      animateBy="words"
+                      direction="top"
+                      className="inline"
+                    />{" "}<span className="font-bold">sq yds</span>
+                  </span>
+                </span>
               </div>
-              
+
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
-              
+
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
                 <span className="text-[#8D957E] text-base lg:text-lg">2024</span>
               </div>
-              
+
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
-              
+
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property status:</span>
                 <span className="text-[#8D957E] text-base lg:text-lg font-bold">Ongoing</span>
               </div>
-              
+
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
-              
+
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property type:</span>
                 <span className="text-[#8D957E] text-base lg:text-lg font-bold">Villa</span>

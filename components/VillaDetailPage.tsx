@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ContainerLayout from "@/layout/ContainerLayout";
@@ -8,6 +8,87 @@ import HorizonInsideVilla from "./Project/Horizon/HorizonInsideVilla";
 import ZenithInsideVilla from "./Project/Zenith/ZenithInsideVilla";
 import CrestInsideVilla from "./Project/Crest/CrestInsideVilla";
 import ExploreMoreVillas from "./ExploreMoreVillas";
+
+// Layout Toggle with sliding indicator
+interface LayoutToggleProps {
+  layouts: { label: string; propertySize: string }[];
+  activeIndex: number;
+  onSelect: (index: number) => void;
+  size?: "sm" | "md";
+}
+
+const LayoutToggle = ({ layouts, activeIndex, onSelect, size = "md" }: LayoutToggleProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [indicator, setIndicator] = useState({ left: 0, width: 0 });
+
+  const updateIndicator = useCallback(() => {
+    const button = buttonRefs.current[activeIndex];
+    const container = containerRef.current;
+    if (button && container) {
+      const containerRect = container.getBoundingClientRect();
+      const buttonRect = button.getBoundingClientRect();
+      setIndicator({
+        left: buttonRect.left - containerRect.left,
+        width: buttonRect.width,
+      });
+    }
+  }, [activeIndex]);
+
+  useLayoutEffect(() => {
+    updateIndicator();
+  }, [updateIndicator]);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateIndicator);
+    return () => window.removeEventListener("resize", updateIndicator);
+  }, [updateIndicator]);
+
+  const textSize = size === "sm" ? "text-sm" : "text-base";
+  const padding = size === "sm" ? "py-3 px-8" : "py-3 px-14";
+
+  // Split "563 sq yds" into number part and word part
+  const splitLabel = (label: string) => {
+    const match = label.match(/^([\d,]+)\s*(.*)$/);
+    if (match) {
+      return { number: match[1], words: match[2] };
+    }
+    return { number: label, words: "" };
+  };
+
+  return (
+    <div ref={containerRef} className="relative flex items-center pb-[1px]">
+      {layouts.map((layout, index) => {
+        const { number, words } = splitLabel(layout.propertySize);
+        return (
+          <button
+            key={index}
+            ref={(el) => { buttonRefs.current[index] = el; }}
+            onClick={() => onSelect(index)}
+            className={`${textSize} ${padding} transition-colors duration-200 whitespace-nowrap relative z-10 ${activeIndex === index
+              ? "text-[#8D957E]"
+              : "text-gray-400 hover:text-gray-500"
+              }`}
+          >
+            <span className="font-semibold">{number}</span>
+            {words && <span className="font-gc-palioka font-normal ml-1">{words}</span>}
+          </button>
+        );
+      })}
+      {/* Sliding indicator - centered on the base line */}
+      <div
+        className="absolute bottom-0 h-[4px] rounded-full bg-[#8D957E] z-[2] transition-all duration-100 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        style={{
+          left: `${indicator.left}px`,
+          width: `${indicator.width}px`,
+          transform: "translateY(50%)",
+        }}
+      />
+      {/* Base guide line */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200 z-[1]" />
+    </div>
+  );
+};
 
 // Amenity Cards Component
 const AmenityCards = () => {
@@ -183,6 +264,25 @@ interface VillaDetailPageProps {
 
 export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
   const [offsetY, setOffsetY] = useState(0);
+  const [activeLayoutIndex, setActiveLayoutIndex] = useState(0);
+  const [isPropertySizeTransitioning, setIsPropertySizeTransitioning] = useState(false);
+  const [displayedPropertySize, setDisplayedPropertySize] = useState("");
+  const prevLayoutIndexRef = useRef(0);
+
+  // Handle layout index change with blur transition
+  const handleLayoutChange = useCallback((newIndex: number) => {
+    if (newIndex === activeLayoutIndex) return;
+    setIsPropertySizeTransitioning(true);
+    // After blur-out, swap the value
+    setTimeout(() => {
+      setActiveLayoutIndex(newIndex);
+      prevLayoutIndexRef.current = newIndex;
+      // After value swap, blur-in
+      setTimeout(() => {
+        setIsPropertySizeTransitioning(false);
+      }, 30);
+    }, 200);
+  }, [activeLayoutIndex]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Letter reveal effects for headings
@@ -215,18 +315,24 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
           title: "The Agasti West",
           subtitle: "West facing villa",
           image: "/mainvilla.jpg",
-          propertySize: "653 sq yds",
+          propertySize: "663 sq yds",
           description:
             "The Agasti Zenith is a thoughtfully crafted villa community that blends refined architecture with modern comfort. Designed for elevated living, each villa showcases seamless planning, natural ventilation, and premium detailing. With serene surroundings, curated amenities, and a focus on privacy, The Agasti Zenith offers a lifestyle where elegance and functionality come together effortlessly.",
+          layoutImages: [
+            { label: "West", src: "/Projects/Atara_Brochure-west.jpg", propertySize: "663 sq yds" },
+          ],
         };
       case "crest":
         return {
           title: "The Agasti East",
           subtitle: "East facing villa",
           image: "/projects-imgs/AgastiCrest.jpg",
-          propertySize: "915 sq yds",
+          propertySize: "500 sq yds",
           description:
             "The Agasti Crest represents the pinnacle of luxury living with its sophisticated design and premium amenities. Each villa is meticulously planned to offer spacious interiors, modern conveniences, and stunning architectural details that create an atmosphere of refined elegance.",
+          layoutImages: [
+            { label: "East", src: "/Projects/Atara_Brochure-east.jpg", propertySize: "500 sq yds" },
+          ],
         };
       case "horizon":
         return {
@@ -236,15 +342,21 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
           propertySize: "915 sq yds",
           description:
             "The Agasti Horizon offers expansive living spaces with panoramic views and contemporary design elements. These villas are designed to maximize natural light and ventilation while providing the ultimate in comfort and luxury for modern families.",
+          layoutImages: [
+            { label: "North 1", src: "/Projects/Atara_Brochure-north1.jpg", propertySize: "563 sq yds" },
+            { label: "North 2", src: "/Projects/Atara_Brochure-north2.jpg", propertySize: "670 sq yds" },
+            { label: "North 3", src: "/Projects/Atara_Brochure-north3.jpg", propertySize: "915 sq yds" },
+          ],
         };
       default:
         return {
           title: "The Agasti Villa",
           subtitle: "Premium villa",
           image: "/mainvilla.jpg",
-          propertySize: "653 sq yds",
+          propertySize: "663 sq yds",
           description:
             "A premium villa offering luxury living with modern amenities.",
+          layoutImages: [],
         };
     }
   };
@@ -284,6 +396,18 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               </div>
             </div>
 
+            {/* Layout Toggle Tabs - Mobile */}
+            {villaData.layoutImages.length > 1 && (
+              <div className="mb-4">
+                <LayoutToggle
+                  layouts={villaData.layoutImages}
+                  activeIndex={activeLayoutIndex}
+                  onSelect={handleLayoutChange}
+                  size="sm"
+                />
+              </div>
+            )}
+
             {/* Villa Image */}
             <div className="relative overflow-hidden mb-6 h-[400px] md:h-[500px]">
               <Image
@@ -303,7 +427,17 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                   Property size:{" "}
                 </span>
                 <span className="text-[#8D957E] text-[14px] font-bold">
-                  {villaData.propertySize}
+                  <span
+                    className="inline-block transition-all duration-200 ease-out"
+                    style={{
+                      filter: isPropertySizeTransitioning ? "blur(4px)" : "blur(0px)",
+                      opacity: isPropertySizeTransitioning ? 0.3 : 1,
+                      transform: isPropertySizeTransitioning ? "translateY(2px)" : "translateY(0)",
+                    }}
+                  >
+                    {(villaData.layoutImages[activeLayoutIndex]?.propertySize || villaData.propertySize).replace(/\s*sq\s*yds?/i, "")}
+                  </span>
+                  {" sq yds"}
                 </span>
               </div>
               <div>
@@ -332,7 +466,25 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               </div>
             </div>
 
-            <div className="w-full h-px bg-gray-300 mt-2 mb-4"></div>
+            <div className="w-full h-px bg-gray-300 mt-2 mb-8"></div>
+
+            {/* Layouts Section - Mobile */}
+            {villaData.layoutImages.length > 0 && (
+              <div className="mb-4">
+                <h4 className="font-gc-palioka text-[16px] sm:text-[24px] text-black mb-0">
+                  Layouts
+                </h4>
+                <div className="relative w-full" style={{ aspectRatio: "16/10" }}>
+                  <Image
+                    src={villaData.layoutImages[activeLayoutIndex].src}
+                    alt={`${villaData.title} Layout - ${villaData.layoutImages[activeLayoutIndex].label}`}
+                    fill
+                    sizes="100vw"
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            )}
 
             <div className="bg-white rounded-lg mb-8">
               <div className="mt-8">
@@ -388,10 +540,20 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                 </p>
               </div>
             </div>
+
+            {/* Layout Toggle Tabs - Desktop */}
+            {villaData.layoutImages.length > 1 && (
+              <LayoutToggle
+                layouts={villaData.layoutImages}
+                activeIndex={activeLayoutIndex}
+                onSelect={handleLayoutChange}
+                size="md"
+              />
+            )}
           </div>
 
           {/* Parallax Image */}
-          <div className="overflow-hidden mb-4 sm:mb-6 w-full h-64 sm:h-80 lg:h-96 xl:h-112">
+          <div className="relative overflow-hidden mb-4 sm:mb-6 w-full h-64 sm:h-80 lg:h-96 xl:h-112">
             <div
               style={{
                 transform: `translateY(${Math.min(0, offsetY * 2)}px) scale(1.1)`,
@@ -418,7 +580,17 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                   Property size:
                 </span>
                 <span className="text-[#8D957E] text-base font-bold lg:text-lg">
-                  {villaData.propertySize}
+                  <span
+                    className="inline-block transition-all duration-200 ease-out"
+                    style={{
+                      filter: isPropertySizeTransitioning ? "blur(4px)" : "blur(0px)",
+                      opacity: isPropertySizeTransitioning ? 0.3 : 1,
+                      transform: isPropertySizeTransitioning ? "translateY(2px)" : "translateY(0)",
+                    }}
+                  >
+                    {(villaData.layoutImages[activeLayoutIndex]?.propertySize || villaData.propertySize).replace(/\s*sq\s*yds?/i, "")}
+                  </span>
+                  {" sq yds"}
                 </span>
               </div>
 
@@ -463,9 +635,27 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                 {/* Grey line above the section */}
                 <div className="w-full h-px bg-gray-300 mb-12"></div>
 
+                {/* Layouts Section - Desktop */}
+                {villaData.layoutImages.length > 0 && (
+                  <div className="mb-8">
+                    <h4 className="font-gc-palioka text-[34px] text-black mb-0">
+                      Layouts
+                    </h4>
+                    <div className="relative w-full" style={{ aspectRatio: "16/6" }}>
+                      <Image
+                        src={villaData.layoutImages[activeLayoutIndex].src}
+                        alt={`${villaData.title} Layout - ${villaData.layoutImages[activeLayoutIndex].label}`}
+                        fill
+                        sizes="100vw"
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {/* Top Section - Property Description and Amenities */}
                 {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 mb-8">
-                 
+
                   <div className="w-full">
                     <h3 className="text-[34px] font-bold text-black mb-4">Property description</h3>
                     <p className="text-gray-600 text-base leading-[1.3] mb-6">
@@ -480,7 +670,7 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                       </button>
                     </Link>
                   </div>
-                  
+
                   <div className="w-full flex justify-end">
                     <AmenityCards />
                   </div>
