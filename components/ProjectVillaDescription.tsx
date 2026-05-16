@@ -96,7 +96,7 @@ export default function ProjectVillaDescription() {
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <span className="text-black text-sm font-bold">Property size: </span>
-              <span className="text-[#8D957E] text-sm">663 <span className="font-bold">sq yds</span></span>
+              <span className="text-[#8D957E] font-bold text-sm">663 <span className="font-bold">sq yds</span></span>
             </div>
             <div>
               <span className="text-black text-sm font-bold">Property type: </span>
@@ -166,7 +166,7 @@ export default function ProjectVillaDescription() {
   <div className="grid grid-cols-2 gap-4 mb-6">
     <div>
       <span className="text-black text-sm font-bold">Property size: </span>
-      <span className="text-[#8D957E] text-sm">500 <span className="font-bold">sq yds</span></span>
+      <span className="text-[#8D957E] font-bold text-sm">500 <span className="font-bold">sq yds</span></span>
     </div>
     <div>
       <span className="text-black text-sm font-bold">Property type: </span>
@@ -236,7 +236,7 @@ export default function ProjectVillaDescription() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <span className="text-black text-sm font-bold">Property size: </span>
-              <span className="text-[#8D957E] text-sm inline-flex items-baseline">
+              <span className="text-[#8D957E] font-bold text-sm inline-flex items-baseline">
                 <span className="inline-block min-w-[5em]">
                   <BlurText
                     key={horizonSizeIndex}
@@ -255,7 +255,7 @@ export default function ProjectVillaDescription() {
             </div>
             <div>
               <span className="text-black text-sm font-bold">Year of build: </span>
-              <span className="text-[#8D957E] text-sm">2024</span>
+              <span className="text-[#8D957E] font-bold text-sm">2024</span>
             </div>
             <div>
               <span className="text-black text-sm font-bold">Property status: </span>

@@ -49,14 +49,14 @@ export default function AboutCommitments() {
 
   // Determine blur class based on section state
   const getCommitmentsBlurClass = () => {
-    if (typeof window === "undefined") return;
-    
+    if (typeof window === "undefined") return '';
+
     const isMobileOrTablet = window.innerWidth < 1024;
-    
+
     if (isMobileOrTablet) {
       return ''; // No blur on mobile/tablet
     }
-    
+
     if (isInSection || !hasExitedSection) {
       return 'filter-none opacity-100'; // Clear when in section or hasn't exited yet
     } else {
@@ -160,20 +160,13 @@ export default function AboutCommitments() {
           </p>
           <div className="max-w-4xl">
   <BlurText
-    text="With every Agasti Villa, we aim to deliver outcomes"
+    text="With every Agasti Villa, we aim to deliver outcomes that prioritize quality, comfort, and long-term value."
     delay={0}
     animateBy="words"
     direction="top"
     className="font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight"
   />
-  <BlurText
-    text="that prioritize quality, comfort, and long-term value."
-    delay={150}
-    animateBy="words"
-    direction="top"
-    onAnimationComplete={handleAnimationComplete}
-    className="font-gc-palioka text-[20px] sm:text-3xl md:text-[32px] lg:text-[32px] text-black leading-tight"
-  />
+  
 </div>
         </div>
       </ContainerLayout>
