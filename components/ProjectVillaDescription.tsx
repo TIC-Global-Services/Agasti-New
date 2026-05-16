@@ -104,7 +104,7 @@ export default function ProjectVillaDescription() {
             </div>
             <div>
               <span className="text-black text-sm font-bold">Year of build: </span>
-              <span className="text-[#8D957E] text-sm">2024</span>
+              <span className="text-[#8D957E] font-bold text-sm">2024</span>
             </div>
             <div>
               <span className="text-black text-sm font-bold">Property status: </span>
@@ -174,7 +174,7 @@ export default function ProjectVillaDescription() {
     </div>
     <div>
       <span className="text-black text-sm font-bold">Year of build: </span>
-      <span className="text-[#8D957E] text-sm">2024</span>
+      <span className="text-[#8D957E] font-bold text-sm">2024</span>
     </div>
     <div>
       <span className="text-black text-sm font-bold">Property status: </span>
@@ -331,14 +331,14 @@ export default function ProjectVillaDescription() {
             <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">653 <span className="font-bold">sq yds</span></span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">653 <span className="font-bold">sq yds</span></span>
               </div>
               
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
               
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">2024</span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">2024</span>
               </div>
               
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
@@ -422,14 +422,14 @@ export default function ProjectVillaDescription() {
             <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">500 <span className="font-bold">sq yds</span></span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">500 <span className="font-bold">sq yds</span></span>
               </div>
               
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
               
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">2024</span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">2024</span>
               </div>
               
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>
@@ -513,7 +513,7 @@ export default function ProjectVillaDescription() {
             <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 xl:gap-10 w-full max-w-6xl">
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 font-gc-palioka-demo text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Property size:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg inline-flex items-baseline">
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg inline-flex items-baseline">
                   <span className="inline-block items-baseline min-w-[5em]">
                     <BlurText
                       key={horizonSizeIndex}
@@ -531,7 +531,7 @@ export default function ProjectVillaDescription() {
 
               <div className="flex items-center justify-center min-w-0">
                 <span className="text-black-500 text-base lg:text-lg font-bold mr-2 whitespace-nowrap">Year of build:</span>
-                <span className="text-[#8D957E] text-base lg:text-lg">2024</span>
+                <span className="text-[#8D957E] text-base font-bold lg:text-lg">2024</span>
               </div>
 
               <div className="w-px h-8 bg-gray-300 hidden sm:block"></div>

@@ -552,6 +552,8 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
               );
             })()}
 
+            <div className="w-full h-px bg-gray-300 mb-8"></div>
+
             <div className="bg-white rounded-lg mb-8">
               <div className="mt-8">
                 <h4 className="font-gc-palioka text-[16px] sm:text-[24px] text-black mb-8 sm:mb-4">
@@ -718,6 +720,8 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
                     </div>
                   </div>
                 )}
+
+                <div className="w-full h-px bg-gray-300 mb-12"></div>
 
                 {/* Top Section - Property Description and Amenities */}
                 {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 xl:gap-32 mb-8">

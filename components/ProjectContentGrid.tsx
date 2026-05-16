@@ -90,15 +90,15 @@ export default function ProjectContentGrid() {
 
         <div
           ref={imageSectionRef}
-          className="relative flex items-center justify-center py-12 w-full overflow-hidden"
+          className="relative flex items-center justify-center py-12 w-full overflow-visible md:overflow-hidden"
         >
           {/* BIG TEXT LAYER (BEHIND IMAGE) */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             {/* Arriving */}
             <span
-              className={`absolute text-[40px]  md:text-7xl font-gc-palioka text-[#8D957E] transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              className={`absolute text-[40px] md:text-7xl font-gc-palioka text-[#8D957E] transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
                 animate
-                  ? "-translate-x-[25dvw] opacity-100"
+                  ? "-translate-x-[30dvw] md:-translate-x-[25dvw] opacity-100"
                   : "translate-x-0 opacity-0"
               }`}
             >
@@ -107,9 +107,9 @@ export default function ProjectContentGrid() {
 
             {/* Shortly */}
             <span
-              className={`absolute text-[40px]  md:text-7xl font-gc-palioka text-[#8D957E] transition-all duration-[1400ms] delay-150 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              className={`absolute text-[40px] md:text-7xl font-gc-palioka text-[#8D957E] transition-all duration-[1400ms] delay-150 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                 animate
-                  ? "translate-x-[25dvw] opacity-100"
+                  ? "translate-x-[30dvw] md:translate-x-[25dvw] opacity-100"
                   : "translate-x-0 opacity-0"
               }`}
             >
