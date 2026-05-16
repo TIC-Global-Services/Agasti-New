@@ -319,7 +319,13 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
           description:
             "The Agasti Zenith is a thoughtfully crafted villa community that blends refined architecture with modern comfort. Designed for elevated living, each villa showcases seamless planning, natural ventilation, and premium detailing. With serene surroundings, curated amenities, and a focus on privacy, The Agasti Zenith offers a lifestyle where elegance and functionality come together effortlessly.",
           layoutImages: [
-            { label: "West", src: "/Projects/Atara_Brochure-west.jpg", propertySize: "663 sq yds" },
+            { label: "West", src: "/Projects/Atara_Brochure-west.jpg", propertySize: "663 sq yds",
+              cutImages: [
+                "/Projects/west/Atara_Brochure-westcut1.jpg",
+                "/Projects/west/Atara_Brochure-westcut2.jpg",
+                "/Projects/west/Atara_Brochure-westcut3.jpg",
+              ],
+            },
           ],
         };
       case "crest":
@@ -331,7 +337,13 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
           description:
             "The Agasti Crest represents the pinnacle of luxury living with its sophisticated design and premium amenities. Each villa is meticulously planned to offer spacious interiors, modern conveniences, and stunning architectural details that create an atmosphere of refined elegance.",
           layoutImages: [
-            { label: "East", src: "/Projects/Atara_Brochure-east.jpg", propertySize: "500 sq yds" },
+            { label: "East", src: "/Projects/Atara_Brochure-east.jpg", propertySize: "500 sq yds",
+              cutImages: [
+                "/Projects/east/Atara_Brochure-eastcut1.jpg",
+                "/Projects/east/Atara_Brochure-eastcut2.jpg",
+                "/Projects/east/Atara_Brochure-eastcut3.jpg",
+              ],
+            },
           ],
         };
       case "horizon":
@@ -343,9 +355,27 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
           description:
             "The Agasti Horizon offers expansive living spaces with panoramic views and contemporary design elements. These villas are designed to maximize natural light and ventilation while providing the ultimate in comfort and luxury for modern families.",
           layoutImages: [
-            { label: "North 1", src: "/Projects/Atara_Brochure-north1.jpg", propertySize: "563 sq yds" },
-            { label: "North 2", src: "/Projects/Atara_Brochure-north2.jpg", propertySize: "670 sq yds" },
-            { label: "North 3", src: "/Projects/Atara_Brochure-north3.jpg", propertySize: "915 sq yds" },
+            { label: "North 1", src: "/Projects/Atara_Brochure-north1.jpg", propertySize: "563 sq yds",
+              cutImages: [
+                "/Projects/north/Atara_Brochure-north1cut1.jpg",
+                "/Projects/north/Atara_Brochure-north1cut2.jpg",
+                "/Projects/north/Atara_Brochure-north1cut3.jpg",
+              ],
+            },
+            { label: "North 2", src: "/Projects/Atara_Brochure-north2.jpg", propertySize: "670 sq yds",
+              cutImages: [
+                "/Projects/north/Atara_Brochure-north2cut1.jpg",
+                "/Projects/north/Atara_Brochure-north2cut2.jpg",
+                "/Projects/north/Atara_Brochure-north2cut3.jpg",
+              ],
+            },
+            { label: "North 3", src: "/Projects/Atara_Brochure-north3.jpg", propertySize: "915 sq yds",
+              cutImages: [
+                "/Projects/north/Atara_Brochure-north3cut1.jpg",
+                "/Projects/north/Atara_Brochure-north3cut2.jpg",
+                "/Projects/north/Atara_Brochure-north3cut3.jpg",
+              ],
+            },
           ],
         };
       default:
@@ -469,22 +499,58 @@ export default function VillaDetailPage({ villaType }: VillaDetailPageProps) {
             <div className="w-full h-px bg-gray-300 mt-2 mb-8"></div>
 
             {/* Layouts Section - Mobile */}
-            {villaData.layoutImages.length > 0 && (
-              <div className="mb-4">
-                <h4 className="font-gc-palioka text-[16px] sm:text-[24px] text-black mb-0">
-                  Layouts
-                </h4>
-                <div className="relative w-full" style={{ aspectRatio: "16/10" }}>
-                  <Image
-                    src={villaData.layoutImages[activeLayoutIndex].src}
-                    alt={`${villaData.title} Layout - ${villaData.layoutImages[activeLayoutIndex].label}`}
-                    fill
-                    sizes="100vw"
-                    className="object-contain"
-                  />
+            {villaData.layoutImages.length > 0 && (() => {
+              const activeLayout = villaData.layoutImages[activeLayoutIndex];
+              const cuts = activeLayout.cutImages;
+              return (
+                <div className="mb-4">
+                  <h4 className="font-gc-palioka text-[16px] sm:text-[24px] text-black mb-1">
+                    Layouts
+                  </h4>
+                  {cuts && cuts.length === 3 ? (
+                    <div className="flex flex-col gap-2">
+                      <div className="relative w-full aspect-[4/3] shadow-lg">
+                        <Image
+                          src={cuts[0]}
+                          alt={`${villaData.title} Layout ${activeLayout.label} - Part 1`}
+                          fill
+                          sizes="100vw"
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="relative w-full aspect-[4/3] shadow-lg">
+                        <Image
+                          src={cuts[1]}
+                          alt={`${villaData.title} Layout ${activeLayout.label} - Part 2`}
+                          fill
+                          sizes="100vw"
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="relative w-full aspect-[4/3] shadow-lg">
+                        <Image
+                          src={cuts[2]}
+                          alt={`${villaData.title} Layout ${activeLayout.label} - Part 3`}
+                          fill
+                          sizes="100vw"
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="relative w-full" style={{ aspectRatio: "16/10" }}>
+                      <Image
+                        src={activeLayout.src}
+                        alt={`${villaData.title} Layout - ${activeLayout.label}`}
+                        fill
+                        sizes="100vw"
+                        className="object-contain"
+                      />
+                    </div>
+                  )}
                 </div>
-              </div>
-            )}
+              );
+            })()}
 
             <div className="bg-white rounded-lg mb-8">
               <div className="mt-8">
