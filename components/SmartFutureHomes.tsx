@@ -43,13 +43,12 @@ export default function SmartFutureHomes() {
             <div className="xl:col-span-3 mb-2 xl:mb-0">
   <div className="font-gc-palioka text-[20px] sm:text-2xl md:text-3xl lg:text-[32px] text-black leading-tight">
     <BlurText
-      text="Crafting Homes Designed for Intelligent Living ,"
+      text="Crafting Homes Designed for Intelligent Living, "
       delay={60}
       animateBy="words"
       direction="top"
       className="inline"
     />
-    <br />
     <BlurText
       text="Lasting Strength, and a Future-Ready Lifestyle"
       delay={60}

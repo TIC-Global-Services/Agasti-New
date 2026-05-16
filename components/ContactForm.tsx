@@ -18,8 +18,8 @@ export default function ContactForm() {
           />
           
           {/* Contact Title Overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="font-gc-palioka text-[20px] sm:text-[48px] text-white font-bold tracking-wider">
+          <div className="absolute bottom-[-28] left-0 right-0 flex justify-center">
+            <h1 className="font-gc-palioka text-[90px] sm:text-[48px] font-bold tracking-wider text-transparent leading-none" style={{ WebkitTextStroke: "1px white", WebkitTextFillColor: "transparent" }}>
               contact
             </h1>
           </div>
@@ -149,15 +149,16 @@ Hitech City, Hyderabad. 500081.
     </div>
 
     {/* Right Column */}
-    <div className="flex-justify-end">
+    <div>
       <h4 className="text-black text-[20px] font-bold mb-2">
         Get in touch
       </h4>
       <div className="space-y-1">
-        <a href="tel:+919704539055" className="text-gray-600 text-[14px]">
+        <a href="tel:+919704539055" className="text-gray-600 text-[14px] whitespace-nowrap">
           +91 97045 39055
         </a>
-        <a href="mailto:info@agastirealty.com"  className="text-gray-600 text-[14px] underline">
+        <br />
+        <a href="mailto:info@agastirealty.com" className="text-gray-600 text-[14px] underline whitespace-nowrap">
           info@agastirealty.com
         </a>
       </div>
