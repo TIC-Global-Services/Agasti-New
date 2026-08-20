@@ -115,7 +115,7 @@ export default function AboutStory() {
               >
                 <video
                   ref={videoRef}
-                  src="https://ik.imagekit.io/99y1fc9mh/Agasti/Room.mp4"
+                  src="https://pub-4fca97288b494c5f9c9fc26464d5fe4e.r2.dev/Room.mp4"
                   autoPlay
                   muted
                   loop
