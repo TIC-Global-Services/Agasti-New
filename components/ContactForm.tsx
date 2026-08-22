@@ -154,8 +154,8 @@ Hitech City, Hyderabad. 500081.
         Get in touch
       </h4>
       <div className="space-y-1">
-        <a href="tel:+919704539055" className="text-gray-600 text-[14px] whitespace-nowrap">
-          +91 97045 39055
+        <a href="tel:+91 90555 55566" className="text-gray-600 text-[14px] whitespace-nowrap">
+         +91 90555 55566
         </a>
         <br />
         <a href="mailto:info@agastirealty.com" className="text-gray-600 text-[14px] underline whitespace-nowrap">
@@ -322,8 +322,8 @@ Hitech City, Hyderabad. 500081.
               <div className="text-center">
                 <h5 className="text-black font-bold mb-2">Contact</h5>
                 <div className="space-y-2">
-                  <a href="tel:+919704539055" className="text-[#717580] text-base">
-                    +919704539055
+                  <a href="tel:+91 90555 55566" className="text-[#717580] text-base">
+                    +91 90555 55566
                   </a>
                   <a href="mailto:info@agastirealty.com" className="text-[#262B35] text-base underline">
                     info@agastirealty.com
@@ -494,8 +494,8 @@ Hitech City, Hyderabad. 500081.
 
                   {/* Contact Info */}
                   <div className="space-y-2 flex flex-col">
-                    <a href="tel:+919704539055" className="text-[#717580]-600 text-base">
-                      +919704539055
+                    <a href="tel:+91 90555 55566" className="text-[#717580]-600 text-base">
+                     +91 90555 55566
                     </a>
                     <a href="mailto:Info@agastirealty.com" className="text-[#262B35]-600 text-base underline">
                       Info@agastirealty.com
