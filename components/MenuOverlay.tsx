@@ -424,13 +424,13 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
 
                   <a
 
-                    href="tel:+919704539055"
+                    href="tel:+91 90555 55566"
 
                     className="text-xs sm:text-sm hover:text-black transition-colors relative group inline-block"
 
                   >
 
-                    +919704539055
+                    +91 90555 55566
 
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
 
