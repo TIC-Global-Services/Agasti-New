@@ -30,6 +30,15 @@ export default function RootLayout({
             gtag('config', 'G-8HHJ12J7YF');
           `}
         </Script>
+        <Script id="clarity-init" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "y8bwjyevku");
+          `}
+        </Script>
       </head>
       <body
         className={`${GC_Palioka_Demo.variable} ${PlusJarkarta_Sans.variable} antialiased`}
